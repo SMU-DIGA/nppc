@@ -49,8 +49,7 @@ def generate_instance(num_elements, num_subsets):
 
 
 def verify_solution(instance, partition):
-    """
-    """
+    """ """
     # Check if partition only contains valid elements
     universe = instance["universe"]
     subsets = instance["subsets"]
