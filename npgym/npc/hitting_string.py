@@ -72,6 +72,3 @@ def verify_solution(instance, solution: str):
 # print(
 #     verify_solution(instance, solution)
 # )
-
-
-

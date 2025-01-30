@@ -72,9 +72,9 @@ def verify_solution(instance, solution_indices):
             - message is a string explaining why the solution is invalid (if applicable)
     """
 
-    universe = instance['universe']
-    k = instance['k']
-    sets = instance['subsets']
+    universe = instance["universe"]
+    k = instance["k"]
+    sets = instance["subsets"]
     # Check if solution uses at most k sets
     if len(solution_indices) > k:
         return (
@@ -95,7 +95,7 @@ def verify_solution(instance, solution_indices):
     return True, "Valid solution"
 
 
-instance, solution = generate_instance(num_elements=20, num_sets=30, k=5 )
+instance, solution = generate_instance(num_elements=20, num_sets=30, k=5)
 
 print(instance)
 print(solution)

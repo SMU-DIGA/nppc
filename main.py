@@ -5,8 +5,8 @@ npc_problems = os.listdir("./npgym/npc")
 
 problem_idx = 0
 for p in npc_problems:
-    if 'init' in p or 'pycache' in p:
+    if "__" in p:
         continue
     else:
-        print(f'{problem_idx}: {p}')
+        print(f"{problem_idx}: {p}")
         problem_idx += 1
