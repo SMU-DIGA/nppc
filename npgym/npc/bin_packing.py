@@ -35,6 +35,7 @@ def generate_instance(
     current_bin = 0
     current_bin_space = bin_capacity
 
+    solution = []
     for _ in range(num_items):
         # Move to next bin if current bin is full or nearly full
         if current_bin_space < min_item_size:
@@ -50,6 +51,7 @@ def generate_instance(
         item_size = random.randint(min_item_size, max_possible)
         items.append(item_size)
         current_bin_space -= item_size
+        solution.append(current_bin)
 
     # If we need more items, add small items that can fit somewhere
     while len(items) < num_items:
