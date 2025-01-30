@@ -16,17 +16,15 @@ def generate_instance(num_pair, min_value=5, max_value=200):
         possible_values.remove(a)
         a = random.sample(possible_values, k=1)[0]
 
-        pairs.append(
-            (a, b)
-        )
+        pairs.append((a, b))
 
     return pairs, x
 
 
 def verify_solution(instance, x):
-    for (a, b) in instance:
+    for a, b in instance:
         if a == x % b:
-            return False, 'The solution is not correct.'
+            return False, "The solution is not correct."
     else:
         return True, "Correct solution."
 
@@ -35,7 +33,4 @@ pairs, x = generate_instance(num_pair=100)
 print(pairs)
 print(x)
 x = 20
-print(
-    verify_solution(pairs, x)
-
-)
+print(verify_solution(pairs, x))

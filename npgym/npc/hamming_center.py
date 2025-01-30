@@ -16,7 +16,7 @@ def generate_instance(n=8, k=3, r=2):
         r: maximum allowed Hamming distance
     """
     # First generate a solution y to ensure instance is solvable
-    y = ''.join(random.choice('01') for _ in range(n))
+    y = "".join(random.choice("01") for _ in range(n))
 
     # Generate k strings with Hamming distance at most r from y
     S = []
@@ -27,14 +27,11 @@ def generate_instance(n=8, k=3, r=2):
         flip_positions = random.sample(range(n), num_flips)
 
         for pos in flip_positions:
-            x[pos] = '1' if x[pos] == '0' else '0'
+            x[pos] = "1" if x[pos] == "0" else "0"
 
-        S.append(''.join(x))
+        S.append("".join(x))
 
-    instance = {
-        'S': S,
-        'r': r
-    }
+    instance = {"S": S, "r": r}
     return instance, y
 
 
@@ -53,15 +50,15 @@ def verify_solution(instance, y):
         is_valid: boolean indicating if y is a valid solution
         violations: list of indices in S where Hamming distance exceeds r
     """
-    S, r = instance['S'], instance['r']
+    S, r = instance["S"], instance["r"]
 
     # Check if y has the correct length
     if len(y) != len(S[0]):
-        return False, 'The length is not correct.'
+        return False, "The length is not correct."
 
     # Check if y is a binary string
-    if not all(bit in '01' for bit in y):
-        return False, 'The solution is not binary.'
+    if not all(bit in "01" for bit in y):
+        return False, "The solution is not binary."
 
     violations = []
 
@@ -72,9 +69,9 @@ def verify_solution(instance, y):
             violations.append(i)
 
     if len(violations) == 0:
-        return True, 'Correct solution.'
+        return True, "Correct solution."
     else:
-        return False, 'Some string is violated.'
+        return False, "Some string is violated."
 
 
 instance, solution = generate_instance()
