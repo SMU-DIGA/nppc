@@ -65,17 +65,17 @@ def generate_instance(num_nodes, bandwidth, edge_density=0.3):
 def verify_solution(instance, layout):
     """
     Verify if a graph layout achieves the target bandwidth.
-
-    Args:
-        graph (list): Adjacency list representation of the graph
-        target_bandwidth (int): Maximum allowed bandwidth
-        layout (list): Permutation of vertices representing their positions
+    #
+    # Args:
+    #     graph (list): Adjacency list representation of the graph
+    #     target_bandwidth (int): Maximum allowed bandwidth
+    #     layout (list): Permutation of vertices representing their positions
 
     Returns:
         tuple: (is_valid, error_message)
             - is_valid: Boolean indicating if layout is valid
             - error_message: String explaining why layout is invalid (if applicable)
-            :param instance:
+            # :param instance:
     """
 
     graph = instance["graph"]
