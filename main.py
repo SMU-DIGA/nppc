@@ -8,5 +8,5 @@ for p in npc_problems:
     if "__" in p:
         continue
     else:
-        print(f"{problem_idx}: {p}")
+        print(f"{problem_idx}: {p}\n")
         problem_idx += 1
