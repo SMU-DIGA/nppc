@@ -55,28 +55,29 @@ def generate_instance(num_variables, num_clauses):
         clause.append((last_var, negated))
         clauses.append(tuple([(-var if negated else var) for var, negated in clause]))
 
-    return clauses, solution
+    instance = {
+        'num_variables': num_variables,
+        "clauses": clauses
+    }
+    return instance, solution
 
 
 def verify_solution(instance, solution):
     if type(instance) is tuple:
         instance = instance[0]
-    variables = set(abs(v) for clause in instance for v in clause)
-    for variable in variables:
-        if variable not in solution.keys():
-            return (
-                False,
-                "The variables in solution are not consistent with the instance.",
-            )
+    num_variables = instance['num_variables']
+    clauses = instance['clauses']
+    if num_variables != len(solution):
+        return False, "Ths solution is not valid."
 
     unsatisfied_clauses = []
 
     # 检查每个子句
-    for i, clause in enumerate(instance):
+    for i, clause in enumerate(clauses):
         clause_satisfied = False
         for literal in clause:
             var = abs(literal)
-            if (literal > 0 and solution[var]) or (literal < 0 and not solution[var]):
+            if (literal > 0 and solution[var-1]) or (literal < 0 and not solution[var-1]):
                 clause_satisfied = True
                 break
         if not clause_satisfied:
@@ -98,10 +99,7 @@ print(solution)
 # solution = {i: True for i in range(1, 21)}
 # print("\n test solution：", solution)
 
-new_solution = {
-    i+1: solution[i] for i in range(len(solution))
-}
 
 # 验证解
-result = verify_solution(instance, new_solution)
+result = verify_solution(instance, solution)
 print(result)
