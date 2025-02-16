@@ -55,18 +55,15 @@ def generate_instance(num_variables, num_clauses):
         clause.append((last_var, negated))
         clauses.append(tuple([(-var if negated else var) for var, negated in clause]))
 
-    instance = {
-        'num_variables': num_variables,
-        "clauses": clauses
-    }
+    instance = {"num_variables": num_variables, "clauses": clauses}
     return instance, solution
 
 
 def verify_solution(instance, solution):
     if type(instance) is tuple:
         instance = instance[0]
-    num_variables = instance['num_variables']
-    clauses = instance['clauses']
+    num_variables = instance["num_variables"]
+    clauses = instance["clauses"]
     if num_variables != len(solution):
         return False, "Ths solution is not valid."
 
@@ -77,7 +74,9 @@ def verify_solution(instance, solution):
         clause_satisfied = False
         for literal in clause:
             var = abs(literal)
-            if (literal > 0 and solution[var-1]) or (literal < 0 and not solution[var-1]):
+            if (literal > 0 and solution[var - 1]) or (
+                literal < 0 and not solution[var - 1]
+            ):
                 clause_satisfied = True
                 break
         if not clause_satisfied:

@@ -10,5 +10,3 @@ for p in npc_problems:
     else:
         print(f"{problem_idx}: {p}\n")
         problem_idx += 1
-
-
