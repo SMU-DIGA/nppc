@@ -94,10 +94,14 @@ print("generate 3sat instances：")
 print(instance)
 print(solution)
 
-# 创建一个解（所有变量都设为True）
-solution = {i: True for i in range(1, 21)}
-print("\n test solution：", solution)
+# # 创建一个解（所有变量都设为True）
+# solution = {i: True for i in range(1, 21)}
+# print("\n test solution：", solution)
+
+new_solution = {
+    i+1: solution[i] for i in range(len(solution))
+}
 
 # 验证解
-result = verify_solution(instance, solution)
+result = verify_solution(instance, new_solution)
 print(result)

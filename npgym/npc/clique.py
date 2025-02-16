@@ -22,7 +22,7 @@ def generate_instance(num_nodes: int, clique_size: int, edge_prob: float = 0.5):
     return graph, clique_vertices
 
 
-def verify_clique(graph: dict, clique: set, clique_size: int):
+def verify_solution(graph: dict, clique: set, clique_size: int):
     num_vertices = len(graph["nodes"])
 
     if not clique:

@@ -43,6 +43,7 @@ print("图的边:", graph)
 print(solution)
 
 # 验证顶点覆盖
-cover = {2, 3, 4}
+# cover = {2, 3, 4}
+cover = solution
 is_valid, message = verify_solution(graph, cover, cover_size=cover_size)
 print(f"验证顶点覆盖{cover}:", message)
