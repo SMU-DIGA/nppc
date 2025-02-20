@@ -55,14 +55,14 @@ def generate_instance(num_variables, num_clauses):
         clause.append((last_var, negated))
         clauses.append(tuple([(-var if negated else var) for var, negated in clause]))
 
-    instance = {"num_variables": num_variables, "clauses": clauses}
+    instance = {"variables": [i+1 for i in range(num_variables)], "clauses": clauses}
     return instance, solution
 
 
 def verify_solution(instance, solution):
     if type(instance) is tuple:
         instance = instance[0]
-    num_variables = instance["num_variables"]
+    num_variables = len(instance["variables"])
     clauses = instance["clauses"]
     if num_variables != len(solution):
         return False, "Ths solution is not valid."
@@ -89,10 +89,10 @@ def verify_solution(instance, solution):
 
 
 # 生成实例
-instance, solution = generate_instance(20, 12)
-print("generate 3sat instances：")
-print(instance)
-print(solution)
+# instance, solution = generate_instance(20, 12)
+# print("generate 3sat instances：")
+# print(instance)
+# print(solution)
 
 # # 创建一个解（所有变量都设为True）
 # solution = {i: True for i in range(1, 21)}
@@ -100,5 +100,5 @@ print(solution)
 
 
 # 验证解
-result = verify_solution(instance, solution)
-print(result)
+# result = verify_solution(instance, solution)
+# print(result)
