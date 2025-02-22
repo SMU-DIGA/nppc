@@ -55,7 +55,7 @@ def generate_instance(num_variables, num_clauses):
         clause.append((last_var, negated))
         clauses.append(tuple([(-var if negated else var) for var, negated in clause]))
 
-    instance = {"variables": [i+1 for i in range(num_variables)], "clauses": clauses}
+    instance = {"variables": [i + 1 for i in range(num_variables)], "clauses": clauses}
     return instance, solution
 
 
@@ -89,16 +89,19 @@ def verify_solution(instance, solution):
 
 
 # 生成实例
-# instance, solution = generate_instance(20, 12)
+# instance, solution = generate_instance(3, 3)
 # print("generate 3sat instances：")
 # print(instance)
 # print(solution)
 
-# # 创建一个解（所有变量都设为True）
+# 创建一个解（所有变量都设为True）
 # solution = {i: True for i in range(1, 21)}
 # print("\n test solution：", solution)
 
-
-# 验证解
+# instance = {'variables': [1, 2, 3], 'clauses': [(2, 1, 3), (-2, 1, -3), (-2, 3, 1)]}
+#
+# solution = [True, True, False]
+#
+# # 验证解
 # result = verify_solution(instance, solution)
 # print(result)
