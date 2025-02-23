@@ -103,6 +103,7 @@ def create_demo_text(n_shot, num_variables, num_clauses):
 
 if __name__ == "__main__":
     from npgym.npc.three_sat import generate_instance, verify_solution
+    from description import three_sat
 
     n_shot = 3
     num_variables = 10
@@ -110,10 +111,7 @@ if __name__ == "__main__":
     iteration = 10000
     model = "openai/gpt-4o-mini"
     output_path = model + ".json"
-    problem_name = "3-Satisfiability (3-SAT)"
-    problem_description = """Input: A set of m clauses - C1 ,C2,...,Cm - over a set of n Boolean valued variables Xn=<x1,x2,...,xn>, such that each clause depends on exactly three distinct variables from Xn. A clause being a Boolean expression of the form yi+yj+yk where each y is of the form x or -x (i.e. negation of x) with x being some variable in Xn. For example if n=4 and m=3 a possible instance could be the (set of) Boolean expressions: C1=(x1+(-x2)+(-x3)); C2=(x2+x3+(-x4)); C3=((-x1)+x3+x4);
-Question: Can each variable xi of Xn be assigned a Boolean value alphai in such a way that every clause evaluates to the Boolean result true under the assignment < xi:=alphai:1<=i<=n>? """
-
+    problem_name, problem_description = three_sat()
     num_true = 0
     num_total = 0
     prompt_tokens = 0
