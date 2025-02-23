@@ -1,7 +1,7 @@
 ## example: https://github.com/BerriAI/litellm
-with open("./api_keys/openai_api_key.txt", "r") as file:
+with open("../api_keys/openai_api_key.txt", "r") as file:
     openai_api_key = file.read().strip()
-with open("./api_keys/claude_api_key.txt", "r") as file:
+with open("../api_keys/claude_api_key.txt", "r") as file:
     claude_api_key = file.read().strip()
 
 from litellm import completion

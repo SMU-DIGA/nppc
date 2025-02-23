@@ -11,9 +11,9 @@ models = {
 
 
 def evaluate_llm(content, model):
-    with open("api_keys/openai_api_key.txt", "r") as file:
+    with open("../api_keys/openai_api_key.txt", "r") as file:
         openai_api_key = file.read().strip()
-    with open("api_keys/deepseek_api_key.txt", "r") as file:
+    with open("../api_keys/deepseek_api_key.txt", "r") as file:
         deepseek_api_key = file.read().strip()
 
     from litellm import completion

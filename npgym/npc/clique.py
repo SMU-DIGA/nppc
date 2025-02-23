@@ -19,10 +19,17 @@ def generate_instance(num_nodes: int, clique_size: int, edge_prob: float = 0.5):
             if random.random() < edge_prob:
                 graph["edges"].add((i, j))
 
-    return graph, clique_vertices
+    instance = {
+        "clique_size": clique_size,
+        "graph": graph,
+    }
+
+    return instance, list(clique_vertices)
 
 
-def verify_solution(graph: dict, clique: set, clique_size: int):
+def verify_solution(instance, clique: list):
+    graph = instance["graph"]
+    clique_size = instance["clique_size"]
     num_vertices = len(graph["nodes"])
 
     if not clique:

@@ -14,10 +14,13 @@ def generate_instance(num_nodes: int, cover_size: int, edge_prob: float = 0.5):
                 if random.random() < edge_prob:  # 70%概率添加边
                     graph["edges"].add((i, j))
 
-    return graph, cover_vertices
+    instance = {"cover_size": cover_size, "graph": graph}
+    return instance, list(cover_vertices)
 
 
-def verify_solution(graph: dict, cover: set, cover_size: int):
+def verify_solution(instance, cover: set):
+    cover_size = instance["cover_size"]
+    graph = instance["graph"]
     num_vertices = len(graph["nodes"])
 
     if not cover:
@@ -36,14 +39,14 @@ def verify_solution(graph: dict, cover: set, cover_size: int):
     return True, "Correct solution."
 
 
-num_nodes = 5
-cover_size = 3
-graph, solution = generate_instance(num_nodes, cover_size)
-print("图的边:", graph)
-print(solution)
-
-# 验证顶点覆盖
-# cover = {2, 3, 4}
-cover = solution
-is_valid, message = verify_solution(graph, cover, cover_size=cover_size)
-print(f"验证顶点覆盖{cover}:", message)
+# num_nodes = 5
+# cover_size = 3
+# graph, solution = generate_instance(num_nodes, cover_size)
+# print("图的边:", graph)
+# print(solution)
+#
+# # 验证顶点覆盖
+# # cover = {2, 3, 4}
+# cover = solution
+# is_valid, message = verify_solution(graph, cover, cover_size=cover_size)
+# print(f"验证顶点覆盖{cover}:", message)
