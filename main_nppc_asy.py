@@ -224,7 +224,7 @@ if __name__ == "__main__":
         model, problem_name, n_shots
     )
     levels = problem_levels[problem_name]
-    for level in list(levels.keys())[-1:]:
+    for level in list(levels.keys())[-3:-2]:
         configs = levels[level]
 
         results[level] = []
