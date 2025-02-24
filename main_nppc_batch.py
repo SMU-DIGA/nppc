@@ -13,7 +13,12 @@ from pathlib import Path
 import pickle
 import os.path as osp
 import litellm
+
 # litellm._turn_on_debug()
+
+# import litellm
+# litellm._turn_on_debug()
+
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -189,7 +194,7 @@ def get_parser():
         "--n_shots",
         type=int,
         required=False,
-        default=3,
+        default=0,
         help="number of in-context examples",
     )
 
@@ -282,7 +287,6 @@ if __name__ == "__main__":
             instances.append(instance)
             contents.append(content)
             examples.append(example)
-
 
             # print(len(contents))
 

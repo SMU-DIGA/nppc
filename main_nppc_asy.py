@@ -293,5 +293,3 @@ if __name__ == "__main__":
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
-
-

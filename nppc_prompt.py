@@ -25,13 +25,11 @@ Question: Can each variable xi of Xn be assigned a Boolean value alphai in such 
     "Vertex Cover": """Input: An n-node undirected graph G(V,E) with node set V and edge set E; a positive integer k with k<=n.
 Question: Is there a subset W of V having size at most k and such that for every edge {u,v} in E at least one of u and v belongs to W?""",
     "Clique": """Input: An n-node undirected graph G(V,E) with node set V and edge set E; a positive integer k with k<=n.
-Question: Does G contain a k-clique, i.e. a subset W of the nodes V such that W has size k and for each distinct pair of nodes u, v in W, {u,v} is an edge of G?
-""",
+Question: Does G contain a k-clique, i.e. a subset W of the nodes V such that W has size k and for each distinct pair of nodes u, v in W, {u,v} is an edge of G?""",
     "Independent Set": """Input: n-node undirected graph G(V,E); positive integer k<=n.
 Question: Does G have an independent set of size at least k, i.e. a subset W of at least k nodes from V such that no pair of nodes in W is joined by an edge in E?""",
     "Partition": """Input: Finite set A; for each element a in A a positive integer size s(a).
-Question: Can A be partitioned into 2 disjoint sets A1 and A2 in a such a way that the sum of the sizes s(x) of elements x in A1 is exactly the same as the sum of the sizes s(y) of the elements y in A2.
-Comments: It should be noted that it is not required that A1 and A2 contain equal numbers of elements, although even with this condition the problem is still NP-complete.""",
+Question: Can A be partitioned into 2 disjoint sets A1 and A2 in a such a way that the sum of the sizes s(x) of elements x in A1 is exactly the same as the sum of the sizes s(y) of the elements y in A2.""",
     "Subset Sum": """Input: Finite set A; for each element a in A a positive integer size s(a); a positive integer K.
 Question: Is there a subset B of A such that the sum of the sizes, s(x), of the elements x in B is exactly equal to K?""",
 }

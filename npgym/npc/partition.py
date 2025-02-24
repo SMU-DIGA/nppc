@@ -81,13 +81,9 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
 # print(f"Validation result: {msg}")
 
 
-
-
 numbers, solution = generate_instance(6)
 print(f"Numbers: {numbers}")
 print(solution)
 valid, msg = verify_solution(numbers, solution)
 
 print(f"Validation result: {msg}")
-
-
