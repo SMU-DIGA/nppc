@@ -18,7 +18,7 @@ models = {
     "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
     "o1-mini": "o1-mini-2024-09-12",
     "deepseek-chat": "deepseek/deepseek-chat",
-    "claude": "anthropic/claude-3-sonnet-20240229",
+    # "claude": "anthropic/claude-3-sonnet-20240229",
 }
 
 
@@ -39,11 +39,11 @@ def set_api_keys():
         openai_api_key = file.read().strip()
     with open("api_keys/deepseek_api_key.txt", "r") as file:
         deepseek_api_key = file.read().strip()
-    with open("./api_keys/claude_api_key.txt", "r") as file:
-        claude_api_key = file.read().strip()
+    # with open("./api_keys/claude_api_key.txt", "r") as file:
+    #     claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
-    os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+    # os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
 
 def extract_solution_from_response(response):
@@ -180,7 +180,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=0,
+        default=2,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -195,7 +195,7 @@ def get_parser():
         "--n_trials",
         type=int,
         required=False,
-        default=100,
+        default=50,
         help="number of trials for each level",
     )
 
@@ -226,7 +226,6 @@ if __name__ == "__main__":
 
     model = args.model
 
-    args.problem = 2
     problem_name = list(problem_descriptions)[args.problem]
     problem_description = problem_descriptions[problem_name]
     generate_instance, verify_solution = get_instance_generator(problem_name)
@@ -255,15 +254,19 @@ if __name__ == "__main__":
     saving_path = "model_{}_problem_{}_shots_{}.pkl".format(
         model, problem_name, n_shots
     )
+
     levels = problem_levels[problem_name]
-    for level in list(levels.keys())[-3:-2]:
+    for level in list(levels.keys()):
+        print("="*15)
+        print("level {}".format(level))
+        print("=" * 15)
         configs = levels[level]
 
         results[level] = []
 
         instances = []
         contents = []
-        for trial in range(n_trials):
+        while True:
             content = nppc_template.replace(
                 "<problem_description>", problem_description
             ).replace("<problem_name>", problem_name)
@@ -275,7 +278,10 @@ if __name__ == "__main__":
             instances.append(instance)
             contents.append(content)
 
-            if len(contents) == args.asy_batch_size or (trial == n_trials - 1):
+            # print(len(contents))
+
+            # if len(contents) == args.asy_batch_size or (trial == n_trials - 1):
+            if len(contents) == args.asy_batch_size:
                 # This is only for the online api model
                 # batch_results = get_results_from_api_asy(contents=contents, model=model)
                 batch_results = get_batch_results_from_api(
@@ -299,7 +305,10 @@ if __name__ == "__main__":
                     results[level] += batch_results
                 instances = []
                 contents = []
-        break
+            # print(len(results[level]))
+            if len(results[level]) == n_trials:
+                break
+
 
     for level in results.keys():
         results_for_level = results[level]
