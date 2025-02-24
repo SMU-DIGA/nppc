@@ -173,7 +173,7 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="claude",
+        default="gpt-4o-mini",
         help="name for LLM",
     )
     parser.add_argument(
@@ -195,7 +195,7 @@ def get_parser():
         "--n_trials",
         type=int,
         required=False,
-        default=50,
+        default=100,
         help="number of trials for each level",
     )
 
