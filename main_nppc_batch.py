@@ -274,6 +274,7 @@ if __name__ == "__main__":
             content = content.replace("<in_context_examples>", demo_content).replace(
                 "<problem_to_solve>", "{}".format(instance)
             )
+            print(content)
 
             instances.append(instance)
             contents.append(content)

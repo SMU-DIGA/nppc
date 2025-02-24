@@ -2,9 +2,6 @@ import random
 from typing import List, Tuple
 
 
-import random
-from typing import List, Tuple
-
 def generate_instance(n: int, max_value: int = 100):
     # 确保 n 是偶数，否则无法均分
     if n < 2:
@@ -23,8 +20,8 @@ def generate_instance(n: int, max_value: int = 100):
     # 生成 A2 的元素，确保 sum(A2) == sum(A1)
     A2 = []
     remaining_sum = sum_A1
-    for _ in range(size_A2 - 1):
-        value = random.randint(1, min(remaining_sum - (size_A2 - 1 - _), max_value))
+    for idx in range(size_A2 - 1):
+        value = random.randint(1, min(remaining_sum - (size_A2 - 1 - idx), max_value))
         A2.append(value)
         remaining_sum -= value
     A2.append(remaining_sum)
@@ -32,17 +29,22 @@ def generate_instance(n: int, max_value: int = 100):
     # 合并 A1 和 A2 成最终的实例 A
     A = A1 + A2
     # 打乱顺序，避免 A1 和 A2 在 A 中是连续的
-    random.shuffle(A)
+
+    indexed = list(enumerate(A))
+    # 随机打乱
+    random.shuffle(indexed)
+    # 解压缩得到打乱后的列表和对应的原始索引
+    indices, shuffled = zip(*indexed)
 
     partition = []
-    for num in A:
-        if num in A1:
+    for i in range(len(A)):
+        if indices[i] < len(A1):
             partition.append(True)
             # A1_set.remove(num)  # 避免重复元素的问题
         else:
             partition.append(False)
 
-    return A, partition
+    return list(shuffled), partition
 
 
 def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, str]:
@@ -67,7 +69,9 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
         return False, f"Invalid partition: {sum1} ≠ {sum2}"
 
 
-numbers, solution = generate_instance(4)
+
+
+numbers, solution = generate_instance(6)
 print(f"Numbers: {numbers}")
 print(solution)
 valid, msg = verify_solution(numbers, solution)
