@@ -8,7 +8,7 @@ from nppc_prompt import nppc_template, example_and_solution, problem_description
 from nppc_problem import problem_levels, problem2path
 from utils import seed_everything
 import asyncio
-from litellm import completion, acompletion
+from litellm import completion, acompletion, batch_completion
 from pathlib import Path
 import pickle
 import os.path as osp
@@ -99,11 +99,43 @@ async def async_evaluate_llm(contents, model):
     return await asyncio.gather(*[call_gpt(content) for content in contents])
 
 
-def get_results_from_api(contents, model):
+def get_results_from_api_asy(contents, model):
     results = []
     try:
         print("Starting the asy calling of LLM")
         responses = asyncio.run(async_evaluate_llm(contents, model=model))
+        print("End of calling LLM")
+        for idx, response in enumerate(responses):
+            token_numbers = {
+                "prompt": response.usage.prompt_tokens,
+                "completion": response.usage.completion_tokens,
+            }
+            prediction = response.choices[0].message.content
+            predicted_solution = extract_solution_from_response(prediction)
+
+            result = {
+                "instance": instance,
+                "examples": examples,
+                "response": prediction,
+                "solution": predicted_solution,
+                "tokens": token_numbers,
+            }
+            # print(result)
+            results.append(result)
+        return results
+    except Exception as e:
+        print(f"Error calling the LLM: {e}")
+        return None
+
+
+def get_batch_results_from_api(contents, model):
+    results = []
+    try:
+        print("Starting the batch calling of LLM")
+        messages = [[{"role": "user", "content": content}] for content in contents]
+        responses = batch_completion(messages=messages, model=models[model])
+
+        # print(responses)
         print("End of calling LLM")
         for idx, response in enumerate(responses):
             token_numbers = {
@@ -245,7 +277,10 @@ if __name__ == "__main__":
 
             if len(contents) == args.asy_batch_size or (trial == n_trials - 1):
                 # This is only for the online api model
-                batch_results = get_results_from_api(contents=contents, model=model)
+                # batch_results = get_results_from_api_asy(contents=contents, model=model)
+                batch_results = get_batch_results_from_api(
+                    contents=contents, model=model
+                )
                 # TODO: @ruiyu, please add the local model implementation
 
                 if batch_results:
@@ -293,5 +328,3 @@ if __name__ == "__main__":
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
-
-
