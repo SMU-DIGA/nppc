@@ -38,7 +38,11 @@ def generate_instance(num_elements, b):
                 # If in different groups, distance can be larger
                 distances[(i, j)] = random.randint(b + 1, 2 * b)
 
-    instance = {"b": b, "distances": distances}
+    instance = {
+        "b": b,
+        "elements": [i for i in range(num_elements)],
+        "distances": distances,
+    }
     return instance, element_groups
 
 
@@ -86,8 +90,9 @@ def verify_solution(instance, partition):
 
 instance, solution = generate_instance(num_elements=10, b=5)
 
+print(instance)
 print(solution)
 
-random.shuffle(solution)
+# random.shuffle(solution)
 
 print(verify_solution(instance, solution))
