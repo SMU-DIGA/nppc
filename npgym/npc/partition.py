@@ -15,7 +15,8 @@ def generate_instance(n: int, max_value: int = 100):
     size_A1 = random.randint(1, n - 1)
     size_A2 = n - size_A1
 
-    # 生成 A1 的元素
+    # 生成 A1 和 A2 的元素，确保它们的和相等
+    # 先生成 A1 的元素
     A1 = [random.randint(1, max_value) for _ in range(size_A1)]
     sum_A1 = sum(A1)
 
@@ -33,15 +34,11 @@ def generate_instance(n: int, max_value: int = 100):
     # 打乱顺序，避免 A1 和 A2 在 A 中是连续的
     random.shuffle(A)
 
-    # 生成布尔列表 partition
-    # 先记录 A1 和 A2 的元素
-    A1_set = set(A1)
-    A2_set = set(A2)
     partition = []
     for num in A:
-        if num in A1_set:
+        if num in A1:
             partition.append(True)
-            A1_set.remove(num)  # 避免重复元素的问题
+            # A1_set.remove(num)  # 避免重复元素的问题
         else:
             partition.append(False)
 
