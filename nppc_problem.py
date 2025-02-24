@@ -35,6 +35,6 @@ problem_levels = {
         1: {"num_nodes": 4, "ind_set_size": 2},
     },
     "Partition": {
-        1: {"n": 4},
+        1: {"n": 6},
     },
 }
