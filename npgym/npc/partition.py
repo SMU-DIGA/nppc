@@ -47,7 +47,7 @@ def generate_instance(n: int, max_value: int = 100):
         else:
             partition.append(False)
 
-    return shuffled, partition
+    return list(shuffled), partition
 
 
 def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, str]:
