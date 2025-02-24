@@ -2,7 +2,8 @@ problem2path = {
     "3-Satisfiability (3-SAT)": "three_sat",
     "Vertex Cover": "vertex_cover",
     "Clique": "clique",
-    "Independent Set": "independent_set"
+    "Independent Set": "independent_set",
+    "Partition": "partition",
 }
 
 problem_levels = {
@@ -32,5 +33,8 @@ problem_levels = {
     },
     "Independent Set": {
         1: {"num_nodes": 4, "ind_set_size": 2},
+    },
+    "Partition": {
+        1: {"n": 6},
     },
 }

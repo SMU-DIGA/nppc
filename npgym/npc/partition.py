@@ -3,32 +3,51 @@ from typing import List, Tuple
 
 
 def generate_instance(n: int, max_value: int = 100):
-    """Generate a partition problem instance
+    # 确保 n 是偶数，否则无法均分
+    if n < 2:
+        raise ValueError("n must be at least 2 to form a partition.")
 
-    Args:
-        n: Number of integers in the set
-        max_value: Maximum value for each integer
+    # 随机生成 A1 和 A2 的大小（元素个数）
+    # 确保 A1 和 A2 的元素个数之和为 n
+    size_A1 = random.randint(1, n - 1)
+    size_A2 = n - size_A1
 
-    Returns:
-        List of positive integers
-    """
-    # Generate random positive integers
-    numbers = []
-    target_sum = 0
-    for _ in range(n - 1):
-        num = random.randint(1, max_value)
-        numbers.append(num)
-        target_sum += num
+    # 生成 A1 和 A2 的元素，确保它们的和相等
+    # 先生成 A1 的元素
+    while True:
+        A1 = [random.randint(1, max_value) for _ in range(size_A1)]
+        sum_A1 = sum(A1)
+        if sum_A1 >= size_A2:
+            break
 
-    # Generate last number to ensure a solution exists
-    remainder = target_sum % 2
-    if remainder == 0:
-        numbers.append(random.randint(1, max_value))
-    else:
-        numbers.append(random.randint(1, max_value) * 2 + 1)
+    # 生成 A2 的元素，确保 sum(A2) == sum(A1)
+    A2 = []
+    remaining_sum = sum_A1
+    for idx in range(size_A2 - 1):
+        value = random.randint(1, min(remaining_sum - (size_A2 - 1 - idx), max_value))
+        A2.append(value)
+        remaining_sum -= value
+    A2.append(remaining_sum)
 
-    random.shuffle(numbers)
-    return numbers, None
+    # 合并 A1 和 A2 成最终的实例 A
+    A = A1 + A2
+    # 打乱顺序，避免 A1 和 A2 在 A 中是连续的
+
+    indexed = list(enumerate(A))
+    # 随机打乱
+    random.shuffle(indexed)
+    # 解压缩得到打乱后的列表和对应的原始索引
+    indices, shuffled = zip(*indexed)
+
+    partition = []
+    for i in range(len(A)):
+        if indices[i] < len(A1):
+            partition.append(True)
+            # A1_set.remove(num)  # 避免重复元素的问题
+        else:
+            partition.append(False)
+
+    return list(shuffled), partition
 
 
 def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, str]:
@@ -53,10 +72,22 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
         return False, f"Invalid partition: {sum1} ≠ {sum2}"
 
 
-numbers, _ = generate_instance(6)
-print(f"Numbers: {numbers}")
+# numbers, solution = generate_instance(6)
+# print(f"Numbers: {numbers}")
+#
+# # Example solution (may not be valid)
+# # solution = [True, False, True, False, True, False]
+# valid, msg = verify_solution(numbers, solution)
+# print(f"Validation result: {msg}")
 
-# Example solution (may not be valid)
-solution = [True, False, True, False, True, False]
+
+
+
+numbers, solution = generate_instance(6)
+print(f"Numbers: {numbers}")
+print(solution)
 valid, msg = verify_solution(numbers, solution)
+
 print(f"Validation result: {msg}")
+
+
