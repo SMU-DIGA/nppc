@@ -14,8 +14,11 @@ def generate_instance(n: int, max_value: int = 100):
 
     # 生成 A1 和 A2 的元素，确保它们的和相等
     # 先生成 A1 的元素
-    A1 = [random.randint(1, max_value) for _ in range(size_A1)]
-    sum_A1 = sum(A1)
+    while True:
+        A1 = [random.randint(1, max_value) for _ in range(size_A1)]
+        sum_A1 = sum(A1)
+        if sum_A1 >= size_A2:
+            break
 
     # 生成 A2 的元素，确保 sum(A2) == sum(A1)
     A2 = []
@@ -44,7 +47,7 @@ def generate_instance(n: int, max_value: int = 100):
         else:
             partition.append(False)
 
-    return list(shuffled), partition
+    return shuffled, partition
 
 
 def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, str]:
@@ -67,6 +70,15 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
         return True, f"Valid partition with sum {sum1}"
     else:
         return False, f"Invalid partition: {sum1} ≠ {sum2}"
+
+
+# numbers, solution = generate_instance(6)
+# print(f"Numbers: {numbers}")
+#
+# # Example solution (may not be valid)
+# # solution = [True, False, True, False, True, False]
+# valid, msg = verify_solution(numbers, solution)
+# print(f"Validation result: {msg}")
 
 
 

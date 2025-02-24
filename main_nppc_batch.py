@@ -203,7 +203,7 @@ def get_parser():
         "--asy_batch_size",
         type=int,
         required=False,
-        default=5,
+        default=1,
         help="the problem name",
     )
 
@@ -242,6 +242,7 @@ if __name__ == "__main__":
                 "<example_problem>", "{}".format(instance)
             ).replace("<example_solution>", json.dumps(solution))
             demo_content += demo
+            print(demo)
             examples.append(instance)
         instance, solution = generate_instance(**configs)
         return demo_content, instance, examples
