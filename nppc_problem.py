@@ -7,11 +7,11 @@ problem2path = {
 problem_levels = {
     "3-Satisfiability (3-SAT)": {
         1: {"num_variables": 5, "num_clauses": 5},
-        2: {"num_variables": 5, "num_clauses": 5},
-        3: {"num_variables": 5, "num_clauses": 5},
-        4: {"num_variables": 5, "num_clauses": 5},
-        5: {"num_variables": 5, "num_clauses": 5},
-        6: {"num_variables": 5, "num_clauses": 5},
+        2: {"num_variables": 10, "num_clauses": 10},
+        3: {"num_variables": 15, "num_clauses": 15},
+        4: {"num_variables": 20, "num_clauses": 20},
+        5: {"num_variables": 25, "num_clauses": 25},
+        6: {"num_variables": 30, "num_clauses": 30},
     },
     "Vertex Cover": {
         1: {"num_nodes": 4, "cover_size": 2},
