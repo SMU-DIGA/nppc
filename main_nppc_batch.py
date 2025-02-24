@@ -146,8 +146,8 @@ def get_batch_results_from_api(contents, model):
             predicted_solution = extract_solution_from_response(prediction)
 
             result = {
-                "instance": instance,
-                "examples": examples,
+                # "instance": instance,
+                # "examples": examples,
                 "response": prediction,
                 "solution": predicted_solution,
                 "tokens": token_numbers,
@@ -180,7 +180,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=4,
+        default=3,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -203,7 +203,7 @@ def get_parser():
         "--asy_batch_size",
         type=int,
         required=False,
-        default=1,
+        default=5,
         help="the problem name",
     )
 
@@ -242,7 +242,6 @@ if __name__ == "__main__":
                 "<example_problem>", "{}".format(instance)
             ).replace("<example_solution>", json.dumps(solution))
             demo_content += demo
-            print(demo)
             examples.append(instance)
         instance, solution = generate_instance(**configs)
         return demo_content, instance, examples
@@ -258,7 +257,7 @@ if __name__ == "__main__":
 
     levels = problem_levels[problem_name]
     for level in list(levels.keys()):
-        print("="*15)
+        print("=" * 15)
         print("level {}".format(level))
         print("=" * 15)
         configs = levels[level]
@@ -267,18 +266,21 @@ if __name__ == "__main__":
 
         instances = []
         contents = []
+        examples = []
         while True:
             content = nppc_template.replace(
                 "<problem_description>", problem_description
             ).replace("<problem_name>", problem_name)
-            demo_content, instance, examples = create_demo_text(configs)
+            demo_content, instance, example = create_demo_text(configs)
             content = content.replace("<in_context_examples>", demo_content).replace(
                 "<problem_to_solve>", "{}".format(instance)
             )
-            print(content)
 
             instances.append(instance)
             contents.append(content)
+            examples.append(example)
+
+            # print(contents)
 
             # print(len(contents))
 
@@ -303,14 +305,14 @@ if __name__ == "__main__":
                             reason = "Wrong Format: We cannot parse the solution from the response."
                         result["correctness"] = correctness
                         result["reason"] = reason
+                        result["instance"] = instances[idx]
+                        result["examples"] = examples[idx]
 
                     results[level] += batch_results
                 instances = []
                 contents = []
-            # print(len(results[level]))
             if len(results[level]) == n_trials:
                 break
-
 
     for level in results.keys():
         results_for_level = results[level]
