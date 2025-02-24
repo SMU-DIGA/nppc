@@ -27,4 +27,6 @@ Question: Is there a subset W of V having size at most k and such that for every
     "Clique": """Input: An n-node undirected graph G(V,E) with node set V and edge set E; a positive integer k with k<=n.
 Question: Does G contain a k-clique, i.e. a subset W of the nodes V such that W has size k and for each distinct pair of nodes u, v in W, {u,v} is an edge of G?
 """,
+    "Independent Set": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Does G have an independent set of size at least k, i.e. a subset W of at least k nodes from V such that no pair of nodes in W is joined by an edge in E?"""
 }

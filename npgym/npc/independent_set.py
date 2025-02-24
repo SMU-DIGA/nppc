@@ -21,7 +21,7 @@ def generate_instance(num_nodes: int, ind_set_size: int, edge_prob: float = 0.5)
             if v1 < v2 and random.random() < edge_prob:  # 70%概率添加边
                 graph["edges"].add((v1, v2))
     instance = {"graph": graph, "size": ind_set_size}
-    return instance, independent_vertices
+    return instance, list(independent_vertices)
 
 
 def verify_solution(instance: dict, independent_set: set):

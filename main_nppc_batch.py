@@ -180,7 +180,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=2,
+        default=3,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -195,7 +195,7 @@ def get_parser():
         "--n_trials",
         type=int,
         required=False,
-        default=50,
+        default=10,
         help="number of trials for each level",
     )
 
@@ -203,7 +203,7 @@ def get_parser():
         "--asy_batch_size",
         type=int,
         required=False,
-        default=10,
+        default=5,
         help="the problem name",
     )
 
