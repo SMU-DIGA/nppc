@@ -74,4 +74,7 @@ numbers, solution = generate_instance(4)
 print(f"Numbers: {numbers}")
 print(solution)
 valid, msg = verify_solution(numbers, solution)
+
 print(f"Validation result: {msg}")
+
+
