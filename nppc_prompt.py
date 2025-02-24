@@ -32,4 +32,6 @@ Question: Does G have an independent set of size at least k, i.e. a subset W of 
     "Partition": """Input: Finite set A; for each element a in A a positive integer size s(a).
 Question: Can A be partitioned into 2 disjoint sets A1 and A2 in a such a way that the sum of the sizes s(x) of elements x in A1 is exactly the same as the sum of the sizes s(y) of the elements y in A2.
 Comments: It should be noted that it is not required that A1 and A2 contain equal numbers of elements, although even with this condition the problem is still NP-complete.""",
+    "Subset Sum": """Input: Finite set A; for each element a in A a positive integer size s(a); a positive integer K.
+Question: Is there a subset B of A such that the sum of the sizes, s(x), of the elements x in B is exactly equal to K?""",
 }

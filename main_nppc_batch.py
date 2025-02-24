@@ -12,6 +12,8 @@ from litellm import completion, acompletion, batch_completion
 from pathlib import Path
 import pickle
 import os.path as osp
+import litellm
+# litellm._turn_on_debug()
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -180,7 +182,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=3,
+        default=5,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -275,12 +277,12 @@ if __name__ == "__main__":
             content = content.replace("<in_context_examples>", demo_content).replace(
                 "<problem_to_solve>", "{}".format(instance)
             )
+            # print(content)
 
             instances.append(instance)
             contents.append(content)
             examples.append(example)
 
-            # print(contents)
 
             # print(len(contents))
 

@@ -4,6 +4,7 @@ problem2path = {
     "Clique": "clique",
     "Independent Set": "independent_set",
     "Partition": "partition",
+    "Subset Sum": "subset_sum",
 }
 
 problem_levels = {
@@ -36,5 +37,8 @@ problem_levels = {
     },
     "Partition": {
         1: {"n": 6},
+    },
+    "Subset Sum": {
+        1: {"num_elements": 5},
     },
 }

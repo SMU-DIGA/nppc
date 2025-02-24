@@ -1,51 +1,48 @@
 import random
+from collections import Counter
 
 
-def generate_instance(num_elements):
-    # elements = list(range(num_elements))
+def generate_instance(num_elements: int, max_value: int = 100):
+    # 生成随机实例 A
+    A = [random.randint(1, max_value) for _ in range(num_elements)]
 
-    # 用enumerate创建(索引,值)对的列表
-    indexed = list(enumerate(range(num_elements)))
-    # 随机打乱
-    random.shuffle(indexed)
-    # 解压缩得到打乱后的列表和对应的原始索引
-    indices, shuffled = zip(*indexed)
+    # 随机选择一个子集 B 作为有效解
+    # 随机决定子集 B 的大小（至少包含一个元素）
+    subset_size = random.randint(1, num_elements)
+    B = random.sample(A, subset_size)
 
-    length = random.randint(num_elements // 4, num_elements // 2)
+    # 计算目标值 K
+    K = sum(B)
+    instance = {"elements": A, "K": K}
 
-    sum_value = 0
-
-    for i in range(length):
-        sum_value += shuffled[i]
-
-    instance = {"elements": list(range(num_elements)), "K": sum_value}
-
-    return instance, indices[:length]
+    return instance, B
 
 
 def verify_solution(instance, solution):
-    elements = instance["elements"]
-    if (
-        (not (0 < len(solution) < len(elements)))
-        and (max(solution) < len(elements) and min(solution) >= 0)
-        and (len(set(solution)) == len(solution))
-    ):
-        return False, "The solution is not valid."
+    # A, K = instance  # 解包 instance 得到集合 A 和目标值 K
+    A = instance["elements"]
+    K = instance["K"]
+    B = solution  # 解包 solution 得到子集 B
 
-    sum_value = 0
+    count_A = Counter(A)
+    count_B = Counter(B)
 
-    for idx in solution:
-        sum_value += elements[idx]
+    # 检查 B 是否是 A 的子集（考虑重复元素）
+    for element, count in count_B.items():
+        if count > count_A[element]:
+            return False, f"Not a subset"
 
-    if sum_value == instance["K"]:
-        return True, "Correct solution."
-    else:
-        return False, "The solution is not correct."
+    # 检查 B 的和是否等于 K
+    if sum(B) != K:
+        return False, f"Wrong sum"
+
+    return True, f"Valid subset"
 
 
-# instance, solution = generate_instance(num_elements=20)
-#
-# solution = list(solution)
-# print(solution)
-#
-# print(verify_solution(instance, solution))
+instance, solution = generate_instance(num_elements=20)
+
+solution = list(solution)
+print(instance)
+print(solution)
+
+print(verify_solution(instance, solution))
