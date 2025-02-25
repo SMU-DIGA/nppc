@@ -42,4 +42,6 @@ Question: Can S be partitioned into two disjoint subsets - S1 and S2 - such that
 Question: Is there a string w of length at most k such that every string in R is a substring of w, i.e. for each r in R, w can be decomposed as w=w0rw1 where w0, w1 are (possibly empty) strings?""",
     "Quadratic Diophantine Equations": """Input: Positive integers a, b, and c.
 Question: Are there two positive integers x and y such that (a*x*x)+(b*y)=c?""",
+    "Quadratic Congruences": """Input: Positive integers a, b, and c.
+Question: Is there a positive integer x whose value is less than c and is such that x2==a(mod b), i.e. the remainder when x2 is divided by b is equal to a?""",
 }

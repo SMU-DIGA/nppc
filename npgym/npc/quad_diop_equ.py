@@ -5,13 +5,15 @@ def generate_instance(low: int, high: 100):
     values = [random.randint(low, high) for _ in range(4)]
     c = values[0] * values[1] * values[1] + values[2] * values[3]
 
-    return list([values[0], values[2], c]), list([values[1], values[3]])
+    instance = {"a": values[0], "b": values[2], "c": c}
+
+    return instance, list([values[1], values[3]])
 
 
 def verify_solution(instance, solution):
-    a = instance[0]
-    b = instance[1]
-    c = instance[2]
+    a = instance["a"]
+    b = instance["b"]
+    c = instance["c"]
 
     x = solution[0]
     y = solution[1]
