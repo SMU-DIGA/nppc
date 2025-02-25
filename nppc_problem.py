@@ -6,6 +6,7 @@ problem2path = {
     "Partition": "partition",                  # 4
     "Subset Sum": "subset_sum",                # 5
     "Set Packing": "set_packing",              # 6
+    "Set Splitting": "set_splitting",          # 7
 }
 
 problem_levels = {
@@ -44,5 +45,8 @@ problem_levels = {
     },
     "Set Packing": {
         1: {"num_elements": 10, "num_subsets": 20, "num_disjoint_sets": 3},
+    },
+    "Set Splitting": {
+        1: {"num_elements": 10, "num_subsets": 4},
     },
 }
