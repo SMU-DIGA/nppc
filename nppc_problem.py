@@ -51,6 +51,6 @@ problem_levels = {
         1: {"num_elements": 10, "num_subsets": 4},
     },
     "Shortest Common Superstring": {
-        1: {"n": 3, "k": 20},
+        1: {"n": 3, "k": 10},
     },
 }
