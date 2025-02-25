@@ -1,116 +1,64 @@
 import random
 
 
-def generate_instance(
-    num_items,
-    bin_capacity,
-    num_bins,
-    min_item_size=1,
-    max_item_size=None,
-):
-    """
-    Generate a bin packing decision instance.
+def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
+    # 生成随机物品大小
+    U = [random.randint(1, bin_capacity) for _ in range(num_items)]
 
-    Args:
-        num_items (int): Number of items to generate
-        bin_capacity (int): Capacity of each bin
-        num_bins (int): Number of bins available
-        min_item_size (int): Minimum size of items
-        max_item_size (int): Maximum size of items (defaults to bin_capacity)
-        seed (int): Random seed for reproducibility
-        solvable (bool): Whether to guarantee the instance is solvable
-
-    Returns:
-        list: List of item sizes
-    """
-
-    if max_item_size is None:
-        max_item_size = bin_capacity
-
-    if max_item_size > bin_capacity:
-        raise ValueError("max_item_size cannot be larger than bin_capacity")
-
-    # Generate items ensuring solution exists with given number of bins
-    items = []
-    current_bin = 0
-    current_bin_space = bin_capacity
-
-    solution = []
-    for _ in range(num_items):
-        # Move to next bin if current bin is full or nearly full
-        if current_bin_space < min_item_size:
-            current_bin += 1
-            if current_bin >= num_bins:
+    # 使用贪心算法（首次适应算法）分配物品到箱子中
+    solution = [[] for _ in range(num_bins)]
+    for item in U:
+        # 尝试将物品放入第一个能容纳它的箱子
+        placed = False
+        for bin_items in solution:
+            if sum(bin_items) + item <= bin_capacity:
+                bin_items.append(item)
+                placed = True
                 break
-            current_bin_space = bin_capacity
+        if not placed:
+            # 如果没有箱子能容纳该物品，则无法生成有效解
+            # 重新生成实例
+            return generate_instance(num_items, bin_capacity, num_bins)
 
-        # Calculate maximum possible item size for this slot
-        max_possible = min(max_item_size, current_bin_space)
+    # 返回生成的实例和有效解
+    instance = {
+        'U': U,
+        'B': bin_capacity,
+        'K': num_bins
+    }
+    return instance, solution
 
-        # Generate item size
-        item_size = random.randint(min_item_size, max_possible)
-        items.append(item_size)
-        current_bin_space -= item_size
-        solution.append(current_bin)
-
-    # If we need more items, add small items that can fit somewhere
-    while len(items) < num_items:
-        item_size = random.randint(
-            min_item_size,
-            min(max_item_size, bin_capacity // (num_items - len(items) + 1)),
-        )
-        items.append(item_size)
-
-    # Shuffle items to make the instance more interesting
-    random.shuffle(items)
-
-    instance = {"items": items, "bin_capacity": bin_capacity, "num_bins": num_bins}
-
-    return instance, None
 
 
 def verify_solution(instance, solution):
-    """
-    Verify if a bin packing solution is valid for the decision version.
+    U = instance['U']
+    B = instance['B']
+    K = instance['K']
 
-    Args:
-        items (list): List of item sizes
-        bin_capacity (int): Capacity of each bin
-        num_bins (int): Number of bins available
-        solution (list): List of bin assignments (each element is a bin number)
+    # 检查解是否包含所有物品且不重复
+    all_items = []
 
-    Returns:
-        tuple: (is_valid, error_message)
-            - is_valid: Boolean indicating if solution is valid
-            - error_message: String explaining why solution is invalid (if applicable)
-    """
-    items = instance["items"]
-    num_bins = instance["num_bins"]
-    bin_capacity = instance["bin_capacity"]
-    if len(items) != len(solution):
-        return False, "Number of items doesn't match solution length"
+    for bin_items in solution:
+        all_items.extend(bin_items)
 
-    # Check if all bin assignments are valid numbers
-    if any(not isinstance(x, int) or x < 0 or x >= num_bins for x in solution):
-        return False, f"Invalid bin numbers in solution (must be 0 to {num_bins - 1})"
+    # 检查物品是否一致（包括重复物品）
+    if sorted(all_items) != sorted(U):
+        return False, f"Items are inconsistent."
 
-    # Calculate bin loads
-    bin_loads = {}
-    for item_idx, bin_num in enumerate(solution):
-        if bin_num not in bin_loads:
-            bin_loads[bin_num] = 0
-        bin_loads[bin_num] += items[item_idx]
+    # 检查每个箱子的总大小是否不超过 B
+    for bin_items in solution:
+        if sum(bin_items) > B:
+            return False, f"The total size exceeds B."
 
-        # Check if bin capacity is exceeded
-        if bin_loads[bin_num] > bin_capacity:
-            return (
-                False,
-                f"Bin {bin_num} exceeds capacity: {bin_loads[bin_num]} > {bin_capacity}",
-            )
-
-    return True, "Solution is valid"
+    return True, f"Valid bin packing."
 
 
-# instance, _ = generate_instance(num_items=10, bin_capacity=5, num_bins=8)
-#
-# print(instance)
+# 示例用法
+num_items = 10
+bin_capacity = 20
+num_bins = 3
+instance, solution = generate_instance(num_items, bin_capacity, num_bins)
+print("Instance:", instance)
+print("Solution:", solution)
+result = verify_solution(instance, solution)
+print(result)

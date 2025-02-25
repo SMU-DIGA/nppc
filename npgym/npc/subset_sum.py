@@ -13,14 +13,14 @@ def generate_instance(num_elements: int, max_value: int = 100):
 
     # 计算目标值 K
     K = sum(B)
-    instance = {"elements": A, "K": K}
+    instance = {"A": A, "K": K}
 
     return instance, B
 
 
 def verify_solution(instance, solution):
     # A, K = instance  # 解包 instance 得到集合 A 和目标值 K
-    A = instance["elements"]
+    A = instance["A"]
     K = instance["K"]
     B = solution  # 解包 solution 得到子集 B
 
