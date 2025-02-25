@@ -38,36 +38,39 @@ def generate_instance(num_elements, num_subsets):
         subset1 = set(random.sample(list(partition_A), len(partition_A) // 2))
         subset1.update(random.sample(list(partition_B), len(partition_B) // 2))
 
-        subsets.append(subset1)
+        subsets.append(list(subset1))
 
     # Shuffle the subsets
     random.shuffle(subsets)
 
-    instance = {"universe": universe, "subsets": subsets}
+    instance = {"Universe": list(set(universe)), "Subsets": subsets}
 
-    return instance, partition_A
+    return instance, [list(partition_A), list(partition_B)]
 
 
 def verify_solution(instance, partition):
     """ """
+    partition_A = set(partition[0])
     # Check if partition only contains valid elements
-    universe = instance["universe"]
-    subsets = instance["subsets"]
-    if not partition.issubset(set(universe)):
+    universe = instance["Universe"]
+    subsets = instance["Subsets"]
+    if not partition_A.issubset(set(universe)):
         return False, "The partition is not valid."
 
     # Create partition B
-    partition_B = set(universe) - partition
+    partition_B = set(universe) - partition_A
 
     # Check if each subset has at least one element in both partitions
     for subset in subsets:
-        if not (subset & partition and subset & partition_B):
+        if not (set(subset) & partition_A and set(subset) & partition_B):
             return False, "Some subset is in both partitions."
 
     return True, "Correct solution."
 
 
-# instance, solution = generate_instance(num_elements=10, num_subsets=8)
+instance, solution = generate_instance(num_elements=10, num_subsets=4)
 # universe = instance["universe"]
 # solution = set(random.sample(universe, len(universe) // 2))
-# print(verify_solution(instance, solution))
+print(instance)
+print(solution)
+print(verify_solution(instance, solution))

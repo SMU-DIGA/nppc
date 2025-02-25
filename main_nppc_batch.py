@@ -187,7 +187,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=5,
+        default=6,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -282,7 +282,7 @@ if __name__ == "__main__":
             content = content.replace("<in_context_examples>", demo_content).replace(
                 "<problem_to_solve>", "{}".format(instance)
             )
-            # print(content)
+            print(content)
 
             instances.append(instance)
             contents.append(content)
