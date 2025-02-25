@@ -1,48 +1,45 @@
 import random
+import string
 
-
-def generate_instance(n: int, k: int, min_len: int = 5, max_len: int = 10):
-    """
-    Generate an instance of the Shortest Common Superstring decision problem.
-
-    Args:
-        n: Number of strings to generate
-        min_len: Minimum length of each string
-        max_len: Maximum length of each string
-        k: Target length for the superstring
-
-    Returns:
-        tuple of (list of strings, target length k)
-    """
-
-    import string
-
-    if k < max_len:
-        raise "k should be larger than max_len"
-    # Generate base string that will ensure at least one solution exists
-    base_len = random.randint(k - max_len, k)
-    base = "".join(random.choices(string.ascii_lowercase, k=base_len))
-
-    # Generate n strings that are substrings of base
-    strings = []
+def generate_instance(n: int, k: int):
+    # 生成随机字符串集合 R
+    R = []
     for _ in range(n):
-        # Random length between min_len and max_len
+        # 随机生成字符串长度，确保总长度不超过 k
+        max_len = min(10, k)  # 每个字符串的最大长度
+        min_len = 1
         length = random.randint(min_len, max_len)
-        # Random starting position in base string
-        if len(base) < length:
-            start = 0
-        else:
-            start = random.randint(0, len(base) - length)
-        # Extract substring
-        substring = base[start : start + length]
-        strings.append(substring)
+        s = ''.join(random.choices(string.ascii_lowercase, k=length))
+        # s = generate_random_string(1, max_len)
+        R.append(s)
 
-    # Shuffle the strings
-    random.shuffle(strings)
+    # 构造有效解 w
+    # 将所有字符串按顺序连接起来，确保总长度不超过 k
+    w = ''.join(R)
+    while len(w) > k:
+        # 如果 w 的长度超过 k，则缩短 w
+        # 随机删除一个字符
+        idx = random.randint(0, len(w) - 1)
+        w = w[:idx] + w[idx + 1:]
 
-    instance = {"strings": strings, "k": k}
+    # 确保 R 中的每个字符串都是 w 的子串
+    for s in R:
+        if s not in w:
+            # 如果某个字符串不是 w 的子串，则重新生成 w
+            # 将该字符串插入到 w 的随机位置
+            idx = random.randint(0, len(w))
+            w = w[:idx] + s + w[idx:]
+            # 如果 w 的长度超过 k，则缩短 w
+            while len(w) > k:
+                idx = random.randint(0, len(w) - 1)
+                w = w[:idx] + w[idx + 1:]
 
-    return instance, base
+    # 返回生成的实例和有效解
+    instance = {
+        'Strings': R,
+        'K': k
+    }
+    return instance, w
 
 
 def verify_solution(instance, solution: str):
@@ -54,8 +51,8 @@ def verify_solution(instance, solution: str):
         bool indicating whether solution is valid
     """
     # Check if solution length is at most k
-    k = instance["k"]
-    strings = instance["strings"]
+    k = instance["K"]
+    strings = instance["Strings"]
     if len(solution) > k:
         return False, "The solution is invalid."
 
@@ -67,7 +64,7 @@ def verify_solution(instance, solution: str):
     return True, "Correct solution."
 
 
-instance, solution = generate_instance(n=20, k=15)
+instance, solution = generate_instance(n=5, k=10)
 print(instance)
 print(solution)
 
