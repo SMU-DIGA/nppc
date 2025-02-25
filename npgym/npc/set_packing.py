@@ -52,12 +52,15 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
     random.shuffle(set_indices)
     shuffle_sets = []
     solution = []
+    selected_sets = []
     for idx, i in enumerate(set_indices):
-        shuffle_sets.append(sets[i])
+        shuffle_sets.append(list(sets[i]))
         if i < num_disjoint_sets:
             solution.append(idx)
+            selected_sets.append(list(sets[i]))
 
-    instance = {"universe": universe, "subsets": shuffle_sets, "k": num_disjoint_sets}
+    instance = {"Universe": list(universe), "Subsets": shuffle_sets, "K": num_disjoint_sets}
+    # print(selected_sets)
 
     return instance, solution
 
@@ -75,13 +78,13 @@ def verify_solution(instance, selected_sets):
         bool: True if the solution is valid, False otherwise
     """
 
-    k = instance["k"]
+    k = instance["K"]
 
     # Check if we have exactly k sets
     if len(selected_sets) != k:
         return False, "The selected subsets is not {}".format(k)
 
-    sets = instance["subsets"]
+    sets = instance["Subsets"]
     # Check if all indices are valid
     if not all(0 <= i < len(sets) for i in selected_sets):
         return False, "Some indices are invalid."
@@ -89,15 +92,16 @@ def verify_solution(instance, selected_sets):
     # Check if sets are disjoint
     union = set()
     for idx in selected_sets:
-        if not sets[idx].isdisjoint(union):
+        if not set(sets[idx]).isdisjoint(union):
             return False, "The sets are not disjoint."
         union.update(sets[idx])
 
     return True, "Correct solution."
 
 
-# instance, solution = generate_instance(
-#     num_elements=10, num_subsets=20, num_disjoint_sets=3
-# )
-#
-# print(verify_solution(instance, solution))
+instance, solution = generate_instance(
+    num_elements=10, num_subsets=20, num_disjoint_sets=2
+)
+print(instance)
+print(solution)
+print(verify_solution(instance, solution))
