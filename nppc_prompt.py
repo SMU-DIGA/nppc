@@ -34,4 +34,6 @@ Question: Can A be partitioned into 2 disjoint sets A1 and A2 in a such a way th
 Comments: It should be noted that it is not required that A1 and A2 contain equal numbers of elements, although even with this condition the problem is still NP-complete.""",
     "Subset Sum": """Input: Finite set A; for each element a in A a positive integer size s(a); a positive integer K.
 Question: Is there a subset B of A such that the sum of the sizes, s(x), of the elements x in B is exactly equal to K?""",
+    "Set Packing": """Input: A collection C=(C1,...,Cm) of finite sets; a positive integer k<=m.
+Question: Are there k sets - D1,...,Dk - from the collection C such that for all 1<=i< j<=k, Di and Dj have no common elements?"""
 }
