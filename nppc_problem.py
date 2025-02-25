@@ -8,6 +8,7 @@ problem2path = {
     "Set Packing": "set_packing",              # 6
     "Set Splitting": "set_splitting",          # 7
     "Shortest Common Superstring": "shortest_common_superstring",   # 8
+    "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
 }
 
 problem_levels = {
@@ -52,5 +53,8 @@ problem_levels = {
     },
     "Shortest Common Superstring": {
         1: {"n": 3, "k": 10},
+    },
+    "Quadratic Diophantine Equations": {
+        1: {"low": 1, "high": 10},
     },
 }

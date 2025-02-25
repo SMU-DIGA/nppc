@@ -40,4 +40,6 @@ Question: Are there k sets - D1,...,Dk - from the collection C such that for all
 Question: Can S be partitioned into two disjoint subsets - S1 and S2 - such that for each set Ci it holds that Ci is not a subset of S1 and Ci is not a subset of S2?""",
     "Shortest Common Superstring": """Input: A finite set R={r1,r2,...,rm} of strings (sequences of symbols); positive integer k.
 Question: Is there a string w of length at most k such that every string in R is a substring of w, i.e. for each r in R, w can be decomposed as w=w0rw1 where w0, w1 are (possibly empty) strings?""",
+    "Quadratic Diophantine Equations": """Input: Positive integers a, b, and c.
+Question: Are there two positive integers x and y such that (a*x*x)+(b*y)=c?""",
 }

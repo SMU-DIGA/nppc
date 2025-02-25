@@ -1,11 +1,11 @@
 import random
 
 
-def generate_instance(low=1, high=100):
+def generate_instance(low: int, high: 100):
     values = [random.randint(low, high) for _ in range(4)]
     c = values[0] * values[1] * values[1] + values[2] * values[3]
 
-    return (values[0], values[2], c), (values[1], values[3])
+    return list([values[0], values[2], c]), list([values[1], values[3]])
 
 
 def verify_solution(instance, solution):
@@ -25,5 +25,9 @@ def verify_solution(instance, solution):
             return False, "The solution does not match."
 
 
-# instance, solution = generate_instance()
-# print(verify_solution(instance, solution))
+instance, solution = generate_instance(1, 100)
+print(instance)
+print(solution)
+print(verify_solution(instance, solution))
+
+
