@@ -43,7 +43,11 @@ def generate_instance(num_elements, num_subsets):
     # Shuffle the subsets
     random.shuffle(subsets)
 
-    instance = {"Universe": list(set(universe)), "Subsets": subsets}
+    subsets_dict = {}
+    for subset in subsets:
+        subsets_dict[len(subsets_dict)] = subset
+
+    instance = {"Universe": list(set(universe)), "Subsets": subsets_dict}
 
     return instance, [list(partition_A), list(partition_B)]
 
@@ -61,7 +65,8 @@ def verify_solution(instance, partition):
     partition_B = set(universe) - partition_A
 
     # Check if each subset has at least one element in both partitions
-    for subset in subsets:
+    for subset_key in subsets:
+        subset = subsets[subset_key]
         if not (set(subset) & partition_A and set(subset) & partition_B):
             return False, "Some subset is in both partitions."
 
