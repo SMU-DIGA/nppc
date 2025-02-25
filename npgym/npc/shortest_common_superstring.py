@@ -68,8 +68,8 @@ def verify_solution(instance, solution: str):
     return True, "Correct solution."
 
 # 示例用法
-n = 5
-k = 20
+n = 3
+k = 10
 instance, solution = generate_instance(n, k)
 print("Instance:", instance)
 print("Solution:", solution)
