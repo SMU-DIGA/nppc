@@ -352,11 +352,11 @@ def main():
     # Calculate metrics
     accuracy = sum(r["correctness"] for r in results) / len(results) if results else 0
     logger.info(f"Level {args.level} accuracy: {accuracy:.2%} ({sum(r['correctness'] for r in results)}/{len(results)})")
-    res_summary = {
+    res_summary = [{
         "level": f"{args.level}",
         "accuracy": f"{accuracy}",
         "num rollouts": f"{len(results)}",
-    }
+    }]
     save_outputs(res_summary, result_folder / f"shots_{args.n_shots}_summary.json")
 
 if __name__ == "__main__":
