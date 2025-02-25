@@ -34,6 +34,4 @@ Question: Can A be partitioned into 2 disjoint sets A1 and A2 in a such a way th
 Comments: It should be noted that it is not required that A1 and A2 contain equal numbers of elements, although even with this condition the problem is still NP-complete.""",
     "Subset Sum": """Input: Finite set A; for each element a in A a positive integer size s(a); a positive integer K.
 Question: Is there a subset B of A such that the sum of the sizes, s(x), of the elements x in B is exactly equal to K?""",
-    "Bin Packing": """Input: A finite set U of m items; for each item u in U a positive integer size s(u); positive integers B (called the bin capacity) and k<=m.
-Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each Ui (1<=i<=k) the total sum of the sizes of the items in Ui does not exceed B?""",
 }

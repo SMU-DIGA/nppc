@@ -5,7 +5,6 @@ problem2path = {
     "Independent Set": "independent_set",
     "Partition": "partition",
     "Subset Sum": "subset_sum",
-    "Bin Packing": "bin_packing",
 }
 
 problem_levels = {
@@ -41,8 +40,5 @@ problem_levels = {
     },
     "Subset Sum": {
         1: {"num_elements": 5},
-    },
-    "Bin Packing": {
-        1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
 }
