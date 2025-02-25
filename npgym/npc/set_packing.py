@@ -50,11 +50,11 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
 
     set_indices = [i for i in range(len(sets))]
     random.shuffle(set_indices)
-    shuffle_sets = []
+    shuffle_sets = {}
     solution = []
     selected_sets = []
     for idx, i in enumerate(set_indices):
-        shuffle_sets.append(list(sets[i]))
+        shuffle_sets[idx] = list(sets[i])
         if i < num_disjoint_sets:
             solution.append(idx)
             selected_sets.append(list(sets[i]))

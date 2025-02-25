@@ -68,5 +68,7 @@ def verify_solution(instance, solution: str):
 
 
 instance, solution = generate_instance(n=20, k=15)
+print(instance)
+print(solution)
 
 print(verify_solution(instance, solution))
