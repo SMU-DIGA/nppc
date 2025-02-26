@@ -1,13 +1,26 @@
 import os
 
-from utils import seed_everything
 from pathlib import Path
 import pickle
 import os.path as osp
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
 from npsolver import NPSolver
 from copy import deepcopy
-from parser import get_parser
+
+
+def seed_everything(seed=42):
+    import torch
+    import numpy as np
+    import random
+
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    np.random.seed(seed)
+    random.seed(seed)
 
 
 def set_api_keys():
@@ -20,6 +33,77 @@ def set_api_keys():
     os.environ["OPENAI_API_KEY"] = openai_api_key
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
     os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+
+
+import argparse
+
+
+def get_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--seed",
+        type=int,
+        required=False,
+        default=42,
+        help="seed",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        required=False,
+        default="gpt-4o-mini",
+        help="name for LLM",
+    )
+    parser.add_argument(
+        "--problem",
+        type=int,
+        required=False,
+        default=0,
+        help="the problem name idx",
+    )
+    parser.add_argument(
+        "--n_shots",
+        type=int,
+        required=False,
+        default=1,
+        help="number of in-context examples",
+    )
+
+    parser.add_argument(
+        "--n_trials",
+        type=int,
+        required=False,
+        default=30,
+        help="number of trials for each level",
+    )
+
+    parser.add_argument(
+        "--batch_size",
+        type=int,
+        required=False,
+        default=10,
+        help="the problem name",
+    )
+
+    parser.add_argument(
+        "--max_tries",
+        type=int,
+        required=False,
+        default=3,
+        help="max tries for one batch",
+    )
+
+    parser.add_argument(
+        "--result_folder",
+        type=str,
+        required=False,
+        default="results",
+        help="folder path to store the results",
+    )
+
+    parser.add_argument("--verbose", type=bool, required=False, default=False)
+
+    return parser.parse_args()
 
 
 def main(args):
