@@ -1,39 +1,13 @@
 import os
-import re
-import json
-import importlib
-import sys
-import argparse
-from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
-from nppc_problem import problem_levels, problem2path
+
 from utils import seed_everything
-import asyncio
-from litellm import completion, acompletion, batch_completion
 from pathlib import Path
 import pickle
 import os.path as osp
-
-models = {
-    "gpt-4o": "gpt-4o-2024-08-06",
-    "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
-    "o1-mini": "o1-mini-2024-09-12",
-    "deepseek-chat": "deepseek/deepseek-chat",
-    # "claude": "anthropic/claude-3-sonnet-20240229",
-    # Offline models
-    "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-}
-
-
-def get_instance_generator(problem_name):
-    np_gym_folder = "./npgym/npc"
-
-    if os.path.dirname(np_gym_folder) not in sys.path:
-        sys.path.append(np_gym_folder)
-    problem_path = problem2path[problem_name]
-    generate_instance = importlib.import_module(problem_path).generate_instance
-    verify_solution = importlib.import_module(problem_path).verify_solution
-
-    return generate_instance, verify_solution
+from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
+from npsolver import NPSolver
+from copy import deepcopy
+from parser import get_parser
 
 
 def set_api_keys():
@@ -41,196 +15,20 @@ def set_api_keys():
         openai_api_key = file.read().strip()
     with open("api_keys/deepseek_api_key.txt", "r") as file:
         deepseek_api_key = file.read().strip()
-    # with open("./api_keys/claude_api_key.txt", "r") as file:
-    #     claude_api_key = file.read().strip()
+    with open("./api_keys/claude_api_key.txt", "r") as file:
+        claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
-    # os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+    os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
 
-def extract_solution_from_response(response):
-    # find the json code
-    match = re.findall(r"```json\n(.*?)\n```", response, re.DOTALL)
-    if match:
-        json_str = match[-1]
-        try:
-            # remove the single line comment
-            json_str = re.sub(r"//.*$", "", json_str, flags=re.MULTILINE)
-            # remove the multiple line comment
-            json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
-            data = json.loads(json_str)
-            answer = data["solution"]
-            return answer
-        except (json.JSONDecodeError, KeyError, SyntaxError) as e:
-            print(f"Error parsing JSON or answer field: {e}")
-            return None
-    else:
-        print("No JSON found in the text.")
-        return None
+def main(args):
+    model_name = args.model
 
-
-def evaluate_llm(content, model):
-    messages = [{"content": content, "role": "user"}]
-    response = completion(model=models[model], messages=messages)
-    return response
-
-
-async def async_evaluate_llm(contents, model):
-    async def call_gpt(prompt):
-        response = await acompletion(
-            model=models[model], messages=[{"role": "user", "content": prompt}]
-        )
-        return response
-
-    return await asyncio.gather(*[call_gpt(content) for content in contents])
-
-
-def get_results_from_api_asy(contents, model):
-    results = []
-    try:
-        print("Starting the asy calling of LLM")
-        responses = asyncio.run(async_evaluate_llm(contents, model=model))
-        print("End of calling LLM")
-        for idx, response in enumerate(responses):
-            token_numbers = {
-                "prompt": response.usage.prompt_tokens,
-                "completion": response.usage.completion_tokens,
-            }
-            prediction = response.choices[0].message.content
-            predicted_solution = extract_solution_from_response(prediction)
-
-            result = {
-                "instance": instance,
-                "examples": examples,
-                "response": prediction,
-                "solution": predicted_solution,
-                "tokens": token_numbers,
-            }
-            # print(result)
-            results.append(result)
-        return results
-    except Exception as e:
-        print(f"Error calling the LLM: {e}")
-        return None
-
-
-def get_batch_results_from_api(contents, model):
-    results = []
-    try:
-        print("Starting the batch calling of LLM")
-        messages = [[{"role": "user", "content": content}] for content in contents]
-        responses = batch_completion(messages=messages, model=models[model])
-
-        # print(responses)
-        print("End of calling LLM")
-        for idx, response in enumerate(responses):
-            token_numbers = {
-                "prompt": response.usage.prompt_tokens,
-                "completion": response.usage.completion_tokens,
-            }
-            prediction = response.choices[0].message.content
-            predicted_solution = extract_solution_from_response(prediction)
-
-            result = {
-                # "instance": instance,
-                # "examples": examples,
-                "response": prediction,
-                "solution": predicted_solution,
-                "tokens": token_numbers,
-            }
-            # print(result)
-            results.append(result)
-        return results
-    except Exception as e:
-        print(f"Error calling the LLM: {e}")
-        return None
-
-
-def get_parser():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--seed",
-        type=int,
-        required=False,
-        default=42,
-        help="seed",
-    )
-    parser.add_argument(
-        "--model",
-        type=str,
-        required=False,
-        default="gpt-4o-mini",
-        help="name for LLM",
-    )
-    parser.add_argument(
-        "--problem",
-        type=int,
-        required=False,
-        default=6,
-        help="the problem name idx",
-    )
-    parser.add_argument(
-        "--n_shots",
-        type=int,
-        required=False,
-        default=0,
-        help="number of in-context examples",
-    )
-
-    parser.add_argument(
-        "--n_trials",
-        type=int,
-        required=False,
-        default=20,
-        help="number of trials for each level",
-    )
-
-    parser.add_argument(
-        "--asy_batch_size",
-        type=int,
-        required=False,
-        default=10,
-        help="the problem name",
-    )
-
-    parser.add_argument(
-        "--result_folder",
-        type=str,
-        required=False,
-        default="results",
-        help="folder path to store the results",
-    )
-
-    return parser.parse_args()
-
-
-if __name__ == "__main__":
-    set_api_keys()
-
-    args = get_parser()
-    seed_everything(args.seed)
-
-    model = args.model
-
-    problem_name = list(problem_descriptions)[args.problem]
-    problem_description = problem_descriptions[problem_name]
-    generate_instance, verify_solution = get_instance_generator(problem_name)
+    problem_name = PROBLEMS[args.problem]
 
     n_shots = args.n_shots
     n_trials = args.n_trials
-
-    def create_demo_text(configs):
-        demo_content = ""
-        examples = []
-        for i in range(n_shots):
-            instance, solution = generate_instance(**configs)
-            demo = example_and_solution.replace(
-                "<example_problem>", "{}".format(instance)
-            ).replace("<example_solution>", json.dumps(solution))
-            demo_content += demo
-            examples.append(instance)
-        instance, solution = generate_instance(**configs)
-        return demo_content, instance, examples
 
     result_folder_path = Path(args.result_folder)
     if not result_folder_path.exists():
@@ -238,93 +36,98 @@ if __name__ == "__main__":
 
     results = {}
     saving_path = "model_{}_problem_{}_shots_{}.pkl".format(
-        model, problem_name, n_shots
+        model_name, problem_name, n_shots
     )
 
-    levels = problem_levels[problem_name]
+    levels = PROBLEM_LEVELS[problem_name]
     for level in list(levels.keys()):
-        print("=" * 15)
-        print("level {}".format(level))
-        print("=" * 15)
-        configs = levels[level]
-
-        results[level] = []
+        env = NPEnv(problem_name=problem_name, level=level)
+        solver = NPSolver(problem_name=problem_name, model=model_name)
 
         # generate all the instance, examples and contents
+        inputs = []
         instances = []
-        examples = []
-        contents = []
-        for _ in range(n_trials):
-            content = nppc_template.replace(
-                "<problem_description>", problem_description
-            ).replace("<problem_name>", problem_name)
-            demo_content, instance, example = create_demo_text(configs)
-            content = content.replace("<in_context_examples>", demo_content).replace(
-                "<problem_to_solve>", "{}".format(instance)
-            )
 
-            instances.append(instance)
-            contents.append(content)
-            examples.append(example)
+        all_problems = env.batch_generate_instance((n_shots + 1) * n_trials)
+
+        problem_idx = 0
+        for _ in range(n_trials):
+            examples = []
+            for _ in range(n_shots):
+                examples.append(all_problems[problem_idx])
+                problem_idx += 1
+            inputs.append(
+                {"instance": all_problems[problem_idx][0], "examples": examples}
+            )
+            instances.append(all_problems[problem_idx][0])
+            problem_idx += 1
+        results[level] = deepcopy(inputs)
 
         #  get the result batch by batch
-        batch_size = args.asy_batch_size
+        batch_size = args.batch_size
         num_batches = n_trials // batch_size + (0 if n_trials % batch_size == 0 else 1)
 
+        predicted_solutions = []
         for batch_idx in range(num_batches):
+            if args.verbose:
+                print("batch {}/ all batch {}".format(batch_idx, num_batches))
+
             start_idx = batch_size * batch_idx
             end_idx = min(batch_size * (batch_idx + 1), n_trials)
-            batch_contents = contents[start_idx:end_idx]
-            # This is only for the online api model
-            # batch_results = get_results_from_api_asy(contents=contents, model=model)
-            batch_results = get_batch_results_from_api(
-                contents=batch_contents, model=model
-            )
-            # TODO: @ruiyu, please add the local model implementation
 
-            if batch_results:
-                for idx, result in enumerate(batch_results):
-                    predicted_solution = result["solution"]
-                    if predicted_solution is not None:
-                        correctness, reason = verify_solution(
-                            instances[start_idx + idx], predicted_solution
-                        )
-                    else:
-                        correctness = False
-                        reason = "Wrong Format: We cannot parse the solution from the response."
-                    result["correctness"] = correctness
-                    result["reason"] = reason
-                    result["instance"] = instances[start_idx + idx]
-                    result["examples"] = examples[start_idx + idx]
+            for _ in range(args.max_tries):
+                outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
 
-                results[level] += batch_results
-            instances = []
-            contents = []
+                if not outputs:
+                    continue
+                else:
+                    for idx, output in enumerate(outputs):
+                        predicted_solutions.append(output["solution"])
+                        results[level][start_idx + idx].update(output)
+                    break
+            else:
+                predicted_solutions += [None] * batch_size
 
-    for level in results.keys():
-        results_for_level = results[level]
-
-        print(
-            "This is for {} of {}".format(
-                problem_levels[problem_name][level], problem_name
-            )
-        )
-        accuracy = []
-        reason = []
-        for result in results_for_level:
-            accuracy.append(result["correctness"])
-            reason.append(result["reason"])
-            print(
-                "{}, {}, {}".format(
-                    result["correctness"], result["reason"], result["tokens"]
-                )
-            )
-
-        print(
-            "Accuracy is {} (all={})".format(
-                sum(accuracy) / len(accuracy), len(accuracy)
-            )
-        )
+        # verify all the results
+        verifications = env.batch_verify_solution(instances, predicted_solutions)
+        for idx in range(len(results[level])):
+            results[level][idx]["correctness"] = verifications[idx][0]
+            results[level][idx]["reason"] = verifications[idx][1]
+        break
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
+
+    if args.verbose:
+        for level in results.keys():
+            results_for_level = results[level]
+
+            print(
+                "This is for {} of {}".format(
+                    PROBLEM_LEVELS[problem_name][level], problem_name
+                )
+            )
+            accuracy = []
+            reason = []
+            for result in results_for_level:
+                accuracy.append(result["correctness"])
+                reason.append(result["reason"])
+                print(
+                    "{}, {}, {}".format(
+                        result["correctness"], result["reason"], result["tokens"]
+                    )
+                )
+
+            print(
+                "Accuracy is {} (all={})".format(
+                    sum(accuracy) / len(accuracy), len(accuracy)
+                )
+            )
+
+
+if __name__ == "__main__":
+    set_api_keys()
+
+    args = get_parser()
+    seed_everything(args.seed)
+    main(args)

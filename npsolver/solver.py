@@ -2,19 +2,7 @@ from litellm import batch_completion
 import re
 import json
 from npsolver.prompt import nppc_template, example_and_solution, problem_descriptions
-
-MODELS = {
-    "online": {
-        "gpt-4o": "gpt-4o-2024-08-06",
-        "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
-        "o1-mini": "o1-mini-2024-09-12",
-        "deepseek-chat": "deepseek/deepseek-chat",
-        "claude": "anthropic/claude-3-sonnet-20240229",
-    },
-    "offline": {
-        "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-    },
-}
+from npsolver import MODELS
 
 
 def extract_solution_from_response(response):
@@ -39,7 +27,7 @@ def extract_solution_from_response(response):
 
 
 class NPSolver:
-    def __init__(self, problem, model):
+    def __init__(self, problem_name, model):
         if model in MODELS["online"]:
             self.is_online = True
         elif model in MODELS["offline"]:
@@ -48,15 +36,15 @@ class NPSolver:
             raise NotImplementedError
 
         self.model_name = model
-        self.problem_name = problem
+        self.problem_name = problem_name
 
         self.local_llm = None
 
-    def get_prediction(self, instances):
+    def get_prediction(self, inputs):
         contents = []
-        for idx in range(len(instances)):
-            problem_to_solve = instances[idx]["problem_to_solve"]
-            examples = instances[idx]["examples"]
+        for idx in range(len(inputs)):
+            problem_to_solve = inputs[idx]["instance"]
+            examples = inputs[idx]["examples"]
             demo_content = ""
             for example in examples:
                 demo = example_and_solution.replace(
@@ -72,18 +60,17 @@ class NPSolver:
             contents.append(content)
 
         if self.is_online:
-            return self.get_batch_results_from_api(contents)
+            return self.get_batch_outputs_from_api(contents)
 
-    def get_batch_results_from_api(self, contents):
+    def get_batch_outputs_from_api(self, contents):
         assert self.is_online
-        results = []
+        outputs = []
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
             responses = batch_completion(
-                messages=messages, model=MODELS[self.model_name]
+                messages=messages, model=MODELS["online"][self.model_name]
             )
-
             # print(responses)
             print("End of calling LLM")
             for idx, response in enumerate(responses):
@@ -94,18 +81,18 @@ class NPSolver:
                 prediction = response.choices[0].message.content
                 predicted_solution = extract_solution_from_response(prediction)
 
-                result = {
+                output = {
                     "response": prediction,
                     "solution": predicted_solution,
                     "tokens": token_numbers,
                 }
                 # print(result)
-                results.append(result)
-            return results
+                outputs.append(output)
+            return outputs
         except Exception as e:
             print(f"Error calling the LLM: {e}")
             return None
 
-    def get_batch_results_from_offline_model(self):
+    def get_batch_outputs_from_offline_model(self):
         assert not self.is_online
         print()
