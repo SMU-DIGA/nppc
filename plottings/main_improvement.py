@@ -2,7 +2,6 @@ from npeval import metrics
 import numpy as np
 from npeval.interval import get_interval_estimates
 from npeval import plot_utils
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 num_runs = 5
