@@ -9,9 +9,11 @@ from nppc_problem import problem_levels, problem2path
 from utils import seed_everything
 import asyncio
 from litellm import completion, acompletion
+from openai import AsyncOpenAI
 from pathlib import Path
 import pickle
 import os.path as osp
+from tqdm import tqdm
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -19,6 +21,7 @@ models = {
     "o1-mini": "o1-mini-2024-09-12",
     "deepseek-chat": "deepseek/deepseek-chat",
     "claude": "anthropic/claude-3-sonnet-20240229",
+    "deepseek-r1": "deepseek-r1-250120",
 }
 
 
@@ -45,6 +48,17 @@ def set_api_keys():
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
     os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
+DeepseekR1Client = None
+
+def set_ark_deepseek_keys():
+    global DeepseekR1Client
+    with open("./api_keys/deepseek_r1_api_key.txt", "r") as file:
+        deepseek_r1_api_key = file.read().strip()
+    os.environ["OPENAI_API_KEY"] = deepseek_r1_api_key
+    DeepseekR1Client = AsyncOpenAI(
+        api_key = os.environ.get(deepseek_r1_api_key),
+        base_url = "https://ark.cn-beijing.volces.com/api/v3",
+    )
 
 def extract_solution_from_response(response):
     # find the json code
@@ -90,14 +104,24 @@ def evaluate_llm(content, model):
 
 
 async def async_evaluate_llm(contents, model):
-    async def call_gpt(prompt):
-        response = await acompletion(
-            model=models[model], messages=[{"role": "user", "content": prompt}]
-        )
-        return response
+    if model == "deepseek-r1":
+        print("calling deepseek-r1")
+        async def call_gpt(prompt):
+            completion = await DeepseekR1Client.chat.completions.create(
+                model=models[model],
+                messages=[
+                    {"role": "user", "content": prompt},
+                ],
+            )
+            return completion
+    else:
+        async def call_gpt(prompt):
+            response = await acompletion(
+                model=models[model], messages=[{"role": "user", "content": prompt}]
+            )
+            return response
 
     return await asyncio.gather(*[call_gpt(content) for content in contents])
-
 
 def get_results_from_api(contents, model):
     results = []
@@ -187,14 +211,18 @@ def get_parser():
 
 
 if __name__ == "__main__":
-    set_api_keys()
 
     args = get_parser()
     seed_everything(args.seed)
 
+    if args.model == "deepseek-r1": # 火山引擎
+        set_ark_deepseek_keys()
+    else:
+        set_api_keys()
+
     model = args.model
 
-    args.problem = 2
+    # args.problem = 2
     problem_name = list(problem_descriptions)[args.problem]
     problem_description = problem_descriptions[problem_name]
     generate_instance, verify_solution = get_instance_generator(problem_name)
@@ -224,14 +252,14 @@ if __name__ == "__main__":
         model, problem_name, n_shots
     )
     levels = problem_levels[problem_name]
-    for level in list(levels.keys())[-3:-2]:
+    for level in tqdm(list(levels.keys()), desc="levels"):
         configs = levels[level]
 
         results[level] = []
 
         instances = []
         contents = []
-        for trial in range(n_trials):
+        for trial in tqdm(range(n_trials), desc="n_trials"):
             content = nppc_template.replace(
                 "<problem_description>", problem_description
             ).replace("<problem_name>", problem_name)
