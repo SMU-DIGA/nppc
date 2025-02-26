@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 class RadarChart:
@@ -42,8 +43,8 @@ class RadarChart:
         fig, ax = plt.subplots(figsize=figsize, subplot_kw=dict(projection="polar"))
 
         # Set default colors if none provided
-        if colors is None:
-            colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+
+        colors = sns.color_palette("colorblind")
 
         # Plot multiple datasets if provided
         if isinstance(self.values[0], (list, np.ndarray)):
@@ -105,13 +106,13 @@ if __name__ == "__main__":
     # Create radar chart with single dataset
     radar1 = RadarChart(categories, values1, "Student Performance Radar Chart")
     fig1, ax1 = radar1.plot()
-    plt.savefig("single_radar.png")
+    # plt.savefig("single_radar.png")
     plt.close()
 
     # Create radar chart with multiple datasets
     radar2 = RadarChart(categories, values2, "Students Performance Comparison")
     fig2, ax2 = radar2.plot()
 
-    plt.savefig("comparison_radar.png")
+    # plt.savefig("comparison_radar.png")
     plt.show()
     # plt.close()

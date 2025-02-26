@@ -59,7 +59,11 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
             solution.append(idx)
             selected_sets.append(list(sets[i]))
 
-    instance = {"Universe": list(universe), "Subsets": shuffle_sets, "K": num_disjoint_sets}
+    instance = {
+        "Universe": list(universe),
+        "Subsets": shuffle_sets,
+        "K": num_disjoint_sets,
+    }
     # print(selected_sets)
 
     return instance, solution

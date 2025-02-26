@@ -1,12 +1,12 @@
 problem2path = {
-    "3-Satisfiability (3-SAT)": "three_sat",   # 0
-    "Vertex Cover": "vertex_cover",            # 1
-    "Clique": "clique",                        # 2
-    "Independent Set": "independent_set",      # 3
-    "Partition": "partition",                  # 4
-    "Subset Sum": "subset_sum",                # 5
-    "Set Packing": "set_packing",              # 6
-    "Set Splitting": "set_splitting",          # 7
+    "3-Satisfiability (3-SAT)": "three_sat",  # 0
+    "Vertex Cover": "vertex_cover",  # 1
+    "Clique": "clique",  # 2
+    "Independent Set": "independent_set",  # 3
+    "Partition": "partition",  # 4
+    "Subset Sum": "subset_sum",  # 5
+    "Set Packing": "set_packing",  # 6
+    "Set Splitting": "set_splitting",  # 7
 }
 
 problem_levels = {

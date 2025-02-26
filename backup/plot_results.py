@@ -1854,16 +1854,16 @@ atari_100k_score_dict = {
 for algo in atari_100k_score_dict:
     print(atari_100k_score_dict[algo].shape)
 
-from rliable import library as rly
-from rliable import metrics
-from rliable import plot_utils
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-IQM = lambda x: metrics.aggregate_iqm(x)  # Interquartile Mean
-OG = lambda x: metrics.aggregate_optimality_gap(x, 1.0)  # Optimality Gap
-MEAN = lambda x: metrics.aggregate_mean(x)
-MEDIAN = lambda x: metrics.aggregate_median(x)
+# from rliable import library as rly
+# from rliable import metrics
+# from rliable import plot_utils
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# IQM = lambda x: metrics.aggregate_iqm(x)  # Interquartile Mean
+# OG = lambda x: metrics.aggregate_optimality_gap(x, 1.0)  # Optimality Gap
+# MEAN = lambda x: metrics.aggregate_mean(x)
+# MEDIAN = lambda x: metrics.aggregate_median(x)
 
 
 #
@@ -1874,25 +1874,25 @@ def save_fig(fig, name):
     return file_name
 
 
-colors = sns.color_palette("colorblind")
-xlabels = ["DER", "OTR", "CURL", "DrQ(ε)", "SPR", "SimPLe", "DrQ"]
-color_idxs = [0, 3, 4, 2, 1, 7, 8]
-ATARI_100K_COLOR_DICT = dict(zip(xlabels, [colors[idx] for idx in color_idxs]))
-
-aggregate_func = lambda x: np.array([MEDIAN(x), IQM(x), MEAN(x), OG(x)])
-aggregate_scores, aggregate_interval_estimates = rly.get_interval_estimates(
-    atari_100k_score_dict, aggregate_func, reps=50000
-)
-
-algorithms = ["SimPLe", "DER", "OTR", "CURL", "DrQ", "DrQ(ε)", "SPR"]
-fig, axes = plot_utils.plot_interval_estimates(
-    aggregate_scores,
-    aggregate_interval_estimates,
-    metric_names=["Median", "IQM", "Mean", "Optimality Gap"],
-    algorithms=algorithms,
-    colors=ATARI_100K_COLOR_DICT,
-    xlabel_y_coordinate=-0.16,
-    xlabel="Human Normalized Score",
-)
-plt.show()
-save_fig(fig, "atari_100k_aggregates")
+# colors = sns.color_palette("colorblind")
+# xlabels = ["DER", "OTR", "CURL", "DrQ(ε)", "SPR", "SimPLe", "DrQ"]
+# color_idxs = [0, 3, 4, 2, 1, 7, 8]
+# ATARI_100K_COLOR_DICT = dict(zip(xlabels, [colors[idx] for idx in color_idxs]))
+#
+# aggregate_func = lambda x: np.array([MEDIAN(x), IQM(x), MEAN(x), OG(x)])
+# aggregate_scores, aggregate_interval_estimates = rly.get_interval_estimates(
+#     atari_100k_score_dict, aggregate_func, reps=50000
+# )
+#
+# algorithms = ["SimPLe", "DER", "OTR", "CURL", "DrQ", "DrQ(ε)", "SPR"]
+# fig, axes = plot_utils.plot_interval_estimates(
+#     aggregate_scores,
+#     aggregate_interval_estimates,
+#     metric_names=["Median", "IQM", "Mean", "Optimality Gap"],
+#     algorithms=algorithms,
+#     colors=ATARI_100K_COLOR_DICT,
+#     xlabel_y_coordinate=-0.16,
+#     xlabel="Human Normalized Score",
+# )
+# plt.show()
+# save_fig(fig, "atari_100k_aggregates")

@@ -21,19 +21,14 @@ def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
             return generate_instance(num_items, bin_capacity, num_bins)
 
     # 返回生成的实例和有效解
-    instance = {
-        'U': U,
-        'B': bin_capacity,
-        'K': num_bins
-    }
+    instance = {"U": U, "B": bin_capacity, "K": num_bins}
     return instance, solution
 
 
-
 def verify_solution(instance, solution):
-    U = instance['U']
-    B = instance['B']
-    K = instance['K']
+    U = instance["U"]
+    B = instance["B"]
+    K = instance["K"]
 
     # 检查解是否包含所有物品且不重复
     all_items = []

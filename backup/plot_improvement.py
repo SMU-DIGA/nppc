@@ -5,7 +5,7 @@ from rliable import metrics
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-filename = "./procgen_data.json"
+filename = "../plottings/procgen_data.json"
 with open(filename, "rb") as f:
     procgen_data_dict = json.load(f)
 
