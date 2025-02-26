@@ -12,7 +12,6 @@ Now please solve the above problem. Reason step by step and present your answer 
 ```json
 {"solution": "___" }
 ```
-
 """
 
 example_and_solution = """Problem: <example_problem>
