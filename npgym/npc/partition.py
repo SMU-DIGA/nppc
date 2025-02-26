@@ -70,24 +70,3 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
         return True, f"Valid partition with sum {sum1}"
     else:
         return False, f"Invalid partition: {sum1} ≠ {sum2}"
-
-
-# numbers, solution = generate_instance(6)
-# print(f"Numbers: {numbers}")
-#
-# # Example solution (may not be valid)
-# # solution = [True, False, True, False, True, False]
-# valid, msg = verify_solution(numbers, solution)
-# print(f"Validation result: {msg}")
-
-
-
-
-numbers, solution = generate_instance(6)
-print(f"Numbers: {numbers}")
-print(solution)
-valid, msg = verify_solution(numbers, solution)
-
-print(f"Validation result: {msg}")
-
-

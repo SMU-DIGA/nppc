@@ -11,5 +11,3 @@ def seed_everything(seed=42):
     torch.backends.cudnn.benchmark = False
     np.random.seed(seed)
     random.seed(seed)
-
-
