@@ -1,11 +1,22 @@
-import numpy as np
 import matplotlib.patches as mpatches
-import collections
 import matplotlib.pyplot as plt
+import collections
+import numpy as np
+import seaborn as sns
+
+num_runs = 5
+num_tasks = 20
+
+nppc_result = {
+    "gpt-4o": np.random.rand(num_runs, num_tasks),
+    "gpt-4o-mini": np.random.rand(num_runs, num_tasks),
+    "claude": np.random.rand(num_runs, num_tasks),
+    "deepseek": np.random.rand(num_runs, num_tasks),
+    "o1": np.random.rand(num_runs, num_tasks),
+}
 
 
 def subsample_scores_mat(score_mat, num_samples=5, replace=False):
-    subsampled_dict = []
     total_samples, num_games = score_mat.shape
     subsampled_scores = np.empty((num_samples, num_games))
     for i in range(num_games):
@@ -41,34 +52,23 @@ def get_rank_matrix(score_dict, n=100000, algorithms=None):
     return all_mat
 
 
-keys = algs
+print(get_rank_matrix(nppc_result).shape)
+
+keys = list(nppc_result.keys())
 labels = list(range(1, len(keys) + 1))
 width = 1.0  # the width of the bars: can also be len(x) sequence
+colors = sns.color_palette("colorblind")
 
 fig, axes = plt.subplots(nrows=1, ncols=6, figsize=(14, 3.5))
-all_ranks = all_ranks_individual["500k"]
+all_ranks = get_rank_matrix(nppc_result)
 for task in range(6):
-    bottom = np.zeros_like(mean_ranks[0])
+    bottom = np.zeros([len(keys)])
+    ax = None
     for i, key in enumerate(keys):
         ranks = all_ranks[task]
         ax = axes[task]
-        ax.bar(
-            labels, ranks[i], width, color=DMC_COLOR_DICT[key], bottom=bottom, alpha=0.9
-        )
+        ax.bar(labels, ranks[i], width, color=colors[i], bottom=bottom, alpha=0.9)
         bottom += ranks[i]
-        # for label in labels:
-        # perc = int(np.round(mean_ranks[i][label-1] * 100))
-        # ax.text(s= str(perc) + '%', x=label-0.25, y=bottom[label-1] - perc/200,
-        #         color="w", verticalalignment="center",
-        #         horizontalalignment="left", size=10)
-        ax.set_title(DMC_ENVS[task], fontsize="large")
-
-    # if task == 0:
-    #   ax.set_ylabel('Fraction (in %)', size='x-large')
-    #   yticks = np.array(range(0, 101, 20))
-    #   ax.set_yticklabels(yticks, size='large')
-    # else:
-    #   ax.set_yticklabels([])
 
     if task == 0:
         ax.set_ylabel("Distribution", size="x-large")
@@ -93,7 +93,7 @@ for task in range(6):
         labelright=False,
     )
 
-fake_patches = [mpatches.Patch(color=DMC_COLOR_DICT[m], alpha=0.75) for m in keys]
+fake_patches = [mpatches.Patch(color=colors[i], alpha=0.75) for i in range(len(keys))]
 legend = fig.legend(
     fake_patches,
     keys,
