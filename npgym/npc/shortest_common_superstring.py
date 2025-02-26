@@ -1,49 +1,50 @@
 import random
+import string
 
 
-def generate_instance(n: int, k: int, min_len: int = 5, max_len: int = 10):
-    """
-    Generate an instance of the Shortest Common Superstring decision problem.
+def generate_instance(n: int, k: int):
+    """生成 Shortest Common Superstring 实例和优化后的解 w"""
 
-    Args:
-        n: Number of strings to generate
-        min_len: Minimum length of each string
-        max_len: Maximum length of each string
-        k: Target length for the superstring
+    # 生成随机字符串 w，长度为 k
+    def generate_random_string(length: int):
+        """生成一个指定长度的随机字符串"""
+        return ''.join(random.choices(string.ascii_lowercase, k=length))
 
-    Returns:
-        tuple of (list of strings, target length k)
-    """
+    w = generate_random_string(k)
 
-    import string
-
-    if k < max_len:
-        raise "k should be larger than max_len"
-    # Generate base string that will ensure at least one solution exists
-    base_len = random.randint(k - max_len, k)
-    base = "".join(random.choices(string.ascii_lowercase, k=base_len))
-
-    # Generate n strings that are substrings of base
-    strings = []
+    # 从 w 中提取 n 个子串作为 R
+    R = []
     for _ in range(n):
-        # Random length between min_len and max_len
-        length = random.randint(min_len, max_len)
-        # Random starting position in base string
-        if len(base) < length:
-            start = 0
-        else:
-            start = random.randint(0, len(base) - length)
-        # Extract substring
-        substring = base[start : start + length]
-        strings.append(substring)
+        # 随机选择子串的起始和结束位置
+        start = random.randint(0, k - 1)
+        end = random.randint(start + 1, k)
+        s = w[start:end]
+        R.append(s)
 
-    # Shuffle the strings
-    random.shuffle(strings)
+    # 优化 w 的长度
+    def optimize_w(w: str, R: list):
+        """优化 w 的长度，删除未被 R 中子串覆盖的字符"""
+        # 标记 w 中哪些字符被 R 的子串覆盖
+        marked = [False] * len(w)
+        for s in R:
+            start = w.find(s)  # 找到子串 s 在 w 中的起始位置
+            if start != -1:
+                for i in range(start, start + len(s)):
+                    marked[i] = True
 
-    instance = {"strings": strings, "k": k}
+        # 构建优化后的 w，只保留被标记的字符
+        optimized_w = ''.join([w[i] for i in range(len(w)) if marked[i]])
+        return optimized_w
 
-    return instance, base
+    # 优化 w
+    optimized_w = optimize_w(w, R)
 
+    # 返回生成的实例和优化后的解
+    instance = {
+        'Strings': R,
+        'K': k
+    }
+    return instance, optimized_w
 
 def verify_solution(instance, solution: str):
     """
@@ -54,8 +55,8 @@ def verify_solution(instance, solution: str):
         bool indicating whether solution is valid
     """
     # Check if solution length is at most k
-    k = instance["k"]
-    strings = instance["strings"]
+    k = instance["K"]
+    strings = instance["Strings"]
     if len(solution) > k:
         return False, "The solution is invalid."
 
@@ -66,7 +67,10 @@ def verify_solution(instance, solution: str):
 
     return True, "Correct solution."
 
-
-instance, solution = generate_instance(n=20, k=15)
-
+# 示例用法
+n = 3
+k = 10
+instance, solution = generate_instance(n, k)
+print("Instance:", instance)
+print("Solution:", solution)
 print(verify_solution(instance, solution))

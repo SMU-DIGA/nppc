@@ -7,6 +7,9 @@ problem2path = {
     "Subset Sum": "subset_sum",                # 5
     "Set Packing": "set_packing",              # 6
     "Set Splitting": "set_splitting",          # 7
+    "Shortest Common Superstring": "shortest_common_superstring",   # 8
+    "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
+    "Quadratic Congruences": "quadratic_congruence",                # 10
 }
 
 problem_levels = {
@@ -48,5 +51,14 @@ problem_levels = {
     },
     "Set Splitting": {
         1: {"num_elements": 10, "num_subsets": 4},
+    },
+    "Shortest Common Superstring": {
+        1: {"n": 3, "k": 10},
+    },
+    "Quadratic Diophantine Equations": {
+        1: {"low": 1, "high": 100},
+    },
+    "Quadratic Congruences": {
+        1: {"min_value": 10, "max_value": 100},
     },
 }
