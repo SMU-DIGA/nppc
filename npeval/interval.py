@@ -207,7 +207,7 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
 
 
 def get_interval_estimates(
-    score_dict: Union[Mapping[str, np.ndarray], Mapping[str, List[np.ndarray]]],
+    score_dict,
     func: Callable[..., np.ndarray],
     method: Literal[
         "basic", "percentile", "studentized", "norm", "bc", "bca"
