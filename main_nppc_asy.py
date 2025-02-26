@@ -13,6 +13,7 @@ from openai import AsyncOpenAI
 from pathlib import Path
 import pickle
 import os.path as osp
+from tqdm import tqdm
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -251,14 +252,14 @@ if __name__ == "__main__":
         model, problem_name, n_shots
     )
     levels = problem_levels[problem_name]
-    for level in list(levels.keys())[-3:-2]:
+    for level in tqdm(list(levels.keys()), desc="levels"):
         configs = levels[level]
 
         results[level] = []
 
         instances = []
         contents = []
-        for trial in range(n_trials):
+        for trial in tqdm(range(n_trials), desc="n_trials"):
             content = nppc_template.replace(
                 "<problem_description>", problem_description
             ).replace("<problem_name>", problem_name)
