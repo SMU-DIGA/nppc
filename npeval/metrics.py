@@ -17,6 +17,9 @@ import numpy as np
 import scipy.stats
 
 
+
+
+
 def aggregate_mean(scores: np.ndarray):
     """Computes mean of sample mean scores per task.
 
@@ -43,7 +46,7 @@ def aggregate_median(scores: np.ndarray):
     return np.median(mean_task_scores, axis=0)
 
 
-def aggregate_optimality_gap(scores: np.ndarray, gamma=1):
+def aggregate_optimality_gap(scores: np.ndarray, gamma=1.0):
     """Computes optimality gap across all runs and tasks.
 
     Args:
@@ -94,3 +97,9 @@ def probability_of_improvement(scores_x: np.ndarray, scores_y: np.ndarray):
             task_improvement_prob /= num_runs_x * num_runs_y
         task_improvement_probabilities.append(task_improvement_prob)
     return np.mean(task_improvement_probabilities)
+
+
+IQM = lambda x: aggregate_iqm(x)  # Interquartile Mean
+OG = lambda x: aggregate_optimality_gap(x, 1.0)  # Optimality Gap
+MEAN = lambda x: aggregate_mean(x)
+MEDIAN = lambda x: aggregate_median(x)

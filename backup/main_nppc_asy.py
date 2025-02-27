@@ -35,11 +35,11 @@ def get_instance_generator(problem_name):
 
 
 def set_api_keys():
-    with open("api_keys/openai_api_key.txt", "r") as file:
+    with open("../api_keys/openai_api_key.txt", "r") as file:
         openai_api_key = file.read().strip()
-    with open("api_keys/deepseek_api_key.txt", "r") as file:
+    with open("../api_keys/deepseek_api_key.txt", "r") as file:
         deepseek_api_key = file.read().strip()
-    with open("./api_keys/claude_api_key.txt", "r") as file:
+    with open("../api_keys/claude_api_key.txt", "r") as file:
         claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key

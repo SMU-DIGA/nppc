@@ -4,6 +4,7 @@ from npeval.interval import get_interval_estimates
 from npeval import plot_utils
 import seaborn as sns
 import matplotlib.pyplot as plt
+from npeval.metrics import MEAN, MEDIAN, IQM, OG
 
 num_runs = 5
 num_tasks = 20
@@ -18,10 +19,6 @@ nppc_result = {
 
 print(nppc_result)
 
-IQM = lambda x: metrics.aggregate_iqm(x)  # Interquartile Mean
-OG = lambda x: metrics.aggregate_optimality_gap(x, 1.0)  # Optimality Gap
-MEAN = lambda x: metrics.aggregate_mean(x)
-MEDIAN = lambda x: metrics.aggregate_median(x)
 aggregate_func = lambda x: np.array([MEDIAN(x), IQM(x), MEAN(x), OG(x)])
 
 aggregate_scores, aggregate_interval_estimates = get_interval_estimates(
