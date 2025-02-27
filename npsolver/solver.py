@@ -1,6 +1,4 @@
-import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 from litellm import batch_completion
 import re
 import json

@@ -1,15 +1,22 @@
 import gradio as gr
 import pandas as pd
 import numpy as np
-from datetime import datetime
 
 
 # Generate sample performance data
 def generate_performance_data():
     models = [
-        "BERT-base", "RoBERTa-large", "GPT-2", "T5-small",
-        "DeBERTa-v3", "XLNet", "ALBERT", "ELECTRA",
-        "LLaMA-7B", "Mistral-7B", "Gemma-7B"
+        "BERT-base",
+        "RoBERTa-large",
+        "GPT-2",
+        "T5-small",
+        "DeBERTa-v3",
+        "XLNet",
+        "ALBERT",
+        "ELECTRA",
+        "LLaMA-7B",
+        "Mistral-7B",
+        "Gemma-7B",
     ]
 
     # Random seed for reproducibility
@@ -23,9 +30,19 @@ def generate_performance_data():
         "ROUGE-L": np.random.uniform(0.41, 0.68, len(models)),
         "Latency (ms)": np.random.randint(45, 350, len(models)),
         "Parameters (M)": [110, 355, 1500, 60, 440, 340, 12, 110, 7000, 7000, 7000],
-        "Last Updated": ["2024-12-15", "2025-01-10", "2024-11-21", "2025-01-05",
-                         "2024-12-30", "2024-11-15", "2024-12-10", "2025-01-20",
-                         "2024-10-25", "2024-11-05", "2025-01-30"]
+        "Last Updated": [
+            "2024-12-15",
+            "2025-01-10",
+            "2024-11-21",
+            "2025-01-05",
+            "2024-12-30",
+            "2024-11-15",
+            "2024-12-10",
+            "2025-01-20",
+            "2024-10-25",
+            "2024-11-05",
+            "2025-01-30",
+        ],
     }
 
     df = pd.DataFrame(data)
@@ -53,19 +70,26 @@ def update_leaderboard(metric, ascending):
     sorted_data["BLEU"] = sorted_data["BLEU"].apply(lambda x: f"{x:.2f}")
 
     # Return sorted dataframe
-    return sorted_data, f"Leaderboard sorted by {metric} ({'ascending' if ascending else 'descending'})"
+    return (
+        sorted_data,
+        f"Leaderboard sorted by {metric} ({'ascending' if ascending else 'descending'})",
+    )
 
 
 # Create Gradio interface
-with gr.Blocks(title="Model Performance Leaderboard", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🏆 Model Performance Leaderboard")
-    gr.Markdown("This leaderboard displays performance metrics for various models on NLP tasks.")
+with gr.Blocks(
+    title="Nondeterministic Polynomial Problem Challenge", theme=gr.themes.Soft()
+) as demo:
+    gr.Markdown("# 🏆 Nondeterministic Polynomial Problem Challenge")
+    gr.Markdown(
+        "This leaderboard displays performance metrics for various models on NLP tasks."
+    )
 
     with gr.Row():
         metric_dropdown = gr.Dropdown(
             choices=metric_choices,  # Use pre-defined choices
             value="Accuracy",
-            label="Sort by"
+            label="Sort by",
         )
         ascending_checkbox = gr.Checkbox(label="Ascending order", value=False)
 
@@ -77,9 +101,7 @@ with gr.Blocks(title="Model Performance Leaderboard", theme=gr.themes.Soft()) as
 
     # Use Gradio's DataFrame component with initial data
     leaderboard_table = gr.DataFrame(
-        value=initial_sorted_data,
-        interactive=False,
-        wrap=True
+        value=initial_sorted_data, interactive=False, wrap=True
     )
 
     gr.Markdown("---")
@@ -89,15 +111,11 @@ with gr.Blocks(title="Model Performance Leaderboard", theme=gr.themes.Soft()) as
     update_button.click(
         update_leaderboard,
         inputs=[metric_dropdown, ascending_checkbox],
-        outputs=[leaderboard_table, sort_info]
+        outputs=[leaderboard_table, sort_info],
     )
 
     # Set initial info message
-    demo.load(
-        lambda: initial_message,
-        inputs=None,
-        outputs=sort_info
-    )
+    demo.load(lambda: initial_message, inputs=None, outputs=sort_info)
 
 # Launch the app
 if __name__ == "__main__":
