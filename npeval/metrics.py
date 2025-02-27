@@ -17,9 +17,6 @@ import numpy as np
 import scipy.stats
 
 
-
-
-
 def aggregate_mean(scores: np.ndarray):
     """Computes mean of sample mean scores per task.
 
