@@ -1,10 +1,16 @@
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 from litellm import batch_completion
 import re
 import json
 from npsolver.prompt import nppc_template, example_and_solution, problem_descriptions
 from npsolver import MODELS
+from huggingface_hub import snapshot_download
+from pathlib import Path
 
 
+# Continue with your vLLM code
 def extract_solution_from_response(response):
     # find the json code
     match = re.findall(r"```json\n(.*?)\n```", response, re.DOTALL)
@@ -26,19 +32,55 @@ def extract_solution_from_response(response):
         return None
 
 
+def initialize_offline_model(model_name: str, model_dir):
+    import torch
+    from vllm import LLM, SamplingParams
+
+    model_dir.mkdir(parents=True, exist_ok=True)
+    model_path = model_dir / model_name
+
+    if not model_path.exists():
+        snapshot_download(
+            repo_id=MODELS["offline"][model_name],
+            local_dir=str(model_path),
+            resume_download=True,
+        )
+    else:
+        print(f"\n{'=' * 20} Loading model from {str(model_path)} {'=' * 20}")
+
+    device_count = torch.cuda.device_count()
+    if device_count == 0:
+        raise RuntimeError("No available GPUs found")
+
+    return LLM(
+        model=MODELS["offline"][model_name],
+        download_dir=str(model_path),
+        tensor_parallel_size=max(device_count, 1),
+        dtype="auto",
+        gpu_memory_utilization=0.8,
+        trust_remote_code=True,
+        enforce_eager=True,
+    ), SamplingParams(temperature=0.6, top_p=0.95, max_tokens=7500)
+
+
 class NPSolver:
-    def __init__(self, problem_name, model):
-        if model in MODELS["online"]:
+    def __init__(self, problem_name, model_name):
+        if model_name in MODELS["online"]:
             self.is_online = True
-        elif model in MODELS["offline"]:
+        elif model_name in MODELS["offline"]:
             self.is_online = False
         else:
             raise NotImplementedError
 
-        self.model_name = model
+        self.model_name = model_name
         self.problem_name = problem_name
 
         self.local_llm = None
+        self.sampling_params = None
+        if not self.is_online:
+            self.local_llm, self.sampling_params = initialize_offline_model(
+                model_name=model_name, model_dir=Path("./models")
+            )
 
     def get_prediction(self, inputs):
         contents = []
@@ -61,6 +103,8 @@ class NPSolver:
 
         if self.is_online:
             return self.get_batch_outputs_from_api(contents)
+        else:
+            return self.get_batch_outputs_from_offline_model(contents)
 
     def get_batch_outputs_from_api(self, contents):
         assert self.is_online
@@ -93,6 +137,28 @@ class NPSolver:
             print(f"Error calling the LLM: {e}")
             return None
 
-    def get_batch_outputs_from_offline_model(self):
+    def get_batch_outputs_from_offline_model(self, contents):
         assert not self.is_online
-        print()
+        try:
+            responses = self.local_llm.generate(contents, self.sampling_params)
+            outputs = []
+
+            for response in responses:
+                response_text = response.outputs[0].text
+                solution = extract_solution_from_response(response_text)
+
+                outputs.append(
+                    {
+                        "response": response_text,
+                        "solution": solution,
+                        "tokens": {
+                            "prompt": len(response.prompt_token_ids),
+                            "completion": len(response.outputs[0].token_ids),
+                        },
+                    }
+                )
+
+            return outputs
+        except Exception as e:
+            print(f"Error calling the LLM: {e}")
+            return None

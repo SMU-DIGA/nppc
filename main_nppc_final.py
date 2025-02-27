@@ -51,7 +51,7 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="gpt-4o-mini",
+        default="deepseek-R1-1.5B",
         help="name for LLM",
     )
     parser.add_argument(
@@ -101,7 +101,7 @@ def get_parser():
         help="folder path to store the results",
     )
 
-    parser.add_argument("--verbose", type=bool, required=False, default=False)
+    parser.add_argument("--verbose", type=bool, required=False, default=True)
 
     return parser.parse_args()
 
@@ -126,7 +126,11 @@ def main(args):
     levels = PROBLEM_LEVELS[problem_name]
     for level in list(levels.keys()):
         env = NPEnv(problem_name=problem_name, level=level)
-        solver = NPSolver(problem_name=problem_name, model=model_name)
+        solver = NPSolver(problem_name=problem_name, model_name=model_name)
+        if args.verbose:
+            print("=" * 15)
+            print("level {}".format(level))
+            print("=" * 15)
 
         # generate all the instance, examples and contents
         inputs = []
@@ -159,10 +163,15 @@ def main(args):
             start_idx = batch_size * batch_idx
             end_idx = min(batch_size * (batch_idx + 1), n_trials)
 
-            for _ in range(args.max_tries):
+            # we will talke the max tries for both open and close models
+            # basically, we will
+            for try_idx in range(args.max_tries):
                 outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
 
-                if not outputs:
+                for output in outputs:
+                    print(output["solution"])
+
+                if outputs is None:
                     continue
                 else:
                     for idx, output in enumerate(outputs):
@@ -177,7 +186,6 @@ def main(args):
         for idx in range(len(results[level])):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
-        break
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
