@@ -14,6 +14,7 @@ problem2path = {
     "Travelling Salesman (TSP)": "tsp",        # 12
     "Dominating Set": "domninating_set",       # 13
     "Hitting String": "hitting_string",        # 14
+    "Hamiltonian Cycle": "hamiltonian_cycle"   # 15
 }
 
 problem_levels = {
@@ -76,5 +77,8 @@ problem_levels = {
     },
     "Hitting String": {
         1: {"n": 5, "m": 10},
-    }
+    },
+    "Hamiltonian Cycle": {
+        1: {"num_nodes": 5, "directed": False},
+    },
 }
