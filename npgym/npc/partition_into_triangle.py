@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(n, edge_prob):
+def generate_instance(n, edge_prob=0.3):
     all_nodes = 3 * n
 
     nodes = list(range(all_nodes))
@@ -41,7 +41,7 @@ def verify_solution(instance, solution):
     n = len(instance["nodes"]) // 3
 
     if len(solution) != n:
-        return False, "The solution is invalid.1"
+        return False, "The solution is invalid"
 
     all_nodes = []
 
@@ -49,7 +49,7 @@ def verify_solution(instance, solution):
         all_nodes += sol
 
     if not (sorted(all_nodes) == nodes):
-        return False, "The solution is invalid.3"
+        return False, "The solution is invalid"
 
     for sol in solution:
         for i in range(3):
@@ -60,6 +60,6 @@ def verify_solution(instance, solution):
         return True, "Correct solution."
 
 
-instance, solution = generate_instance(n=10, edge_prob=0.3)
-print(solution)
-print(verify_solution(instance, solution))
+# instance, solution = generate_instance(n=10)
+# print(solution)
+# print(verify_solution(instance, solution))

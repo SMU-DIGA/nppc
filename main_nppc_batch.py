@@ -13,7 +13,12 @@ from pathlib import Path
 import pickle
 import os.path as osp
 import litellm
+
 # litellm._turn_on_debug()
+
+# import litellm
+# litellm._turn_on_debug()
+
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -137,6 +142,7 @@ def get_batch_results_from_api(contents, model):
         messages = [[{"role": "user", "content": content}] for content in contents]
         responses = batch_completion(messages=messages, model=models[model])
 
+        # print(responses)
         print("End of calling LLM")
         for idx, response in enumerate(responses):
             token_numbers = {
@@ -144,7 +150,6 @@ def get_batch_results_from_api(contents, model):
                 "completion": response.usage.completion_tokens,
             }
             prediction = response.choices[0].message.content
-            print(prediction)
             predicted_solution = extract_solution_from_response(prediction)
 
             result = {
@@ -182,14 +187,14 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=11,
+        default=6,
         help="the problem name idx",
     )
     parser.add_argument(
         "--n_shots",
         type=int,
         required=False,
-        default=3,
+        default=0,
         help="number of in-context examples",
     )
 
@@ -197,7 +202,7 @@ def get_parser():
         "--n_trials",
         type=int,
         required=False,
-        default=1,
+        default=10,
         help="number of trials for each level",
     )
 
@@ -205,7 +210,7 @@ def get_parser():
         "--asy_batch_size",
         type=int,
         required=False,
-        default=1,
+        default=5,
         help="the problem name",
     )
 
@@ -243,8 +248,6 @@ if __name__ == "__main__":
             demo = example_and_solution.replace(
                 "<example_problem>", "{}".format(instance)
             ).replace("<example_solution>", json.dumps(solution))
-            # print("#" * 10)
-            # print(demo)
             demo_content += demo
             examples.append(instance)
         instance, solution = generate_instance(**configs)
@@ -284,7 +287,6 @@ if __name__ == "__main__":
             instances.append(instance)
             contents.append(content)
             examples.append(example)
-
 
             # print(len(contents))
 
@@ -344,5 +346,4 @@ if __name__ == "__main__":
         )
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
-        print(f)
         pickle.dump(results, f)
