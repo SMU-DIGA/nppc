@@ -1,19 +1,20 @@
 import os
-from openai import OpenAI
+from openai import OpenAI, AsyncOpenAI
+import asyncio
 
 
 def set_api_keys():
-    with open("api_keys/openai_api_key.txt", "r") as file:
+    with open("../api_keys/openai_api_key.txt", "r") as file:
         openai_api_key = file.read().strip()
-    with open("api_keys/deepseek_api_key.txt", "r") as file:
+    with open("../api_keys/deepseek_api_key.txt", "r") as file:
         deepseek_api_key = file.read().strip()
-    with open("./api_keys/claude_api_key.txt", "r") as file:
+    with open("../api_keys/claude_api_key.txt", "r") as file:
         claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
     os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
-    with open("./api_keys/huoshan_api_key.txt", "r") as file:
+    with open("../api_keys/huoshan_api_key.txt", "r") as file:
         huoshan_api_key = file.read().strip()
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
@@ -29,25 +30,9 @@ print("----- standard request -----")
 completion = client.chat.completions.create(
     model="deepseek-r1-250120",  # your model endpoint ID
     messages=[
-        {"role": "system", "content": "你是人工智能助手"},
         {"role": "user", "content": "常见的十字花科植物有哪些？"},
     ],
 )
 print(completion.choices[0].message.content)
 
-# Streaming:
-print("----- streaming request -----")
-stream = client.chat.completions.create(
-    model="deepseek-r1-250120",  # your model endpoint ID
-    messages=[
-        {"role": "system", "content": "你是人工智能助手"},
-        {"role": "user", "content": "常见的十字花科植物有哪些？"},
-    ],
-    stream=True,
-)
-
-for chunk in stream:
-    if not chunk.choices:
-        continue
-    print(chunk.choices[0].delta.content, end="")
-print()
+print("Done!")

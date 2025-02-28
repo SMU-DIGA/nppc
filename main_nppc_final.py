@@ -34,6 +34,10 @@ def set_api_keys():
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
     os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
+    with open("./api_keys/huoshan_api_key.txt", "r") as file:
+        huoshan_api_key = file.read().strip()
+    os.environ["ARK_API_KEY"] = huoshan_api_key
+
 
 import argparse
 
@@ -51,7 +55,7 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="deepseek-R1-1.5B",
+        default="deepseek-r1",
         help="name for LLM",
     )
     parser.add_argument(
@@ -124,7 +128,10 @@ def main(args):
     )
 
     levels = PROBLEM_LEVELS[problem_name]
-    for level in list(levels.keys()):
+    for level_idx, level in enumerate(list(levels.keys())):
+        if level_idx <= len(list(levels.keys())) - 3:
+            continue
+
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:
@@ -158,7 +165,7 @@ def main(args):
         predicted_solutions = []
         for batch_idx in range(num_batches):
             if args.verbose:
-                print("batch {}/ all batch {}".format(batch_idx, num_batches))
+                print("batch {} over all {} batches".format(batch_idx + 1, num_batches))
 
             start_idx = batch_size * batch_idx
             end_idx = min(batch_size * (batch_idx + 1), n_trials)
@@ -167,9 +174,6 @@ def main(args):
             # basically, we will
             for try_idx in range(args.max_tries):
                 outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
-
-                for output in outputs:
-                    print(output["solution"])
 
                 if outputs is None:
                     continue
@@ -186,6 +190,8 @@ def main(args):
         for idx in range(len(results[level])):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
+
+        break
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)

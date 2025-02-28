@@ -5,6 +5,9 @@ MODELS = {
         "o1-mini": "o1-mini-2024-09-12",
         "deepseek-chat": "deepseek/deepseek-chat",
         "claude": "anthropic/claude-3-sonnet-20240229",
+        "deepseek-r1": "deepseek-r1-250120",
+        "deepseek-r1-32b": "deepseek-r1-distill-qwen-32b-250120",
+        "deepseek-v3": "deepseek-v3-241226",
     },
     "offline": {
         "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",

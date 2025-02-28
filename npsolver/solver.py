@@ -5,6 +5,9 @@ from npsolver.prompt import nppc_template, example_and_solution, problem_descrip
 from npsolver import MODELS
 from huggingface_hub import snapshot_download
 from pathlib import Path
+import asyncio
+from openai import AsyncOpenAI
+import os
 
 
 # Continue with your vLLM code
@@ -79,6 +82,26 @@ class NPSolver:
                 model_name=model_name, model_dir=Path("./models")
             )
 
+        self.client = None
+
+        if model_name in ["deepseek-r1", "deepseek-v3"]:
+            self.client = AsyncOpenAI(
+                api_key=os.environ.get("ARK_API_KEY"),
+                base_url="https://ark.cn-beijing.volces.com/api/v3",
+            )
+
+    async def async_evaluate_llm(self, contents):
+        assert self.client is not None
+
+        async def call_gpt(prompt):
+            response = await self.client.chat.completions.create(
+                model=MODELS["online"][self.model_name],
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return response
+
+        return await asyncio.gather(*[call_gpt(content) for content in contents])
+
     def get_prediction(self, inputs):
         contents = []
         for idx in range(len(inputs)):
@@ -109,9 +132,12 @@ class NPSolver:
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
-            responses = batch_completion(
-                messages=messages, model=MODELS["online"][self.model_name]
-            )
+            if self.model_name in ["deepseek-r1", "deepseek-v3"]:
+                responses = asyncio.run(self.async_evaluate_llm(contents))
+            else:
+                responses = batch_completion(
+                    messages=messages, model=MODELS["online"][self.model_name]
+                )
             # print(responses)
             print("End of calling LLM")
             for idx, response in enumerate(responses):
