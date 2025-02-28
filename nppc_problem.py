@@ -13,6 +13,7 @@ problem2path = {
     "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
     "Travelling Salesman (TSP)": "tsp",        # 12
     "Dominating Set": "domninating_set",       # 13
+    "Hitting String": "hitting_string",        # 14
 }
 
 problem_levels = {
@@ -72,5 +73,8 @@ problem_levels = {
     },
     "Dominating Set": {
         1: {"num_nodes": 10, "k": 5},
+    },
+    "Hitting String": {
+        1: {"n": 5, "m": 10},
     }
 }

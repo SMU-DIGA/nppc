@@ -56,7 +56,8 @@ def verify_solution(instance, solution: str):
     return True, "Correct solution."
 
 
-# instance, solution = generate_instance(n=10, m=200)
+instance, solution = generate_instance(n=5, m=10)
+print(instance)
 # print(
 #     solution
 # )
@@ -66,7 +67,7 @@ def verify_solution(instance, solution: str):
 #
 # solution = ''.join(solution)
 #
-# print(solution)
+print(solution)
 #
 #
 # print(

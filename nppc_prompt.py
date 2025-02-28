@@ -47,4 +47,6 @@ Question: Does M contain a matching, i.e. is there a subset Q of M such that |Q|
 Question: Is there an ordering < pi(1),pi(2),...,pi(n)> of the n cities such that the value sum from i=1 to n-1 dpi(i),pi(i+1)+dpi(n),pi(1) is no more than B?""",
     "Dominating Set": """Input: n-node undirected graph G(V,E); positive integer k<=n.
 Question: Does G contain a dominating set of size at most k, i.e. a subset W of V containing at most k nodes and such that for every node u in V-W (i.e. in V but not in W) there is a node w in W such that {u,w} is an edge of G?""",
+    "Hitting String": """Input: Finite set S={s1,...,sm} each si being a string of n symbols over {0,1,*}.
+Question: Is there a binary string x=x1x2...xn of length n such that for each sj in S, sj and x agree in at least one position?""",
 }
