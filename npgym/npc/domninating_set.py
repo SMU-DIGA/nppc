@@ -16,7 +16,7 @@ def generate_instance(num_nodes: int, k: int, edge_prob: float = 0.3):
         - List of edges (pairs of vertices)
     """
 
-    instance = {"k": k, "graph": {}}
+    instance = {"K": k, "Graph": {}}
     # Ensure k is valid for the graph size
     if k > num_nodes:
         raise ValueError("k cannot be larger than n")
@@ -51,8 +51,8 @@ def generate_instance(num_nodes: int, k: int, edge_prob: float = 0.3):
             if random.random() < edge_prob:
                 edges.add((i, j))
 
-    instance["graph"]["nodes"] = nodes
-    instance["graph"]["edges"] = edges
+    instance["Graph"]["nodes"] = nodes
+    instance["Graph"]["edges"] = edges
 
     return instance, dominating_vertices
 
@@ -72,11 +72,11 @@ def verify_solution(instance, solution: set[int]):
     # Create a set of all nodes
     if not solution:
         return False, "The solution is empty."
-    if len(solution) > instance["k"]:
+    if len(solution) > instance["K"]:
         return False, "Too many nodes."
 
-    nodes = instance["graph"]["nodes"]
-    edges = instance["graph"]["edges"]
+    nodes = instance["Graph"]["nodes"]
+    edges = instance["Graph"]["edges"]
     all_nodes = set(nodes)
 
     # Get set of vertices dominated by the solution

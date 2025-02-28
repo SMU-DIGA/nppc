@@ -59,7 +59,7 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
             solution.append(idx)
             selected_sets.append(list(sets[i]))
 
-    instance = {"Universe": list(universe), "Subsets": shuffle_sets, "K": num_disjoint_sets}
+    instance = {"universe": list(universe), "subsets": shuffle_sets, "k": num_disjoint_sets}
     # print(selected_sets)
 
     return instance, solution
@@ -78,13 +78,13 @@ def verify_solution(instance, selected_sets):
         bool: True if the solution is valid, False otherwise
     """
 
-    k = instance["K"]
+    k = instance["k"]
 
     # Check if we have exactly k sets
     if len(selected_sets) != k:
         return False, "The selected subsets is not {}".format(k)
 
-    sets = instance["Subsets"]
+    sets = instance["subsets"]
     # Check if all indices are valid
     if not all(0 <= i < len(sets) for i in selected_sets):
         return False, "Some indices are invalid."

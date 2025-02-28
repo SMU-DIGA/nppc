@@ -19,7 +19,7 @@ def generate_instance(num_cities: int, target_length: int, min_distance=1, max_d
     if num_cities < 3:
         raise ValueError("Number of cities must be at least 3")
 
-    instance = {"Length": target_length}
+    instance = {"length": target_length}
 
     # Initialize distance matrix with zeros
     distances = [[0] * num_cities for _ in range(num_cities)]
@@ -81,7 +81,7 @@ def generate_instance(num_cities: int, target_length: int, min_distance=1, max_d
                 distances[i][j] = distance
                 distances[j][i] = distance
 
-    instance["Distances"] = distances
+    instance["distances"] = distances
     return instance, cities_order
 
 
@@ -100,8 +100,8 @@ def verify_solution(instance, tour):
             - error_message: String explaining why solution is invalid (if applicable)
     """
 
-    distances = instance["Distances"]
-    target_length = instance["Length"]
+    distances = instance["distances"]
+    target_length = instance["length"]
     num_cities = len(distances)
 
     # Check if tour length matches number of cities
