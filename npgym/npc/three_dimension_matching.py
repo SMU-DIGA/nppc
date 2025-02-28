@@ -80,7 +80,7 @@ def verify_solution(
 
 
 # 使用示例
-n = 4
+n = 3
 all_triples, solution = generate_instance(n)
 
 print(f"生成的3D Matching实例:")
