@@ -1,6 +1,7 @@
 # Nondeterministic Polynomial Problem Challenge
 
 
+![architecture](./assets/nppc.png)
 
 ## List of NP problems
 
