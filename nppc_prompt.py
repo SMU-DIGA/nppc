@@ -45,4 +45,6 @@ Question: Is there a positive integer x whose value is less than c and is such t
 Question: Does M contain a matching, i.e. is there a subset Q of M such that |Q|=n and for all distinct pairs of triples (u,v,w) and (x,y,z) in Q it holds that u/=x and v/=y and w/=z?""",
     "Travelling Salesman (TSP)": """Input: A set C of n cities {c1,...,cn}; for each pair of cities (ci,cj) (1<=i< j<=n) a positive integer distance di,j; a positive integer B.
 Question: Is there an ordering < pi(1),pi(2),...,pi(n)> of the n cities such that the value sum from i=1 to n-1 dpi(i),pi(i+1)+dpi(n),pi(1) is no more than B?""",
+    "Dominating Set": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Does G contain a dominating set of size at most k, i.e. a subset W of V containing at most k nodes and such that for every node u in V-W (i.e. in V but not in W) there is a node w in W such that {u,w} is an edge of G?""",
 }

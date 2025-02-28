@@ -12,6 +12,7 @@ problem2path = {
     "Quadratic Congruences": "quadratic_congruence",                # 10
     "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
     "Travelling Salesman (TSP)": "tsp",        # 12
+    "Dominating Set": "domninating_set",       # 13
 }
 
 problem_levels = {
@@ -69,4 +70,7 @@ problem_levels = {
     "Travelling Salesman (TSP)": {
         1: {"num_cities": 5, "target_length": 10},
     },
+    "Dominating Set": {
+        1: {"num_nodes": 10, "k": 5},
+    }
 }
