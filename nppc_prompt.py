@@ -50,5 +50,7 @@ Question: Does G contain a dominating set of size at most k, i.e. a subset W of 
     "Hitting String": """Input: Finite set S={s1,...,sm} each si being a string of n symbols over {0,1,*}.
 Question: Is there a binary string x=x1x2...xn of length n such that for each sj in S, sj and x agree in at least one position?""",
     "Hamiltonian Cycle": """Input: n-node graph G(V,E).
-Question: Is there a cycle in G that visits every node in V exactly once and returns to the starting node, and thus contains exactly n edges?"""
+Question: Is there a cycle in G that visits every node in V exactly once and returns to the starting node, and thus contains exactly n edges?""",
+    "Bin Packing": """Input: A finite set U of m items; for each item u in U a positive integer size s(u); positive integers B (called the bin capacity) and k<=m.
+Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each Ui (1<=i<=k) the total sum of the sizes of the items in Ui does not exceed B?""",
 }

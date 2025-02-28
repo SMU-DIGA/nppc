@@ -14,7 +14,8 @@ problem2path = {
     "Travelling Salesman (TSP)": "tsp",        # 12
     "Dominating Set": "domninating_set",       # 13
     "Hitting String": "hitting_string",        # 14
-    "Hamiltonian Cycle": "hamiltonian_cycle"   # 15
+    "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
+    "Bin Packing": "bin_packing",              # 16
 }
 
 problem_levels = {
@@ -80,5 +81,8 @@ problem_levels = {
     },
     "Hamiltonian Cycle": {
         1: {"num_nodes": 5, "directed": False},
+    },
+    "Bin Packing": {
+        1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
 }
