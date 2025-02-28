@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_cities, target_length, min_distance=1, max_distance=100):
+def generate_instance(num_cities: int, target_length: int, min_distance=1, max_distance=100):
     """
     Generate a TSP decision instance with guaranteed solution under target_length.
 
@@ -19,7 +19,7 @@ def generate_instance(num_cities, target_length, min_distance=1, max_distance=10
     if num_cities < 3:
         raise ValueError("Number of cities must be at least 3")
 
-    instance = {"length": target_length}
+    instance = {"Length": target_length}
 
     # Initialize distance matrix with zeros
     distances = [[0] * num_cities for _ in range(num_cities)]
@@ -81,7 +81,7 @@ def generate_instance(num_cities, target_length, min_distance=1, max_distance=10
                 distances[i][j] = distance
                 distances[j][i] = distance
 
-    instance["distances"] = distances
+    instance["Distances"] = distances
     return instance, cities_order
 
 
@@ -100,8 +100,8 @@ def verify_solution(instance, tour):
             - error_message: String explaining why solution is invalid (if applicable)
     """
 
-    distances = instance["distances"]
-    target_length = instance["length"]
+    distances = instance["Distances"]
+    target_length = instance["Length"]
     num_cities = len(distances)
 
     # Check if tour length matches number of cities
@@ -132,8 +132,11 @@ def verify_solution(instance, tour):
     return True, "Solution is valid"
 
 
-instance, solution = generate_instance(num_cities=10, target_length=200)
+instance, solution = generate_instance(num_cities=5, target_length=10)
 
+print(instance)
 print(solution)
 
+print(verify_solution(instance, solution))
+solution = [0, 1, 2, 3, 4]
 print(verify_solution(instance, solution))

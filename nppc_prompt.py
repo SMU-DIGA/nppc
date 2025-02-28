@@ -43,4 +43,6 @@ Question: Are there two positive integers x and y such that (a*x*x)+(b*y)=c?""",
 Question: Is there a positive integer x whose value is less than c and is such that x2==a(mod b), i.e. the remainder when x2 is divided by b is equal to a?""",
     "3-Dimensional Matching (3DM)": """Input: 3 disjoint sets X, Y, and Z each comprising exactly n elements; a set M of m triples {(xi,yi,zi):1<=i<=m} such that xi is in X, yi in Y, and zi in Z, i.e. M is a subset of XxYxZ.
 Question: Does M contain a matching, i.e. is there a subset Q of M such that |Q|=n and for all distinct pairs of triples (u,v,w) and (x,y,z) in Q it holds that u/=x and v/=y and w/=z?""",
+    "Travelling Salesman (TSP)": """Input: A set C of n cities {c1,...,cn}; for each pair of cities (ci,cj) (1<=i< j<=n) a positive integer distance di,j; a positive integer B.
+Question: Is there an ordering < pi(1),pi(2),...,pi(n)> of the n cities such that the value sum from i=1 to n-1 dpi(i),pi(i+1)+dpi(n),pi(1) is no more than B?""",
 }
