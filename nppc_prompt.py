@@ -53,4 +53,6 @@ Question: Is there a binary string x=x1x2...xn of length n such that for each sj
 Question: Is there a cycle in G that visits every node in V exactly once and returns to the starting node, and thus contains exactly n edges?""",
     "Bin Packing": """Input: A finite set U of m items; for each item u in U a positive integer size s(u); positive integers B (called the bin capacity) and k<=m.
 Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each Ui (1<=i<=k) the total sum of the sizes of the items in Ui does not exceed B?""",
+    "Exact Cover by 3-Sets (X3C)": """Input: A finite set X containing exactly 3n elements; a collection C of subsets of X each of which contains exactly 3 elements.
+Question: Does C contain an exact cover for X, i.e. a sub-collection of 3-element sets D=(D1,...,Dn) such that each element of X occurs in exactly one subset in D?""",
 }

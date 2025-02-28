@@ -16,6 +16,7 @@ problem2path = {
     "Hitting String": "hitting_string",        # 14
     "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
     "Bin Packing": "bin_packing",              # 16
+    "Exact Cover by 3-Sets (X3C)": "x3c",      # 17
 }
 
 problem_levels = {
@@ -84,5 +85,8 @@ problem_levels = {
     },
     "Bin Packing": {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
+    },
+    "Exact Cover by 3-Sets (X3C)": {
+        1: {"num_elements": 3, "num_subsets": 5},
     },
 }
