@@ -11,7 +11,6 @@ problem2path = {
     "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
     "Quadratic Congruences": "quadratic_congruence",                # 10
     "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
-
 }
 
 problem_levels = {
@@ -65,5 +64,5 @@ problem_levels = {
     },
     "3-Dimensional Matching (3DM)": {
         1: {"n": 3},
-    }
+    },
 }
