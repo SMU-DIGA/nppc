@@ -10,6 +10,7 @@ problem2path = {
     "Shortest Common Superstring": "shortest_common_superstring",   # 8
     "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
     "Quadratic Congruences": "quadratic_congruence",                # 10
+    "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
 }
 
 problem_levels = {
@@ -61,4 +62,7 @@ problem_levels = {
     "Quadratic Congruences": {
         1: {"min_value": 10, "max_value": 100},
     },
+    "3-Dimensional Matching (3DM)": {
+        1: {"n": 3},
+    }
 }

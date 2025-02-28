@@ -44,4 +44,6 @@ Question: Is there a string w of length at most k such that every string in R is
 Question: Are there two positive integers x and y such that (a*x*x)+(b*y)=c?""",
     "Quadratic Congruences": """Input: Positive integers a, b, and c.
 Question: Is there a positive integer x whose value is less than c and is such that x2==a(mod b), i.e. the remainder when x2 is divided by b is equal to a?""",
+    "3-Dimensional Matching (3DM)": """Input: 3 disjoint sets X, Y, and Z each comprising exactly n elements; a set M of m triples {(xi,yi,zi):1<=i<=m} such that xi is in X, yi in Y, and zi in Z, i.e. M is a subset of XxYxZ.
+Question: Does M contain a matching, i.e. is there a subset Q of M such that |Q|=n and for all distinct pairs of triples (u,v,w) and (x,y,z) in Q it holds that u/=x and v/=y and w/=z?"""
 }
