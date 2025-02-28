@@ -17,6 +17,11 @@ PROBLEM_LEVELS = {
         4: {"num_variables": 20, "num_clauses": 20},
         5: {"num_variables": 25, "num_clauses": 25},
         6: {"num_variables": 30, "num_clauses": 30},
+        7: {"num_variables": 40, "num_clauses": 40},
+        8: {"num_variables": 50, "num_clauses": 50},
+        9: {"num_variables": 60, "num_clauses": 60},
+        10: {"num_variables": 70, "num_clauses": 70},
+        11: {"num_variables": 80, "num_clauses": 80},
     },
     "Vertex Cover": {
         1: {"num_nodes": 4, "cover_size": 2},
