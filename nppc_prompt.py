@@ -55,4 +55,6 @@ Question: Is there a cycle in G that visits every node in V exactly once and ret
 Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each Ui (1<=i<=k) the total sum of the sizes of the items in Ui does not exceed B?""",
     "Exact Cover by 3-Sets (X3C)": """Input: A finite set X containing exactly 3n elements; a collection C of subsets of X each of which contains exactly 3 elements.
 Question: Does C contain an exact cover for X, i.e. a sub-collection of 3-element sets D=(D1,...,Dn) such that each element of X occurs in exactly one subset in D?""",
+    "Minimum Cover": """Input: A finite set S; A collection C=(C1,...,Cm) of subsets of S; a positive integer k<=m.
+Question: Does C contain a cover for S comprising at most k subsets, i.e. a collection D=(D1,...,Dt), where t<=k, each Di is a set in C, and such that every element in S belongs to at least one set in D?""",
 }

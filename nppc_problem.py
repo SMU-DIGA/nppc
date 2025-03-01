@@ -17,6 +17,7 @@ problem2path = {
     "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
     "Bin Packing": "bin_packing",              # 16
     "Exact Cover by 3-Sets (X3C)": "x3c",      # 17
+    "Minimum Cover": "minimum_cover",          # 18
 }
 
 problem_levels = {
@@ -89,4 +90,7 @@ problem_levels = {
     "Exact Cover by 3-Sets (X3C)": {
         1: {"num_elements": 3, "num_subsets": 5},
     },
+    "Minimum Cover": {
+        1: {"num_elements": 5, "num_sets": 10, "k": 3},
+    }
 }
