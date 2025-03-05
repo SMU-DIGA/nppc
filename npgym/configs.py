@@ -1,18 +1,15 @@
-problem2path = {
-    "3-Satisfiability (3-SAT)": "three_sat",   # 0
-    "Vertex Cover": "vertex_cover",            # 1
-    "Clique": "clique",                        # 2
-    "Independent Set": "independent_set",      # 3
-    "Partition": "partition",                  # 4
-    "Subset Sum": "subset_sum",                # 5
-    "Set Packing": "set_packing",              # 6
-    "Set Splitting": "set_splitting",          # 7
-    "Shortest Common Superstring": "shortest_common_superstring",   # 8
-    "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
-    "Quadratic Congruences": "quadratic_congruence",                # 10
+PROBLEM2PATH = {
+    "3-Satisfiability (3-SAT)": "three_sat",  # 0
+    "Vertex Cover": "vertex_cover",  # 1
+    "Clique": "clique",  # 2
+    "Independent Set": "independent_set",  # 3
+    "Partition": "partition",  # 4
+    "Subset Sum": "subset_sum",  # 5
+    "Set Packing": "set_packing",  # 6
+    "Set Splitting": "set_splitting",  # 7
 }
 
-problem_levels = {
+PROBLEM_LEVELS = {
     "3-Satisfiability (3-SAT)": {
         1: {"num_variables": 5, "num_clauses": 5},
         2: {"num_variables": 10, "num_clauses": 10},
@@ -20,6 +17,11 @@ problem_levels = {
         4: {"num_variables": 20, "num_clauses": 20},
         5: {"num_variables": 25, "num_clauses": 25},
         6: {"num_variables": 30, "num_clauses": 30},
+        7: {"num_variables": 40, "num_clauses": 40},
+        8: {"num_variables": 50, "num_clauses": 50},
+        9: {"num_variables": 60, "num_clauses": 60},
+        10: {"num_variables": 70, "num_clauses": 70},
+        11: {"num_variables": 80, "num_clauses": 80},
     },
     "Vertex Cover": {
         1: {"num_nodes": 4, "cover_size": 2},
@@ -52,13 +54,6 @@ problem_levels = {
     "Set Splitting": {
         1: {"num_elements": 10, "num_subsets": 4},
     },
-    "Shortest Common Superstring": {
-        1: {"n": 3, "k": 10},
-    },
-    "Quadratic Diophantine Equations": {
-        1: {"low": 1, "high": 100},
-    },
-    "Quadratic Congruences": {
-        1: {"min_value": 10, "max_value": 100},
-    },
 }
+
+PROBLEMS = list(PROBLEM_LEVELS.keys())

@@ -1,7 +1,7 @@
 import os
 
 
-npc_problems = os.listdir("../npgym/npc")
+npc_problems = os.listdir("./npgym/npc")
 
 problem_idx = 0
 for p in npc_problems:
