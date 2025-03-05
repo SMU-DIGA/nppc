@@ -1,7 +1,9 @@
 import random
 
 
-def generate_instance(num_cities: int, target_length: int, min_distance=1, max_distance=100):
+def generate_instance(
+    num_cities: int, target_length: int, min_distance=1, max_distance=100
+):
     """
     Generate a TSP decision instance with guaranteed solution under target_length.
 

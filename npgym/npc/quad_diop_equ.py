@@ -31,5 +31,3 @@ instance, solution = generate_instance(1, 100)
 print(instance)
 print(solution)
 print(verify_solution(instance, solution))
-
-

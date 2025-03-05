@@ -47,6 +47,7 @@ def verify_solution(instance, solution):
     else:
         return False, "The sum exceeds J."
 
+
 num_elements = 10
 k = 3
 instance, solution = generate_instance(num_elements=num_elements, k=k)

@@ -114,9 +114,9 @@ def verify_solution(instance, solution):
 
     return True, "Solution is valid"
 
+
 for i in range(10):
     instance, solution = generate_instance(num_nodes=10, target_leaves=3)
     # print(instance)
     print(solution)
     print(verify_solution(instance, solution))
-

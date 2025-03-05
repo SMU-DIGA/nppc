@@ -41,6 +41,6 @@ ax = plot_utils.plot_probability_of_improvement(
     pair_separator="_",
 )
 
-plt.savefig('improvement.pdf', bbox_inches="tight")
+plt.savefig("improvement.pdf", bbox_inches="tight")
 
 plt.show()

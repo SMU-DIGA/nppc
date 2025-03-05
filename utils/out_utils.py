@@ -3,6 +3,7 @@ import re
 import json
 import ast
 
+
 def clear_output(output, model_name=None):
     for token in ["<|endoftext|>", "<pad>", "<end_of_turn>"]:
         output = output.replace(token, " ")
@@ -21,7 +22,7 @@ def save_outputs(outputs, model_inputs, filepath):
     for ind in range(len(outputs)):
         output_item = {
             "output": [clear_output(o) for o in outputs[ind]],
-            "model_input": model_inputs
+            "model_input": model_inputs,
         }
         formatted_outputs.append(output_item)
 
@@ -34,12 +35,16 @@ def save_outputs(outputs, model_inputs, filepath):
 def extract_json_and_answer(text, tag_name="solution"):
     # match = re.search(r"```json\n(.*?)\n```", text, re.DOTALL)
     match = re.search(f"<{tag_name}>\\s?(.*?)\\s?</{tag_name}>", text, re.DOTALL)
-    
+
     if match:
         json_str = match.group(1)
         print("json:", json_str)
         try:
-            json_str = json_str.replace("True", "true").replace("False", "false").replace("None", "null")
+            json_str = (
+                json_str.replace("True", "true")
+                .replace("False", "false")
+                .replace("None", "null")
+            )
             data = json.loads(json_str)["solution"]
             if isinstance(data, str):
                 answer = ast.literal_eval(data)

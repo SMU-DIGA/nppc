@@ -3,8 +3,9 @@ import ast
 from utils.problem_utils import load_np_problem
 import numpy as np
 
+
 def extract_answers(json_file, instance):
-    with open(json_file, 'r') as file:
+    with open(json_file, "r") as file:
         data = json.load(file)
 
     num_corrected = 0
@@ -18,11 +19,15 @@ def extract_answers(json_file, instance):
             json_end = output_text.rfind("}")
             num_total += 1
             if json_start != -1 and json_end != -1:
-                extracted_json = json.loads(output_text[json_start:json_end+1])
+                extracted_json = json.loads(output_text[json_start : json_end + 1])
                 num_json += 1
                 if "solution" in extracted_json:
                     answer_str = extracted_json["solution"]
-                    if isinstance(answer_str, str) and answer_str.startswith("[") and answer_str.endswith("]"):
+                    if (
+                        isinstance(answer_str, str)
+                        and answer_str.startswith("[")
+                        and answer_str.endswith("]")
+                    ):
                         answer = ast.literal_eval(answer_str)
                         results = verify_solution(instance, answer)
                         num_list += 1
@@ -37,6 +42,7 @@ def extract_answers(json_file, instance):
             print("Error decoding JSON in one of the entries.")
     print(num_json, num_list, num_corrected, num_total)
     return num_corrected / num_total
+
 
 # Example usage
 files = [5]

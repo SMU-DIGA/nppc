@@ -31,7 +31,7 @@ def generate_instance(num_element: int, num_triples: int):
         ele_indices.remove(ele_indices[mid_idx])
 
         triples.append((ele_indices[0], mid_element, ele_indices[1]))
-    instance = {'n': num_element, 'triples': triples}
+    instance = {"n": num_element, "triples": triples}
 
     return instance, element_perm
 
@@ -50,11 +50,12 @@ def verify_solution(instance, solution):
             return False, "Some triple is not satisfying."
     return True, "Correct solution."
 
+
 num_element = 5
 num_triples = 3
 
 for i in range(1):
-    print("="*20)
+    print("=" * 20)
     instance, solution = generate_instance(num_element, num_triples)
     print(instance)
     print(solution)

@@ -8,7 +8,7 @@ def generate_instance(n: int, k: int):
     # 生成随机字符串 w，长度为 k
     def generate_random_string(length: int):
         """生成一个指定长度的随机字符串"""
-        return ''.join(random.choices(string.ascii_lowercase, k=length))
+        return "".join(random.choices(string.ascii_lowercase, k=length))
 
     w = generate_random_string(k)
 
@@ -33,18 +33,16 @@ def generate_instance(n: int, k: int):
                     marked[i] = True
 
         # 构建优化后的 w，只保留被标记的字符
-        optimized_w = ''.join([w[i] for i in range(len(w)) if marked[i]])
+        optimized_w = "".join([w[i] for i in range(len(w)) if marked[i]])
         return optimized_w
 
     # 优化 w
     optimized_w = optimize_w(w, R)
 
     # 返回生成的实例和优化后的解
-    instance = {
-        'strings': R,
-        'k': k
-    }
+    instance = {"strings": R, "k": k}
     return instance, optimized_w
+
 
 def verify_solution(instance, solution: str):
     """
@@ -66,6 +64,7 @@ def verify_solution(instance, solution: str):
             return False, "Some string is not the substring of the solution"
 
     return True, "Correct solution."
+
 
 # 示例用法
 n = 3

@@ -98,6 +98,7 @@ def verify_solution(instance, layout):
 
     return True, "Layout is valid"
 
+
 for i in range(1):
     instance, solution = generate_instance(num_nodes=5, bandwidth=2)
     print(instance)

@@ -2,9 +2,7 @@ import random
 from typing import List, Tuple
 
 
-def generate_instance(
-    num_nodes: int, directed: bool, edge_probability: float = 0.3
-):
+def generate_instance(num_nodes: int, directed: bool, edge_probability: float = 0.3):
     """Generate a graph instance containing a Hamiltonian cycle
 
     Args:

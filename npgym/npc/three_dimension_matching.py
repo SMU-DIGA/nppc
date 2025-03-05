@@ -46,7 +46,8 @@ def generate_instance(
 
 
 def verify_solution(
-    triples: List[Tuple[int, int, int]], matching: List[Tuple[int, int, int]]) -> bool:
+    triples: List[Tuple[int, int, int]], matching: List[Tuple[int, int, int]]
+) -> bool:
     """
     验证给定的matching是否合法
     """

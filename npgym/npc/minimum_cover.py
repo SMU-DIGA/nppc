@@ -30,11 +30,7 @@ def generate_instance(num_elements: int, num_sets: int, k: int):
             break
 
     # 返回生成的实例和有效解
-    instance = {
-        "universe": S,
-        "subsets": C,
-        "k": k
-    }
+    instance = {"universe": S, "subsets": C, "k": k}
     return instance, D_indices
 
 
@@ -56,6 +52,7 @@ def verify_solution(instance, solution):
     else:
         return False, "The solution does not cover S"
 
+
 # 示例用法
 num_elements = 5
 num_sets = 10
@@ -63,7 +60,6 @@ k = 3
 instance, solution = generate_instance(num_elements, num_sets, k)
 print("Instance:", instance)
 print("Solution:", solution)
-
 
 
 # 示例用法

@@ -1,29 +1,29 @@
 problem2path = {
-    "3-Satisfiability (3-SAT)": "three_sat",   # 0
-    "Vertex Cover": "vertex_cover",            # 1
-    "Clique": "clique",                        # 2
-    "Independent Set": "independent_set",      # 3
-    "Partition": "partition",                  # 4
-    "Subset Sum": "subset_sum",                # 5
-    "Set Packing": "set_packing",              # 6
-    "Set Splitting": "set_splitting",          # 7
-    "Shortest Common Superstring": "shortest_common_superstring",   # 8
-    "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
-    "Quadratic Congruences": "quadratic_congruence",                # 10
-    "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
-    "Travelling Salesman (TSP)": "tsp",        # 12
-    "Dominating Set": "domninating_set",       # 13
-    "Hitting String": "hitting_string",        # 14
+    "3-Satisfiability (3-SAT)": "three_sat",  # 0
+    "Vertex Cover": "vertex_cover",  # 1
+    "Clique": "clique",  # 2
+    "Independent Set": "independent_set",  # 3
+    "Partition": "partition",  # 4
+    "Subset Sum": "subset_sum",  # 5
+    "Set Packing": "set_packing",  # 6
+    "Set Splitting": "set_splitting",  # 7
+    "Shortest Common Superstring": "shortest_common_superstring",  # 8
+    "Quadratic Diophantine Equations": "quad_diop_equ",  # 9
+    "Quadratic Congruences": "quadratic_congruence",  # 10
+    "3-Dimensional Matching (3DM)": "three_dimension_matching",  # 11
+    "Travelling Salesman (TSP)": "tsp",  # 12
+    "Dominating Set": "domninating_set",  # 13
+    "Hitting String": "hitting_string",  # 14
     "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
-    "Bin Packing": "bin_packing",              # 16
-    "Exact Cover by 3-Sets (X3C)": "x3c",      # 17
-    "Minimum Cover": "minimum_cover",          # 18
-    "Graph 3-Colourability (3-COL)": "graph_three_colorability",    # 19
-    "Clustering": "clustering",                # 20
-    "Betweenness": "betweenness",              # 21
-    "Minimum Sum of Squares": "min_sum_square",# 22
-    "Bandwidth": "bandwidth",                  # 23
-    "Maximum Leaf Spanning Tree": "max_leaf_span_tree"              # 24
+    "Bin Packing": "bin_packing",  # 16
+    "Exact Cover by 3-Sets (X3C)": "x3c",  # 17
+    "Minimum Cover": "minimum_cover",  # 18
+    "Graph 3-Colourability (3-COL)": "graph_three_colorability",  # 19
+    "Clustering": "clustering",  # 20
+    "Betweenness": "betweenness",  # 21
+    "Minimum Sum of Squares": "min_sum_square",  # 22
+    "Bandwidth": "bandwidth",  # 23
+    "Maximum Leaf Spanning Tree": "max_leaf_span_tree",  # 24
 }
 
 problem_levels = {

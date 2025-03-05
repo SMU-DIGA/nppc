@@ -48,7 +48,9 @@ def set_api_keys():
     os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
     os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
+
 DeepseekR1Client = None
+
 
 def set_ark_deepseek_keys():
     global DeepseekR1Client
@@ -56,9 +58,10 @@ def set_ark_deepseek_keys():
         deepseek_r1_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = deepseek_r1_api_key
     DeepseekR1Client = AsyncOpenAI(
-        api_key = os.environ.get(deepseek_r1_api_key),
-        base_url = "https://ark.cn-beijing.volces.com/api/v3",
+        api_key=os.environ.get(deepseek_r1_api_key),
+        base_url="https://ark.cn-beijing.volces.com/api/v3",
     )
+
 
 def extract_solution_from_response(response):
     # find the json code
@@ -106,6 +109,7 @@ def evaluate_llm(content, model):
 async def async_evaluate_llm(contents, model):
     if model == "deepseek-r1":
         print("calling deepseek-r1")
+
         async def call_gpt(prompt):
             completion = await DeepseekR1Client.chat.completions.create(
                 model=models[model],
@@ -114,7 +118,9 @@ async def async_evaluate_llm(contents, model):
                 ],
             )
             return completion
+
     else:
+
         async def call_gpt(prompt):
             response = await acompletion(
                 model=models[model], messages=[{"role": "user", "content": prompt}]
@@ -122,6 +128,7 @@ async def async_evaluate_llm(contents, model):
             return response
 
     return await asyncio.gather(*[call_gpt(content) for content in contents])
+
 
 def get_results_from_api(contents, model):
     results = []
@@ -211,11 +218,10 @@ def get_parser():
 
 
 if __name__ == "__main__":
-
     args = get_parser()
     seed_everything(args.seed)
 
-    if args.model == "deepseek-r1": # 火山引擎
+    if args.model == "deepseek-r1":  # 火山引擎
         set_ark_deepseek_keys()
     else:
         set_api_keys()

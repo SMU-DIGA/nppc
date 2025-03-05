@@ -24,7 +24,6 @@ def generate_instance(num_elements: int, num_subsets: int):
     random.shuffle(indexed)
     indices, shuffled = zip(*indexed)
 
-
     set_indices = [i for i in range(len(shuffled))]
     shuffle_sets = {}
     for idx, i in enumerate(shuffled):

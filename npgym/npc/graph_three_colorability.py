@@ -98,7 +98,7 @@ def generate_instance(num_nodes: int, num_edges: int):
         final_solution.append(shuffle_solutions[i])
 
     # 返回生成的实例和有效解
-    instance = {"nodes": nodes, "edges": shuffle_edges, 'color_indices': [0, 1, 2]}
+    instance = {"nodes": nodes, "edges": shuffle_edges, "color_indices": [0, 1, 2]}
     return instance, final_solution
 
 

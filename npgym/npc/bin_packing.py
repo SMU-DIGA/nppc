@@ -1,6 +1,7 @@
 import random
 import numpy as np
 
+
 def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
     remaining = [bin_capacity] * num_bins
     mask = [False] * num_bins
@@ -28,6 +29,7 @@ def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
         exp_x = np.exp(x_shifted)
         # 归一化
         return exp_x / np.sum(exp_x)
+
     # assign items for bins
     for n_item in range(num_items):
         probs = softmax(remaining, mask)
@@ -73,7 +75,7 @@ def verify_solution(instance, solution):
     if len(solution) != len(item_weights):
         return False, "The solution is not valid."
 
-    if max(solution) > num_bins-1:
+    if max(solution) > num_bins - 1:
         return False, "No this bin."
 
     bin_weights = [0] * num_bins

@@ -1,5 +1,6 @@
 import importlib
 
+
 def load_np_problem(problem_name):
     """
     Dynamically loads a problem environment from `gym.npc` based on the problem name.
@@ -20,4 +21,6 @@ def load_np_problem(problem_name):
     except ImportError as e:
         raise ImportError(f"Could not import module '{module_name}': {e}")
     except AttributeError as e:
-        raise AttributeError(f"Module '{module_name}' does not contain the required functions: {e}")
+        raise AttributeError(
+            f"Module '{module_name}' does not contain the required functions: {e}"
+        )
