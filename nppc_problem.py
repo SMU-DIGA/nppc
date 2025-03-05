@@ -10,6 +10,20 @@ problem2path = {
     "Shortest Common Superstring": "shortest_common_superstring",   # 8
     "Quadratic Diophantine Equations": "quad_diop_equ",             # 9
     "Quadratic Congruences": "quadratic_congruence",                # 10
+    "3-Dimensional Matching (3DM)": "three_dimension_matching",     # 11
+    "Travelling Salesman (TSP)": "tsp",        # 12
+    "Dominating Set": "domninating_set",       # 13
+    "Hitting String": "hitting_string",        # 14
+    "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
+    "Bin Packing": "bin_packing",              # 16
+    "Exact Cover by 3-Sets (X3C)": "x3c",      # 17
+    "Minimum Cover": "minimum_cover",          # 18
+    "Graph 3-Colourability (3-COL)": "graph_three_colorability",    # 19
+    "Clustering": "clustering",                # 20
+    "Betweenness": "betweenness",              # 21
+    "Minimum Sum of Squares": "min_sum_square",# 22
+    "Bandwidth": "bandwidth",                  # 23
+    "Maximum Leaf Spanning Tree": "max_leaf_span_tree"              # 24
 }
 
 problem_levels = {
@@ -60,5 +74,47 @@ problem_levels = {
     },
     "Quadratic Congruences": {
         1: {"min_value": 10, "max_value": 100},
+    },
+    "3-Dimensional Matching (3DM)": {
+        1: {"n": 3},
+    },
+    "Travelling Salesman (TSP)": {
+        1: {"num_cities": 5, "target_length": 10},
+    },
+    "Dominating Set": {
+        1: {"num_nodes": 10, "k": 5},
+    },
+    "Hitting String": {
+        1: {"n": 5, "m": 10},
+    },
+    "Hamiltonian Cycle": {
+        1: {"num_nodes": 5, "directed": False},
+    },
+    "Bin Packing": {
+        1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
+    },
+    "Exact Cover by 3-Sets (X3C)": {
+        1: {"num_elements": 3, "num_subsets": 5},
+    },
+    "Minimum Cover": {
+        1: {"num_elements": 5, "num_sets": 10, "k": 3},
+    },
+    "Graph 3-Colourability (3-COL)": {
+        1: {"num_nodes": 5, "num_edges": 8},
+    },
+    "Clustering": {
+        1: {"num_elements": 6, "b": 5},
+    },
+    "Betweenness": {
+        1: {"num_element": 4, "num_triples": 3},
+    },
+    "Minimum Sum of Squares": {
+        1: {"num_elements": 10, "k": 3},
+    },
+    "Bandwidth": {
+        1: {"num_nodes": 5, "bandwidth": 2},
+    },
+    "Maximum Leaf Spanning Tree": {
+        1: {"num_nodes": 10, "target_leaves": 3},
     },
 }

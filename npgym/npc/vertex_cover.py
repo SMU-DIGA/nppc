@@ -39,11 +39,11 @@ def verify_solution(instance, cover: set):
     return True, "Correct solution."
 
 
-# num_nodes = 5
-# cover_size = 3
-# graph, solution = generate_instance(num_nodes, cover_size)
-# print("图的边:", graph)
-# print(solution)
+num_nodes = 5
+cover_size = 3
+graph, solution = generate_instance(num_nodes, cover_size)
+print(graph)
+print(solution)
 #
 # # 验证顶点覆盖
 # # cover = {2, 3, 4}

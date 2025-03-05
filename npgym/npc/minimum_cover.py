@@ -1,101 +1,71 @@
 import random
 
 
-def generate_instance(num_elements, num_sets, k):
-    """
-    Generate an instance of the decision version of Minimum Set Cover problem.
-    The instance is guaranteed to have at least one solution.
+def generate_instance(num_elements: int, num_sets: int, k: int):
+    """生成 Minimum Cover 实例和有效解"""
 
-    Args:
-        num_elements (int): Number of elements in the universe
-        num_sets (int): Number of sets to generate
-        k (int): The target number of sets for the decision problem
-        seed (int, optional): Random seed for reproducibility
+    # 生成集合 S
+    S = set(range(0, num_elements))  # 元素为 1, 2, ..., num_elements
 
-    Returns:
-        tuple: (universe, sets, k) where
-            - universe is a set of elements (represented as integers)
-            - sets is a list of sets
-            - k is the target number of sets
-    """
+    # 生成子集集合 C
+    C = {}
+    for i in range(num_sets):
+        # 随机生成一个子集
+        subset_size = random.randint(1, num_elements)  # 子集大小随机
+        subset = set(random.sample(sorted(S), subset_size))
+        C[i] = subset
 
-    # Create universe of elements
-    universe = set(range(num_elements))
+    # 确保生成的实例至少有一个有效解
+    # 随机选择一个大小为 k 的子集集合 D，确保 D 覆盖 S
+    while True:
+        # 随机选择 k 个子集的索引
+        D_indices = random.sample(list(C.keys()), k)
+        D = [C[i] for i in D_indices]
 
-    # First, generate k sets that together cover all elements
-    # This ensures at least one solution exists
-    remaining_elements = universe.copy()
-    solution_sets = []
-    elements_per_set = max(1, num_elements // k)
+        # 检查 D 是否覆盖 S
+        covered = set()
+        for subset in D:
+            covered.update(subset)
+        if covered >= S:  # 如果 D 覆盖 S
+            break
 
-    for i in range(k):
-        if i == k - 1:
-            # Last set takes all remaining elements
-            new_set = remaining_elements
-        else:
-            # Take a random subset of remaining elements
-            size = min(elements_per_set, len(remaining_elements))
-            new_set = set(random.sample(list(remaining_elements), size))
-
-        solution_sets.append(new_set)
-        remaining_elements -= new_set
-
-    # Generate additional random sets
-    all_sets = solution_sets.copy()
-    for _ in range(num_sets - k):
-        # Create a random set with size between 1 and num_elements/2
-        size = random.randint(1, max(1, num_elements // 2))
-        new_set = set(random.sample(list(universe), size))
-        all_sets.append(new_set)
-
-    # Shuffle the sets
-    random.shuffle(all_sets)
-
-    instance = {"universe": universe, "subsets": all_sets, "k": k}
-
-    return instance, solution_sets
+    # 返回生成的实例和有效解
+    instance = {
+        "universe": S,
+        "subsets": C,
+        "k": k
+    }
+    return instance, D_indices
 
 
-def verify_solution(instance, solution_indices):
-    """
-    Verify if the given solution is valid for the decision version of Minimum Set Cover.
-
-    Args:
-        universe (set): Set of all elements to be covered
-        sets (list): List of sets available to choose from
-        k (int): Maximum number of sets allowed in the solution
-        solution_indices (list): Indices of the sets chosen in the solution
-
-    Returns:
-        tuple: (is_valid, message) where
-            - is_valid is a boolean indicating if the solution is valid
-            - message is a string explaining why the solution is invalid (if applicable)
-    """
-
-    universe = instance["universe"]
+def verify_solution(instance, solution):
+    S = instance["universe"]
+    C = instance["subsets"]
     k = instance["k"]
-    sets = instance["subsets"]
-    # Check if solution uses at most k sets
-    if len(solution_indices) > k:
-        return (
-            False,
-            f"Solution uses {len(solution_indices)} sets, but only {k} are allowed",
-        )
 
-    # Check if indices are valid
-    if not all(0 <= i < len(sets) for i in solution_indices):
-        return False, "Invalid set indices in solution"
+    # 检查解的大小是否不超过 k
+    if len(solution) > k:
+        return False, "The number of subsets in the solution exceeds k"
 
-    # Check if solution covers all elements
-    covered = set().union(*[sets[i] for i in solution_indices])
-    if covered != universe:
-        missing = universe - covered
-        return False, f"Solution does not cover all elements. Missing: {missing}"
+    # 检查解是否覆盖 S
+    covered = set()
+    for i in solution:
+        covered.update(C[i])
+    if covered >= S:
+        return True, "Valid solution"
+    else:
+        return False, "The solution does not cover S"
 
-    return True, "Valid solution"
+# 示例用法
+num_elements = 5
+num_sets = 10
+k = 3
+instance, solution = generate_instance(num_elements, num_sets, k)
+print("Instance:", instance)
+print("Solution:", solution)
 
 
-instance, solution = generate_instance(num_elements=20, num_sets=30, k=5)
 
-print(instance)
-print(solution)
+# 示例用法
+is_valid = verify_solution(instance, solution)
+print("Is the solution valid?", is_valid)

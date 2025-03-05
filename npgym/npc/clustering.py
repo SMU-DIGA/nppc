@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_elements, b):
+def generate_instance(num_elements: int, b: int):
     """
     Generate a clustering instance ensuring at least one valid 3-partition exists.
 
@@ -88,11 +88,12 @@ def verify_solution(instance, partition):
     return True, "Valid solution"
 
 
-instance, solution = generate_instance(num_elements=10, b=5)
+instance, solution = generate_instance(num_elements=6, b=5)
 
 print(instance)
 print(solution)
+print(verify_solution(instance, solution))
 
-# random.shuffle(solution)
+random.shuffle(solution)
 
 print(verify_solution(instance, solution))

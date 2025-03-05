@@ -187,14 +187,14 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=6,
+        default=14,
         help="the problem name idx",
     )
     parser.add_argument(
         "--n_shots",
         type=int,
         required=False,
-        default=0,
+        default=3,
         help="number of in-context examples",
     )
 
@@ -202,7 +202,7 @@ def get_parser():
         "--n_trials",
         type=int,
         required=False,
-        default=10,
+        default=5,
         help="number of trials for each level",
     )
 

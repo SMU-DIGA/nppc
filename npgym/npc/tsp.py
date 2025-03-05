@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_cities, target_length, min_distance=1, max_distance=100):
+def generate_instance(num_cities: int, target_length: int, min_distance=1, max_distance=100):
     """
     Generate a TSP decision instance with guaranteed solution under target_length.
 
@@ -132,8 +132,11 @@ def verify_solution(instance, tour):
     return True, "Solution is valid"
 
 
-instance, solution = generate_instance(num_cities=10, target_length=200)
+instance, solution = generate_instance(num_cities=5, target_length=10)
 
+print(instance)
 print(solution)
 
+print(verify_solution(instance, solution))
+solution = [0, 1, 2, 3, 4]
 print(verify_solution(instance, solution))

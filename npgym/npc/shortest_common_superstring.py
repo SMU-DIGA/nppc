@@ -41,8 +41,8 @@ def generate_instance(n: int, k: int):
 
     # 返回生成的实例和优化后的解
     instance = {
-        'Strings': R,
-        'K': k
+        'strings': R,
+        'k': k
     }
     return instance, optimized_w
 
@@ -55,8 +55,8 @@ def verify_solution(instance, solution: str):
         bool indicating whether solution is valid
     """
     # Check if solution length is at most k
-    k = instance["K"]
-    strings = instance["Strings"]
+    k = instance["k"]
+    strings = instance["strings"]
     if len(solution) > k:
         return False, "The solution is invalid."
 
