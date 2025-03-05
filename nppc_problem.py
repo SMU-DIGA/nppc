@@ -23,6 +23,7 @@ problem2path = {
     "Betweenness": "betweenness",              # 21
     "Minimum Sum of Squares": "min_sum_square",# 22
     "Bandwidth": "bandwidth",                  # 23
+    "Maximum Leaf Spanning Tree": "max_leaf_span_tree"              # 24
 }
 
 problem_levels = {
@@ -112,5 +113,8 @@ problem_levels = {
     },
     "Bandwidth": {
         1: {"num_nodes": 5, "bandwidth": 2},
+    },
+    "Maximum Leaf Spanning Tree": {
+        1: {"num_nodes": 10, "target_leaves": 3},
     },
 }
