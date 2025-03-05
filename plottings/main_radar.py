@@ -40,4 +40,6 @@ plt.legend(loc="upper right", bbox_to_anchor=(0.1, 0.1))
 plt.title("Product Comparison", size=15)
 
 plt.tight_layout()
+plt.savefig('radar.pdf', bbox_inches="tight")
+
 plt.show()

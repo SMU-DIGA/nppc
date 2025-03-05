@@ -129,7 +129,7 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        if level_idx < len(list(levels.keys())) - 1:
+        if level_idx not in [3, 6]:
             continue
 
         env = NPEnv(problem_name=problem_name, level=level)
@@ -190,8 +190,6 @@ def main(args):
         for idx in range(len(results[level])):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
-
-        break
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)

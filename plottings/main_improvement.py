@@ -15,7 +15,6 @@ nppc_result = {
     "o1": np.random.rand(num_runs, num_tasks),
 }
 
-
 pairs = []
 
 algorithms = list(nppc_result.keys())
@@ -36,10 +35,12 @@ probabilities, probability_cis = get_interval_estimates(
     nppc_pairs, metrics.probability_of_improvement, reps=2000
 )
 
-plot_utils.plot_probability_of_improvement(
+ax = plot_utils.plot_probability_of_improvement(
     probability_estimates=probabilities,
     probability_interval_estimates=probability_cis,
     pair_separator="_",
 )
+
+plt.savefig('improvement.pdf', bbox_inches="tight")
 
 plt.show()

@@ -84,7 +84,7 @@ class NPSolver:
 
         self.client = None
 
-        if model_name in ["deepseek-r1", "deepseek-v3"]:
+        if self.is_online and model_name.startswith("deepseek"):
             self.client = AsyncOpenAI(
                 api_key=os.environ.get("ARK_API_KEY"),
                 base_url="https://ark.cn-beijing.volces.com/api/v3",
@@ -132,7 +132,7 @@ class NPSolver:
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
-            if self.model_name in ["deepseek-r1", "deepseek-v3"]:
+            if self.is_online and self.model_name.startswith("deepseek"):
                 responses = asyncio.run(self.async_evaluate_llm(contents))
             else:
                 responses = batch_completion(
