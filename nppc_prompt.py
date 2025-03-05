@@ -65,4 +65,6 @@ Question: Is there a partition of X into 3 disjoint sets - X1,X2,X3 - with which
 Question: Is there a one-to-one function, f:A->{1,2,...,n} such that for each triple (a,b,c) in C it holds that either f(a)< f(b)< f(c) or f(c)< f(b)< f(a)?""",
     "Minimum Sum of Squares": """Input: A set A of n elements; for each element a in A a positive integer size s(a); positive integers k<=n and J.
 Question: Can A be partitioned into k disjoint sets A1,...,Ak such that sum from i=1 to k ( sum from {x in Ai} s(x))2<=J?""",
+    "Bandwidth": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Is there a linear ordering of V with bandwidth at most k, i.e. a one-to-one function f:V->{1,2,...,n} such that for all edges {u,v} in G, |f(u)-f(v)|<=k?""",
 }

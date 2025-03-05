@@ -22,6 +22,7 @@ problem2path = {
     "Clustering": "clustering",                # 20
     "Betweenness": "betweenness",              # 21
     "Minimum Sum of Squares": "min_sum_square",# 22
+    "Bandwidth": "bandwidth",                  # 23
 }
 
 problem_levels = {
@@ -108,5 +109,8 @@ problem_levels = {
     },
     "Minimum Sum of Squares": {
         1: {"num_elements": 10, "k": 3},
+    },
+    "Bandwidth": {
+        1: {"num_nodes": 5, "bandwidth": 2},
     },
 }
