@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_elements, k, min_value=10, max_value=30):
+def generate_instance(num_elements: int, k: int, min_value=1, max_value=20):
     elements = []
     groups = []
     for i in range(num_elements):
@@ -47,12 +47,16 @@ def verify_solution(instance, solution):
     else:
         return False, "The sum exceeds J."
 
+num_elements = 10
+k = 3
+instance, solution = generate_instance(num_elements=num_elements, k=k)
+print(instance)
+print(solution)
+print(verify_solution(instance, solution))
 
-instance, solution = generate_instance(num_elements=50, k=10)
 
-num_elements = 50
-k = 10
 groups = []
 for i in range(num_elements):
     groups.append(random.randint(1, k))
+print(groups)
 print(verify_solution(instance, groups))

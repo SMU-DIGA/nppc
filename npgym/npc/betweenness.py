@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_element=20, num_triples=30):
+def generate_instance(num_element: int, num_triples: int):
     element_perm = list(range(num_element))
     random.shuffle(element_perm)
 
@@ -31,12 +31,17 @@ def generate_instance(num_element=20, num_triples=30):
         ele_indices.remove(ele_indices[mid_idx])
 
         triples.append((ele_indices[0], mid_element, ele_indices[1]))
+    instance = {'n': num_element, 'triples': triples}
 
-    return triples, element_perm
+    return instance, element_perm
 
 
 def verify_solution(instance, solution):
-    for triple in instance:
+    n = instance["n"]
+    triples = instance["triples"]
+    if len(solution) != n:
+        return False, "Wrong size."
+    for triple in triples:
         if (solution[triple[0]] < solution[triple[1]] < solution[triple[2]]) or (
             solution[triple[0]] > solution[triple[1]] > solution[triple[2]]
         ):
@@ -45,7 +50,14 @@ def verify_solution(instance, solution):
             return False, "Some triple is not satisfying."
     return True, "Correct solution."
 
+num_element = 5
+num_triples = 3
 
-instance, solution = generate_instance()
-random.shuffle(solution)
-print(verify_solution(instance, solution))
+for i in range(1):
+    print("="*20)
+    instance, solution = generate_instance(num_element, num_triples)
+    print(instance)
+    print(solution)
+    print(verify_solution(instance, solution))
+    random.shuffle(solution)
+    print(verify_solution(instance, solution))

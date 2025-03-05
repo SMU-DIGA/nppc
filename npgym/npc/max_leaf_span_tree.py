@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_nodes, target_leaves):
+def generate_instance(num_nodes: int, target_leaves: int):
     """
     Generate a graph instance for Maximum Leaf Spanning Tree decision problem.
     The instance will guarantee existence of a spanning tree with at least target_leaves leaves.
@@ -114,10 +114,9 @@ def verify_solution(instance, solution):
 
     return True, "Solution is valid"
 
+for i in range(10):
+    instance, solution = generate_instance(num_nodes=10, target_leaves=3)
+    # print(instance)
+    print(solution)
+    print(verify_solution(instance, solution))
 
-instance, solution = generate_instance(num_nodes=10, target_leaves=3)
-
-print(instance)
-
-
-print(verify_solution(instance, solution))

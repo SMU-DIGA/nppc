@@ -47,7 +47,7 @@ def generate_instance(num_elements, num_subsets):
     for subset in subsets:
         subsets_dict[len(subsets_dict)] = subset
 
-    instance = {"Universe": list(set(universe)), "Subsets": subsets_dict}
+    instance = {"universe": list(set(universe)), "subsets": subsets_dict}
 
     return instance, [list(partition_A), list(partition_B)]
 
@@ -56,8 +56,8 @@ def verify_solution(instance, partition):
     """ """
     partition_A = set(partition[0])
     # Check if partition only contains valid elements
-    universe = instance["Universe"]
-    subsets = instance["Subsets"]
+    universe = instance["universe"]
+    subsets = instance["subsets"]
     if not partition_A.issubset(set(universe)):
         return False, "The partition is not valid."
 

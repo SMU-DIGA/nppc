@@ -86,9 +86,9 @@ def generate_instance(num_nodes: int, num_edges: int):
     shuffle_edges = []
     for edge in edges:
         if shuffle_nodes[edge[0]] < shuffle_nodes[edge[1]]:
-            shuffle_edges.append([shuffle_nodes[edge[0]], shuffle_nodes[edge[1]]])
+            shuffle_edges.append((shuffle_nodes[edge[0]], shuffle_nodes[edge[1]]))
         else:
-            shuffle_edges.append([shuffle_nodes[edge[1]], shuffle_nodes[edge[0]]])
+            shuffle_edges.append((shuffle_nodes[edge[1]], shuffle_nodes[edge[0]]))
 
     shuffle_solutions = {}
     for i in range(num_nodes):
@@ -109,13 +109,13 @@ def verify_solution(instance, solution):
     # 检查每个边的两个节点颜色是否不同
     for u, v in edges:
         if solution[u] == solution[v]:
-            return False
-    return True
+            return False, "The two nodes of an edge have the same color"
+    return True, "Correct solution"
 
 
 # 示例用法
 
-for _ in range(100):
+for _ in range(1):
     num_nodes = 10
     num_edges = 15
     instance, solution = generate_instance(num_nodes, num_edges)

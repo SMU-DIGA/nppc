@@ -41,4 +41,32 @@ Question: Is there a string w of length at most k such that every string in R is
 Question: Are there two positive integers x and y such that (a*x*x)+(b*y)=c?""",
     "Quadratic Congruences": """Input: Positive integers a, b, and c.
 Question: Is there a positive integer x whose value is less than c and is such that x2==a(mod b), i.e. the remainder when x2 is divided by b is equal to a?""",
+    "3-Dimensional Matching (3DM)": """Input: 3 disjoint sets X, Y, and Z each comprising exactly n elements; a set M of m triples {(xi,yi,zi):1<=i<=m} such that xi is in X, yi in Y, and zi in Z, i.e. M is a subset of XxYxZ.
+Question: Does M contain a matching, i.e. is there a subset Q of M such that |Q|=n and for all distinct pairs of triples (u,v,w) and (x,y,z) in Q it holds that u/=x and v/=y and w/=z?""",
+    "Travelling Salesman (TSP)": """Input: A set C of n cities {c1,...,cn}; for each pair of cities (ci,cj) (1<=i< j<=n) a positive integer distance di,j; a positive integer B.
+Question: Is there an ordering < pi(1),pi(2),...,pi(n)> of the n cities such that the value sum from i=1 to n-1 dpi(i),pi(i+1)+dpi(n),pi(1) is no more than B?""",
+    "Dominating Set": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Does G contain a dominating set of size at most k, i.e. a subset W of V containing at most k nodes and such that for every node u in V-W (i.e. in V but not in W) there is a node w in W such that {u,w} is an edge of G?""",
+    "Hitting String": """Input: Finite set S={s1,...,sm} each si being a string of n symbols over {0,1,*}.
+Question: Is there a binary string x=x1x2...xn of length n such that for each sj in S, sj and x agree in at least one position?""",
+    "Hamiltonian Cycle": """Input: n-node graph G(V,E).
+Question: Is there a cycle in G that visits every node in V exactly once and returns to the starting node, and thus contains exactly n edges?""",
+    "Bin Packing": """Input: A finite set U of m items; for each item u in U a positive integer size s(u); positive integers B (called the bin capacity) and k<=m.
+Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each Ui (1<=i<=k) the total sum of the sizes of the items in Ui does not exceed B?""",
+    "Exact Cover by 3-Sets (X3C)": """Input: A finite set X containing exactly 3n elements; a collection C of subsets of X each of which contains exactly 3 elements.
+Question: Does C contain an exact cover for X, i.e. a sub-collection of 3-element sets D=(D1,...,Dn) such that each element of X occurs in exactly one subset in D?""",
+    "Minimum Cover": """Input: A finite set S; A collection C=(C1,...,Cm) of subsets of S; a positive integer k<=m.
+Question: Does C contain a cover for S comprising at most k subsets, i.e. a collection D=(D1,...,Dt), where t<=k, each Di is a set in C, and such that every element in S belongs to at least one set in D?""",
+    "Graph 3-Colourability (3-COL)": """Input: An n-node undirected graph G(V,E) with node set V and edge set E.
+Question: Can each node of G(V,E) be assigned exactly one of three colours - Red, Blue, Green - in such a way that no two nodes which are joined by an edge, are assigned the same colour?""",
+    "Clustering": """Input: Finite set X; for each pair of elements x and y in X, a positive integer distance d(x,y); positive integer B.
+Question: Is there a partition of X into 3 disjoint sets - X1,X2,X3 - with which: for each set Xi (1<=i<=3), for all pairs x and y in Xi it holds that d(x,y)<=B?""",
+    "Betweenness": """Input: A finite set of size n, A; a set C of ordered triples, (a,b,c), of distinct elements from A.
+Question: Is there a one-to-one function, f:A->{1,2,...,n} such that for each triple (a,b,c) in C it holds that either f(a)< f(b)< f(c) or f(c)< f(b)< f(a)?""",
+    "Minimum Sum of Squares": """Input: A set A of n elements; for each element a in A a positive integer size s(a); positive integers k<=n and J.
+Question: Can A be partitioned into k disjoint sets A1,...,Ak such that sum from i=1 to k ( sum from {x in Ai} s(x))2<=J?""",
+    "Bandwidth": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Is there a linear ordering of V with bandwidth at most k, i.e. a one-to-one function f:V->{1,2,...,n} such that for all edges {u,v} in G, |f(u)-f(v)|<=k?""",
+    "Maximum Leaf Spanning Tree": """Input: n-node undirected graph G(V,E); positive integer k<=n.
+Question: Does G have a spanning tree in which at least k nodes have degree 1.""",
 }

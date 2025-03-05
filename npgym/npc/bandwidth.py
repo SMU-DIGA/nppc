@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_nodes, bandwidth, edge_density=0.3):
+def generate_instance(num_nodes: int, bandwidth: int, edge_density=0.3):
     """
     Generate a graph instance for the Bandwidth decision problem with guaranteed solution.
 
@@ -98,9 +98,12 @@ def verify_solution(instance, layout):
 
     return True, "Layout is valid"
 
-
-instance, solution = generate_instance(num_nodes=5, bandwidth=2)
-print(solution)
+for i in range(1):
+    instance, solution = generate_instance(num_nodes=5, bandwidth=2)
+    print(instance)
+    print(solution)
+    print(verify_solution(instance, solution))
 solution = list(range(5))
 random.shuffle(solution)
+print(solution)
 print(verify_solution(instance, solution))

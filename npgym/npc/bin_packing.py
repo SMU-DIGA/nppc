@@ -1,36 +1,33 @@
 import random
 import numpy as np
 
-
-def softmax(x, mask=None):
-    """
-    计算softmax值
-
-    参数:
-    x -- 输入数组/列表
-
-    返回:
-    归一化的概率分布（softmax结果）
-    """
-    # 为了数值稳定性，减去最大值
-    x_np = np.array(x, dtype=np.float64)
-
-    if mask is not None:
-        # 将被屏蔽的位置设为非常小的值(负无穷)，这样exp后接近0
-        x_np = np.where(mask, -np.inf, x_np)
-    valid_max = np.max(x_np[x_np != -np.inf])
-    x_shifted = x_np - valid_max
-    # 计算指数
-    exp_x = np.exp(x_shifted)
-    # 归一化
-    return exp_x / np.sum(exp_x)
-
-
 def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
     remaining = [bin_capacity] * num_bins
     mask = [False] * num_bins
     num_items_for_bins = [0] * num_bins
 
+    def softmax(x, mask=None):
+        """
+        计算softmax值
+
+        参数:
+        x -- 输入数组/列表
+
+        返回:
+        归一化的概率分布（softmax结果）
+        """
+        # 为了数值稳定性，减去最大值
+        x_np = np.array(x, dtype=np.float64)
+
+        if mask is not None:
+            # 将被屏蔽的位置设为非常小的值(负无穷)，这样exp后接近0
+            x_np = np.where(mask, -np.inf, x_np)
+        valid_max = np.max(x_np[x_np != -np.inf])
+        x_shifted = x_np - valid_max
+        # 计算指数
+        exp_x = np.exp(x_shifted)
+        # 归一化
+        return exp_x / np.sum(exp_x)
     # assign items for bins
     for n_item in range(num_items):
         probs = softmax(remaining, mask)
@@ -76,6 +73,9 @@ def verify_solution(instance, solution):
     if len(solution) != len(item_weights):
         return False, "The solution is not valid."
 
+    if max(solution) > num_bins-1:
+        return False, "No this bin."
+
     bin_weights = [0] * num_bins
 
     for idx, bin_idx in enumerate(solution):
@@ -88,11 +88,12 @@ def verify_solution(instance, solution):
 
 
 # 示例用法
-num_items = 50
-bin_capacity = 30
-num_bins = 10
+num_items = 10
+bin_capacity = 20
+num_bins = 3
 instance, solution = generate_instance(num_items, bin_capacity, num_bins)
 print("Instance:", instance)
 print("Solution:", solution)
+# solution = [0, 1, 1, 2, 2, 2 , 2 , 2, 2, 3]
 result = verify_solution(instance, solution)
 print(result)
