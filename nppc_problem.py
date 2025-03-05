@@ -20,6 +20,7 @@ problem2path = {
     "Minimum Cover": "minimum_cover",          # 18
     "Graph 3-Colourability (3-COL)": "graph_three_colorability",    # 19
     "Clustering": "clustering",                # 20
+    "Betweenness": "betweenness",              # 21
 }
 
 problem_levels = {
@@ -100,5 +101,8 @@ problem_levels = {
     },
     "Clustering": {
         1: {"num_elements": 6, "b": 5},
+    },
+    "Betweenness": {
+        1: {"num_element": 4, "num_triples": 3},
     }
 }

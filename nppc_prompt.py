@@ -61,4 +61,6 @@ Question: Does C contain a cover for S comprising at most k subsets, i.e. a coll
 Question: Can each node of G(V,E) be assigned exactly one of three colours - Red, Blue, Green - in such a way that no two nodes which are joined by an edge, are assigned the same colour?""",
     "Clustering": """Input: Finite set X; for each pair of elements x and y in X, a positive integer distance d(x,y); positive integer B.
 Question: Is there a partition of X into 3 disjoint sets - X1,X2,X3 - with which: for each set Xi (1<=i<=3), for all pairs x and y in Xi it holds that d(x,y)<=B?""",
+    "Betweenness": """Input: A finite set of size n, A; a set C of ordered triples, (a,b,c), of distinct elements from A.
+Question: Is there a one-to-one function, f:A->{1,2,...,n} such that for each triple (a,b,c) in C it holds that either f(a)< f(b)< f(c) or f(c)< f(b)< f(a)?""",
 }
