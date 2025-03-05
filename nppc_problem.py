@@ -21,6 +21,7 @@ problem2path = {
     "Graph 3-Colourability (3-COL)": "graph_three_colorability",    # 19
     "Clustering": "clustering",                # 20
     "Betweenness": "betweenness",              # 21
+    "Minimum Sum of Squares": "min_sum_square",# 22
 }
 
 problem_levels = {
@@ -104,5 +105,8 @@ problem_levels = {
     },
     "Betweenness": {
         1: {"num_element": 4, "num_triples": 3},
-    }
+    },
+    "Minimum Sum of Squares": {
+        1: {"num_elements": 10, "k": 3},
+    },
 }
