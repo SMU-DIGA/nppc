@@ -57,4 +57,6 @@ Question: Can U be partitioned into k disjoint sets U1,...,Uk such that for each
 Question: Does C contain an exact cover for X, i.e. a sub-collection of 3-element sets D=(D1,...,Dn) such that each element of X occurs in exactly one subset in D?""",
     "Minimum Cover": """Input: A finite set S; A collection C=(C1,...,Cm) of subsets of S; a positive integer k<=m.
 Question: Does C contain a cover for S comprising at most k subsets, i.e. a collection D=(D1,...,Dt), where t<=k, each Di is a set in C, and such that every element in S belongs to at least one set in D?""",
+    "Graph 3-Colourability (3-COL)": """Input: An n-node undirected graph G(V,E) with node set V and edge set E.
+Question: Can each node of G(V,E) be assigned exactly one of three colours - Red, Blue, Green - in such a way that no two nodes which are joined by an edge, are assigned the same colour?""",
 }

@@ -18,6 +18,7 @@ problem2path = {
     "Bin Packing": "bin_packing",              # 16
     "Exact Cover by 3-Sets (X3C)": "x3c",      # 17
     "Minimum Cover": "minimum_cover",          # 18
+    "Graph 3-Colourability (3-COL)": "graph_three_colorability"     # 19
 }
 
 problem_levels = {
@@ -92,5 +93,8 @@ problem_levels = {
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
-    }
+    },
+    "Graph 3-Colourability (3-COL)": {
+        1: {"num_nodes": 5, "num_edges": 8},
+    },
 }

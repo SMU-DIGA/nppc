@@ -51,9 +51,9 @@ def verify_solution(instance: dict, independent_set: set):
 
 
 # 使用示例
-# edges, solution = generate_instance(5, 3)
-# print("图的边:", edges)
-# print(solution)
+edges, solution = generate_instance(5, 3)
+print(edges)
+print(solution)
 # independent_set = solution
 # is_valid, msg = verify_solution(edges, independent_set)
 # print(f"验证独立集{independent_set}:", msg)
