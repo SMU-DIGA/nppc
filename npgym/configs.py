@@ -7,6 +7,23 @@ PROBLEM2PATH = {
     "Subset Sum": "subset_sum",  # 5
     "Set Packing": "set_packing",  # 6
     "Set Splitting": "set_splitting",  # 7
+    "Shortest Common Superstring": "shortest_common_superstring",  # 8
+    "Quadratic Diophantine Equations": "quad_diop_equ",  # 9
+    "Quadratic Congruences": "quadratic_congruence",  # 10
+    "3-Dimensional Matching (3DM)": "three_dimension_matching",  # 11
+    "Travelling Salesman (TSP)": "tsp",  # 12
+    "Dominating Set": "domninating_set",  # 13
+    "Hitting String": "hitting_string",  # 14
+    "Hamiltonian Cycle": "hamiltonian_cycle",  # 15
+    "Bin Packing": "bin_packing",  # 16
+    "Exact Cover by 3-Sets (X3C)": "x3c",  # 17
+    "Minimum Cover": "minimum_cover",  # 18
+    "Graph 3-Colourability (3-COL)": "graph_three_colorability",  # 19
+    "Clustering": "clustering",  # 20
+    "Betweenness": "betweenness",  # 21
+    "Minimum Sum of Squares": "min_sum_square",  # 22
+    "Bandwidth": "bandwidth",  # 23
+    "Maximum Leaf Spanning Tree": "max_leaf_span_tree",  # 24
 }
 
 PROBLEM_LEVELS = {
@@ -17,11 +34,6 @@ PROBLEM_LEVELS = {
         4: {"num_variables": 20, "num_clauses": 20},
         5: {"num_variables": 25, "num_clauses": 25},
         6: {"num_variables": 30, "num_clauses": 30},
-        7: {"num_variables": 40, "num_clauses": 40},
-        8: {"num_variables": 50, "num_clauses": 50},
-        9: {"num_variables": 60, "num_clauses": 60},
-        10: {"num_variables": 70, "num_clauses": 70},
-        11: {"num_variables": 80, "num_clauses": 80},
     },
     "Vertex Cover": {
         1: {"num_nodes": 4, "cover_size": 2},
@@ -53,6 +65,57 @@ PROBLEM_LEVELS = {
     },
     "Set Splitting": {
         1: {"num_elements": 10, "num_subsets": 4},
+    },
+    "Shortest Common Superstring": {
+        1: {"n": 3, "k": 10},
+    },
+    "Quadratic Diophantine Equations": {
+        1: {"low": 1, "high": 100},
+    },
+    "Quadratic Congruences": {
+        1: {"min_value": 10, "max_value": 100},
+    },
+    "3-Dimensional Matching (3DM)": {
+        1: {"n": 3},
+    },
+    "Travelling Salesman (TSP)": {
+        1: {"num_cities": 5, "target_length": 10},
+    },
+    "Dominating Set": {
+        1: {"num_nodes": 10, "k": 5},
+    },
+    "Hitting String": {
+        1: {"n": 5, "m": 10},
+    },
+    "Hamiltonian Cycle": {
+        1: {"num_nodes": 5, "directed": False},
+    },
+    "Bin Packing": {
+        1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
+    },
+    "Exact Cover by 3-Sets (X3C)": {
+        1: {"num_elements": 3, "num_subsets": 5},
+    },
+    "Minimum Cover": {
+        1: {"num_elements": 5, "num_sets": 10, "k": 3},
+    },
+    "Graph 3-Colourability (3-COL)": {
+        1: {"num_nodes": 5, "num_edges": 8},
+    },
+    "Clustering": {
+        1: {"num_elements": 6, "b": 5},
+    },
+    "Betweenness": {
+        1: {"num_element": 4, "num_triples": 3},
+    },
+    "Minimum Sum of Squares": {
+        1: {"num_elements": 10, "k": 3},
+    },
+    "Bandwidth": {
+        1: {"num_nodes": 5, "bandwidth": 2},
+    },
+    "Maximum Leaf Spanning Tree": {
+        1: {"num_nodes": 10, "target_leaves": 3},
     },
 }
 
