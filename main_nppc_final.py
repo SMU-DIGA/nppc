@@ -62,7 +62,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=0,
+        default=15,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -129,14 +129,11 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        if level_idx not in [3, 6]:
-            continue
-
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:
             print("=" * 15)
-            print("level {}".format(level))
+            print("level {}: {}".format(level, levels[level]))
             print("=" * 15)
 
         # generate all the instance, examples and contents
@@ -191,11 +188,7 @@ def main(args):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
 
-    with open(osp.join(result_folder_path, saving_path), "wb") as f:
-        pickle.dump(results, f)
-
-    if args.verbose:
-        for level in results.keys():
+        if args.verbose:
             results_for_level = results[level]
 
             print(
@@ -220,10 +213,15 @@ def main(args):
                 )
             )
 
+    with open(osp.join(result_folder_path, saving_path), "wb") as f:
+        pickle.dump(results, f)
+
 
 if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
     seed_everything(args.seed)
+
+    print(args)
     main(args)
