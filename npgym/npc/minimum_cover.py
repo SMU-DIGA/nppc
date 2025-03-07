@@ -1,37 +1,39 @@
 import random
+from copy import deepcopy
 
 
 def generate_instance(num_elements: int, num_sets: int, k: int):
-    """生成 Minimum Cover 实例和有效解"""
-
     # 生成集合 S
-    S = set(range(0, num_elements))  # 元素为 1, 2, ..., num_elements
-
+    S = list(range(0, num_elements))  # 元素为 1, 2, ..., num_elements
     # 生成子集集合 C
-    C = {}
-    for i in range(num_sets):
-        # 随机生成一个子集
+    C = []
+
+    random.shuffle(S)
+    indices = list(range(1, num_elements - 2))
+    random.shuffle(indices)
+    indices = [0] + sorted(indices[: k - 1]) + [num_elements]
+    for idx in range(1, k + 1):
+        C.append(deepcopy(sorted(S[indices[idx - 1] : indices[idx]])))
+
+    for _ in range(k, num_sets):
         subset_size = random.randint(1, num_elements)  # 子集大小随机
-        subset = set(random.sample(sorted(S), subset_size))
-        C[i] = subset
+        subset = list(random.sample(sorted(S), subset_size))
+        C.append(deepcopy(subset))
 
-    # 确保生成的实例至少有一个有效解
-    # 随机选择一个大小为 k 的子集集合 D，确保 D 覆盖 S
-    while True:
-        # 随机选择 k 个子集的索引
-        D_indices = random.sample(list(C.keys()), k)
-        D = [C[i] for i in D_indices]
+    shuffle_subset = list(range(num_sets))
+    random.shuffle(shuffle_subset)
 
-        # 检查 D 是否覆盖 S
-        covered = set()
-        for subset in D:
-            covered.update(subset)
-        if covered >= S:  # 如果 D 覆盖 S
-            break
+    dict_c = {}
+    solution = []
+    for i in range(num_sets):
+        dict_c[i] = C[shuffle_subset[i]]
+        if shuffle_subset[i] < k:
+            solution.append(i)
 
     # 返回生成的实例和有效解
-    instance = {"universe": S, "subsets": C, "k": k}
-    return instance, D_indices
+    instance = {"universe": S, "subsets": dict_c, "k": k}
+
+    return instance, solution
 
 
 def verify_solution(instance, solution):
@@ -47,21 +49,12 @@ def verify_solution(instance, solution):
     covered = set()
     for i in solution:
         covered.update(C[i])
-    if covered >= S:
+    if covered >= set(S):
         return True, "Valid solution"
     else:
         return False, "The solution does not cover S"
 
 
-# 示例用法
-num_elements = 5
-num_sets = 10
-k = 3
-instance, solution = generate_instance(num_elements, num_sets, k)
-print("Instance:", instance)
-print("Solution:", solution)
-
-
-# 示例用法
+instance, solution = generate_instance(num_elements=20, num_sets=20, k=5)
 is_valid = verify_solution(instance, solution)
 print("Is the solution valid?", is_valid)
