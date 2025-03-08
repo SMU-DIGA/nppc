@@ -138,6 +138,11 @@ PROBLEM_LEVELS = {
     },
     "Bandwidth": {
         1: {"num_nodes": 5, "bandwidth": 2},
+        2: {"num_nodes": 10, "bandwidth": 3},
+        3: {"num_nodes": 10, "bandwidth": 5},
+        4: {"num_nodes": 15, "bandwidth": 3},
+        5: {"num_nodes": 15, "bandwidth": 5},
+        6: {"num_nodes": 15, "bandwidth": 7},
     },
     "Maximum Leaf Spanning Tree": {
         1: {"num_nodes": 10, "target_leaves": 3},
