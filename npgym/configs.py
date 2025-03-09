@@ -131,25 +131,13 @@ PROBLEM_LEVELS = {
         1: {"num_elements": 6, "b": 5},
     },
     "Betweenness": {
-        0: {"num_element": 5, "num_triples": 1},
-        1: {"num_element": 3, "num_triples": 1},
-        2: {"num_element": 4, "num_triples": 2},
-
-        3: {"num_element": 6, "num_triples": 3},
-        4: {"num_element": 5, "num_triples": 3},
-        5: {"num_element": 4, "num_triples": 3},
-
-        6: {"num_element": 6, "num_triples": 4},
-        7: {"num_element": 5, "num_triples": 4},
-        8: {"num_element": 4, "num_triples": 4},
-
-        9: {"num_element": 8, "num_triples": 5},
-        10: {"num_element": 6, "num_triples": 5},
-        11: {"num_element": 5, "num_triples": 5},
-
-        12: {"num_element": 8, "num_triples": 8},
-        13: {"num_element": 6, "num_triples": 8},
-        14: {"num_element": 8, "num_triples": 10},
+        0: {"num_element": 8, "num_triples": 6}, # 0
+        1: {"num_element": 3, "num_triples": 1}, # 0.8
+        2: {"num_element": 4, "num_triples": 2}, # 0.62
+        3: {"num_element": 5, "num_triples": 3}, # 0.45
+        4: {"num_element": 6, "num_triples": 4}, # 0.12
+        5: {"num_element": 7, "num_triples": 5}, # 0.05
+        6: {"num_element": 8, "num_triples": 6}, # 0
     },
     "Minimum Sum of Squares": {
         1: {"num_elements": 10, "k": 3},

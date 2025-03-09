@@ -40,22 +40,25 @@ def verify_solution(instance, solution):
     n = len(instance["elements"])
     triples = instance["triples"]
     solution_set = set(solution)
-    if len(solution_set) < n or max(solution) >= n or min(solution) < 0:
-        return False, "Not one-to-one function."
-    if len(solution) != n:
-        return False, "Wrong size."
-    for triple in triples:
-        if (solution[triple[0]] < solution[triple[1]] < solution[triple[2]]) or (
-            solution[triple[0]] > solution[triple[1]] > solution[triple[2]]
-        ):
-            continue
-        else:
-            return False, "Some triple is not satisfying."
-    return True, "Correct solution."
+    try:
+        if len(solution_set) < n or max(solution) >= n or min(solution) < 0:
+            return False, "Not one-to-one function."
+        if len(solution) != n:
+            return False, "Wrong size."
+        for triple in triples:
+            if (solution[triple[0]] < solution[triple[1]] < solution[triple[2]]) or (
+                solution[triple[0]] > solution[triple[1]] > solution[triple[2]]
+            ):
+                continue
+            else:
+                return False, "Some triple is not satisfying."
+        return True, "Correct solution."
+    except:
+        return False, "Value error"
 
 
 num_element = 4
-num_triples = 1
+num_triples = 3
 
 for i in range(1):
     print("=" * 20)
@@ -64,5 +67,5 @@ for i in range(1):
     print(solution)
     print(verify_solution(instance, solution))
     random.shuffle(solution)
-    solution = [0,0,1,2]
+    solution = [0, 0, 1, 2]
     print(verify_solution(instance, solution))
