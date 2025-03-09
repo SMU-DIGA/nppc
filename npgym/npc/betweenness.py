@@ -39,6 +39,9 @@ def generate_instance(num_element: int, num_triples: int):
 def verify_solution(instance, solution):
     n = len(instance["elements"])
     triples = instance["triples"]
+    solution_set = set(solution)
+    if len(solution_set) < n:
+        return False, "Not one-to-one function."
     if len(solution) != n:
         return False, "Wrong size."
     for triple in triples:
@@ -51,8 +54,8 @@ def verify_solution(instance, solution):
     return True, "Correct solution."
 
 
-num_element = 3
-num_triples = 10
+num_element = 4
+num_triples = 1
 
 for i in range(1):
     print("=" * 20)
@@ -61,4 +64,5 @@ for i in range(1):
     print(solution)
     print(verify_solution(instance, solution))
     random.shuffle(solution)
+    solution = [0,0,1,2]
     print(verify_solution(instance, solution))
