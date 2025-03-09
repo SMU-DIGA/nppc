@@ -55,7 +55,6 @@ print(instance)
 print(solution)
 print(verify_solution(instance, solution))
 
-
 groups = []
 for i in range(num_elements):
     groups.append(random.randint(1, k))

@@ -1,5 +1,5 @@
 import random
-from typing import List, Tuple, Set
+from typing import List
 
 
 def generate_instance(num_nodes: int, k: int, edge_prob: float = 0.3):

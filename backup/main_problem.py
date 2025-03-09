@@ -1,6 +1,5 @@
 import os
 
-
 npc_problems = os.listdir("./npgym/npc")
 
 problem_idx = 0

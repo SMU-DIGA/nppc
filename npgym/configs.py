@@ -108,7 +108,7 @@ PROBLEM_LEVELS = {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
     "Exact Cover by 3-Sets (X3C)": {
-        1: {"num_elements": 3, "num_subsets": 5},
+        1: {"num_elements": 3, "num_subsets": 6},
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
@@ -131,7 +131,11 @@ PROBLEM_LEVELS = {
         1: {"num_elements": 6, "b": 5},
     },
     "Betweenness": {
-        1: {"num_element": 4, "num_triples": 3},
+        1: {"num_element": 4, "num_triples": 4},
+        2: {"num_element": 5, "num_triples": 10},
+        3: {"num_element": 6, "num_triples": 20},
+        4: {"num_element": 7, "num_triples": 35},
+        5: {"num_element": 8, "num_triples": 56},
     },
     "Minimum Sum of Squares": {
         1: {"num_elements": 10, "k": 3},

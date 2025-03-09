@@ -13,7 +13,7 @@ def generate_instance(num_elements: int, num_sets: int, k: int):
     random.shuffle(indices)
     indices = [0] + sorted(indices[: k - 1]) + [num_elements]
     for idx in range(1, k + 1):
-        C.append(deepcopy(sorted(S[indices[idx - 1] : indices[idx]])))
+        C.append(deepcopy(sorted(S[indices[idx - 1]: indices[idx]])))
 
     for _ in range(k, num_sets):
         subset_size = random.randint(1, num_elements)  # 子集大小随机

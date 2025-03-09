@@ -4,12 +4,12 @@
 # os.chdir(script_dir)
 # print(os.getcwd())
 
-from typing import List, Set, Tuple
 import random
+from typing import List, Tuple
 
 
 def generate_instance(
-    n: int,
+        n: int,
 ):
     """
     生成3D matching实例
@@ -46,7 +46,7 @@ def generate_instance(
 
 
 def verify_solution(
-    triples: List[Tuple[int, int, int]], matching: List[Tuple[int, int, int]]
+        triples: List[Tuple[int, int, int]], matching: List[Tuple[int, int, int]]
 ) -> bool:
     """
     验证给定的matching是否合法

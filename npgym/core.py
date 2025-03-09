@@ -1,6 +1,7 @@
-import os
 import importlib
+import os
 import sys
+
 from .configs import PROBLEM_LEVELS, PROBLEM2PATH
 
 

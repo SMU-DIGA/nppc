@@ -1,15 +1,15 @@
-from typing import List, Tuple, Dict, Set
 import random
+from typing import List, Tuple, Dict
 
 
 # TODO: need revision
 def generate_instance(
-    num_vertices: int,
-    num_required_edges: int,
-    num_optional_edges: int,
-    min_weight: int,
-    max_weight: int,
-    budget: int = None,
+        num_vertices: int,
+        num_required_edges: int,
+        num_optional_edges: int,
+        min_weight: int,
+        max_weight: int,
+        budget: int = None,
 ) -> Dict:
     """
     Generate a Rural Postman Problem instance with guaranteed feasible solution.
