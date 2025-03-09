@@ -129,8 +129,8 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        # if level < 8:
-        #     continue
+        if level <= 6:
+            continue
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:

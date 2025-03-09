@@ -108,10 +108,27 @@ PROBLEM_LEVELS = {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
     "Exact Cover by 3-Sets (X3C)": {
-        1: {"num_elements": 3, "num_subsets": 5},
+        1: {"num_elements": 3, "num_subsets": 6},  # 0.8
+        2: {"num_elements": 4, "num_subsets": 8},  # 0.7
+        3: {"num_elements": 5, "num_subsets": 10},  # 0.4
+        4: {"num_elements": 7, "num_subsets": 14},  # 0.2
+        5: {"num_elements": 8, "num_subsets": 16},  # 0.167
+        6: {"num_elements": 10, "num_subsets": 20},  # 0.07
+        7: {"num_elements": 15, "num_subsets": 30},  # 0
+        8: {"num_elements": 20, "num_subsets": 40},  # 0
+        9: {"num_elements": 30, "num_subsets": 60},  # 0
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
+        2: {"num_elements": 10, "num_sets": 20, "k": 5},
+        3: {"num_elements": 10, "num_sets": 30, "k": 5},
+        4: {"num_elements": 15, "num_sets": 20, "k": 8},
+        5: {"num_elements": 15, "num_sets": 30, "k": 10},
+        6: {"num_elements": 20, "num_sets": 40, "k": 10},
+        7: {"num_elements": 30, "num_sets": 60, "k": 10},
+        8: {"num_elements": 40, "num_sets": 80, "k": 10},
+        9: {"num_elements": 50, "num_sets": 100, "k": 10},
+        10: {"num_elements": 50, "num_sets": 100, "k": 20},
     },
     "Graph 3-Colourability (3-COL)": {
         1: {"num_nodes": 5, "num_edges": 8},
@@ -131,18 +148,27 @@ PROBLEM_LEVELS = {
         1: {"num_elements": 6, "b": 5},
     },
     "Betweenness": {
-        1: {"num_element": 4, "num_triples": 3},
+        1: {"num_element": 3, "num_triples": 1},
+        2: {"num_element": 4, "num_triples": 2},
+        3: {"num_element": 5, "num_triples": 3},
+        4: {"num_element": 6, "num_triples": 4},
+        5: {"num_element": 7, "num_triples": 5},
+        6: {"num_element": 8, "num_triples": 6},
     },
     "Minimum Sum of Squares": {
         1: {"num_elements": 10, "k": 3},
     },
     "Bandwidth": {
-        1: {"num_nodes": 5, "bandwidth": 2},
-        2: {"num_nodes": 10, "bandwidth": 3},
-        3: {"num_nodes": 10, "bandwidth": 5},
-        4: {"num_nodes": 15, "bandwidth": 3},
-        5: {"num_nodes": 15, "bandwidth": 5},
-        6: {"num_nodes": 15, "bandwidth": 7},
+        1: {"num_nodes": 3, "bandwidth": 2},
+        2: {"num_nodes": 4, "bandwidth": 2},
+        3: {"num_nodes": 5, "bandwidth": 3},
+        4: {"num_nodes": 5, "bandwidth": 2},
+        5: {"num_nodes": 6, "bandwidth": 3},
+        6: {"num_nodes": 6, "bandwidth": 2},
+        7: {"num_nodes": 7, "bandwidth": 3},
+        8: {"num_nodes": 7, "bandwidth": 2},
+        9: {"num_nodes": 8, "bandwidth": 3},
+        10: {"num_nodes": 8, "bandwidth": 2},
     },
     "Maximum Leaf Spanning Tree": {
         1: {"num_nodes": 10, "target_leaves": 3},

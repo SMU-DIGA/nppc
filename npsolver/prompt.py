@@ -62,7 +62,7 @@ Question: Can each node of G(V,E) be assigned exactly one of three colours - Red
     "Clustering": """Input: Finite set X; for each pair of elements x and y in X, a positive integer distance d(x,y); positive integer B.
 Question: Is there a partition of X into 3 disjoint sets - X1,X2,X3 - with which: for each set Xi (1<=i<=3), for all pairs x and y in Xi it holds that d(x,y)<=B?""",
     "Betweenness": """Input: A finite set of size n, A; a set C of ordered triples, (a,b,c), of distinct elements from A.
-Question: Is there a one-to-one function, f:A->{1,2,...,n} such that for each triple (a,b,c) in C it holds that either f(a)< f(b)< f(c) or f(c)< f(b)< f(a)?""",
+Question: Is there a one-to-one function, f:A->{0,1,...,n-1} such that for each triple (a,b,c) in C it holds that either f(a)< f(b)< f(c) or f(c)< f(b)< f(a)?""",
     "Minimum Sum of Squares": """Input: A set A of n elements; for each element a in A a positive integer size s(a); positive integers k<=n and J.
 Question: Can A be partitioned into k disjoint sets A1,...,Ak such that sum from i=1 to k ( sum from {x in Ai} s(x))2<=J?""",
     "Bandwidth": """Input: n-node undirected graph G(V,E); positive integer k<=n.
