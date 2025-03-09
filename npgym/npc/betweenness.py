@@ -40,7 +40,7 @@ def verify_solution(instance, solution):
     n = len(instance["elements"])
     triples = instance["triples"]
     solution_set = set(solution)
-    if len(solution_set) < n:
+    if len(solution_set) < n or max(solution) >= n or min(solution) < 0:
         return False, "Not one-to-one function."
     if len(solution) != n:
         return False, "Wrong size."
