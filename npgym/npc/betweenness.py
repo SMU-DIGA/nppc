@@ -67,5 +67,10 @@ for i in range(1):
     print(solution)
     print(verify_solution(instance, solution))
     random.shuffle(solution)
+    print(verify_solution(instance, solution))
     solution = [0, 0, 1, 2]
+    print(verify_solution(instance, solution))
+    solution = [0, 1, 2, 4]
+    print(verify_solution(instance, solution))
+    solution = [0, 1, 2]
     print(verify_solution(instance, solution))

@@ -108,7 +108,15 @@ PROBLEM_LEVELS = {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
     "Exact Cover by 3-Sets (X3C)": {
-        1: {"num_elements": 3, "num_subsets": 6},
+        # 1: {"num_elements": 3, "num_subsets": 6}, # 0.8
+        # 2: {"num_elements": 4, "num_subsets": 8}, # 0.7
+        # 3: {"num_elements": 5, "num_subsets": 10}, # 0.4
+        # 4: {"num_elements": 7, "num_subsets": 14}, # 0.2
+        # 5: {"num_elements": 8, "num_subsets": 16}, # 0.167
+        # 6: {"num_elements": 10, "num_subsets": 20}, # 0.07
+        # 7: {"num_elements": 15, "num_subsets": 30}, # 0
+        # 8: {"num_elements": 20, "num_subsets": 40}, # 0
+        9: {"num_elements": 30, "num_subsets": 60}, # 0
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},

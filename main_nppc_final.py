@@ -62,7 +62,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=21,
+        default=17,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -85,7 +85,7 @@ def get_parser():
         "--batch_size",
         type=int,
         required=False,
-        default=10,
+        default=30,
         help="the problem name",
     )
 
