@@ -146,6 +146,7 @@ PROBLEM_LEVELS = {
         7: {"num_elements": 40, "b": 10},
         8: {"num_elements": 50, "b": 10},
         9: {"num_elements": 60, "b": 10},
+        10: {"num_elements": 70, "b": 10},
     },
     "Betweenness": {
         1: {"num_element": 3, "num_triples": 1},
