@@ -16,7 +16,8 @@ npgym ensures that the generated instance has at least one solution, maybe not o
 
 ## Solver Suite: npsolver
 
-npsolver is a suite which provide a unified interface 
+npsolver is a suite which provide a unified interface for both online models via API
+and offline models.
 
 ## Evaluation Suite: npeval
 

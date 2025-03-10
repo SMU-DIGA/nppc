@@ -62,7 +62,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=15,
+        default=18,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -129,6 +129,8 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
+        if level < 11:
+            continue
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:
