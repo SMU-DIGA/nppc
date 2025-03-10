@@ -1,5 +1,5 @@
 import random
-from typing import List, Set, Dict
+from typing import List, Set
 
 
 def generate_instance(n: int, m: int, k: int) -> tuple[list[set[int]], set[int]]:
@@ -50,7 +50,7 @@ def generate_instance(n: int, m: int, k: int) -> tuple[list[set[int]], set[int]]
 
 
 def verify_solution(
-    subsets: List[Set[int]], universe: Set[int], solution_indices: List[int]
+        subsets: List[Set[int]], universe: Set[int], solution_indices: List[int]
 ) -> bool:
     """
     验证给定的解是否是有效的Exact Cover解

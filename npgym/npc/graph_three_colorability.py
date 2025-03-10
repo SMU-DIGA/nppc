@@ -1,6 +1,7 @@
 import random
-import numpy as np
 from itertools import product
+
+import numpy as np
 
 
 def generate_instance(num_nodes: int, num_edges: int):
@@ -29,7 +30,7 @@ def generate_instance(num_nodes: int, num_edges: int):
     third_edge_set_number = third_chunk * first_chunk
 
     assert num_edges <= (
-        first_edge_set_number + second_edge_set_number + third_edge_set_number
+            first_edge_set_number + second_edge_set_number + third_edge_set_number
     )
     edge_number_for_sets = [0] * 3
     mask = [False] * 3
@@ -75,9 +76,9 @@ def generate_instance(num_nodes: int, num_edges: int):
     random.shuffle(combination3)
 
     edges = (
-        combination1[: edge_number_for_sets[0]]
-        + combination2[: edge_number_for_sets[1]]
-        + combination3[: edge_number_for_sets[2]]
+            combination1[: edge_number_for_sets[0]]
+            + combination2[: edge_number_for_sets[1]]
+            + combination3[: edge_number_for_sets[2]]
     )
 
     shuffle_nodes = list(range(num_nodes))

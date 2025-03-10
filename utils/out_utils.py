@@ -1,7 +1,7 @@
+import ast
+import json
 import os
 import re
-import json
-import ast
 
 
 def clear_output(output, model_name=None):

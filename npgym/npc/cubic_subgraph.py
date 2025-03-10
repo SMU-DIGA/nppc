@@ -46,9 +46,9 @@ def generate_instance(num_nodes: int, k: int, edge_prob: float = 0.3):
                 j
                 for j in cubic_vertices
                 if j != i
-                and sum(1 for edge in edges if j in edge) < 3
-                and (i, j) not in edges
-                and (j, i) not in edges
+                   and sum(1 for edge in edges if j in edge) < 3
+                   and (i, j) not in edges
+                   and (j, i) not in edges
             ]
 
             if not available:

@@ -1,5 +1,5 @@
 import random
-from typing import List, Set, Tuple
+from typing import Set
 
 
 def generate_instance(n: int, m: int):

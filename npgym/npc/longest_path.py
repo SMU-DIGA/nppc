@@ -1,6 +1,4 @@
 import random
-from typing import List, Set, Tuple, Dict
-from collections import defaultdict
 
 
 def generate_instance(num_nodes, num_length, edge_prob=0.3):

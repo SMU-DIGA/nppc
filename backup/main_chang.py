@@ -1,6 +1,5 @@
-import random
-import re
 import ast
+import re
 
 models = {
     "openai/gpt-4o": "gpt-4o-2024-08-06",

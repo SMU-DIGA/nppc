@@ -1,18 +1,19 @@
-import os
-import re
-import json
-import importlib
-import sys
 import argparse
-from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
-from nppc_problem import problem_levels, problem2path
-from utils import seed_everything
 import asyncio
-from litellm import completion, acompletion, batch_completion
-from pathlib import Path
-import pickle
+import importlib
+import json
+import os
 import os.path as osp
-import litellm
+import pickle
+import re
+import sys
+from pathlib import Path
+
+from litellm import completion, acompletion, batch_completion
+
+from nppc_problem import problem_levels, problem2path
+from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
+from utils import seed_everything
 
 # litellm._turn_on_debug()
 
@@ -240,6 +241,7 @@ if __name__ == "__main__":
     n_shots = args.n_shots
     n_trials = args.n_trials
 
+
     def create_demo_text(configs):
         demo_content = ""
         examples = []
@@ -252,6 +254,7 @@ if __name__ == "__main__":
             examples.append(instance)
         instance, solution = generate_instance(**configs)
         return demo_content, instance, examples
+
 
     result_folder_path = Path(args.result_folder)
     if not result_folder_path.exists():
