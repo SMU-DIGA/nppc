@@ -129,3 +129,4 @@ for i in range(10):
     print(instance)
     print(solution)
     print(verify_solution(instance, solution))
+
