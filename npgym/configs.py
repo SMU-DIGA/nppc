@@ -108,15 +108,15 @@ PROBLEM_LEVELS = {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
     "Exact Cover by 3-Sets (X3C)": {
-        1: {"num_elements": 3, "num_subsets": 6},  # 0.8
-        2: {"num_elements": 4, "num_subsets": 8},  # 0.7
-        3: {"num_elements": 5, "num_subsets": 10},  # 0.4
-        4: {"num_elements": 7, "num_subsets": 14},  # 0.2
-        5: {"num_elements": 8, "num_subsets": 16},  # 0.167
-        6: {"num_elements": 10, "num_subsets": 20},  # 0.07
-        7: {"num_elements": 15, "num_subsets": 30},  # 0
-        8: {"num_elements": 20, "num_subsets": 40},  # 0
-        9: {"num_elements": 30, "num_subsets": 60},  # 0
+        1: {"num_elements": 3, "num_subsets": 6},
+        2: {"num_elements": 4, "num_subsets": 8},
+        3: {"num_elements": 5, "num_subsets": 10},
+        4: {"num_elements": 7, "num_subsets": 14},
+        5: {"num_elements": 8, "num_subsets": 16},
+        6: {"num_elements": 10, "num_subsets": 20},
+        7: {"num_elements": 15, "num_subsets": 30},
+        8: {"num_elements": 20, "num_subsets": 40},
+        9: {"num_elements": 30, "num_subsets": 60},
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
@@ -125,10 +125,16 @@ PROBLEM_LEVELS = {
         4: {"num_elements": 15, "num_sets": 20, "k": 8},
         5: {"num_elements": 15, "num_sets": 30, "k": 10},
         6: {"num_elements": 20, "num_sets": 40, "k": 10},
-        7: {"num_elements": 30, "num_sets": 60, "k": 10},
-        8: {"num_elements": 40, "num_sets": 80, "k": 10},
-        9: {"num_elements": 50, "num_sets": 100, "k": 10},
-        10: {"num_elements": 50, "num_sets": 100, "k": 20},
+        7: {"num_elements": 25, "num_sets": 50, "k": 10},
+        8: {"num_elements": 30, "num_sets": 60, "k": 10},
+        9: {"num_elements": 35, "num_sets": 70, "k": 10},
+        10: {"num_elements": 40, "num_sets": 80, "k": 10},
+        11: {"num_elements": 45, "num_sets": 90, "k": 10},
+        12: {"num_elements": 50, "num_sets": 100, "k": 10},
+        13: {"num_elements": 55, "num_sets": 110, "k": 10},
+        14: {"num_elements": 60, "num_sets": 120, "k": 10},
+        15: {"num_elements": 65, "num_sets": 130, "k": 10},
+        16: {"num_elements": 70, "num_sets": 140, "k": 10},
     },
     "Graph 3-Colourability (3-COL)": {
         1: {"num_nodes": 5, "num_edges": 8},
@@ -146,6 +152,9 @@ PROBLEM_LEVELS = {
     },
     "Clustering": {
         1: {"num_elements": 6, "b": 5},
+        8: {"num_elements": 50, "b": 10},  # 0
+        9: {"num_elements": 60, "b": 10},  # 0
+        10: {"num_elements": 70, "b": 10},  # 0
     },
     "Betweenness": {
         1: {"num_element": 3, "num_triples": 1},
