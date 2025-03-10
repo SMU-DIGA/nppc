@@ -1,0 +1,3318 @@
+[
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3056
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 2112
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 2491
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2429
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 2896
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3353
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 6620
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 339,
+      "completion": 5686
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 998
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 6513
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3414
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3344
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 1376
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1408
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3540
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 5133
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1992
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 2175
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 1739
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 1249
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2984
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 1945
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 2039
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 339,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 4193
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3138
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 4647
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3904
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 1667
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3797
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 4705
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1185
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 1997
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3226
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2198
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 1579
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2637
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1831
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 2847
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 339,
+      "completion": 2761
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 521
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 2132
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 2355
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2098
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1370
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3368
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3166
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 339,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1054
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 578
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3311
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1044
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 4228
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 321,
+      "completion": 2832
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 4974
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1675
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 3342
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1300
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 1172
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2260
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 4055
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 2332
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 4811
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 345,
+      "completion": 1245
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 4979
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 1668
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 339,
+      "completion": 1544
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": []
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 317,
+      "completion": 1973
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2288
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3076
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 4082
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2712
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 6745
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 321,
+      "completion": 1510
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3467
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2298
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 327,
+      "completion": 3797
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 6696
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 2859
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 327,
+      "completion": 5945
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 339,
+      "completion": 2653
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3368
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2411
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 3271
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 2166
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 2,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 333,
+      "completion": 4573
+    }
+  }
+]

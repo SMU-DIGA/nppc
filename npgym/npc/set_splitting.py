@@ -1,6 +1,5 @@
 import random
 
-
 def generate_instance(num_elements, num_subsets):
     """
     Generate an instance of the Set Splitting decision problem.
@@ -15,6 +14,10 @@ def generate_instance(num_elements, num_subsets):
     #         - universe: list of integers representing elements
     #         - subsets: list of sets containing elements from universe
     """
+    # Constraints
+    assert isinstance(num_elements, int) and num_elements >= 2, "num_elements must be an integer ≥ 2"
+    assert isinstance(num_subsets, int) and num_subsets >= 1, "num_subsets must be an integer ≥ 1"
+    assert num_subsets <= 2**num_elements - 1, "num_subsets is too large; must be ≤ 2^num_elements - 1"
 
     # Create universe of n elements
     universe = list(range(1, num_elements + 1))
@@ -73,9 +76,9 @@ def verify_solution(instance, partition):
     return True, "Correct solution."
 
 
-instance, solution = generate_instance(num_elements=10, num_subsets=4)
+# instance, solution = generate_instance(num_elements=10, num_subsets=4)
 # universe = instance["universe"]
 # solution = set(random.sample(universe, len(universe) // 2))
-print(instance)
-print(solution)
-print(verify_solution(instance, solution))
+# print(instance)
+# print(solution)
+# print(verify_solution(instance, solution))

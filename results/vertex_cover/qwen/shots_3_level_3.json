@@ -1,0 +1,7117 @@
+[
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      3,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 3413
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 5350
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 3710
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 1868
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 3772
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 4436
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 627,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 6657
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 6024
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 5993
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 4883
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 5066
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 3827
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 591,
+      "completion": 6961
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 3658
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 579,
+      "completion": 5057
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      4,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 585,
+      "completion": 5247
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 4518
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3,
+      4
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 591,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 4610
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1,
+      5,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 5858
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 5945
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 5874
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 2451
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 5171
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 4956
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 621,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 4710
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 585,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      4,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 633,
+      "completion": 3827
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 3537
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      5,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 591,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 4509
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 2893
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      4,
+      2,
+      5,
+      1
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 585,
+      "completion": 4312
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 6655
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3,
+      5,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 579,
+      "completion": 4507
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      5,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 6201
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 591,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      5,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 4120
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 5995
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      4,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 585,
+      "completion": 6878
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 579,
+      "completion": 3112
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 5602
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 5162
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      5,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      3,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 597,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1,
+      2,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 627,
+      "completion": 3733
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 4132
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 627,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 4433
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      5,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 579,
+      "completion": 4752
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 4637
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      5,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 609,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 633,
+      "completion": 6588
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 639,
+      "completion": 4785
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      3,
+      4,
+      6,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 567,
+      "completion": 3989
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 3856
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 6285
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 585,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 6897
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 621,
+      "completion": 4949
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 579,
+      "completion": 5847
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 621,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 3900
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 615,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 597,
+      "completion": 6477
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 633,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      2,
+      3,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 585,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 609,
+      "completion": 6535
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 4584
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      0,
+      3,
+      5,
+      7
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 609,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 609,
+      "completion": 3967
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 591,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 5157
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 4388
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      3,
+      4,
+      6
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 627,
+      "completion": 4237
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 597,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 597,
+      "completion": 6905
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 6979
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 6617
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 3172
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 615,
+      "completion": 6724
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 591,
+      "completion": 4072
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 567,
+      "completion": 5210
+    }
+  },
+  {
+    "instance": {
+      "cover_size": 4,
+      "graph": {
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "edges": [
+          [
+            0,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      }
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 603,
+      "completion": 3562
+    }
+  }
+]

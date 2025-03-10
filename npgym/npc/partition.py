@@ -3,6 +3,10 @@ from typing import List, Tuple
 
 
 def generate_instance(n: int, max_value: int = 100):
+    # Constraints
+    assert isinstance(n, int) and n >= 2, "n must be an integer ≥ 2."
+    assert isinstance(max_value, int) and max_value >= 1, "max_value must be an integer ≥ 1."
+
     # 确保 n 是偶数，否则无法均分
     if n < 2:
         raise ValueError("n must be at least 2 to form a partition.")
@@ -70,3 +74,10 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
         return True, f"Valid partition with sum {sum1}"
     else:
         return False, f"Invalid partition: {sum1} ≠ {sum2}"
+    
+
+instances, partition = generate_instance(4, 100)
+print(instances)
+print(partition)
+res = verify_solution(instances, partition)
+print(res)

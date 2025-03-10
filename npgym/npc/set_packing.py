@@ -16,6 +16,13 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
     #         - List of sets representing the instance
     #         - Target k value (number of disjoint sets to find)
     """
+    # Constraints
+    assert isinstance(num_elements, int) and num_elements >= 1, "num_elements must be an integer ≥ 1."
+    assert isinstance(num_subsets, int) and num_subsets >= 1, "num_subsets must be an integer ≥ 1."
+    assert isinstance(num_disjoint_sets, int) and num_disjoint_sets >= 1, "num_disjoint_sets must be an integer ≥ 1."
+    assert num_disjoint_sets <= num_subsets, "num_disjoint_sets (K) cannot be larger than num_subsets (M)."
+    assert num_disjoint_sets <= num_elements, "num_disjoint_sets (K) cannot exceed num_elements (N), as each set requires unique elements."
+
     if num_disjoint_sets > num_subsets:
         raise ValueError("k cannot be larger than m")
     # if k * n < n:  # Ensure we can create k disjoint sets

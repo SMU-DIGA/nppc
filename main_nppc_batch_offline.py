@@ -2,9 +2,6 @@ import os
 import re
 import json
 import argparse
-import multiprocessing as mp
-import multiprocessing.pool
-import multiprocessing.resource_tracker as rt
 import logging
 import ast
 import gc
@@ -40,6 +37,7 @@ MODELS = {
     "deepseek-chat": "deepseek/deepseek-chat",
     # Offline models
     "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "qwen": "Qwen/QwQ-32B"
 }
 
 def get_instance_generator(problem_name: str, np_gym_folder: str = "./npgym/npc") -> Tuple[Callable, Callable]:
@@ -97,23 +95,23 @@ def save_outputs(results: List[Dict], file_path: Path) -> None:
         if file_path.exists():
             with file_path.open() as f:
                 try:
-                    existing_data = json.load(f)  # Load existing JSON
+                    existing_data = json.load(f)
                 except json.JSONDecodeError:
                     logger.warning(f"Warning: {file_path} is empty or corrupted. Overwriting with fresh results.")
-                    existing_data = []  # Reset if file is corrupted
+                    existing_data = []
         
         def convert_sets(obj):
             """Ensure JSON compatibility by converting sets, tuples, and None values."""
             if isinstance(obj, set):
-                return list(obj)  # Convert sets to lists
+                return list(obj)
             elif isinstance(obj, tuple):
-                return list(obj)  # Convert tuples to lists
+                return list(obj)
             elif isinstance(obj, dict):
-                return {str(k): convert_sets(v) for k, v in obj.items()}  # Ensure valid dict
+                return {str(k): convert_sets(v) for k, v in obj.items()}
             elif isinstance(obj, list):
-                return [convert_sets(x) for x in obj]  # Recursively process lists
+                return [convert_sets(x) for x in obj]
             elif obj is None:
-                return "null"  # JSON cannot handle None, replace with "null"
+                return "null"
             return obj
         existing_data += [convert_sets(r) for r in results]
         with file_path.open("w", encoding="utf-8") as f:
@@ -127,7 +125,7 @@ def save_outputs(results: List[Dict], file_path: Path) -> None:
         logger.error(f"Failed to save results: {str(e)}")
 
 
-def initialize_offline_model(model_name: str, model_dir: Path = Path("offline_models")) -> Tuple[LLM, SamplingParams]:
+def initialize_offline_model(model_name: str, model_dir: Path = Path("/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/offline_models")) -> Tuple[LLM, SamplingParams]:
     model_dir.mkdir(parents=True, exist_ok=True)
     model_path = model_dir / model_name
     
@@ -156,7 +154,7 @@ def initialize_offline_model(model_name: str, model_dir: Path = Path("offline_mo
     ), SamplingParams(
         temperature=0.6,
         top_p=0.95,
-        max_tokens=7500
+        max_tokens=32768
     )
 
 
@@ -172,6 +170,7 @@ def process_batch(batch_instances: List[str],
         if llm is not None and sampling_params is not None:
             offline_mode = True
             responses = llm.generate(batch_contents, sampling_params)
+            print(responses)
         else:
             messages = [[{"role": "user", "content": content}] for content in batch_contents]
             responses = batch_completion(messages=messages, model=MODELS[model_name])
@@ -273,9 +272,9 @@ def configure_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="NPCC Evaluation Pipeline")
     parser.add_argument("--seed", type=int, default=42,
                        help="Random seed for reproducibility")
-    parser.add_argument("--model", choices=list(MODELS), default="deepseek",
+    parser.add_argument("--model", choices=list(MODELS), default="qwen",
                        help="Model to evaluate")
-    parser.add_argument("--problem", type=int, default=0,
+    parser.add_argument("-p", "--problem", type=int, default=0,
                        help="Problem index to evaluate")
     parser.add_argument("-l", "--level", type=int, default=1,
                        help="Level of problem to evaluate")
@@ -312,7 +311,7 @@ def main():
         llm, sampling_params = initialize_offline_model(args.model)
     else: 
         llm, sampling_params = None, None
-    # set seed after initializing offline model
+    # set seed after initializing offline model to avoid mp worker conflict
     seed_everything(args.seed)
     
     # Generate evaluation instances

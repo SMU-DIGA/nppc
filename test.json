@@ -1,0 +1,21 @@
+[
+  {
+    "level": "1",
+    "accuracy": "0.78",
+    "num rollouts": "100"
+  },
+  "level",
+  "accuracy",
+  "num rollouts",
+  "level",
+  "accuracy",
+  "num rollouts",
+  "level",
+  "accuracy",
+  "num rollouts",
+  {
+    "level": 1,
+    "accuracy": 0.78,
+    "num rollouts": 100
+  }
+]

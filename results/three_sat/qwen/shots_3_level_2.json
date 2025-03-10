@@ -1,0 +1,7975 @@
+[
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          -2,
+          4
+        ],
+        [
+          -9,
+          4,
+          7
+        ],
+        [
+          1,
+          3,
+          -7
+        ],
+        [
+          -4,
+          6,
+          -2
+        ],
+        [
+          -6,
+          10,
+          -5
+        ],
+        [
+          7,
+          -2,
+          -5
+        ],
+        [
+          -1,
+          -4,
+          5
+        ],
+        [
+          2,
+          7,
+          -5
+        ],
+        [
+          6,
+          -10,
+          -4
+        ],
+        [
+          9,
+          4,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 5016
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          6,
+          4
+        ],
+        [
+          -3,
+          5,
+          10
+        ],
+        [
+          -10,
+          -7,
+          6
+        ],
+        [
+          -2,
+          -1,
+          10
+        ],
+        [
+          10,
+          2,
+          7
+        ],
+        [
+          9,
+          1,
+          -2
+        ],
+        [
+          5,
+          -7,
+          3
+        ],
+        [
+          9,
+          -3,
+          -2
+        ],
+        [
+          6,
+          3,
+          -1
+        ],
+        [
+          -2,
+          -6,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4209
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          9,
+          10
+        ],
+        [
+          -8,
+          -9,
+          -10
+        ],
+        [
+          -2,
+          -6,
+          1
+        ],
+        [
+          -1,
+          -2,
+          -10
+        ],
+        [
+          -1,
+          6,
+          2
+        ],
+        [
+          4,
+          -9,
+          3
+        ],
+        [
+          -7,
+          4,
+          2
+        ],
+        [
+          -7,
+          -10,
+          -8
+        ],
+        [
+          -7,
+          -6,
+          -2
+        ],
+        [
+          9,
+          -8,
+          -3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 5487
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          -7,
+          8
+        ],
+        [
+          -1,
+          3,
+          7
+        ],
+        [
+          8,
+          -5,
+          -7
+        ],
+        [
+          -5,
+          4,
+          -1
+        ],
+        [
+          -1,
+          -8,
+          -3
+        ],
+        [
+          2,
+          -10,
+          4
+        ],
+        [
+          -10,
+          4,
+          1
+        ],
+        [
+          -5,
+          4,
+          6
+        ],
+        [
+          3,
+          -5,
+          -8
+        ],
+        [
+          -8,
+          2,
+          9
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4748
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          5,
+          -2
+        ],
+        [
+          2,
+          9,
+          3
+        ],
+        [
+          -10,
+          4,
+          6
+        ],
+        [
+          5,
+          1,
+          -2
+        ],
+        [
+          1,
+          -6,
+          3
+        ],
+        [
+          -9,
+          -7,
+          -1
+        ],
+        [
+          -9,
+          1,
+          -6
+        ],
+        [
+          -1,
+          5,
+          -6
+        ],
+        [
+          4,
+          10,
+          -2
+        ],
+        [
+          4,
+          -3,
+          -9
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          -8,
+          6
+        ],
+        [
+          4,
+          1,
+          10
+        ],
+        [
+          5,
+          2,
+          10
+        ],
+        [
+          -1,
+          2,
+          -5
+        ],
+        [
+          2,
+          7,
+          6
+        ],
+        [
+          10,
+          -9,
+          2
+        ],
+        [
+          -1,
+          7,
+          10
+        ],
+        [
+          -2,
+          6,
+          9
+        ],
+        [
+          7,
+          -6,
+          10
+        ],
+        [
+          -4,
+          7,
+          9
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          8,
+          3
+        ],
+        [
+          -2,
+          -4,
+          -5
+        ],
+        [
+          1,
+          -10,
+          4
+        ],
+        [
+          7,
+          4,
+          -10
+        ],
+        [
+          3,
+          -1,
+          -2
+        ],
+        [
+          -3,
+          -9,
+          -8
+        ],
+        [
+          8,
+          3,
+          10
+        ],
+        [
+          10,
+          -9,
+          7
+        ],
+        [
+          8,
+          5,
+          4
+        ],
+        [
+          -4,
+          5,
+          -8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4672
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          2,
+          7
+        ],
+        [
+          -9,
+          -8,
+          7
+        ],
+        [
+          7,
+          -1,
+          10
+        ],
+        [
+          -5,
+          7,
+          -9
+        ],
+        [
+          -5,
+          7,
+          8
+        ],
+        [
+          -7,
+          -3,
+          8
+        ],
+        [
+          10,
+          -1,
+          2
+        ],
+        [
+          3,
+          1,
+          -5
+        ],
+        [
+          8,
+          6,
+          9
+        ],
+        [
+          -5,
+          -2,
+          8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4816
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          2,
+          4
+        ],
+        [
+          3,
+          -2,
+          -10
+        ],
+        [
+          -5,
+          -7,
+          9
+        ],
+        [
+          10,
+          -4,
+          -2
+        ],
+        [
+          6,
+          -9,
+          7
+        ],
+        [
+          -1,
+          7,
+          8
+        ],
+        [
+          -8,
+          3,
+          7
+        ],
+        [
+          8,
+          -7,
+          -5
+        ],
+        [
+          5,
+          8,
+          4
+        ],
+        [
+          -1,
+          8,
+          -6
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          9,
+          4
+        ],
+        [
+          -1,
+          2,
+          -5
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          6,
+          8,
+          -5
+        ],
+        [
+          -2,
+          -4,
+          -6
+        ],
+        [
+          4,
+          -8,
+          -5
+        ],
+        [
+          4,
+          -5,
+          10
+        ],
+        [
+          1,
+          -9,
+          -3
+        ],
+        [
+          -1,
+          9,
+          -5
+        ],
+        [
+          1,
+          5,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 877,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -10,
+          1,
+          3
+        ],
+        [
+          2,
+          -4,
+          10
+        ],
+        [
+          8,
+          10,
+          -5
+        ],
+        [
+          -10,
+          2,
+          -4
+        ],
+        [
+          -3,
+          -4,
+          -10
+        ],
+        [
+          7,
+          -8,
+          -9
+        ],
+        [
+          -5,
+          -10,
+          8
+        ],
+        [
+          -10,
+          -4,
+          -7
+        ],
+        [
+          -5,
+          -3,
+          2
+        ],
+        [
+          -10,
+          5,
+          -8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 885,
+      "completion": 4956
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          2,
+          -4
+        ],
+        [
+          3,
+          -8,
+          9
+        ],
+        [
+          8,
+          2,
+          -10
+        ],
+        [
+          -6,
+          10,
+          -2
+        ],
+        [
+          7,
+          -8,
+          5
+        ],
+        [
+          2,
+          -6,
+          -5
+        ],
+        [
+          7,
+          9,
+          -1
+        ],
+        [
+          4,
+          9,
+          6
+        ],
+        [
+          -1,
+          4,
+          5
+        ],
+        [
+          -8,
+          -2,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 3750
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          9,
+          5,
+          -7
+        ],
+        [
+          8,
+          -9,
+          -3
+        ],
+        [
+          2,
+          5,
+          -7
+        ],
+        [
+          -5,
+          10,
+          8
+        ],
+        [
+          9,
+          8,
+          6
+        ],
+        [
+          6,
+          -4,
+          -9
+        ],
+        [
+          7,
+          1,
+          6
+        ],
+        [
+          -3,
+          8,
+          -1
+        ],
+        [
+          -8,
+          -2,
+          10
+        ],
+        [
+          3,
+          2,
+          8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4189
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -2,
+          7,
+          -10
+        ],
+        [
+          5,
+          -1,
+          -9
+        ],
+        [
+          5,
+          -6,
+          -9
+        ],
+        [
+          -4,
+          -9,
+          -7
+        ],
+        [
+          2,
+          -7,
+          -4
+        ],
+        [
+          4,
+          8,
+          -5
+        ],
+        [
+          -8,
+          5,
+          -3
+        ],
+        [
+          6,
+          5,
+          7
+        ],
+        [
+          -4,
+          -7,
+          8
+        ],
+        [
+          10,
+          -6,
+          5
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6187
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          2,
+          -1
+        ],
+        [
+          -10,
+          6,
+          3
+        ],
+        [
+          -7,
+          3,
+          4
+        ],
+        [
+          3,
+          5,
+          -8
+        ],
+        [
+          -8,
+          2,
+          3
+        ],
+        [
+          2,
+          -7,
+          1
+        ],
+        [
+          6,
+          -5,
+          -7
+        ],
+        [
+          -8,
+          -1,
+          6
+        ],
+        [
+          -5,
+          -7,
+          -2
+        ],
+        [
+          -5,
+          -8,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 877,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          6,
+          -4
+        ],
+        [
+          4,
+          6,
+          -2
+        ],
+        [
+          -1,
+          -7,
+          5
+        ],
+        [
+          -2,
+          4,
+          -1
+        ],
+        [
+          -3,
+          -4,
+          -2
+        ],
+        [
+          6,
+          -3,
+          -1
+        ],
+        [
+          -9,
+          -5,
+          -3
+        ],
+        [
+          1,
+          -6,
+          -4
+        ],
+        [
+          5,
+          -1,
+          -3
+        ],
+        [
+          -8,
+          10,
+          -6
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 877,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          -2,
+          -9
+        ],
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          -9,
+          -7,
+          2
+        ],
+        [
+          8,
+          4,
+          7
+        ],
+        [
+          7,
+          2,
+          -6
+        ],
+        [
+          5,
+          -6,
+          -3
+        ],
+        [
+          -2,
+          10,
+          -7
+        ],
+        [
+          -9,
+          1,
+          6
+        ],
+        [
+          7,
+          1,
+          -5
+        ],
+        [
+          -10,
+          9,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          5,
+          -9
+        ],
+        [
+          1,
+          -3,
+          -9
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          6,
+          3,
+          -10
+        ],
+        [
+          -1,
+          -3,
+          9
+        ],
+        [
+          8,
+          7,
+          10
+        ],
+        [
+          4,
+          9,
+          -2
+        ],
+        [
+          -5,
+          -8,
+          10
+        ],
+        [
+          -10,
+          1,
+          -9
+        ],
+        [
+          3,
+          -5,
+          -9
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 3477
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -7,
+          1,
+          8
+        ],
+        [
+          10,
+          -7,
+          9
+        ],
+        [
+          1,
+          6,
+          -3
+        ],
+        [
+          7,
+          2,
+          4
+        ],
+        [
+          9,
+          2,
+          -7
+        ],
+        [
+          -4,
+          -6,
+          3
+        ],
+        [
+          9,
+          10,
+          -4
+        ],
+        [
+          4,
+          -2,
+          -3
+        ],
+        [
+          -10,
+          3,
+          2
+        ],
+        [
+          10,
+          -8,
+          6
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          1,
+          -9
+        ],
+        [
+          2,
+          -9,
+          7
+        ],
+        [
+          10,
+          -4,
+          -6
+        ],
+        [
+          -8,
+          -2,
+          -6
+        ],
+        [
+          -4,
+          8,
+          9
+        ],
+        [
+          5,
+          -7,
+          9
+        ],
+        [
+          2,
+          6,
+          10
+        ],
+        [
+          -10,
+          -3,
+          6
+        ],
+        [
+          -5,
+          7,
+          3
+        ],
+        [
+          6,
+          3,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 3819
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -2,
+          5,
+          -10
+        ],
+        [
+          -10,
+          -7,
+          3
+        ],
+        [
+          -10,
+          3,
+          8
+        ],
+        [
+          4,
+          -8,
+          -5
+        ],
+        [
+          5,
+          8,
+          4
+        ],
+        [
+          -5,
+          -7,
+          -9
+        ],
+        [
+          5,
+          -1,
+          -8
+        ],
+        [
+          5,
+          2,
+          3
+        ],
+        [
+          -9,
+          -3,
+          7
+        ],
+        [
+          8,
+          -6,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 5411
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          10,
+          -1
+        ],
+        [
+          -3,
+          -8,
+          -9
+        ],
+        [
+          5,
+          -4,
+          -3
+        ],
+        [
+          -5,
+          -4,
+          -10
+        ],
+        [
+          -7,
+          8,
+          2
+        ],
+        [
+          -10,
+          -9,
+          1
+        ],
+        [
+          -7,
+          1,
+          6
+        ],
+        [
+          -3,
+          -2,
+          6
+        ],
+        [
+          8,
+          1,
+          7
+        ],
+        [
+          1,
+          -6,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 3615
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -3,
+          2,
+          -8
+        ],
+        [
+          -4,
+          1,
+          10
+        ],
+        [
+          9,
+          -7,
+          -8
+        ],
+        [
+          -4,
+          5,
+          -6
+        ],
+        [
+          5,
+          2,
+          -6
+        ],
+        [
+          -8,
+          7,
+          6
+        ],
+        [
+          -6,
+          9,
+          -5
+        ],
+        [
+          7,
+          -3,
+          -5
+        ],
+        [
+          6,
+          5,
+          -9
+        ],
+        [
+          3,
+          -8,
+          6
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 3734
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          3,
+          2
+        ],
+        [
+          7,
+          1,
+          3
+        ],
+        [
+          8,
+          2,
+          3
+        ],
+        [
+          -5,
+          -4,
+          2
+        ],
+        [
+          9,
+          7,
+          2
+        ],
+        [
+          -4,
+          -5,
+          -8
+        ],
+        [
+          2,
+          -8,
+          3
+        ],
+        [
+          6,
+          10,
+          -2
+        ],
+        [
+          -3,
+          -10,
+          -6
+        ],
+        [
+          -3,
+          4,
+          8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 4398
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          6,
+          2
+        ],
+        [
+          -3,
+          9,
+          10
+        ],
+        [
+          -9,
+          1,
+          -2
+        ],
+        [
+          3,
+          6,
+          -4
+        ],
+        [
+          -5,
+          4,
+          -10
+        ],
+        [
+          -9,
+          3,
+          -10
+        ],
+        [
+          1,
+          -2,
+          10
+        ],
+        [
+          10,
+          7,
+          1
+        ],
+        [
+          8,
+          4,
+          -7
+        ],
+        [
+          1,
+          3,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 3855
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          4,
+          8
+        ],
+        [
+          -4,
+          3,
+          2
+        ],
+        [
+          -10,
+          7,
+          -4
+        ],
+        [
+          -10,
+          6,
+          -4
+        ],
+        [
+          9,
+          8,
+          -10
+        ],
+        [
+          -2,
+          -7,
+          8
+        ],
+        [
+          1,
+          10,
+          5
+        ],
+        [
+          9,
+          -1,
+          -2
+        ],
+        [
+          5,
+          -6,
+          7
+        ],
+        [
+          1,
+          9,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 3975
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -3,
+          -4,
+          -7
+        ],
+        [
+          3,
+          -6,
+          -8
+        ],
+        [
+          10,
+          9,
+          -3
+        ],
+        [
+          3,
+          7,
+          5
+        ],
+        [
+          -10,
+          5,
+          8
+        ],
+        [
+          -2,
+          7,
+          5
+        ],
+        [
+          10,
+          -4,
+          -1
+        ],
+        [
+          -9,
+          -7,
+          -3
+        ],
+        [
+          4,
+          1,
+          -8
+        ],
+        [
+          7,
+          -4,
+          -10
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4222
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -5,
+          8,
+          4
+        ],
+        [
+          -4,
+          5,
+          9
+        ],
+        [
+          8,
+          -6,
+          5
+        ],
+        [
+          7,
+          -6,
+          3
+        ],
+        [
+          2,
+          6,
+          -8
+        ],
+        [
+          4,
+          -9,
+          -5
+        ],
+        [
+          -10,
+          -4,
+          -9
+        ],
+        [
+          1,
+          2,
+          -7
+        ],
+        [
+          3,
+          1,
+          10
+        ],
+        [
+          4,
+          -5,
+          -6
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 4207
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          10,
+          5
+        ],
+        [
+          -5,
+          8,
+          9
+        ],
+        [
+          5,
+          -4,
+          2
+        ],
+        [
+          5,
+          3,
+          -1
+        ],
+        [
+          3,
+          -7,
+          9
+        ],
+        [
+          2,
+          3,
+          -9
+        ],
+        [
+          -1,
+          5,
+          7
+        ],
+        [
+          6,
+          5,
+          -1
+        ],
+        [
+          1,
+          -2,
+          8
+        ],
+        [
+          9,
+          5,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4257
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          -2,
+          -8
+        ],
+        [
+          -1,
+          -9,
+          4
+        ],
+        [
+          -6,
+          -9,
+          8
+        ],
+        [
+          -2,
+          9,
+          -8
+        ],
+        [
+          -9,
+          7,
+          -8
+        ],
+        [
+          5,
+          -1,
+          -7
+        ],
+        [
+          4,
+          2,
+          -1
+        ],
+        [
+          9,
+          -1,
+          2
+        ],
+        [
+          7,
+          3,
+          9
+        ],
+        [
+          7,
+          -8,
+          -10
+        ]
+      ]
+    },
+    "solution": [
+      "false",
+      "true",
+      "false",
+      "true",
+      "false",
+      "false",
+      "true",
+      "false",
+      "true",
+      "false"
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4227
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          -7,
+          10
+        ],
+        [
+          -6,
+          -3,
+          5
+        ],
+        [
+          -1,
+          -7,
+          -10
+        ],
+        [
+          -2,
+          -1,
+          -8
+        ],
+        [
+          -7,
+          -8,
+          -4
+        ],
+        [
+          -3,
+          9,
+          5
+        ],
+        [
+          10,
+          -6,
+          -4
+        ],
+        [
+          9,
+          4,
+          7
+        ],
+        [
+          1,
+          9,
+          3
+        ],
+        [
+          1,
+          6,
+          7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 3477
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          -9,
+          7
+        ],
+        [
+          4,
+          -5,
+          10
+        ],
+        [
+          -6,
+          2,
+          4
+        ],
+        [
+          -7,
+          -1,
+          -2
+        ],
+        [
+          8,
+          -4,
+          6
+        ],
+        [
+          4,
+          -10,
+          -2
+        ],
+        [
+          7,
+          4,
+          6
+        ],
+        [
+          9,
+          6,
+          5
+        ],
+        [
+          8,
+          -2,
+          10
+        ],
+        [
+          -6,
+          -7,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6773
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          9,
+          6
+        ],
+        [
+          -8,
+          -3,
+          6
+        ],
+        [
+          -3,
+          -9,
+          -1
+        ],
+        [
+          -1,
+          -7,
+          -3
+        ],
+        [
+          1,
+          -4,
+          8
+        ],
+        [
+          8,
+          -1,
+          -9
+        ],
+        [
+          -9,
+          5,
+          -10
+        ],
+        [
+          -2,
+          -10,
+          3
+        ],
+        [
+          -6,
+          5,
+          7
+        ],
+        [
+          8,
+          -4,
+          -9
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4860
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -7,
+          -6,
+          -2
+        ],
+        [
+          -4,
+          -8,
+          5
+        ],
+        [
+          9,
+          -1,
+          -3
+        ],
+        [
+          -10,
+          3,
+          -7
+        ],
+        [
+          10,
+          4,
+          7
+        ],
+        [
+          -3,
+          -2,
+          6
+        ],
+        [
+          4,
+          2,
+          6
+        ],
+        [
+          1,
+          -5,
+          8
+        ],
+        [
+          -9,
+          7,
+          -10
+        ],
+        [
+          -10,
+          -5,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 3982
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          -6,
+          -5
+        ],
+        [
+          3,
+          -7,
+          -8
+        ],
+        [
+          2,
+          6,
+          -10
+        ],
+        [
+          1,
+          -5,
+          -7
+        ],
+        [
+          10,
+          -9,
+          3
+        ],
+        [
+          3,
+          5,
+          -9
+        ],
+        [
+          2,
+          3,
+          7
+        ],
+        [
+          8,
+          -2,
+          6
+        ],
+        [
+          -10,
+          -4,
+          8
+        ],
+        [
+          1,
+          7,
+          6
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 880,
+      "completion": 7312
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          5,
+          -8
+        ],
+        [
+          7,
+          -5,
+          -10
+        ],
+        [
+          -10,
+          9,
+          -3
+        ],
+        [
+          8,
+          5,
+          -2
+        ],
+        [
+          3,
+          -5,
+          4
+        ],
+        [
+          7,
+          2,
+          -8
+        ],
+        [
+          -9,
+          10,
+          -7
+        ],
+        [
+          -9,
+          2,
+          -10
+        ],
+        [
+          3,
+          1,
+          -7
+        ],
+        [
+          -1,
+          -2,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 3859
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          2,
+          10,
+          -3
+        ],
+        [
+          6,
+          8,
+          4
+        ],
+        [
+          2,
+          -8,
+          -9
+        ],
+        [
+          -5,
+          1,
+          -2
+        ],
+        [
+          -3,
+          4,
+          10
+        ],
+        [
+          -8,
+          -4,
+          -7
+        ],
+        [
+          -7,
+          10,
+          1
+        ],
+        [
+          -7,
+          1,
+          -4
+        ],
+        [
+          10,
+          2,
+          -3
+        ],
+        [
+          4,
+          8,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 5319
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          6,
+          -2,
+          -4
+        ],
+        [
+          6,
+          -3,
+          7
+        ],
+        [
+          -10,
+          7,
+          -9
+        ],
+        [
+          9,
+          -3,
+          -8
+        ],
+        [
+          6,
+          -8,
+          1
+        ],
+        [
+          3,
+          4,
+          7
+        ],
+        [
+          -7,
+          -8,
+          -9
+        ],
+        [
+          4,
+          -5,
+          1
+        ],
+        [
+          -3,
+          -8,
+          9
+        ],
+        [
+          9,
+          -6,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 877,
+      "completion": 7499
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          -10,
+          -6
+        ],
+        [
+          4,
+          10,
+          -1
+        ],
+        [
+          6,
+          -5,
+          -9
+        ],
+        [
+          -7,
+          -1,
+          -5
+        ],
+        [
+          3,
+          6,
+          4
+        ],
+        [
+          3,
+          5,
+          -7
+        ],
+        [
+          2,
+          10,
+          7
+        ],
+        [
+          -8,
+          6,
+          1
+        ],
+        [
+          -6,
+          2,
+          -7
+        ],
+        [
+          8,
+          5,
+          -6
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 4581
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          -1,
+          7
+        ],
+        [
+          3,
+          5,
+          -2
+        ],
+        [
+          6,
+          3,
+          -1
+        ],
+        [
+          -7,
+          -2,
+          9
+        ],
+        [
+          2,
+          -3,
+          4
+        ],
+        [
+          1,
+          -6,
+          2
+        ],
+        [
+          -2,
+          -4,
+          -7
+        ],
+        [
+          -6,
+          10,
+          -5
+        ],
+        [
+          -3,
+          2,
+          -1
+        ],
+        [
+          6,
+          4,
+          -3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4121
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          5,
+          -2,
+          4
+        ],
+        [
+          5,
+          4,
+          -9
+        ],
+        [
+          -4,
+          -8,
+          7
+        ],
+        [
+          10,
+          2,
+          -1
+        ],
+        [
+          -7,
+          10,
+          -6
+        ],
+        [
+          1,
+          -2,
+          -10
+        ],
+        [
+          1,
+          7,
+          5
+        ],
+        [
+          2,
+          -9,
+          3
+        ],
+        [
+          -2,
+          9,
+          4
+        ],
+        [
+          10,
+          -2,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 880,
+      "completion": 4828
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          1,
+          10
+        ],
+        [
+          3,
+          -6,
+          10
+        ],
+        [
+          1,
+          -6,
+          7
+        ],
+        [
+          10,
+          2,
+          -8
+        ],
+        [
+          -8,
+          3,
+          6
+        ],
+        [
+          -2,
+          -10,
+          4
+        ],
+        [
+          1,
+          4,
+          10
+        ],
+        [
+          3,
+          -10,
+          1
+        ],
+        [
+          6,
+          4,
+          -7
+        ],
+        [
+          -10,
+          -6,
+          2
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 883,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          6,
+          -4
+        ],
+        [
+          -8,
+          -6,
+          -10
+        ],
+        [
+          -1,
+          7,
+          -10
+        ],
+        [
+          1,
+          6,
+          -10
+        ],
+        [
+          4,
+          9,
+          -10
+        ],
+        [
+          -3,
+          -5,
+          2
+        ],
+        [
+          -6,
+          -8,
+          2
+        ],
+        [
+          -2,
+          -1,
+          -7
+        ],
+        [
+          5,
+          10,
+          -6
+        ],
+        [
+          -6,
+          -8,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4788
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          9,
+          6,
+          4
+        ],
+        [
+          -8,
+          -5,
+          2
+        ],
+        [
+          10,
+          -1,
+          -4
+        ],
+        [
+          -4,
+          6,
+          -7
+        ],
+        [
+          5,
+          3,
+          -1
+        ],
+        [
+          -2,
+          -8,
+          -10
+        ],
+        [
+          -1,
+          4,
+          3
+        ],
+        [
+          -2,
+          -5,
+          10
+        ],
+        [
+          -4,
+          8,
+          3
+        ],
+        [
+          -2,
+          -1,
+          -8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6280
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -5,
+          -10,
+          -8
+        ],
+        [
+          5,
+          -8,
+          -7
+        ],
+        [
+          5,
+          -7,
+          -3
+        ],
+        [
+          9,
+          4,
+          1
+        ],
+        [
+          9,
+          8,
+          6
+        ],
+        [
+          -3,
+          -1,
+          6
+        ],
+        [
+          -1,
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -10,
+          -5
+        ],
+        [
+          -10,
+          -7,
+          -6
+        ],
+        [
+          -4,
+          6,
+          9
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 4348
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          -4,
+          1
+        ],
+        [
+          10,
+          -4,
+          3
+        ],
+        [
+          -1,
+          -10,
+          -3
+        ],
+        [
+          9,
+          6,
+          -2
+        ],
+        [
+          -6,
+          -5,
+          10
+        ],
+        [
+          8,
+          -6,
+          -3
+        ],
+        [
+          -7,
+          -5,
+          9
+        ],
+        [
+          -1,
+          7,
+          -10
+        ],
+        [
+          -10,
+          2,
+          -8
+        ],
+        [
+          -4,
+          -6,
+          9
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 5867
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          -7,
+          8
+        ],
+        [
+          8,
+          -7,
+          6
+        ],
+        [
+          10,
+          -4,
+          -3
+        ],
+        [
+          5,
+          -1,
+          -6
+        ],
+        [
+          -6,
+          -3,
+          -7
+        ],
+        [
+          6,
+          -8,
+          1
+        ],
+        [
+          3,
+          -1,
+          -2
+        ],
+        [
+          7,
+          9,
+          -5
+        ],
+        [
+          2,
+          -1,
+          -7
+        ],
+        [
+          -6,
+          1,
+          -7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 877,
+      "completion": 5724
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          5,
+          7,
+          -8
+        ],
+        [
+          9,
+          7,
+          3
+        ],
+        [
+          -6,
+          3,
+          8
+        ],
+        [
+          8,
+          -5,
+          -4
+        ],
+        [
+          2,
+          -10,
+          -6
+        ],
+        [
+          7,
+          -9,
+          10
+        ],
+        [
+          -5,
+          -2,
+          -7
+        ],
+        [
+          -2,
+          -8,
+          3
+        ],
+        [
+          4,
+          -3,
+          1
+        ],
+        [
+          4,
+          -3,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4553
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -3,
+          2,
+          9
+        ],
+        [
+          7,
+          5,
+          10
+        ],
+        [
+          1,
+          -3,
+          5
+        ],
+        [
+          -1,
+          -7,
+          6
+        ],
+        [
+          5,
+          6,
+          1
+        ],
+        [
+          -5,
+          -8,
+          2
+        ],
+        [
+          8,
+          -6,
+          -5
+        ],
+        [
+          8,
+          4,
+          -7
+        ],
+        [
+          9,
+          3,
+          -2
+        ],
+        [
+          -3,
+          -9,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 6002
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          -7,
+          2
+        ],
+        [
+          8,
+          10,
+          3
+        ],
+        [
+          -6,
+          3,
+          -5
+        ],
+        [
+          -7,
+          -1,
+          3
+        ],
+        [
+          4,
+          -10,
+          -5
+        ],
+        [
+          -8,
+          -3,
+          9
+        ],
+        [
+          10,
+          5,
+          9
+        ],
+        [
+          8,
+          5,
+          4
+        ],
+        [
+          10,
+          2,
+          1
+        ],
+        [
+          2,
+          8,
+          10
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          8,
+          5
+        ],
+        [
+          -7,
+          10,
+          -1
+        ],
+        [
+          9,
+          -8,
+          -6
+        ],
+        [
+          -5,
+          2,
+          -8
+        ],
+        [
+          -9,
+          -3,
+          6
+        ],
+        [
+          4,
+          5,
+          7
+        ],
+        [
+          -10,
+          5,
+          -8
+        ],
+        [
+          -10,
+          -2,
+          8
+        ],
+        [
+          -9,
+          -5,
+          -7
+        ],
+        [
+          4,
+          -6,
+          7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          -3,
+          -9
+        ],
+        [
+          10,
+          7,
+          9
+        ],
+        [
+          -7,
+          1,
+          -9
+        ],
+        [
+          -6,
+          -9,
+          -4
+        ],
+        [
+          -4,
+          -6,
+          5
+        ],
+        [
+          -9,
+          -5,
+          3
+        ],
+        [
+          5,
+          -8,
+          6
+        ],
+        [
+          -8,
+          6,
+          -4
+        ],
+        [
+          -1,
+          -4,
+          -9
+        ],
+        [
+          -10,
+          9,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 6220
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          7,
+          -2,
+          -5
+        ],
+        [
+          -1,
+          5,
+          -7
+        ],
+        [
+          7,
+          -2,
+          -9
+        ],
+        [
+          8,
+          -4,
+          9
+        ],
+        [
+          -7,
+          5,
+          -3
+        ],
+        [
+          -8,
+          -6,
+          4
+        ],
+        [
+          -2,
+          -10,
+          -8
+        ],
+        [
+          2,
+          5,
+          4
+        ],
+        [
+          -8,
+          -1,
+          2
+        ],
+        [
+          -6,
+          -10,
+          -7
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          2,
+          7
+        ],
+        [
+          -7,
+          -8,
+          -10
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          -3,
+          -7,
+          6
+        ],
+        [
+          8,
+          -2,
+          -7
+        ],
+        [
+          -5,
+          6,
+          -1
+        ],
+        [
+          7,
+          4,
+          8
+        ],
+        [
+          -3,
+          -9,
+          1
+        ],
+        [
+          8,
+          3,
+          -2
+        ],
+        [
+          -6,
+          5,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 877,
+      "completion": 4183
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          1,
+          -2
+        ],
+        [
+          -9,
+          10,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          9
+        ],
+        [
+          6,
+          9,
+          -8
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          -9,
+          -10,
+          -6
+        ],
+        [
+          -8,
+          3,
+          -7
+        ],
+        [
+          -4,
+          2,
+          -7
+        ],
+        [
+          -6,
+          -2,
+          -7
+        ],
+        [
+          8,
+          -10,
+          -3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6052
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          7,
+          4,
+          5
+        ],
+        [
+          8,
+          3,
+          -9
+        ],
+        [
+          -9,
+          -6,
+          4
+        ],
+        [
+          6,
+          -3,
+          9
+        ],
+        [
+          9,
+          8,
+          7
+        ],
+        [
+          -1,
+          9,
+          -2
+        ],
+        [
+          -3,
+          1,
+          -9
+        ],
+        [
+          -5,
+          10,
+          -3
+        ],
+        [
+          4,
+          9,
+          -1
+        ],
+        [
+          10,
+          -9,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4130
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -4,
+          6,
+          10
+        ],
+        [
+          -3,
+          -2,
+          10
+        ],
+        [
+          1,
+          -7,
+          -5
+        ],
+        [
+          10,
+          5,
+          1
+        ],
+        [
+          3,
+          -1,
+          -10
+        ],
+        [
+          10,
+          -5,
+          8
+        ],
+        [
+          -9,
+          -4,
+          3
+        ],
+        [
+          -9,
+          10,
+          7
+        ],
+        [
+          4,
+          10,
+          6
+        ],
+        [
+          -5,
+          -4,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 884,
+      "completion": 4826
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          9,
+          -6
+        ],
+        [
+          1,
+          -5,
+          -4
+        ],
+        [
+          -3,
+          -9,
+          -1
+        ],
+        [
+          7,
+          -2,
+          -4
+        ],
+        [
+          -1,
+          -8,
+          -6
+        ],
+        [
+          -1,
+          -3,
+          5
+        ],
+        [
+          7,
+          10,
+          8
+        ],
+        [
+          -1,
+          -7,
+          -2
+        ],
+        [
+          2,
+          6,
+          -10
+        ],
+        [
+          5,
+          -8,
+          7
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 5916
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          2,
+          -1,
+          9
+        ],
+        [
+          4,
+          -6,
+          10
+        ],
+        [
+          3,
+          -10,
+          -4
+        ],
+        [
+          -3,
+          1,
+          -8
+        ],
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          3,
+          -4,
+          -2
+        ],
+        [
+          6,
+          8,
+          -9
+        ],
+        [
+          10,
+          -6,
+          -9
+        ],
+        [
+          6,
+          4,
+          9
+        ],
+        [
+          3,
+          6,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6307
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          2,
+          -1,
+          -9
+        ],
+        [
+          -9,
+          5,
+          8
+        ],
+        [
+          4,
+          -5,
+          3
+        ],
+        [
+          -6,
+          -9,
+          -1
+        ],
+        [
+          -8,
+          3,
+          9
+        ],
+        [
+          -1,
+          -4,
+          8
+        ],
+        [
+          -6,
+          4,
+          1
+        ],
+        [
+          -8,
+          10,
+          -1
+        ],
+        [
+          -9,
+          5,
+          10
+        ],
+        [
+          6,
+          -2,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 5091
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          -5,
+          -4
+        ],
+        [
+          -3,
+          6,
+          2
+        ],
+        [
+          2,
+          -8,
+          9
+        ],
+        [
+          -10,
+          -3,
+          -7
+        ],
+        [
+          -3,
+          -10,
+          -9
+        ],
+        [
+          3,
+          -5,
+          10
+        ],
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          -3,
+          -4,
+          7
+        ],
+        [
+          -3,
+          -6,
+          8
+        ],
+        [
+          -7,
+          -3,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          7,
+          -9,
+          10
+        ],
+        [
+          4,
+          -8,
+          7
+        ],
+        [
+          -3,
+          -5,
+          -8
+        ],
+        [
+          5,
+          -9,
+          -7
+        ],
+        [
+          -1,
+          9,
+          -2
+        ],
+        [
+          -6,
+          -7,
+          10
+        ],
+        [
+          7,
+          5,
+          9
+        ],
+        [
+          7,
+          -4,
+          10
+        ],
+        [
+          9,
+          10,
+          8
+        ],
+        [
+          -7,
+          3,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 880,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          7,
+          2
+        ],
+        [
+          -4,
+          6,
+          2
+        ],
+        [
+          -10,
+          -9,
+          5
+        ],
+        [
+          -8,
+          10,
+          -1
+        ],
+        [
+          -1,
+          -9,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          1
+        ],
+        [
+          7,
+          -6,
+          10
+        ],
+        [
+          -9,
+          1,
+          2
+        ],
+        [
+          -6,
+          5,
+          4
+        ],
+        [
+          -10,
+          1,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 5544
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          8,
+          -9
+        ],
+        [
+          -5,
+          -2,
+          7
+        ],
+        [
+          7,
+          -6,
+          1
+        ],
+        [
+          -2,
+          -7,
+          6
+        ],
+        [
+          6,
+          -10,
+          4
+        ],
+        [
+          -4,
+          -8,
+          10
+        ],
+        [
+          -4,
+          10,
+          -9
+        ],
+        [
+          2,
+          -10,
+          -9
+        ],
+        [
+          9,
+          1,
+          8
+        ],
+        [
+          -10,
+          5,
+          -8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 4252
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          -2,
+          10
+        ],
+        [
+          -1,
+          4,
+          7
+        ],
+        [
+          10,
+          -5,
+          3
+        ],
+        [
+          -8,
+          6,
+          9
+        ],
+        [
+          4,
+          7,
+          6
+        ],
+        [
+          -8,
+          -3,
+          9
+        ],
+        [
+          4,
+          -9,
+          -7
+        ],
+        [
+          -3,
+          8,
+          -1
+        ],
+        [
+          8,
+          3,
+          6
+        ],
+        [
+          -9,
+          -1,
+          -7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 5576
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          1,
+          -7
+        ],
+        [
+          10,
+          9,
+          -3
+        ],
+        [
+          6,
+          -9,
+          8
+        ],
+        [
+          -10,
+          -5,
+          8
+        ],
+        [
+          -7,
+          -10,
+          2
+        ],
+        [
+          4,
+          6,
+          9
+        ],
+        [
+          5,
+          8,
+          -6
+        ],
+        [
+          -3,
+          -10,
+          1
+        ],
+        [
+          2,
+          -4,
+          -3
+        ],
+        [
+          -2,
+          -10,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 6101
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          -3,
+          -9
+        ],
+        [
+          6,
+          10,
+          8
+        ],
+        [
+          -9,
+          8,
+          3
+        ],
+        [
+          9,
+          10,
+          -5
+        ],
+        [
+          2,
+          8,
+          5
+        ],
+        [
+          -3,
+          -5,
+          1
+        ],
+        [
+          5,
+          8,
+          1
+        ],
+        [
+          -1,
+          -7,
+          5
+        ],
+        [
+          4,
+          -7,
+          -9
+        ],
+        [
+          7,
+          -10,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 880,
+      "completion": 5386
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          2,
+          8,
+          -9
+        ],
+        [
+          -6,
+          -1,
+          -3
+        ],
+        [
+          3,
+          -2,
+          5
+        ],
+        [
+          -1,
+          -4,
+          2
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          -8,
+          -1,
+          6
+        ],
+        [
+          -1,
+          5,
+          7
+        ],
+        [
+          3,
+          -4,
+          -5
+        ],
+        [
+          -4,
+          -7,
+          -8
+        ],
+        [
+          8,
+          2,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 876,
+      "completion": 6504
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          4,
+          2,
+          -10
+        ],
+        [
+          3,
+          -5,
+          -2
+        ],
+        [
+          1,
+          -8,
+          3
+        ],
+        [
+          -4,
+          3,
+          -8
+        ],
+        [
+          -1,
+          -6,
+          3
+        ],
+        [
+          4,
+          -6,
+          -9
+        ],
+        [
+          7,
+          -6,
+          3
+        ],
+        [
+          8,
+          -9,
+          -5
+        ],
+        [
+          9,
+          6,
+          10
+        ],
+        [
+          -10,
+          -9,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 4157
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          2,
+          -7
+        ],
+        [
+          10,
+          5,
+          -6
+        ],
+        [
+          -2,
+          -9,
+          -10
+        ],
+        [
+          1,
+          -4,
+          -2
+        ],
+        [
+          1,
+          -7,
+          8
+        ],
+        [
+          -6,
+          -4,
+          2
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          -1,
+          5,
+          -10
+        ],
+        [
+          -4,
+          -9,
+          2
+        ],
+        [
+          -4,
+          10,
+          -9
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          6,
+          10,
+          9
+        ],
+        [
+          6,
+          4,
+          9
+        ],
+        [
+          -8,
+          -10,
+          7
+        ],
+        [
+          10,
+          -1,
+          3
+        ],
+        [
+          -4,
+          10,
+          6
+        ],
+        [
+          -9,
+          -10,
+          3
+        ],
+        [
+          6,
+          3,
+          -9
+        ],
+        [
+          -4,
+          5,
+          -9
+        ],
+        [
+          -2,
+          6,
+          -8
+        ],
+        [
+          10,
+          -5,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 882,
+      "completion": 4183
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          5,
+          -9,
+          1
+        ],
+        [
+          -9,
+          4,
+          3
+        ],
+        [
+          -10,
+          9,
+          -2
+        ],
+        [
+          -5,
+          7,
+          -3
+        ],
+        [
+          8,
+          -1,
+          7
+        ],
+        [
+          -9,
+          7,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -4
+        ],
+        [
+          2,
+          -5,
+          -7
+        ],
+        [
+          7,
+          -10,
+          6
+        ],
+        [
+          -6,
+          1,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4398
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -4,
+          3,
+          -5
+        ],
+        [
+          -5,
+          8,
+          -9
+        ],
+        [
+          9,
+          4,
+          -10
+        ],
+        [
+          1,
+          -7,
+          -10
+        ],
+        [
+          -5,
+          4,
+          -10
+        ],
+        [
+          2,
+          -7,
+          5
+        ],
+        [
+          -1,
+          5,
+          -7
+        ],
+        [
+          -6,
+          -8,
+          2
+        ],
+        [
+          -9,
+          1,
+          10
+        ],
+        [
+          -8,
+          7,
+          3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4230
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -3,
+          -6,
+          7
+        ],
+        [
+          -9,
+          -4,
+          7
+        ],
+        [
+          -5,
+          -6,
+          -8
+        ],
+        [
+          -10,
+          9,
+          -4
+        ],
+        [
+          -9,
+          -3,
+          7
+        ],
+        [
+          -2,
+          9,
+          -10
+        ],
+        [
+          1,
+          6,
+          -7
+        ],
+        [
+          -8,
+          -5,
+          3
+        ],
+        [
+          3,
+          -10,
+          -1
+        ],
+        [
+          -4,
+          1,
+          -6
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 4603
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          7,
+          -10
+        ],
+        [
+          -4,
+          10,
+          2
+        ],
+        [
+          6,
+          8,
+          -4
+        ],
+        [
+          10,
+          -7,
+          -6
+        ],
+        [
+          -8,
+          10,
+          -1
+        ],
+        [
+          -9,
+          7,
+          1
+        ],
+        [
+          7,
+          -5,
+          9
+        ],
+        [
+          5,
+          1,
+          3
+        ],
+        [
+          -2,
+          -9,
+          10
+        ],
+        [
+          -7,
+          -6,
+          8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 5181
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -6,
+          2,
+          7
+        ],
+        [
+          -9,
+          7,
+          -1
+        ],
+        [
+          -3,
+          10,
+          9
+        ],
+        [
+          5,
+          -10,
+          -8
+        ],
+        [
+          3,
+          -4,
+          1
+        ],
+        [
+          8,
+          -10,
+          -1
+        ],
+        [
+          10,
+          8,
+          -9
+        ],
+        [
+          10,
+          -1,
+          -4
+        ],
+        [
+          -1,
+          3,
+          -9
+        ],
+        [
+          3,
+          -1,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 4725
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          5,
+          -6,
+          9
+        ],
+        [
+          7,
+          9,
+          -2
+        ],
+        [
+          2,
+          -5,
+          -6
+        ],
+        [
+          -10,
+          1,
+          2
+        ],
+        [
+          7,
+          -6,
+          -5
+        ],
+        [
+          10,
+          -8,
+          -9
+        ],
+        [
+          -5,
+          -4,
+          1
+        ],
+        [
+          2,
+          -4,
+          -7
+        ],
+        [
+          -6,
+          -10,
+          4
+        ],
+        [
+          5,
+          10,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 4685
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          10,
+          1
+        ],
+        [
+          3,
+          8,
+          -6
+        ],
+        [
+          -9,
+          -5,
+          6
+        ],
+        [
+          6,
+          -2,
+          3
+        ],
+        [
+          7,
+          -9,
+          -3
+        ],
+        [
+          5,
+          6,
+          -1
+        ],
+        [
+          8,
+          4,
+          -6
+        ],
+        [
+          -9,
+          5,
+          -3
+        ],
+        [
+          -4,
+          2,
+          -8
+        ],
+        [
+          4,
+          6,
+          -8
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          -2,
+          -6
+        ],
+        [
+          9,
+          -5,
+          1
+        ],
+        [
+          4,
+          10,
+          5
+        ],
+        [
+          -2,
+          5,
+          3
+        ],
+        [
+          -2,
+          1,
+          10
+        ],
+        [
+          -5,
+          -3,
+          -10
+        ],
+        [
+          -5,
+          -6,
+          -8
+        ],
+        [
+          8,
+          -1,
+          -2
+        ],
+        [
+          7,
+          10,
+          3
+        ],
+        [
+          6,
+          -4,
+          2
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4777
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          -5,
+          6
+        ],
+        [
+          -6,
+          -8,
+          9
+        ],
+        [
+          2,
+          -6,
+          8
+        ],
+        [
+          6,
+          -3,
+          -2
+        ],
+        [
+          6,
+          9,
+          2
+        ],
+        [
+          -10,
+          -7,
+          4
+        ],
+        [
+          -7,
+          2,
+          6
+        ],
+        [
+          -10,
+          -6,
+          4
+        ],
+        [
+          -2,
+          8,
+          -6
+        ],
+        [
+          -5,
+          7,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 4861
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -7,
+          8,
+          4
+        ],
+        [
+          10,
+          -5,
+          7
+        ],
+        [
+          -10,
+          1,
+          -7
+        ],
+        [
+          -6,
+          9,
+          -1
+        ],
+        [
+          -2,
+          5,
+          1
+        ],
+        [
+          6,
+          7,
+          -9
+        ],
+        [
+          -3,
+          8,
+          10
+        ],
+        [
+          -7,
+          -3,
+          5
+        ],
+        [
+          -1,
+          2,
+          10
+        ],
+        [
+          3,
+          2,
+          10
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 4369
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          8,
+          4
+        ],
+        [
+          1,
+          -10,
+          8
+        ],
+        [
+          2,
+          -3,
+          -5
+        ],
+        [
+          4,
+          -8,
+          -2
+        ],
+        [
+          6,
+          9,
+          1
+        ],
+        [
+          9,
+          8,
+          6
+        ],
+        [
+          5,
+          3,
+          1
+        ],
+        [
+          -1,
+          8,
+          -3
+        ],
+        [
+          -5,
+          -8,
+          2
+        ],
+        [
+          5,
+          3,
+          10
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 3992
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          3,
+          -9,
+          -1
+        ],
+        [
+          10,
+          3,
+          -8
+        ],
+        [
+          8,
+          -3,
+          4
+        ],
+        [
+          -5,
+          2,
+          1
+        ],
+        [
+          -8,
+          5,
+          10
+        ],
+        [
+          8,
+          -5,
+          3
+        ],
+        [
+          -8,
+          -7,
+          6
+        ],
+        [
+          7,
+          5,
+          -6
+        ],
+        [
+          -5,
+          -7,
+          8
+        ],
+        [
+          -3,
+          -6,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4631
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          -2,
+          -10
+        ],
+        [
+          -2,
+          -3,
+          -7
+        ],
+        [
+          3,
+          -5,
+          9
+        ],
+        [
+          5,
+          -7,
+          -6
+        ],
+        [
+          5,
+          1,
+          -7
+        ],
+        [
+          -1,
+          5,
+          -9
+        ],
+        [
+          -8,
+          4,
+          -7
+        ],
+        [
+          -3,
+          -9,
+          -7
+        ],
+        [
+          -8,
+          -5,
+          -2
+        ],
+        [
+          -10,
+          5,
+          -8
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -8,
+          -7,
+          -9
+        ],
+        [
+          7,
+          8,
+          2
+        ],
+        [
+          -5,
+          7,
+          1
+        ],
+        [
+          -2,
+          -8,
+          -5
+        ],
+        [
+          7,
+          -4,
+          5
+        ],
+        [
+          -8,
+          -2,
+          -10
+        ],
+        [
+          4,
+          1,
+          -10
+        ],
+        [
+          9,
+          -5,
+          -8
+        ],
+        [
+          -6,
+          1,
+          -10
+        ],
+        [
+          -4,
+          -9,
+          -8
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 6374
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          1,
+          -5,
+          -2
+        ],
+        [
+          -2,
+          -10,
+          8
+        ],
+        [
+          4,
+          7,
+          -6
+        ],
+        [
+          10,
+          -9,
+          -3
+        ],
+        [
+          -10,
+          -3,
+          6
+        ],
+        [
+          3,
+          -7,
+          10
+        ],
+        [
+          -8,
+          -4,
+          1
+        ],
+        [
+          -10,
+          7,
+          -3
+        ],
+        [
+          -1,
+          10,
+          3
+        ],
+        [
+          -8,
+          3,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 882,
+      "completion": 4643
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -7,
+          -1,
+          -4
+        ],
+        [
+          10,
+          -6,
+          4
+        ],
+        [
+          -5,
+          -1,
+          4
+        ],
+        [
+          -8,
+          -3,
+          -9
+        ],
+        [
+          6,
+          5,
+          4
+        ],
+        [
+          -10,
+          -8,
+          -1
+        ],
+        [
+          -3,
+          -1,
+          -8
+        ],
+        [
+          -8,
+          6,
+          -7
+        ],
+        [
+          -2,
+          -6,
+          4
+        ],
+        [
+          -4,
+          7,
+          -10
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          -4,
+          -6
+        ],
+        [
+          -6,
+          3,
+          -1
+        ],
+        [
+          2,
+          -8,
+          9
+        ],
+        [
+          -4,
+          -5,
+          -3
+        ],
+        [
+          -2,
+          7,
+          8
+        ],
+        [
+          -5,
+          -1,
+          7
+        ],
+        [
+          -7,
+          4,
+          -3
+        ],
+        [
+          1,
+          8,
+          10
+        ],
+        [
+          8,
+          -2,
+          10
+        ],
+        [
+          2,
+          -9,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 878,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          8,
+          -10,
+          3
+        ],
+        [
+          8,
+          1,
+          -2
+        ],
+        [
+          -5,
+          -7,
+          10
+        ],
+        [
+          -1,
+          -9,
+          6
+        ],
+        [
+          6,
+          8,
+          -1
+        ],
+        [
+          -9,
+          2,
+          -4
+        ],
+        [
+          -9,
+          -2,
+          8
+        ],
+        [
+          6,
+          -5,
+          -7
+        ],
+        [
+          2,
+          6,
+          -9
+        ],
+        [
+          9,
+          10,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 5208
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -2,
+          -3,
+          5
+        ],
+        [
+          -8,
+          3,
+          4
+        ],
+        [
+          9,
+          3,
+          8
+        ],
+        [
+          -1,
+          -5,
+          -4
+        ],
+        [
+          9,
+          6,
+          7
+        ],
+        [
+          10,
+          9,
+          -8
+        ],
+        [
+          -5,
+          3,
+          10
+        ],
+        [
+          5,
+          1,
+          3
+        ],
+        [
+          -3,
+          -10,
+          5
+        ],
+        [
+          -3,
+          -10,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 4464
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -3,
+          6,
+          -8
+        ],
+        [
+          -1,
+          7,
+          8
+        ],
+        [
+          3,
+          1,
+          6
+        ],
+        [
+          5,
+          -3,
+          8
+        ],
+        [
+          1,
+          -3,
+          2
+        ],
+        [
+          10,
+          -4,
+          8
+        ],
+        [
+          1,
+          -4,
+          -9
+        ],
+        [
+          -2,
+          9,
+          8
+        ],
+        [
+          -4,
+          8,
+          6
+        ],
+        [
+          3,
+          7,
+          -6
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 878,
+      "completion": 4059
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          5,
+          -3,
+          -7
+        ],
+        [
+          3,
+          4,
+          -5
+        ],
+        [
+          -2,
+          7,
+          10
+        ],
+        [
+          -7,
+          -3,
+          -8
+        ],
+        [
+          -7,
+          5,
+          -8
+        ],
+        [
+          10,
+          -5,
+          -8
+        ],
+        [
+          1,
+          3,
+          -5
+        ],
+        [
+          -2,
+          5,
+          -7
+        ],
+        [
+          1,
+          -2,
+          5
+        ],
+        [
+          10,
+          8,
+          7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 6099
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          6,
+          3,
+          1
+        ],
+        [
+          6,
+          -1,
+          -5
+        ],
+        [
+          3,
+          2,
+          10
+        ],
+        [
+          5,
+          -6,
+          -2
+        ],
+        [
+          3,
+          9,
+          5
+        ],
+        [
+          -6,
+          -3,
+          -2
+        ],
+        [
+          -9,
+          4,
+          10
+        ],
+        [
+          -2,
+          10,
+          3
+        ],
+        [
+          5,
+          6,
+          -3
+        ],
+        [
+          -5,
+          -1,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 879,
+      "completion": 5583
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          -8,
+          -7
+        ],
+        [
+          1,
+          -9,
+          10
+        ],
+        [
+          -1,
+          -2,
+          5
+        ],
+        [
+          -2,
+          4,
+          -9
+        ],
+        [
+          2,
+          3,
+          -5
+        ],
+        [
+          -9,
+          -4,
+          2
+        ],
+        [
+          9,
+          -4,
+          -10
+        ],
+        [
+          2,
+          -4,
+          8
+        ],
+        [
+          2,
+          3,
+          -6
+        ],
+        [
+          -9,
+          4,
+          -7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 879,
+      "completion": 5305
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          2,
+          7,
+          5
+        ],
+        [
+          4,
+          9,
+          7
+        ],
+        [
+          4,
+          -2,
+          8
+        ],
+        [
+          1,
+          8,
+          -2
+        ],
+        [
+          2,
+          -3,
+          -7
+        ],
+        [
+          2,
+          -6,
+          4
+        ],
+        [
+          2,
+          4,
+          7
+        ],
+        [
+          7,
+          6,
+          8
+        ],
+        [
+          -3,
+          8,
+          2
+        ],
+        [
+          -8,
+          -4,
+          -3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 876,
+      "completion": 2888
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -9,
+          8,
+          10
+        ],
+        [
+          8,
+          -10,
+          -5
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          -7,
+          -8,
+          -9
+        ],
+        [
+          9,
+          5,
+          -3
+        ],
+        [
+          -5,
+          7,
+          8
+        ],
+        [
+          -8,
+          9,
+          3
+        ],
+        [
+          8,
+          7,
+          -6
+        ],
+        [
+          1,
+          10,
+          -3
+        ],
+        [
+          6,
+          7,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 3858
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -2,
+          6,
+          -3
+        ],
+        [
+          8,
+          -7,
+          9
+        ],
+        [
+          10,
+          1,
+          6
+        ],
+        [
+          -6,
+          -2,
+          8
+        ],
+        [
+          -8,
+          9,
+          6
+        ],
+        [
+          -7,
+          -4,
+          8
+        ],
+        [
+          5,
+          -1,
+          -10
+        ],
+        [
+          10,
+          -2,
+          6
+        ],
+        [
+          -7,
+          4,
+          6
+        ],
+        [
+          -7,
+          9,
+          6
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 5318
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          10,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          10
+        ],
+        [
+          6,
+          2,
+          4
+        ],
+        [
+          -5,
+          3,
+          -10
+        ],
+        [
+          -2,
+          -3,
+          4
+        ],
+        [
+          8,
+          -10,
+          -7
+        ],
+        [
+          -3,
+          5,
+          10
+        ],
+        [
+          9,
+          -3,
+          -1
+        ],
+        [
+          1,
+          -2,
+          6
+        ],
+        [
+          -6,
+          -2,
+          -7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 881,
+      "completion": 3761
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -7,
+          -4,
+          -3
+        ],
+        [
+          5,
+          -8,
+          7
+        ],
+        [
+          9,
+          6,
+          2
+        ],
+        [
+          4,
+          5,
+          3
+        ],
+        [
+          -5,
+          -1,
+          -9
+        ],
+        [
+          5,
+          9,
+          -7
+        ],
+        [
+          9,
+          -4,
+          -8
+        ],
+        [
+          -7,
+          -5,
+          9
+        ],
+        [
+          4,
+          3,
+          -8
+        ],
+        [
+          5,
+          2,
+          8
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 877,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "clauses": [
+        [
+          -1,
+          -3,
+          8
+        ],
+        [
+          -4,
+          -5,
+          -6
+        ],
+        [
+          4,
+          9,
+          3
+        ],
+        [
+          8,
+          -10,
+          3
+        ],
+        [
+          -10,
+          -6,
+          5
+        ],
+        [
+          6,
+          -3,
+          -7
+        ],
+        [
+          -1,
+          10,
+          -4
+        ],
+        [
+          5,
+          3,
+          1
+        ],
+        [
+          -3,
+          -2,
+          -6
+        ],
+        [
+          1,
+          9,
+          -7
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 880,
+      "completion": 6718
+    }
+  }
+]

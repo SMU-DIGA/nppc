@@ -1,7 +1,11 @@
 import random
 
-
 def generate_instance(num_nodes: int, ind_set_size: int, edge_prob: float = 0.5):
+    # Constraints
+    assert isinstance(num_nodes, int) and num_nodes >= 2, "num_nodes must be an integer ≥ 2"
+    assert isinstance(ind_set_size, int) and 1 <= ind_set_size <= num_nodes, "ind_set_size must be an integer between 1 and num_nodes"
+    assert isinstance(edge_prob, float) and 0.0 <= edge_prob <= 1.0, "edge_prob must be a float between 0 and 1"
+    
     graph = dict()
     graph["nodes"] = [i for i in range(num_nodes)]
     graph["edges"] = set()

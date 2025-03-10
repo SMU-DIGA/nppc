@@ -3,6 +3,10 @@ from collections import Counter
 
 
 def generate_instance(num_elements: int, max_value: int = 100):
+    # Constraints
+    assert isinstance(num_elements, int) and num_elements >= 1, "num_elements must be an integer ≥ 1."
+    assert isinstance(max_value, int) and max_value >= 1, "max_value must be an integer ≥ 1."
+
     # 生成随机实例 A
     A = [random.randint(1, max_value) for _ in range(num_elements)]
 

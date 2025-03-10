@@ -26,9 +26,10 @@ def plot_accuracy_from_json(json_file, model_name, problem_name, n_shots, save_p
     plt.savefig(save_path)
 
 
-model_name = "deepseek"
+model_name = "qwen"
 n_shots = 3
 problem_list = ["three_sat", "clique", "vertex_cover"]
+# ["independent_set", "partition", "set_packing", "set_splitting", "subset_sum"]
 for problem_name in problem_list:
     json_file = os.path.join("./results", problem_name, model_name, f"shots_{n_shots}_summary.json")
     save_path = os.path.join("./results", problem_name, model_name, f"{problem_name}_{model_name}_{n_shots}_shots_accuracy_plot.png")

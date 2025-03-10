@@ -1,0 +1,4808 @@
+[
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          1,
+          -3
+        ],
+        [
+          -1,
+          -5,
+          4
+        ],
+        [
+          5,
+          -2,
+          3
+        ],
+        [
+          -5,
+          3,
+          1
+        ],
+        [
+          -3,
+          5,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          -3,
+          1
+        ],
+        [
+          4,
+          1,
+          -3
+        ],
+        [
+          -1,
+          5,
+          3
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          3,
+          -2,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          3,
+          -5
+        ],
+        [
+          2,
+          1,
+          -5
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          -2,
+          3,
+          1
+        ],
+        [
+          -5,
+          -4,
+          2
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4390
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          1,
+          2
+        ],
+        [
+          -5,
+          1,
+          3
+        ],
+        [
+          -1,
+          3,
+          -2
+        ],
+        [
+          -3,
+          2,
+          -5
+        ],
+        [
+          -2,
+          3,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -2,
+          -3
+        ],
+        [
+          -4,
+          -1,
+          3
+        ],
+        [
+          5,
+          -2,
+          -4
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          -5,
+          -4,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5373
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -5,
+          4
+        ],
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          5,
+          -2,
+          3
+        ],
+        [
+          -4,
+          2,
+          1
+        ],
+        [
+          -4,
+          -5,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          -5,
+          -3
+        ],
+        [
+          4,
+          -2,
+          -5
+        ],
+        [
+          -4,
+          -1,
+          5
+        ],
+        [
+          2,
+          5,
+          -4
+        ],
+        [
+          4,
+          -1,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -5,
+          -4
+        ],
+        [
+          3,
+          -1,
+          -4
+        ],
+        [
+          -5,
+          -1,
+          -4
+        ],
+        [
+          -4,
+          -1,
+          -3
+        ],
+        [
+          -4,
+          3,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          -1,
+          -4
+        ],
+        [
+          5,
+          -2,
+          3
+        ],
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          -5,
+          3,
+          -4
+        ],
+        [
+          -2,
+          -3,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 2963
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          -4,
+          2
+        ],
+        [
+          3,
+          -1,
+          4
+        ],
+        [
+          2,
+          -4,
+          -3
+        ],
+        [
+          -1,
+          2,
+          -3
+        ],
+        [
+          4,
+          2,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -2,
+          4,
+          1
+        ],
+        [
+          -2,
+          3,
+          -1
+        ],
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          -2,
+          5,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4670
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          -4,
+          -3
+        ],
+        [
+          3,
+          -2,
+          -5
+        ],
+        [
+          5,
+          4,
+          -2
+        ],
+        [
+          -5,
+          1,
+          -2
+        ],
+        [
+          -4,
+          1,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          3,
+          4
+        ],
+        [
+          -4,
+          -3,
+          5
+        ],
+        [
+          4,
+          2,
+          -3
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          -4,
+          5,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4170
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -3,
+          -1
+        ],
+        [
+          -1,
+          2,
+          4
+        ],
+        [
+          5,
+          2,
+          3
+        ],
+        [
+          -2,
+          -5,
+          -3
+        ],
+        [
+          4,
+          -2,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4343
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          3,
+          2
+        ],
+        [
+          2,
+          -4,
+          5
+        ],
+        [
+          -5,
+          4,
+          3
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          -5,
+          -1,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4999
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          -4,
+          2
+        ],
+        [
+          4,
+          1,
+          -3
+        ],
+        [
+          3,
+          -5,
+          2
+        ],
+        [
+          2,
+          -3,
+          5
+        ],
+        [
+          -3,
+          4,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          -2,
+          5
+        ],
+        [
+          -3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          -2
+        ],
+        [
+          -4,
+          1,
+          -3
+        ],
+        [
+          -1,
+          -5,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5808
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          1,
+          2,
+          -4
+        ],
+        [
+          5,
+          -1,
+          4
+        ],
+        [
+          5,
+          1,
+          -2
+        ],
+        [
+          1,
+          -2,
+          -5
+        ],
+        [
+          3,
+          -4,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4708
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          -5
+        ],
+        [
+          5,
+          3,
+          4
+        ],
+        [
+          -4,
+          -3,
+          2
+        ],
+        [
+          4,
+          2,
+          -5
+        ],
+        [
+          4,
+          -3,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          2,
+          -1
+        ],
+        [
+          4,
+          2,
+          -3
+        ],
+        [
+          4,
+          -1,
+          5
+        ],
+        [
+          2,
+          3,
+          -4
+        ],
+        [
+          5,
+          3,
+          2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -3,
+          -1
+        ],
+        [
+          4,
+          -3,
+          -5
+        ],
+        [
+          -3,
+          2,
+          -4
+        ],
+        [
+          -5,
+          -2,
+          4
+        ],
+        [
+          -2,
+          4,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6338
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          1
+        ],
+        [
+          -1,
+          5,
+          -4
+        ],
+        [
+          2,
+          -1,
+          3
+        ],
+        [
+          4,
+          5,
+          -2
+        ],
+        [
+          -5,
+          1,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6601
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          -4
+        ],
+        [
+          -2,
+          3,
+          -4
+        ],
+        [
+          -5,
+          2,
+          -3
+        ],
+        [
+          1,
+          5,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          -4,
+          2
+        ],
+        [
+          -3,
+          -5,
+          -1
+        ],
+        [
+          3,
+          1,
+          4
+        ],
+        [
+          2,
+          -4,
+          3
+        ],
+        [
+          3,
+          -4,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4862
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          1,
+          2
+        ],
+        [
+          -3,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          -3
+        ],
+        [
+          4,
+          -1,
+          5
+        ],
+        [
+          -4,
+          -5,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          4,
+          5
+        ],
+        [
+          5,
+          3,
+          -2
+        ],
+        [
+          -4,
+          -2,
+          5
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          -4,
+          -2
+        ],
+        [
+          5,
+          -4,
+          1
+        ],
+        [
+          -4,
+          5,
+          -2
+        ],
+        [
+          2,
+          -3,
+          1
+        ],
+        [
+          -1,
+          -2,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          -4,
+          -2
+        ],
+        [
+          5,
+          -1,
+          -4
+        ],
+        [
+          -4,
+          1,
+          -3
+        ],
+        [
+          -2,
+          3,
+          -1
+        ],
+        [
+          3,
+          -5,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5524
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          4,
+          -3
+        ],
+        [
+          2,
+          4,
+          3
+        ],
+        [
+          -1,
+          -4,
+          2
+        ],
+        [
+          3,
+          5,
+          4
+        ],
+        [
+          3,
+          -2,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          3,
+          1
+        ],
+        [
+          -2,
+          3,
+          -1
+        ],
+        [
+          1,
+          -5,
+          -2
+        ],
+        [
+          -5,
+          -3,
+          4
+        ],
+        [
+          -3,
+          -4,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          -1,
+          -2
+        ],
+        [
+          4,
+          -3,
+          1
+        ],
+        [
+          5,
+          1,
+          2
+        ],
+        [
+          5,
+          -4,
+          -3
+        ],
+        [
+          4,
+          -1,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4029
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          1,
+          -5,
+          -2
+        ],
+        [
+          -1,
+          2,
+          3
+        ],
+        [
+          -3,
+          4,
+          -5
+        ],
+        [
+          -4,
+          5,
+          -2
+        ],
+        [
+          4,
+          -5,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7195
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -4,
+          -5
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ],
+        [
+          5,
+          -2,
+          -1
+        ],
+        [
+          3,
+          -2,
+          -1
+        ],
+        [
+          -1,
+          5,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6874
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -4,
+          3
+        ],
+        [
+          -4,
+          3,
+          -5
+        ],
+        [
+          5,
+          1,
+          -3
+        ],
+        [
+          1,
+          -4,
+          2
+        ],
+        [
+          4,
+          -1,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          -5,
+          1
+        ],
+        [
+          4,
+          2,
+          -5
+        ],
+        [
+          -4,
+          5,
+          3
+        ],
+        [
+          -3,
+          5,
+          -2
+        ],
+        [
+          1,
+          -5,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6195
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          5
+        ],
+        [
+          -3,
+          -1,
+          5
+        ],
+        [
+          2,
+          -1,
+          5
+        ],
+        [
+          -5,
+          2,
+          -4
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6024
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          1,
+          4
+        ],
+        [
+          4,
+          3,
+          1
+        ],
+        [
+          -5,
+          -1,
+          -4
+        ],
+        [
+          -5,
+          1,
+          3
+        ],
+        [
+          4,
+          5,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5923
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          -4,
+          -5
+        ],
+        [
+          -4,
+          1,
+          -5
+        ],
+        [
+          2,
+          -3,
+          -5
+        ],
+        [
+          -4,
+          5,
+          -1
+        ],
+        [
+          5,
+          -3,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5418
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          4,
+          3
+        ],
+        [
+          1,
+          -4,
+          5
+        ],
+        [
+          -3,
+          -1,
+          -2
+        ],
+        [
+          -4,
+          5,
+          3
+        ],
+        [
+          -3,
+          -2,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 2891
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -2,
+          -4
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          5,
+          -3,
+          4
+        ],
+        [
+          1,
+          4,
+          -2
+        ],
+        [
+          3,
+          1,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6764
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          4,
+          -2
+        ],
+        [
+          -3,
+          -4,
+          5
+        ],
+        [
+          -1,
+          -3,
+          -4
+        ],
+        [
+          -2,
+          4,
+          5
+        ],
+        [
+          3,
+          -4,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6910
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          5,
+          -4
+        ],
+        [
+          5,
+          2,
+          -4
+        ],
+        [
+          5,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          -3
+        ],
+        [
+          -3,
+          5,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 3997
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          1,
+          -5
+        ],
+        [
+          -5,
+          -4,
+          1
+        ],
+        [
+          5,
+          -2,
+          3
+        ],
+        [
+          3,
+          2,
+          -4
+        ],
+        [
+          5,
+          -2,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6700
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          5,
+          -3
+        ],
+        [
+          -4,
+          -3,
+          5
+        ],
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          1,
+          -4,
+          3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -3,
+          -5
+        ],
+        [
+          -3,
+          4,
+          5
+        ],
+        [
+          -5,
+          1,
+          -4
+        ],
+        [
+          2,
+          -4,
+          1
+        ],
+        [
+          -3,
+          1,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          3,
+          5
+        ],
+        [
+          -2,
+          4,
+          -1
+        ],
+        [
+          5,
+          -1,
+          2
+        ],
+        [
+          -3,
+          5,
+          -4
+        ],
+        [
+          -3,
+          2,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5383
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          2,
+          1
+        ],
+        [
+          -1,
+          -3,
+          -5
+        ],
+        [
+          3,
+          5,
+          4
+        ],
+        [
+          -3,
+          1,
+          5
+        ],
+        [
+          -1,
+          3,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          4,
+          -3
+        ],
+        [
+          5,
+          -3,
+          1
+        ],
+        [
+          5,
+          2,
+          -3
+        ],
+        [
+          1,
+          5,
+          -2
+        ],
+        [
+          4,
+          5,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 3794
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          1,
+          5,
+          -3
+        ],
+        [
+          -5,
+          2,
+          -1
+        ],
+        [
+          2,
+          1,
+          4
+        ],
+        [
+          -5,
+          1,
+          3
+        ],
+        [
+          -3,
+          4,
+          1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          -4,
+          3
+        ],
+        [
+          3,
+          -5,
+          4
+        ],
+        [
+          -4,
+          -2,
+          1
+        ],
+        [
+          2,
+          4,
+          -1
+        ],
+        [
+          -5,
+          -3,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          -5,
+          -2,
+          3
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          5,
+          -1,
+          4
+        ],
+        [
+          -4,
+          -3,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 3265
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          5,
+          4
+        ],
+        [
+          5,
+          -3,
+          -1
+        ],
+        [
+          5,
+          -3,
+          -1
+        ],
+        [
+          -5,
+          -2,
+          3
+        ],
+        [
+          -5,
+          -1,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6015
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          5,
+          4
+        ],
+        [
+          -4,
+          2,
+          5
+        ],
+        [
+          3,
+          -4,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4261
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          5,
+          1
+        ],
+        [
+          -5,
+          3,
+          1
+        ],
+        [
+          -4,
+          -3,
+          2
+        ],
+        [
+          -4,
+          5,
+          1
+        ],
+        [
+          1,
+          5,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          -2
+        ],
+        [
+          5,
+          -2,
+          4
+        ],
+        [
+          4,
+          -5,
+          -3
+        ],
+        [
+          1,
+          4,
+          -2
+        ],
+        [
+          -2,
+          -4,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          -5,
+          4
+        ],
+        [
+          5,
+          3,
+          -4
+        ],
+        [
+          -5,
+          3,
+          2
+        ],
+        [
+          1,
+          -4,
+          3
+        ],
+        [
+          -3,
+          2,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5013
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          1,
+          -5
+        ],
+        [
+          4,
+          -2,
+          -5
+        ],
+        [
+          5,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          -5,
+          4,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 3908
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          4,
+          -2
+        ],
+        [
+          5,
+          -4,
+          -2
+        ],
+        [
+          -3,
+          1,
+          2
+        ],
+        [
+          -3,
+          4,
+          1
+        ],
+        [
+          -2,
+          -1,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4675
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          -4,
+          1
+        ],
+        [
+          5,
+          2,
+          -4
+        ],
+        [
+          -3,
+          -5,
+          -2
+        ],
+        [
+          5,
+          -1,
+          4
+        ],
+        [
+          -1,
+          4,
+          -2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6838
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          5,
+          1
+        ],
+        [
+          -2,
+          1,
+          5
+        ],
+        [
+          2,
+          1,
+          -3
+        ],
+        [
+          2,
+          -4,
+          5
+        ],
+        [
+          1,
+          2,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          5,
+          2
+        ],
+        [
+          -2,
+          1,
+          3
+        ],
+        [
+          2,
+          -4,
+          -3
+        ],
+        [
+          -3,
+          -5,
+          -4
+        ],
+        [
+          4,
+          2,
+          5
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5697
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -5,
+          -4
+        ],
+        [
+          -3,
+          4,
+          1
+        ],
+        [
+          1,
+          -4,
+          5
+        ],
+        [
+          4,
+          1,
+          -3
+        ],
+        [
+          -4,
+          -3,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          -1,
+          -2
+        ],
+        [
+          4,
+          3,
+          2
+        ],
+        [
+          1,
+          -2,
+          -3
+        ],
+        [
+          -5,
+          -4,
+          3
+        ],
+        [
+          1,
+          5,
+          2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          -2,
+          5
+        ],
+        [
+          -5,
+          -1,
+          -4
+        ],
+        [
+          -1,
+          -5,
+          2
+        ],
+        [
+          -1,
+          -4,
+          -2
+        ],
+        [
+          2,
+          3,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6088
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          1,
+          -5
+        ],
+        [
+          5,
+          4,
+          -1
+        ],
+        [
+          5,
+          3,
+          -4
+        ],
+        [
+          3,
+          -4,
+          -1
+        ],
+        [
+          -3,
+          2,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5988
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -3,
+          -2
+        ],
+        [
+          -2,
+          5,
+          4
+        ],
+        [
+          -1,
+          2,
+          5
+        ],
+        [
+          -2,
+          5,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          2
+        ],
+        [
+          2,
+          -3,
+          -5
+        ],
+        [
+          2,
+          1,
+          -5
+        ],
+        [
+          -2,
+          5,
+          -4
+        ],
+        [
+          4,
+          3,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6246
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          -4,
+          -1
+        ],
+        [
+          1,
+          -5,
+          4
+        ],
+        [
+          -2,
+          -1,
+          -3
+        ],
+        [
+          -5,
+          4,
+          2
+        ],
+        [
+          1,
+          -5,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4024
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -1,
+          -4
+        ],
+        [
+          5,
+          3,
+          -2
+        ],
+        [
+          1,
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -1,
+          5
+        ],
+        [
+          4,
+          -5,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -5,
+          -1,
+          -3
+        ],
+        [
+          -5,
+          -4,
+          2
+        ],
+        [
+          5,
+          -1,
+          -4
+        ],
+        [
+          2,
+          -5,
+          3
+        ],
+        [
+          2,
+          5,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          1,
+          -3,
+          2
+        ],
+        [
+          -5,
+          4,
+          -2
+        ],
+        [
+          -5,
+          -3,
+          1
+        ],
+        [
+          -2,
+          4,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6707
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -4,
+          -3,
+          2
+        ],
+        [
+          1,
+          2,
+          -4
+        ],
+        [
+          -1,
+          5,
+          2
+        ],
+        [
+          1,
+          -3,
+          2
+        ],
+        [
+          -5,
+          2,
+          -3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          -2,
+          4,
+          -3
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          5,
+          4,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 2927
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          3,
+          -1
+        ],
+        [
+          -3,
+          4,
+          5
+        ],
+        [
+          -3,
+          -4,
+          -2
+        ],
+        [
+          5,
+          -1,
+          3
+        ],
+        [
+          3,
+          -1,
+          2
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6464
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          1,
+          4,
+          3
+        ],
+        [
+          -5,
+          -1,
+          -2
+        ],
+        [
+          -3,
+          2,
+          -5
+        ],
+        [
+          -3,
+          -4,
+          1
+        ],
+        [
+          2,
+          5,
+          -4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -3,
+          -2
+        ],
+        [
+          3,
+          -5,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          -1,
+          -3,
+          5
+        ],
+        [
+          -1,
+          -2,
+          -3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          5,
+          -3
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          1,
+          -2,
+          -5
+        ],
+        [
+          5,
+          -2,
+          4
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6807
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          -2,
+          -3
+        ],
+        [
+          3,
+          -1,
+          -4
+        ],
+        [
+          3,
+          2,
+          -5
+        ],
+        [
+          -5,
+          4,
+          -2
+        ],
+        [
+          5,
+          -2,
+          -4
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5363
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          2,
+          -1
+        ],
+        [
+          4,
+          5,
+          -2
+        ],
+        [
+          1,
+          -5,
+          -4
+        ],
+        [
+          3,
+          -2,
+          5
+        ],
+        [
+          -5,
+          -4,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4936
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          2,
+          4
+        ],
+        [
+          -3,
+          -1,
+          -2
+        ],
+        [
+          5,
+          -3,
+          -4
+        ],
+        [
+          2,
+          5,
+          -1
+        ],
+        [
+          3,
+          -5,
+          -2
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6921
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          -5,
+          3
+        ],
+        [
+          4,
+          2,
+          3
+        ],
+        [
+          -4,
+          1,
+          -3
+        ],
+        [
+          5,
+          3,
+          4
+        ],
+        [
+          -3,
+          1,
+          5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5813
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          3,
+          -2
+        ],
+        [
+          -5,
+          -4,
+          -2
+        ],
+        [
+          -4,
+          1,
+          5
+        ],
+        [
+          -1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5715
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -4,
+          -3
+        ],
+        [
+          -2,
+          -4,
+          1
+        ],
+        [
+          1,
+          -5,
+          3
+        ],
+        [
+          -2,
+          4,
+          -1
+        ],
+        [
+          1,
+          5,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 2813
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          5,
+          3
+        ],
+        [
+          2,
+          -5,
+          -4
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          3,
+          -2,
+          -1
+        ],
+        [
+          -2,
+          3,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -4,
+          5
+        ],
+        [
+          -5,
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          -3
+        ],
+        [
+          -4,
+          -1,
+          5
+        ],
+        [
+          2,
+          1,
+          4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          -3,
+          5
+        ],
+        [
+          4,
+          -1,
+          -2
+        ],
+        [
+          -2,
+          1,
+          -5
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ],
+        [
+          2,
+          -4,
+          -5
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          4,
+          -2
+        ],
+        [
+          4,
+          -5,
+          3
+        ],
+        [
+          -5,
+          2,
+          -4
+        ],
+        [
+          -5,
+          -1,
+          -4
+        ],
+        [
+          2,
+          1,
+          -5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6181
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          4,
+          -3
+        ],
+        [
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -5,
+          1,
+          2
+        ],
+        [
+          3,
+          -5,
+          1
+        ],
+        [
+          2,
+          -3,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -1,
+          4,
+          -5
+        ],
+        [
+          3,
+          1,
+          -5
+        ],
+        [
+          2,
+          -5,
+          4
+        ],
+        [
+          -2,
+          -3,
+          1
+        ],
+        [
+          -3,
+          -4,
+          5
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 593,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          5,
+          4
+        ],
+        [
+          4,
+          3,
+          -2
+        ],
+        [
+          -1,
+          -2,
+          -5
+        ],
+        [
+          2,
+          4,
+          -5
+        ],
+        [
+          5,
+          3,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 5378
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          5,
+          -1,
+          -4
+        ],
+        [
+          -2,
+          3,
+          5
+        ],
+        [
+          2,
+          -1,
+          -5
+        ],
+        [
+          -4,
+          -1,
+          -5
+        ],
+        [
+          2,
+          5,
+          -1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6597
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          -2,
+          -1
+        ],
+        [
+          4,
+          1,
+          5
+        ],
+        [
+          1,
+          -4,
+          3
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          -2,
+          1,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4534
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          -4,
+          -1
+        ],
+        [
+          -5,
+          2,
+          -3
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          -4,
+          3,
+          -1
+        ],
+        [
+          5,
+          -2,
+          1
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -2,
+          -3,
+          4
+        ],
+        [
+          -5,
+          -4,
+          2
+        ],
+        [
+          2,
+          -3,
+          4
+        ],
+        [
+          -5,
+          2,
+          3
+        ],
+        [
+          -2,
+          -4,
+          -1
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 4044
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          3,
+          -2,
+          1
+        ],
+        [
+          -1,
+          -5,
+          -4
+        ],
+        [
+          5,
+          3,
+          -1
+        ],
+        [
+          -3,
+          -5,
+          2
+        ],
+        [
+          4,
+          -5,
+          3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 7500
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          2,
+          -1
+        ],
+        [
+          -2,
+          -3,
+          -4
+        ],
+        [
+          -4,
+          -2,
+          5
+        ],
+        [
+          -3,
+          2,
+          5
+        ],
+        [
+          -1,
+          -3,
+          5
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      true,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 6692
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          5,
+          1
+        ],
+        [
+          3,
+          -4,
+          -1
+        ],
+        [
+          4,
+          -1,
+          5
+        ],
+        [
+          3,
+          -1,
+          4
+        ],
+        [
+          -2,
+          1,
+          3
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6575
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          2,
+          -1,
+          -4
+        ],
+        [
+          4,
+          3,
+          -5
+        ],
+        [
+          1,
+          -5,
+          -2
+        ],
+        [
+          -3,
+          1,
+          2
+        ],
+        [
+          -2,
+          -1,
+          4
+        ]
+      ]
+    },
+    "solution": [
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 592,
+      "completion": 6699
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          4,
+          -5,
+          3
+        ],
+        [
+          2,
+          -3,
+          -5
+        ],
+        [
+          4,
+          1,
+          2
+        ],
+        [
+          -2,
+          -3,
+          -4
+        ],
+        [
+          1,
+          -3,
+          -4
+        ]
+      ]
+    },
+    "solution": "null",
+    "correctness": false,
+    "reason": "Invalid solution format",
+    "tokens": {
+      "prompt": 592,
+      "completion": 4833
+    }
+  },
+  {
+    "instance": {
+      "variables": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "clauses": [
+        [
+          -3,
+          -1,
+          -2
+        ],
+        [
+          -4,
+          -2,
+          -1
+        ],
+        [
+          1,
+          -4,
+          -5
+        ],
+        [
+          -2,
+          -3,
+          5
+        ],
+        [
+          5,
+          4,
+          3
+        ]
+      ]
+    },
+    "solution": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "correctness": true,
+    "reason": "Correct solution.",
+    "tokens": {
+      "prompt": 593,
+      "completion": 5541
+    }
+  }
+]
