@@ -11,6 +11,7 @@ def generate_instance(num_elements: int, k: int, min_value=1, max_value=100):
     group_value = [0] * k
     for ele_idx, element in enumerate(elements):
         group_value[groups[ele_idx] - 1] += element
+    # print(group_value)
 
     J = sum([v * v for v in group_value]) + random.randint(0, max_value)
     group_indices = [i+1 for i in range(k)]
@@ -50,7 +51,7 @@ def verify_solution(instance, solution):
         return False, "The sum exceeds J."
 
 
-num_elements = 500
+num_elements = 10
 k = 3
 instance, solution = generate_instance(num_elements=num_elements, k=k)
 print(instance)
