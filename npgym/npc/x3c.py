@@ -47,22 +47,21 @@ def verify_solution(instance, solution):
     elements = instance["universe"]
     subsets = instance["subsets"]
 
-    if len(solution) < len(elements)/3:
-        return False, "The solution is invalid."
+    try:
+        if not (max(solution) < len(subsets) and min(solution) >= 0):
+            return False, "The solution is invalid."
 
-    if not (int(max(solution)) < len(subsets) and int(min(solution)) >= 0):
-        return False, "The solution is invalid."
+        elements_covered = []
 
-    elements_covered = []
+        for i in solution:
+            elements_covered += subsets[i]
+        if sorted(list(elements_covered)) == elements:
+            return True, "Correct solution."
+        else:
+            return False, "The solution is not correct."
 
-    for i in solution:
-        elements_covered += subsets[i]
-    # print(elements_covered)
-    # print(sorted(list(elements_covered)))
-    if sorted(list(elements_covered)) == elements:
-        return True, "Correct solution."
-    else:
-        return False, "The solution is not correct."
+    except:
+        return False, "verification error"
 
 
 instance, solution = generate_instance(num_elements=3, num_subsets=6)

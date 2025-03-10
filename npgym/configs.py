@@ -108,15 +108,16 @@ PROBLEM_LEVELS = {
         1: {"num_items": 10, "bin_capacity": 20, "num_bins": 3},
     },
     "Exact Cover by 3-Sets (X3C)": {
-        # 1: {"num_elements": 3, "num_subsets": 6}, # 0.8
-        # 2: {"num_elements": 4, "num_subsets": 8}, # 0.7
-        # 3: {"num_elements": 5, "num_subsets": 10}, # 0.4
-        # 4: {"num_elements": 7, "num_subsets": 14}, # 0.2
-        # 5: {"num_elements": 8, "num_subsets": 16}, # 0.167
-        # 6: {"num_elements": 10, "num_subsets": 20}, # 0.07
-        # 7: {"num_elements": 15, "num_subsets": 30}, # 0
-        # 8: {"num_elements": 20, "num_subsets": 40}, # 0
-        9: {"num_elements": 30, "num_subsets": 60}, # 0
+        1: {"num_elements": 3, "num_subsets": 6},
+        2: {"num_elements": 4, "num_subsets": 8},
+        3: {"num_elements": 5, "num_subsets": 10},
+        4: {"num_elements": 7, "num_subsets": 14},
+        5: {"num_elements": 8, "num_subsets": 16},
+        6: {"num_elements": 10, "num_subsets": 20},
+        7: {"num_elements": 15, "num_subsets": 30},
+        8: {"num_elements": 20, "num_subsets": 40},
+        9: {"num_elements": 25, "num_subsets": 50},
+        10: {"num_elements": 30, "num_subsets": 60},
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
@@ -136,7 +137,15 @@ PROBLEM_LEVELS = {
         12: {"num_nodes": 30, "num_edges": 80},
     },
     "Clustering": {
-        1: {"num_elements": 6, "b": 5},
+        1: {"num_elements": 6, "b": 10}, # 0.83
+        2: {"num_elements": 10, "b": 10}, # 0.76
+        3: {"num_elements": 15, "b": 10}, # 0.6
+        4: {"num_elements": 18, "b": 10}, # 0.43
+        5: {"num_elements": 20, "b": 10}, # 0.23
+        6: {"num_elements": 30, "b": 10}, # 0.067
+        7: {"num_elements": 40, "b": 10},
+        8: {"num_elements": 50, "b": 10},
+        9: {"num_elements": 60, "b": 10},
     },
     "Betweenness": {
         1: {"num_element": 3, "num_triples": 1},

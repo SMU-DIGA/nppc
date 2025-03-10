@@ -66,7 +66,7 @@ Question: Is there a one-to-one function, f:A->{0,1,2,...,n-1} such that for eac
     "Minimum Sum of Squares": """Input: A set A of n elements; for each element a in A a positive integer size s(a); positive integers k<=n and J.
 Question: Can A be partitioned into k disjoint sets A1,...,Ak such that sum from i=1 to k ( sum from {x in Ai} s(x))2<=J?""",
     "Bandwidth": """Input: n-node undirected graph G(V,E); positive integer k<=n.
-Question: Is there a linear ordering of V with bandwidth at most k, i.e. a one-to-one function f:V->{1,2,...,n} such that for all edges {u,v} in G, |f(u)-f(v)|<=k?""",
+Question: Is there a linear ordering of V with bandwidth at most k, i.e. a one-to-one function f:V->{0,1,2,...,n-1} such that for all edges {u,v} in G, |f(u)-f(v)|<=k?""",
     "Maximum Leaf Spanning Tree": """Input: n-node undirected graph G(V,E); positive integer k<=n.
 Question: Does G have a spanning tree in which at least k nodes have degree 1.""",
 }
