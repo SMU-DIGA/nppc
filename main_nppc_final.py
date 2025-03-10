@@ -38,6 +38,10 @@ def set_api_keys():
         huoshan_api_key = file.read().strip()
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
+    with open("./api_keys/maas_api_key.txt", "r") as file:
+        maas_api_key = file.read().strip()
+    os.environ["MAAS_API_KEY"] = maas_api_key
+
 
 import argparse
 
@@ -55,14 +59,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="deepseek-v3",
+        default="deepseek-r1",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=23,
+        default=24,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -129,7 +133,7 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        if level < 10:
+        if level < 14:
             continue
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
@@ -182,7 +186,9 @@ def main(args):
                         results[level][start_idx + idx].update(output)
                     break
             else:
-                predicted_solutions += [None] * batch_size
+                predicted_solutions += [None] * (end_idx - start_idx)
+                for idx in range(start_idx, end_idx):
+                    results[level][idx]["tokens"] = {}
 
         # verify all the results
         verifications = env.batch_verify_solution(instances, predicted_solutions)

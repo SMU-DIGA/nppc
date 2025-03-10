@@ -165,7 +165,9 @@ PROBLEM_LEVELS = {
         6: {"num_element": 8, "num_triples": 6},
     },
     "Minimum Sum of Squares": {
-        1: {"num_elements": 10, "k": 3},
+        1: {"num_elements": 100, "k": 3},
+        2: {"num_elements": 200, "k": 3},
+        3: {"num_elements": 300, "k": 3},
     },
     "Bandwidth": {
         1: {"num_nodes": 3, "bandwidth": 2},
@@ -181,6 +183,12 @@ PROBLEM_LEVELS = {
     },
     "Maximum Leaf Spanning Tree": {
         1: {"num_nodes": 10, "target_leaves": 3},
+        7: {"num_nodes": 50, "target_leaves": 30},
+        8: {"num_nodes": 50, "target_leaves": 40},
+        11: {"num_nodes": 60, "target_leaves": 50},
+        12: {"num_nodes": 70, "target_leaves": 60},
+        13: {"num_nodes": 80, "target_leaves": 70},
+        14: {"num_nodes": 100, "target_leaves": 80},
     },
 }
 
