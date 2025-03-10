@@ -62,7 +62,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=20,
+        default=22,
         help="the problem name idx",
     )
     parser.add_argument(

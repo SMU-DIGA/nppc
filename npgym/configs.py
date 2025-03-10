@@ -121,6 +121,21 @@ PROBLEM_LEVELS = {
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
+        2: {"num_elements": 10, "num_sets": 20, "k": 5},
+        3: {"num_elements": 10, "num_sets": 30, "k": 5},
+        4: {"num_elements": 15, "num_sets": 20, "k": 8},
+        5: {"num_elements": 15, "num_sets": 30, "k": 10},
+        6: {"num_elements": 20, "num_sets": 40, "k": 10},
+        7: {"num_elements": 25, "num_sets": 50, "k": 10},
+        8: {"num_elements": 30, "num_sets": 60, "k": 10},
+        9: {"num_elements": 35, "num_sets": 70, "k": 10},
+        10: {"num_elements": 40, "num_sets": 80, "k": 10},
+        11: {"num_elements": 45, "num_sets": 90, "k": 10},
+        12: {"num_elements": 50, "num_sets": 100, "k": 10},
+        13: {"num_elements": 55, "num_sets": 110, "k": 10},
+        14: {"num_elements": 60, "num_sets": 120, "k": 10},
+        15: {"num_elements": 65, "num_sets": 130, "k": 10},
+        16: {"num_elements": 70, "num_sets": 140, "k": 10},
     },
     "Graph 3-Colourability (3-COL)": {
         1: {"num_nodes": 5, "num_edges": 8},
@@ -157,10 +172,24 @@ PROBLEM_LEVELS = {
         6: {"num_element": 8, "num_triples": 6},
     },
     "Minimum Sum of Squares": {
-        1: {"num_elements": 10, "k": 3},
+        # 1: {"num_elements": 10, "k": 3}, # 0.76
+        # 2: {"num_elements": 30, "k": 3}, # 0.5
+        # 3: {"num_elements": 100, "k": 3}, # 0.433
+        # 1: {"num_elements": 100, "k": 4}, # 0.5333
+        2: {"num_elements": 500, "k": 3}, #
+        3: {"num_elements": 500, "k": 100}, #
     },
     "Bandwidth": {
-        1: {"num_nodes": 5, "bandwidth": 2},
+        1: {"num_nodes": 3, "bandwidth": 2},
+        2: {"num_nodes": 4, "bandwidth": 2},
+        3: {"num_nodes": 5, "bandwidth": 3},
+        4: {"num_nodes": 5, "bandwidth": 2},
+        5: {"num_nodes": 6, "bandwidth": 3},
+        6: {"num_nodes": 6, "bandwidth": 2},
+        7: {"num_nodes": 7, "bandwidth": 3},
+        8: {"num_nodes": 7, "bandwidth": 2},
+        9: {"num_nodes": 8, "bandwidth": 3},
+        10: {"num_nodes": 8, "bandwidth": 2},
     },
     "Maximum Leaf Spanning Tree": {
         1: {"num_nodes": 10, "target_leaves": 3},
