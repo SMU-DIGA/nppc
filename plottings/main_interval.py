@@ -1,9 +1,9 @@
-from npeval import metrics
-import numpy as np
-from npeval.interval import get_interval_estimates
-from npeval import plot_utils
-import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+from npeval import plot_utils
+from npeval.interval import get_interval_estimates
 from npeval.metrics import MEAN, MEDIAN, IQM, OG
 
 num_runs = 5

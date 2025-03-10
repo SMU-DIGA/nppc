@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Set data
 categories = ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"]

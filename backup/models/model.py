@@ -1,6 +1,6 @@
-from litellm import completion
-
 import os
+
+from litellm import completion
 
 ## set ENV variables
 os.environ["OPENAI_API_KEY"] = "your-openai-key"

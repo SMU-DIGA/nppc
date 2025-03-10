@@ -1,11 +1,11 @@
 import os
-
-from pathlib import Path
-import pickle
 import os.path as osp
+import pickle
+from copy import deepcopy
+from pathlib import Path
+
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
 from npsolver import NPSolver
-from copy import deepcopy
 
 
 def seed_everything(seed=42):

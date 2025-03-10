@@ -1,6 +1,7 @@
 import json
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
 
 
 def plot_accuracy_from_json(json_file, model_name, problem_name, n_shots, save_path):

@@ -68,5 +68,5 @@ Question: Can A be partitioned into k disjoint sets A1,...,Ak such that sum from
     "Bandwidth": """Input: n-node undirected graph G(V,E); positive integer k<=n.
 Question: Is there a linear ordering of V with bandwidth at most k, i.e. a one-to-one function f:V->{0,1,2,...,n-1} such that for all edges {u,v} in G, |f(u)-f(v)|<=k?""",
     "Maximum Leaf Spanning Tree": """Input: n-node undirected graph G(V,E); positive integer k<=n.
-Question: Does G have a spanning tree in which at least k nodes have degree 1.""",
+Question: Does G have a spanning tree in which at least k nodes have degree 1?""",
 }

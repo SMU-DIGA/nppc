@@ -64,7 +64,7 @@ def verify_solution(instance, solution):
         return False, "verification error"
 
 
-instance, solution = generate_instance(num_elements=3, num_subsets=10)
+instance, solution = generate_instance(num_elements=3, num_subsets=6)
 
 print(instance)
 print(solution)

@@ -4,9 +4,9 @@ with open("../api_keys/openai_api_key.txt", "r") as file:
 with open("../api_keys/claude_api_key.txt", "r") as file:
     claude_api_key = file.read().strip()
 
-from litellm import completion
-
 import os
+
+from litellm import completion
 
 ## set ENV variables
 os.environ["OPENAI_API_KEY"] = openai_api_key

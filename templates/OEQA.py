@@ -14,7 +14,6 @@ Please show your final answer in the `answer` field, e.g.,`"answer": "42"`.
 ```
 """
 
-
 DEEPSEEK_MATH = """
 ## Probelm 
 {question}

@@ -1,8 +1,9 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
+from npeval import metrics
 from npeval import plot_utils
 from npeval.interval import get_interval_estimates
-from npeval import metrics
 
 num_runs = 5
 num_tasks = 100

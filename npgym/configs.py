@@ -116,7 +116,8 @@ PROBLEM_LEVELS = {
         6: {"num_elements": 10, "num_subsets": 20},
         7: {"num_elements": 15, "num_subsets": 30},
         8: {"num_elements": 20, "num_subsets": 40},
-        9: {"num_elements": 30, "num_subsets": 60},
+        9: {"num_elements": 25, "num_subsets": 50},
+        10: {"num_elements": 30, "num_subsets": 60},
     },
     "Minimum Cover": {
         1: {"num_elements": 5, "num_sets": 10, "k": 3},
@@ -151,10 +152,16 @@ PROBLEM_LEVELS = {
         12: {"num_nodes": 30, "num_edges": 80},
     },
     "Clustering": {
-        1: {"num_elements": 6, "b": 5},
-        8: {"num_elements": 50, "b": 10},  # 0
-        9: {"num_elements": 60, "b": 10},  # 0
-        10: {"num_elements": 70, "b": 10},  # 0
+        1: {"num_elements": 6, "b": 10}, # 0.83
+        2: {"num_elements": 10, "b": 10}, # 0.76
+        3: {"num_elements": 15, "b": 10}, # 0.6
+        4: {"num_elements": 18, "b": 10}, # 0.43
+        5: {"num_elements": 20, "b": 10}, # 0.23
+        6: {"num_elements": 30, "b": 10}, # 0.067
+        7: {"num_elements": 40, "b": 10},
+        8: {"num_elements": 50, "b": 10},
+        9: {"num_elements": 60, "b": 10},
+        10: {"num_elements": 70, "b": 10},
     },
     "Betweenness": {
         1: {"num_element": 3, "num_triples": 1},
@@ -165,9 +172,18 @@ PROBLEM_LEVELS = {
         6: {"num_element": 8, "num_triples": 6},
     },
     "Minimum Sum of Squares": {
-        1: {"num_elements": 100, "k": 3},
-        2: {"num_elements": 200, "k": 3},
-        3: {"num_elements": 300, "k": 3},
+        1: {"num_elements": 10, "k": 5},  # 0.93
+        2: {"num_elements": 50, "k": 8},  # 0.83
+        3: {"num_elements": 100, "k": 8}, # 0.77
+        4: {"num_elements": 100, "k": 5}, # 0.63
+        5: {"num_elements": 100, "k": 4}, # 0.4
+        6: {"num_elements": 100, "k": 3}, # 0.26
+        7: {"num_elements": 200, "k": 10}, # 0.2
+        8: {"num_elements": 200, "k": 4}, # 0.17
+        9: {"num_elements": 200, "k": 3}, # 0.03
+        10: {"num_elements": 300, "k": 3}, # 0.03
+        # 8: {"num_elements": 200, "k": 8}, # 0.13
+        # 9: {"num_elements": 200, "k": 5}, # 0.23
     },
     "Bandwidth": {
         1: {"num_nodes": 3, "bandwidth": 2},
@@ -182,13 +198,16 @@ PROBLEM_LEVELS = {
         10: {"num_nodes": 8, "bandwidth": 2},
     },
     "Maximum Leaf Spanning Tree": {
-        1: {"num_nodes": 10, "target_leaves": 3},
-        7: {"num_nodes": 50, "target_leaves": 30},
-        8: {"num_nodes": 50, "target_leaves": 40},
-        11: {"num_nodes": 60, "target_leaves": 50},
-        12: {"num_nodes": 70, "target_leaves": 60},
-        13: {"num_nodes": 80, "target_leaves": 70},
-        14: {"num_nodes": 100, "target_leaves": 80},
+        1: {"num_nodes": 5, "target_leaves": 2}, #
+        2: {"num_nodes": 10, "target_leaves": 5}, #
+        3: {"num_nodes": 20, "target_leaves": 10}, # 0.92
+        4: {"num_nodes": 30, "target_leaves": 20}, # 0.7
+        5: {"num_nodes": 40, "target_leaves": 30}, # 0.416
+        6: {"num_nodes": 60, "target_leaves": 50}, # 0.37
+        7: {"num_nodes": 70, "target_leaves": 60}, #
+        8: {"num_nodes": 80, "target_leaves": 65}, # 0.15
+        9: {"num_nodes": 90, "target_leaves": 75}, # 0.11
+        10: {"num_nodes": 100, "target_leaves": 80}, # 0.06
     },
 }
 
