@@ -19,14 +19,14 @@ def extract_answers(json_file, instance):
             json_end = output_text.rfind("}")
             num_total += 1
             if json_start != -1 and json_end != -1:
-                extracted_json = json.loads(output_text[json_start: json_end + 1])
+                extracted_json = json.loads(output_text[json_start : json_end + 1])
                 num_json += 1
                 if "solution" in extracted_json:
                     answer_str = extracted_json["solution"]
                     if (
-                            isinstance(answer_str, str)
-                            and answer_str.startswith("[")
-                            and answer_str.endswith("]")
+                        isinstance(answer_str, str)
+                        and answer_str.startswith("[")
+                        and answer_str.endswith("]")
                     ):
                         answer = ast.literal_eval(answer_str)
                         results = verify_solution(instance, answer)

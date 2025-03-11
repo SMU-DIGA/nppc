@@ -78,7 +78,7 @@ def update_leaderboard(metric, ascending):
 
 # Create Gradio interface
 with gr.Blocks(
-        title="Nondeterministic Polynomial Problem Challenge", theme=gr.themes.Soft()
+    title="Nondeterministic Polynomial Problem Challenge", theme=gr.themes.Soft()
 ) as demo:
     gr.Markdown("# 🏆 Nondeterministic Polynomial Problem Challenge")
     gr.Markdown(

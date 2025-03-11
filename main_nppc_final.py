@@ -59,14 +59,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="deepseek-r1",
+        default="gpt-4o-mini",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=24,
+        default=15,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -133,7 +133,7 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        if level < 14:
+        if level > 1:
             continue
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)

@@ -59,6 +59,7 @@ def verify_solution(instance, solution):
     else:
         return True, "Correct solution."
 
+
 # instance, solution = generate_instance(n=10)
 # print(solution)
 # print(verify_solution(instance, solution))
