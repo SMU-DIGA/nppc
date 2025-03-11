@@ -69,7 +69,7 @@ PROBLEM_LEVELS = {
         1: {"num_elements": 10, "num_subsets": 20, "num_disjoint_sets": 3},
     },
     "Set Splitting": {
-        1: {"num_elements": 10, "num_subsets": 4},
+        1: {"num_elements": 10, "num_subsets": 500},
     },
     "Shortest Common Superstring": {
         1: {"n": 3, "k": 10},
