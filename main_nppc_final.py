@@ -133,8 +133,9 @@ def main(args):
 
     levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
-        if level < 14:
-            continue
+        # if level_idx not in [3, 6]:
+        #     continue
+
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:
@@ -185,10 +186,9 @@ def main(args):
                         predicted_solutions.append(output["solution"])
                         results[level][start_idx + idx].update(output)
                     break
-            else:
-                predicted_solutions += [None] * (end_idx - start_idx)
-                for idx in range(start_idx, end_idx):
-                    results[level][idx]["tokens"] = {}
+            
+            if outputs is None:
+                predicted_solutions += [None] * batch_size
 
         # verify all the results
         verifications = env.batch_verify_solution(instances, predicted_solutions)
@@ -196,7 +196,11 @@ def main(args):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
 
-        if args.verbose:
+        with open(osp.join(result_folder_path, saving_path.replace(".pkl", "_level_{}.pkl".format(level))), "wb") as f:
+            pickle.dump(results, f)
+
+    if args.verbose:
+        for level in results.keys():
             results_for_level = results[level]
 
             print(
