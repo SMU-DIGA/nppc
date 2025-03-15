@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(low: int, high: 100):
+def generate_instance(low: int, high: int):
     values = [random.randint(low, high) for _ in range(4)]
     c = values[0] * values[1] * values[1] + values[2] * values[3]
 
@@ -15,6 +15,8 @@ def verify_solution(instance, solution):
     b = instance["b"]
     c = instance["c"]
 
+    if len(solution) != 2:
+        return False, "The solution is not valid."
     x = solution[0]
     y = solution[1]
 
