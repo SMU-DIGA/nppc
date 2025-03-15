@@ -1,6 +1,6 @@
 import json
-from typing import Any, Dict, List, Tuple, Callable, Optional
 from pathlib import Path
+from typing import Dict, List
 
 
 def save_outputs(results: List[Dict], file_path: Path) -> None:

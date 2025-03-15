@@ -1,6 +1,4 @@
 import random
-from math import gcd
-from functools import reduce
 
 
 def generate_instance(num_pair, min_value=5, max_value=200):

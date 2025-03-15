@@ -1,6 +1,3 @@
-import pickle
-
-
 # with open("./results/model_gpt-4o-mini_problem_Clique_shots_3.pkl", 'rb') as f:
 #     all_results = pickle.load(f)
 #

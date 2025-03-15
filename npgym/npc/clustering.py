@@ -88,7 +88,7 @@ def verify_solution(instance, partition):
     return True, "Valid solution"
 
 
-instance, solution = generate_instance(num_elements=6, b=5)
+instance, solution = generate_instance(num_elements=50, b=10)
 
 print(instance)
 print(solution)

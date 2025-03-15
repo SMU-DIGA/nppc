@@ -1,19 +1,21 @@
-import os
-import re
-import json
-import importlib
-import sys
 import argparse
-from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
-from nppc_problem import problem_levels, problem2path
-from utils import seed_everything
 import asyncio
+import importlib
+import json
+import os
+import os.path as osp
+import pickle
+import re
+import sys
+from pathlib import Path
+
 from litellm import completion, acompletion
 from openai import AsyncOpenAI
-from pathlib import Path
-import pickle
-import os.path as osp
 from tqdm import tqdm
+
+from nppc_problem import problem_levels, problem2path
+from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
+from utils import seed_everything
 
 models = {
     "gpt-4o": "gpt-4o-2024-08-06",
@@ -236,6 +238,7 @@ if __name__ == "__main__":
     n_shots = args.n_shots
     n_trials = args.n_trials
 
+
     def create_demo_text(configs):
         demo_content = ""
         examples = []
@@ -248,6 +251,7 @@ if __name__ == "__main__":
             examples.append(instance)
         instance, solution = generate_instance(**configs)
         return demo_content, instance, examples
+
 
     result_folder_path = Path(args.result_folder)
     if not result_folder_path.exists():

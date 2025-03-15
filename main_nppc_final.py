@@ -1,11 +1,11 @@
 import os
-
-from pathlib import Path
-import pickle
 import os.path as osp
+import pickle
+from copy import deepcopy
+from pathlib import Path
+
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
 from npsolver import NPSolver
-from copy import deepcopy
 
 
 def seed_everything(seed=42):
@@ -38,6 +38,10 @@ def set_api_keys():
         huoshan_api_key = file.read().strip()
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
+    with open("./api_keys/maas_api_key.txt", "r") as file:
+        maas_api_key = file.read().strip()
+    os.environ["MAAS_API_KEY"] = maas_api_key
+
 
 import argparse
 
@@ -62,7 +66,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=0,
+        default=24,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -136,7 +140,7 @@ def main(args):
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         if args.verbose:
             print("=" * 15)
-            print("level {}".format(level))
+            print("level {}: {}".format(level, levels[level]))
             print("=" * 15)
 
         # generate all the instance, examples and contents
@@ -221,10 +225,15 @@ def main(args):
                 )
             )
 
+    with open(osp.join(result_folder_path, saving_path), "wb") as f:
+        pickle.dump(results, f)
+
 
 if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
     seed_everything(args.seed)
+
+    print(args)
     main(args)

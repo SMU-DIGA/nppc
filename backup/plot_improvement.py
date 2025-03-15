@@ -1,9 +1,10 @@
 import json
+
+import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 from rliable import library as rly
 from rliable import metrics
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 filename = "../plottings/procgen_data.json"
 with open(filename, "rb") as f:
@@ -74,7 +75,7 @@ def score_normalization_procgen(res_dict, min_scores, max_scores):
     norm_scores = {}
     for game, scores in res_dict.items():
         norm_scores[game] = (np.array(scores) - min_scores[game]) / (
-            max_scores[game] - min_scores[game]
+                max_scores[game] - min_scores[game]
         )
     return norm_scores
 

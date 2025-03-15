@@ -1,6 +1,6 @@
 import os
-from openai import OpenAI, AsyncOpenAI
-import asyncio
+
+from openai import OpenAI
 
 
 def set_api_keys():

@@ -104,7 +104,3 @@ for i in range(1):
     print(instance)
     print(solution)
     print(verify_solution(instance, solution))
-solution = list(range(5))
-random.shuffle(solution)
-print(solution)
-print(verify_solution(instance, solution))
