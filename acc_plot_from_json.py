@@ -1,5 +1,4 @@
 import json
-import matplotlib.pyplot as plt
 import os
 import json
 import re
@@ -28,6 +27,8 @@ def read_json_files(directory):
             })
     
     return data
+
+import matplotlib.pyplot as plt
 
 
 def plot_accuracy_from_json(json_file, model_name, problem_name, n_shots, save_path):

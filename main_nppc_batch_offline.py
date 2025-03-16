@@ -1,22 +1,22 @@
-import os
-import re
-import json
 import argparse
 import logging
 import ast
-import gc
 import importlib
+import json
+import logging
+import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple, Callable, Optional
 
 import torch
 from huggingface_hub import snapshot_download
-from vllm import LLM, SamplingParams
 from litellm import batch_completion
-
-from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
 from nppc_problem import problem_levels, problem2path
+from nppc_prompt import nppc_template, example_and_solution, problem_descriptions
+from vllm import LLM, SamplingParams
+
 from utils import seed_everything
 
 # Configure logging
@@ -42,7 +42,7 @@ MODELS = {
 
 
 def get_instance_generator(
-    problem_name: str, np_gym_folder: str = "./npgym/npc"
+        problem_name: str, np_gym_folder: str = "./npgym/npc"
 ) -> Tuple[Callable, Callable]:
     """Load problem-specific instance generator and validator"""
     np_gym_dir = Path(np_gym_folder)
@@ -128,7 +128,9 @@ def save_outputs(results: List[Dict], file_path: Path) -> None:
         logger.error(f"Failed to save results: {str(e)}")
 
 
-def initialize_offline_model(model_name: str, model_dir: Path = Path("/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/offline_models")) -> Tuple[LLM, SamplingParams]:
+def initialize_offline_model(
+        model_name: str, model_dir: Path = Path("offline_models")
+) -> Tuple[LLM, SamplingParams]:
     model_dir.mkdir(parents=True, exist_ok=True)
     model_path = model_dir / model_name
 
@@ -138,7 +140,7 @@ def initialize_offline_model(model_name: str, model_dir: Path = Path("/proj/clou
             repo_id=MODELS[model_name], local_dir=str(model_path), resume_download=True
         )
     else:
-        print(f"\n{'='*20} Loading model from {str(model_path)} {'='*20}")
+        print(f"\n{'=' * 20} Loading model from {str(model_path)} {'=' * 20}")
 
     device_count = torch.cuda.device_count()
     if device_count == 0:
@@ -160,12 +162,12 @@ def initialize_offline_model(model_name: str, model_dir: Path = Path("/proj/clou
 
 
 def process_batch(
-    batch_instances: List[str],
-    batch_contents: List[str],
-    verify_solution: Callable,
-    model_name: str,
-    llm: Optional[LLM],
-    sampling_params: Optional[SamplingParams],
+        batch_instances: List[str],
+        batch_contents: List[str],
+        verify_solution: Callable,
+        model_name: str,
+        llm: Optional[LLM],
+        sampling_params: Optional[SamplingParams],
 ) -> List[Dict]:
     """Process a batch of instances through LLM"""
     offline_mode = False
@@ -189,7 +191,7 @@ def process_batch(
 
 
 def format_response(
-    response: Any, instance: str, verify_solution: Callable, offline_mode: bool
+        response: Any, instance: str, verify_solution: Callable, offline_mode: bool
 ) -> Dict:
     """Format LLM response with validation"""
     prediction = (
@@ -222,17 +224,17 @@ def format_response(
 
 
 def process_level(
-    level: str,
-    problem_name: str,
-    result_folder: Path,
-    args: argparse.Namespace,
-    #  llm: Optional[LLM],
-    #  sampling_params: Optional[SamplingParams],
-    debug: bool = False,
+        level: str,
+        problem_name: str,
+        result_folder: Path,
+        args: argparse.Namespace,
+        #  llm: Optional[LLM],
+        #  sampling_params: Optional[SamplingParams],
+        debug: bool = False,
 ) -> None:
     """Process a single problem level in isolated context"""
     with ResourceManager():
-        logger.info(f"\n{'='*20} Processing level {level} {'='*20}")
+        logger.info(f"\n{'=' * 20} Processing level {level} {'=' * 20}")
 
         # Initialize components
         generate_instance, verify_solution = get_instance_generator(problem_name)
@@ -266,7 +268,7 @@ def process_level(
         # Process in batches
         results = []
         for batch_start in range(0, args.n_trials, args.asy_batch_size):
-            batch_instances = instances[batch_start : batch_start + args.asy_batch_size]
+            batch_instances = instances[batch_start: batch_start + args.asy_batch_size]
             batch_prompts = [
                 main_prompt.replace("<problem_to_solve>", "{}".format(inst))
                 for inst in batch_instances
@@ -274,7 +276,7 @@ def process_level(
 
             if debug:
                 print(
-                    f"\n{'='*20} Example Prompt {'='*20}\n{batch_prompts[0]}\n{'='*20} Example Prompt {'='*20}"
+                    f"\n{'=' * 20} Example Prompt {'=' * 20}\n{batch_prompts[0]}\n{'=' * 20} Example Prompt {'=' * 20}"
                 )
 
             batch_results = process_batch(
@@ -288,7 +290,7 @@ def process_level(
 
             if debug:
                 print(
-                    f"\n{'='*20} Example Results {'='*20}\n{batch_results[0]}\n{'='*20} Example Results {'='*20}"
+                    f"\n{'=' * 20} Example Results {'=' * 20}\n{batch_results[0]}\n{'=' * 20} Example Results {'=' * 20}"
                 )
 
             save_outputs(
@@ -349,13 +351,13 @@ def main():
     if args.debug:
         print("=" * 20, f"Evaluating problem: {problem_name}", "=" * 20)
     result_folder = (
-        Path(args.result_folder) / f"{problem2path[problem_name]}" / f"{args.model}"
+            Path(args.result_folder) / f"{problem2path[problem_name]}" / f"{args.model}"
     )
     result_folder.mkdir(parents=True, exist_ok=True)
     assert args.level in list(
         problem_levels[list(problem_descriptions)[args.problem]].keys()
     )
-    logger.info(f"\n{'='*20} Processing level {args.level} {'='*20}")
+    logger.info(f"\n{'=' * 20} Processing level {args.level} {'=' * 20}")
 
     # Initialize components
     generate_instance, verify_solution = get_instance_generator(problem_name)
@@ -402,7 +404,7 @@ def main():
 
         if args.debug:
             print(
-                f"\n{'='*20} Example Prompt {'='*20}\n{batch_prompts[0]}\n{'='*20} Example Prompt {'='*20}"
+                f"\n{'=' * 20} Example Prompt {'=' * 20}\n{batch_prompts[0]}\n{'=' * 20} Example Prompt {'=' * 20}"
             )
 
         batch_results = process_batch(
@@ -416,7 +418,7 @@ def main():
 
         if args.debug:
             print(
-                f"\n{'='*20} Example Results {'='*20}\n{batch_results[0]}\n{'='*20} Example Results {'='*20}"
+                f"\n{'=' * 20} Example Results {'=' * 20}\n{batch_results[0]}\n{'=' * 20} Example Results {'=' * 20}"
             )
 
         save_outputs(

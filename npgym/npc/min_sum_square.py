@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(num_elements: int, k: int, min_value=1, max_value=20):
+def generate_instance(num_elements: int, k: int, min_value=1, max_value=100):
     elements = []
     groups = []
     for i in range(num_elements):
@@ -11,24 +11,27 @@ def generate_instance(num_elements: int, k: int, min_value=1, max_value=20):
     group_value = [0] * k
     for ele_idx, element in enumerate(elements):
         group_value[groups[ele_idx] - 1] += element
+    # print(group_value)
 
     J = sum([v * v for v in group_value]) + random.randint(0, max_value)
+    group_indices = [i+1 for i in range(k)]
+    # print(group_indices)
 
-    instance = {"elements": elements, "k": k, "J": J}
+    instance = {"elements": elements, "set_indices": group_indices, "J": J}
 
     return instance, groups
 
 
 def verify_solution(instance, solution):
     elements = instance["elements"]
-    k = instance["k"]
+    k = len(instance["set_indices"])
     J = instance["J"]
 
     if len(elements) != len(solution):
         return False, "The solution is not with the same elements"
 
-    if len(set(solution)) != k:
-        return False, "The subset number is not correct"
+    if len(set(solution)) > k:
+        return False, "The subset number is not valid"
 
     group_value = {}
 
@@ -48,8 +51,8 @@ def verify_solution(instance, solution):
         return False, "The sum exceeds J."
 
 
-num_elements = 10
-k = 3
+num_elements = 30
+k = 5
 instance, solution = generate_instance(num_elements=num_elements, k=k)
 print(instance)
 print(solution)

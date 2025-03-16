@@ -26,9 +26,9 @@ def generate_instance(num_elements):
 def verify_solution(instance, solution):
     elements = instance["elements"]
     if (
-        (not (0 < len(solution) < len(elements)))
-        and (max(solution) < len(elements) and min(solution) >= 0)
-        and (len(set(solution)) == len(solution))
+            (not (0 < len(solution) < len(elements)))
+            and (max(solution) < len(elements) and min(solution) >= 0)
+            and (len(set(solution)) == len(solution))
     ):
         return False, "The solution is not valid."
 
@@ -41,7 +41,6 @@ def verify_solution(instance, solution):
         return True, "Correct solution."
     else:
         return False, "The solution is not correct."
-
 
 # instance, solution = generate_instance(num_elements=20)
 #

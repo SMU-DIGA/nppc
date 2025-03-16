@@ -1,5 +1,5 @@
 import random
-from typing import List, Dict, Tuple
+from typing import List
 
 
 def format_instance(clauses: List[List[int]]) -> str:
@@ -75,7 +75,7 @@ def verify_solution(instance, solution):
         for literal in clause:
             var = abs(literal)
             if (literal > 0 and solution[var - 1]) or (
-                literal < 0 and not solution[var - 1]
+                    literal < 0 and not solution[var - 1]
             ):
                 clause_satisfied = True
                 break
@@ -86,7 +86,6 @@ def verify_solution(instance, solution):
         return True, "Correct solution."
     else:
         return False, f"The following clauses are not satisfied: {unsatisfied_clauses}."
-
 
 # 生成实例
 # instance, solution = generate_instance(3, 3)

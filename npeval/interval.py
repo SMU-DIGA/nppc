@@ -1,7 +1,8 @@
-from typing import Callable, Dict, List, Optional, Tuple, Union, Mapping, Literal
-from absl import logging
+from typing import Callable, Dict, List, Optional, Tuple, Union, Literal
+
 import arch.bootstrap as arch_bs
 import numpy as np
+from absl import logging
 from numpy import random
 
 Float = Union[float, np.float32, np.float64]
@@ -54,11 +55,11 @@ class StratifiedBootstrap(arch_bs.IIDBootstrap):
     _name = "Stratified Bootstrap"
 
     def __init__(
-        self,
-        *args: np.ndarray,
-        random_state: Optional[random.RandomState] = None,
-        task_bootstrap: bool = False,
-        **kwargs: np.ndarray,
+            self,
+            *args: np.ndarray,
+            random_state: Optional[random.RandomState] = None,
+            task_bootstrap: bool = False,
+            **kwargs: np.ndarray,
     ) -> None:
         """Initializes StratifiedBootstrap.
 
@@ -97,7 +98,7 @@ class StratifiedBootstrap(arch_bs.IIDBootstrap):
         return strata_indices[1:]
 
     def update_indices(
-        self,
+            self,
     ) -> Tuple[np.ndarray, ...]:
         """Selects the indices to sample from the bootstrap distribution."""
         # `self._num_items` corresponds to the number of runs
@@ -129,10 +130,10 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
     """
 
     def __init__(
-        self,
-        *args: np.ndarray,
-        random_state: Optional[random.RandomState] = None,
-        **kwargs: np.ndarray,
+            self,
+            *args: np.ndarray,
+            random_state: Optional[random.RandomState] = None,
+            **kwargs: np.ndarray,
     ) -> None:
         """Initializes StratifiedIndependentSamplesBootstrap.
 
@@ -171,17 +172,17 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
         return strata_indices[1:]
 
     def _get_indices(
-        self,
-        num_runs: int,
-        array_shape: Tuple[int, ...],
-        strata_indices: List[np.ndarray],
+            self,
+            num_runs: int,
+            array_shape: Tuple[int, ...],
+            strata_indices: List[np.ndarray],
     ) -> Tuple[np.ndarray, ...]:
         """Helper function for updating bootstrap indices."""
         indices = np.random.choice(num_runs, array_shape, replace=True)
         return indices, *strata_indices
 
     def update_indices(
-        self,
+            self,
     ) -> Tuple[List[Tuple[np.ndarray, ...]], Dict[str, Tuple[np.ndarray, ...]]]:
         """Update independent sampling indices for the next bootstrap iteration."""
 
@@ -207,15 +208,15 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
 
 
 def get_interval_estimates(
-    score_dict,
-    func: Callable[..., np.ndarray],
-    method: Literal[
-        "basic", "percentile", "studentized", "norm", "bc", "bca"
-    ] = "percentile",
-    task_bootstrap: bool = False,
-    reps: int = 50000,
-    confidence_interval_size: Float = 0.95,
-    random_state: Optional[random.RandomState] = None,
+        score_dict,
+        func: Callable[..., np.ndarray],
+        method: Literal[
+            "basic", "percentile", "studentized", "norm", "bc", "bca"
+        ] = "percentile",
+        task_bootstrap: bool = False,
+        reps: int = 50000,
+        confidence_interval_size: Float = 0.95,
+        random_state: Optional[random.RandomState] = None,
 ) -> Tuple[Dict[str, np.ndarray], Dict[str, np.ndarray]]:
     """Computes interval estimates via stratified bootstrap confidence intervals.
 

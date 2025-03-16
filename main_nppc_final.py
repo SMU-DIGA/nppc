@@ -1,9 +1,12 @@
 import os
-from pathlib import Path
-import pickle
-import os.path as osp
-from copy import deepcopy
 import json
+import os.path as osp
+import pickle
+from copy import deepcopy
+from pathlib import Path
+
+from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
+from npsolver import NPSolver
 
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
 from npsolver import NPSolver
@@ -38,6 +41,10 @@ def set_api_keys():
         huoshan_api_key = file.read().strip()
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
+    with open("./api_keys/maas_api_key.txt", "r") as file:
+        maas_api_key = file.read().strip()
+    os.environ["MAAS_API_KEY"] = maas_api_key
+
 
 import argparse
 
@@ -63,6 +70,7 @@ def get_parser():
         type=int,
         required=False,
         default=1,
+        default=24,
         help="the problem name idx",
     )
     parser.add_argument(
@@ -142,6 +150,8 @@ def main(args):
 
     print("levels", levels)
     for level_idx, level in enumerate(list(levels.keys())):
+        # if level_idx not in [3, 6]:
+        #     continue
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
         seed_everything(args.seed)
@@ -194,7 +204,8 @@ def main(args):
                         predicted_solutions.append(output["solution"])
                         results[level][start_idx + idx].update(output)
                     break
-            else:
+            
+            if outputs is None:
                 predicted_solutions += [None] * batch_size
 
         # verify all the results
@@ -203,7 +214,11 @@ def main(args):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
 
-        if args.verbose:
+        with open(osp.join(result_folder_path, saving_path.replace(".pkl", "_level_{}.pkl".format(level))), "wb") as f:
+            pickle.dump(results, f)
+
+    if args.verbose:
+        for level in results.keys():
             results_for_level = results[level]
 
             print(

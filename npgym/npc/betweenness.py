@@ -58,7 +58,7 @@ def verify_solution(instance, solution):
 
 
 num_element = 4
-num_triples = 1
+num_triples = 3
 
 for i in range(1):
     print("=" * 20)
@@ -68,4 +68,10 @@ for i in range(1):
     print(verify_solution(instance, solution))
     random.shuffle(solution)
     solution = [0, 0, 1, 2]
+    print(verify_solution(instance, solution))
+    solution = [0, 0, 1, 2]
+    print(verify_solution(instance, solution))
+    solution = [0, 1, 2, 4]
+    print(verify_solution(instance, solution))
+    solution = [0, 1, 2]
     print(verify_solution(instance, solution))

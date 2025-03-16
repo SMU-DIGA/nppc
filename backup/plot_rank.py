@@ -1,6 +1,6 @@
-import seaborn as sns
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
 
 colors = sns.color_palette("colorblind")
 algs = ["SLAC", "SAC+AE", "Dreamer", "PISAC", "RAD", "DrQ"]

@@ -1,5 +1,4 @@
 import random
-from typing import List, Set, Tuple
 
 
 def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: int):

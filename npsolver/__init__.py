@@ -8,6 +8,8 @@ MODELS = {
         "deepseek-r1": "deepseek-r1-250120",
         "deepseek-r1-32b": "deepseek-r1-distill-qwen-32b-250120",
         "deepseek-v3": "deepseek-v3-241226",
+        "maas-deepseek-r1": "MaaS-DS-R1",
+        "maas-deepseek-v3": "MaaS-DS-V3",
     },
     "offline": {
         "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",

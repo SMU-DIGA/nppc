@@ -1854,6 +1854,7 @@ atari_100k_score_dict = {
 for algo in atari_100k_score_dict:
     print(atari_100k_score_dict[algo].shape)
 
+
 # from rliable import library as rly
 # from rliable import metrics
 # from rliable import plot_utils
@@ -1872,7 +1873,6 @@ def save_fig(fig, name):
     file_name = "{}.pdf".format(name)
     fig.savefig(file_name, format="pdf", bbox_inches="tight")
     return file_name
-
 
 # colors = sns.color_palette("colorblind")
 # xlabels = ["DER", "OTR", "CURL", "DrQ(ε)", "SPR", "SimPLe", "DrQ"]

@@ -75,7 +75,7 @@ def verify_solution(instance, solution):
         neighbors = set()
         for other in solution:
             if vertex != other and (
-                (vertex, other) in edges or (other, vertex) in edges
+                    (vertex, other) in edges or (other, vertex) in edges
             ):
                 neighbors.add(other)
         if len(neighbors) < instance["k"]:
