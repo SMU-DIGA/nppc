@@ -1,0 +1,54 @@
+Namespace(seed=42, model='deepseek-r1', problem=1, n_shots=1, n_trials=30, batch_size=10, max_tries=3, result_folder='results_online', verbose=True)
+deepseek-r1 Vertex Cover
+levels {1: {'num_nodes': 4, 'cover_size': 2}, 2: {'num_nodes': 8, 'cover_size': 3}, 3: {'num_nodes': 12, 'cover_size': 4}, 4: {'num_nodes': 16, 'cover_size': 5}}
+===============
+level 1: {'num_nodes': 4, 'cover_size': 2}
+===============
+batch 1 over all 3 batches
+Starting the batch calling of LLM
+End of calling LLM
+batch 2 over all 3 batches
+Starting the batch calling of LLM
+End of calling LLM
+No JSON found in the text.
+batch 3 over all 3 batches
+Starting the batch calling of LLM
+End of calling LLM
+This is for {'num_nodes': 4, 'cover_size': 2} of Vertex Cover
+True, Correct solution., {'prompt': 244, 'completion': 2580}
+True, Correct solution., {'prompt': 232, 'completion': 2907}
+True, Correct solution., {'prompt': 232, 'completion': 1827}
+True, Correct solution., {'prompt': 244, 'completion': 1418}
+True, Correct solution., {'prompt': 226, 'completion': 3114}
+True, Correct solution., {'prompt': 238, 'completion': 1900}
+True, Correct solution., {'prompt': 238, 'completion': 1359}
+True, Correct solution., {'prompt': 226, 'completion': 5048}
+True, Correct solution., {'prompt': 232, 'completion': 2196}
+True, Correct solution., {'prompt': 244, 'completion': 1669}
+True, Correct solution., {'prompt': 232, 'completion': 1834}
+True, Correct solution., {'prompt': 244, 'completion': 3604}
+False, The solution is None, {'prompt': 244, 'completion': 2339}
+True, Correct solution., {'prompt': 238, 'completion': 2659}
+True, Correct solution., {'prompt': 232, 'completion': 871}
+True, Correct solution., {'prompt': 226, 'completion': 3519}
+True, Correct solution., {'prompt': 238, 'completion': 2991}
+True, Correct solution., {'prompt': 232, 'completion': 1594}
+True, Correct solution., {'prompt': 226, 'completion': 7327}
+True, Correct solution., {'prompt': 238, 'completion': 1645}
+True, Correct solution., {'prompt': 226, 'completion': 1335}
+True, Correct solution., {'prompt': 232, 'completion': 957}
+True, Correct solution., {'prompt': 238, 'completion': 1270}
+True, Correct solution., {'prompt': 232, 'completion': 8043}
+True, Correct solution., {'prompt': 232, 'completion': 6091}
+True, Correct solution., {'prompt': 232, 'completion': 1807}
+True, Correct solution., {'prompt': 226, 'completion': 2824}
+True, Correct solution., {'prompt': 244, 'completion': 1696}
+True, Correct solution., {'prompt': 238, 'completion': 3857}
+True, Correct solution., {'prompt': 250, 'completion': 1688}
+Accuracy is 0.9666666666666667 (all=30)
+Traceback (most recent call last):
+  File "/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/nppc/main_nppc_final.py", line 233, in <module>
+    main(args)
+  File "/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/nppc/main_nppc_final.py", line 220, in main
+    solver.save_level_results_to_json(results_for_level, level, saving_path_json)
+TypeError: NPSolver.save_level_results_to_json() takes 3 positional arguments but 4 were given

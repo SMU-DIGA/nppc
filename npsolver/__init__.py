@@ -13,6 +13,7 @@ MODELS = {
     },
     "offline": {
         "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "qwen": "Qwen/QwQ-32B",
     },
 }
 

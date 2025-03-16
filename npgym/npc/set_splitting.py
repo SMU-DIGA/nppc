@@ -1,61 +1,68 @@
 import random
 
 
+def generate_valid_numbers(x1, x2, x3):
+    while True:
+        a = random.randint(1, min(x1-1, x3-1))  # Ensure a < x1 and a < x3
+        b = random.randint(1, min(x2-1, x3-a))  # Ensure b < x2 and a + b < x3
+        
+        if a + b < x3:
+            return a, b
+
 def generate_instance(num_elements, num_subsets):
     """
-    Generate an instance of the Set Splitting decision problem.
+    Generate an instance of the Set Splitting problem with at least one solution.
 
-    # Args:
-    #     n (int): Number of elements in the universe
-    #     m (int): Number of subsets
-    #     seed (int, optional): Random seed for reproducibility
-    #
-    # Returns:
-    #     tuple: (universe, subsets)
-    #         - universe: list of integers representing elements
-    #         - subsets: list of sets containing elements from universe
+    Args:
+        n (int): Number of elements in the universal set S.
+        m (int): Number of subsets in collection C.
+
+    Returns:
+        tuple: (universal_set, subsets), where:
+            - universal_set (set): The full set of elements.
+            - subsets (list of sets): The collection of m subsets.
     """
 
-    # Create universe of n elements
-    universe = list(range(1, num_elements + 1))
+    assert num_elements >= 2, "The universal set must contain at least 2 elements."
+    assert num_subsets >= 1, "There must be at least one subset."
 
-    # Generate m random subsets that guarantee at least one solution exists
+    # Step 1: Create the universal set S with unique elements
+    universal_set = set(range(1, num_elements + 1))  # Elements labeled from 1 to n
+
+    # Step 2: Randomly partition S into two initial disjoint sets S1 and S2
+    shuffled_list = list(universal_set)
+    random.shuffle(shuffled_list)
+    split_idx = num_elements // 2
+    S1 = set(shuffled_list[:split_idx])
+    S2 = set(shuffled_list[split_idx:])
+    # Step 3: Generate subsets ensuring each subset has at least one element from S1 and S2
     subsets = []
-
-    # First, create a valid partition to ensure solution exists
-    partition_A = set(random.sample(universe, num_elements // 2))
-    partition_B = set(universe) - partition_A
-
-    # Generate m-2 random subsets
-
-    # partial_subset = num_subsets // 2
-    # for _ in range(partial_subset):
-    #     subset_size = random.randint(2, num_elements - 1)
-    #     subset = set(random.sample(universe, subset_size))
-    #     subsets.append(subset)
     for _ in range(num_subsets):
-        # Add two subsets that cross the partition to make problem non-trivial
-        subset1 = set(random.sample(list(partition_A), len(partition_A) // 2))
-        subset1.update(random.sample(list(partition_B), len(partition_B) // 2))
-
-        subsets.append(list(subset1))
-
-    # Shuffle the subsets
-    random.shuffle(subsets)
-
+        size_s1, size_s2 = generate_valid_numbers(len(S1), len(S2), num_elements)
+        from_S1 = random.sample(S1, k=size_s1)
+        from_S2 = random.sample(S2, k=size_s2)
+        subset = set(from_S1 + from_S2)
+        subsets.append(subset)
+    
     subsets_dict = {}
     for subset in subsets:
-        subsets_dict[len(subsets_dict)] = subset
+        subsets_dict[len(subsets_dict)] = list(subset)
 
-    instance = {"universe": list(set(universe)), "subsets": subsets_dict}
-
-    return instance, [list(partition_A), list(partition_B)]
+    instance = {"universe": list(universal_set), "subsets": subsets_dict}
+    
+    return instance, [list(S1), list(S2)]
 
 
 def verify_solution(instance, partition):
-    """ """
-    partition_A = set(partition[0])
+    if not isinstance(partition, list) or len(partition) != 2:
+        return False, "Partition must be a list of two lists."
+
+    # Ensure each element in partition is a list
+    if not all(isinstance(sublist, list) for sublist in partition):
+        return False, "Each element in the partition must be a list."
+    
     # Check if partition only contains valid elements
+    partition_A = set(partition[0])
     universe = instance["universe"]
     subsets = instance["subsets"]
     if not partition_A.issubset(set(universe)):
@@ -72,10 +79,12 @@ def verify_solution(instance, partition):
 
     return True, "Correct solution."
 
+def test():
+    instance, solution = generate_instance(10, 300)
+    print(instance)
+    print(solution)
+    print(verify_solution(instance, [[], []]))
+    
 
-instance, solution = generate_instance(num_elements=10, num_subsets=4)
-# universe = instance["universe"]
-# solution = set(random.sample(universe, len(universe) // 2))
-print(instance)
-print(solution)
-print(verify_solution(instance, solution))
+if __name__ == "__main__":
+    test()

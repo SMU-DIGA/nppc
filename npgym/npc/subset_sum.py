@@ -1,8 +1,10 @@
 import random
 from collections import Counter
 
-
 def generate_instance(num_elements: int, max_value: int = 100):
+    # Constraints
+    assert isinstance(num_elements, int) and num_elements >= 1, "num_elements must be an integer ≥ 1."
+
     # 生成随机实例 A
     A = [random.randint(1, max_value) for _ in range(num_elements)]
 
@@ -17,8 +19,11 @@ def generate_instance(num_elements: int, max_value: int = 100):
 
     return instance, B
 
-
 def verify_solution(instance, solution):
+    
+    if not isinstance(solution, list):
+        return False, "Wrong solution format."
+    
     # A, K = instance  # 解包 instance 得到集合 A 和目标值 K
     A = instance["A"]
     K = instance["k"]
@@ -38,11 +43,12 @@ def verify_solution(instance, solution):
 
     return True, f"Valid subset"
 
+def test():
+    instance, solution = generate_instance(num_elements=40)
+    print(instance)
+    print(solution)
+    print(verify_solution(instance, solution))
 
-instance, solution = generate_instance(num_elements=20)
 
-solution = list(solution)
-print(instance)
-print(solution)
-
-print(verify_solution(instance, solution))
+if __name__ == "__main__":
+    test()
