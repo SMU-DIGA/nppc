@@ -1,7 +1,7 @@
 import random
 
 
-def generate_instance(min_value=10, max_value=100):
+def generate_instance(min_value: int, max_value: int):
     x = random.randint(min_value, max_value)
 
     b = random.randint(min_value, max_value)
@@ -16,11 +16,12 @@ def generate_instance(min_value=10, max_value=100):
 
 
 def verify_solution(instance, x):
-    a = instance["a"]
-    b = instance["b"]
-    c = instance["c"]
+    a = int(instance["a"])
+    b = int(instance["b"])
+    c = int(instance["c"])
+    x = int(x)
 
-    if x >= c:
+    if x > c or x == c:
         return False, "x is larger than c."
 
     if a == x * x % b:
@@ -30,5 +31,7 @@ def verify_solution(instance, x):
 
 
 instance, solution = generate_instance(min_value=10, max_value=20)
+print(instance)
+print(solution)
 
 print(verify_solution(instance, solution))

@@ -1,54 +1,90 @@
 import random
+import numpy as np
 
 
 def generate_instance(num_items: int, bin_capacity: int, num_bins: int):
-    # 生成随机物品大小
-    U = [random.randint(1, bin_capacity) for _ in range(num_items)]
+    remaining = [bin_capacity] * num_bins
+    mask = [False] * num_bins
+    num_items_for_bins = [0] * num_bins
 
-    # 使用贪心算法（首次适应算法）分配物品到箱子中
-    solution = [[] for _ in range(num_bins)]
-    for item in U:
-        # 尝试将物品放入第一个能容纳它的箱子
-        placed = False
-        for bin_items in solution:
-            if sum(bin_items) + item <= bin_capacity:
-                bin_items.append(item)
-                placed = True
-                break
-        if not placed:
-            # 如果没有箱子能容纳该物品，则无法生成有效解
-            # 重新生成实例
-            return generate_instance(num_items, bin_capacity, num_bins)
+    def softmax(x, mask=None):
+        """
+        计算softmax值
 
-    # 返回生成的实例和有效解
+        参数:
+        x -- 输入数组/列表
+
+        返回:
+        归一化的概率分布（softmax结果）
+        """
+        # 为了数值稳定性，减去最大值
+        x_np = np.array(x, dtype=np.float64)
+
+        if mask is not None:
+            # 将被屏蔽的位置设为非常小的值(负无穷)，这样exp后接近0
+            x_np = np.where(mask, -np.inf, x_np)
+        valid_max = np.max(x_np[x_np != -np.inf])
+        x_shifted = x_np - valid_max
+        # 计算指数
+        exp_x = np.exp(x_shifted)
+        # 归一化
+        return exp_x / np.sum(exp_x)
+
+    # assign items for bins
+    for n_item in range(num_items):
+        probs = softmax(remaining, mask)
+
+        # 根据概率分布采样一个索引
+        sampled_index = np.random.choice(range(num_bins), p=probs)
+
+        num_items_for_bins[sampled_index] += 1
+        remaining[sampled_index] -= 1
+        if remaining[sampled_index] == 0:
+            mask[sampled_index] = True
+
+    item_weights = []
+    item_to_bin = []
+    for n_bin in range(num_bins):
+        remaining_weight = bin_capacity
+        for n_item in range(num_items_for_bins[n_bin]):
+            item_weight = random.randint(
+                1, remaining_weight - (num_items_for_bins[n_bin] - n_item + 1)
+            )
+            remaining_weight -= item_weight
+            item_weights.append(item_weight)
+            item_to_bin.append(n_bin)
+
+    zipped_items = list(zip(item_to_bin, item_weights))
+    random.shuffle(zipped_items)
+
     instance = {
-        'U': U,
-        'B': bin_capacity,
-        'K': num_bins
+        "bins": [i for i in range(num_bins)],
+        "bin_capacity": bin_capacity,
+        "item_weights": [zipped_item[1] for zipped_item in zipped_items],
     }
+
+    solution = [zipped_item[0] for zipped_item in zipped_items]
     return instance, solution
 
 
-
 def verify_solution(instance, solution):
-    U = instance['U']
-    B = instance['B']
-    K = instance['K']
+    num_bins = len(instance["bins"])
+    item_weights = instance["item_weights"]
+    bin_capacity = instance["bin_capacity"]
 
-    # 检查解是否包含所有物品且不重复
-    all_items = []
+    if len(solution) != len(item_weights):
+        return False, "The solution is not valid."
 
-    for bin_items in solution:
-        all_items.extend(bin_items)
+    if max(solution) > num_bins - 1:
+        return False, "No this bin."
 
-    # 检查物品是否一致（包括重复物品）
-    if sorted(all_items) != sorted(U):
-        return False, f"Items are inconsistent."
+    bin_weights = [0] * num_bins
 
-    # 检查每个箱子的总大小是否不超过 B
-    for bin_items in solution:
-        if sum(bin_items) > B:
-            return False, f"The total size exceeds B."
+    for idx, bin_idx in enumerate(solution):
+        bin_weights[bin_idx] += item_weights[idx]
+
+    if max(bin_weights) > bin_capacity:
+        return False, f"The total size exceeds B."
 
     return True, f"Valid bin packing."
 
@@ -60,5 +96,6 @@ num_bins = 3
 instance, solution = generate_instance(num_items, bin_capacity, num_bins)
 print("Instance:", instance)
 print("Solution:", solution)
+# solution = [0, 1, 1, 2, 2, 2 , 2 , 2, 2, 3]
 result = verify_solution(instance, solution)
 print(result)

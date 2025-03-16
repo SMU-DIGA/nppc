@@ -1,74 +1,126 @@
 import random
+import numpy as np
+from itertools import product
 
 
-def generate_instance(num_nodes: int, edge_prob: float = 0.5):
-    graph = dict()
-    graph["nodes"] = [i for i in range(num_nodes)]
-    graph["edges"] = set()
+def generate_instance(num_nodes: int, num_edges: int):
+    """生成 3-COL 实例和有效解"""
+
+    # 生成节点
+    nodes = list(range(num_nodes))
+
+    # 生成有效解：随机分配颜色（0, 1, 2）
+    chunk_size = num_nodes // 3
+    remainder = num_nodes % 3
+
+    # 初始划分
+    first_chunk = chunk_size + (1 if remainder > 0 else 0)
+    second_chunk = chunk_size + (1 if remainder > 1 else 0)
+    third_chunk = chunk_size
+
+    solution = [0] * first_chunk + [1] * second_chunk + [2] * third_chunk
+    first_chunk_nodes = list(range(first_chunk))
+    second_chunk_nodes = list(range(first_chunk, first_chunk + second_chunk))
+    third_chunk_nodes = list(
+        range(first_chunk + second_chunk, first_chunk + second_chunk + third_chunk)
+    )
+    first_edge_set_number = first_chunk * second_chunk
+    second_edge_set_number = second_chunk * third_chunk
+    third_edge_set_number = third_chunk * first_chunk
+
+    assert num_edges <= (
+        first_edge_set_number + second_edge_set_number + third_edge_set_number
+    )
+    edge_number_for_sets = [0] * 3
+    mask = [False] * 3
+    remaining_edges = [
+        first_edge_set_number,
+        second_edge_set_number,
+        third_edge_set_number,
+    ]
+
+    def softmax(x, mask=None):
+        # 为了数值稳定性，减去最大值
+        x_np = np.array(x, dtype=np.float64)
+
+        if mask is not None:
+            # 将被屏蔽的位置设为非常小的值(负无穷)，这样exp后接近0
+            x_np = np.where(mask, -np.inf, x_np)
+        valid_max = np.max(x_np[x_np != -np.inf])
+        x_shifted = x_np - valid_max
+        # 计算指数
+        exp_x = np.exp(x_shifted)
+        # 归一化
+        return exp_x / np.sum(exp_x)
+
+    # assign items for bins
+    for n_edge in range(num_edges):
+        probs = softmax(remaining_edges, mask)
+
+        # 根据概率分布采样一个索引
+        sampled_index = np.random.choice(range(3), p=probs)
+
+        edge_number_for_sets[sampled_index] += 1
+        remaining_edges[sampled_index] -= 1
+        if remaining_edges[sampled_index] == 0:
+            mask[sampled_index] = True
+
+    # 随机生成边
+
+    combination1 = list(product(first_chunk_nodes, second_chunk_nodes))
+    random.shuffle(combination1)
+    combination2 = list(product(second_chunk_nodes, third_chunk_nodes))
+    random.shuffle(combination2)
+    combination3 = list(product(first_chunk_nodes, third_chunk_nodes))
+    random.shuffle(combination3)
+
+    edges = (
+        combination1[: edge_number_for_sets[0]]
+        + combination2[: edge_number_for_sets[1]]
+        + combination3[: edge_number_for_sets[2]]
+    )
+
+    shuffle_nodes = list(range(num_nodes))
+    random.shuffle(shuffle_nodes)
+
+    shuffle_edges = []
+    for edge in edges:
+        if shuffle_nodes[edge[0]] < shuffle_nodes[edge[1]]:
+            shuffle_edges.append((shuffle_nodes[edge[0]], shuffle_nodes[edge[1]]))
+        else:
+            shuffle_edges.append((shuffle_nodes[edge[1]], shuffle_nodes[edge[0]]))
+
+    shuffle_solutions = {}
     for i in range(num_nodes):
-        for j in range(i + 1, num_nodes):
-            if random.random() < edge_prob:
-                graph["edges"].add((i, j))
-    colors = {i: random.randint(0, 2) for i in range(num_nodes)}
-    # 随机添加边，保证相邻顶点颜色不同
-    for v1 in range(num_nodes):
-        for v2 in range(v1 + 1, num_nodes):
-            if colors[v1] != colors[v2] and random.random() < edge_prob:  # 70%概率添加边
-                graph["edges"].add((v1, v2))
+        shuffle_solutions[shuffle_nodes[i]] = solution[i]
+    final_solution = []
+    for i in range(num_nodes):
+        final_solution.append(shuffle_solutions[i])
 
-    return graph, colors
+    # 返回生成的实例和有效解
+    instance = {"nodes": nodes, "edges": shuffle_edges, "color_indices": [0, 1, 2]}
+    return instance, final_solution
 
 
-def verify_solution(graph, coloring):
-    """
-    验证3着色方案是否合法
+def verify_solution(instance, solution):
+    nodes = instance["nodes"]
+    edges = instance["edges"]
 
-    参数:
-    edges: 边的列表，每条边表示为(v1, v2)
-    coloring: 列表，coloring[i]表示顶点i的颜色(0,1,2)
-
-    返回:
-    valid: 布尔值，表示着色方案是否合法
-    error_msg: 如果不合法，返回错误信息
-    """
-    edges = graph["edges"]
-
-    num_vertices = len(graph["nodes"])
-
-    if not coloring:
-        return False, "The coloring cannot be empty."
-
-    if len(coloring) != num_vertices:
-        return False, "The coloring is not matching the nodes."
-
-    if not all(c in [0, 1, 2] for c in coloring):
-        return False, "Colors more than three."
-
-    # 检查相邻顶点是否有相同颜色
-    for v1, v2 in edges:
-        if coloring[v1] == coloring[v2]:
-            return (
-                False,
-                f"Neighboring nodes {v1} and {v2} have the same color {coloring[v1]}",
-            )
-
-    return True, "Correct solution."
+    # 检查每个边的两个节点颜色是否不同
+    for u, v in edges:
+        if solution[u] == solution[v]:
+            return False, "The two nodes of an edge have the same color"
+    return True, "Correct solution"
 
 
-n_vertices = 5
-edges, solution = generate_instance(n_vertices)
-print(f"生成的图的边: {edges}")
+# 示例用法
 
-# 测试一个合法的着色方案
-valid_coloring = [0, 1, 2, 0, 1]
-is_valid, msg = verify_solution(edges, valid_coloring)
-print(f"\n测试合法方案:")
-print(f"着色方案: {valid_coloring}")
-print(f"验证结果: {msg}")
-
-# 测试一个非法的着色方案
-invalid_coloring = [0, 0, 1, 2, 1]
-is_valid, msg = verify_solution(edges, invalid_coloring)
-print(f"\n测试非法方案:")
-print(f"着色方案: {invalid_coloring}")
-print(f"验证结果: {msg}")
+for _ in range(1):
+    num_nodes = 10
+    num_edges = 15
+    instance, solution = generate_instance(num_nodes, num_edges)
+    print("Instance:", instance)
+    print("Solution:", solution)
+    # # 示例用法
+    is_valid = verify_solution(instance, solution)
+    print(is_valid)

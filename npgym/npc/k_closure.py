@@ -84,8 +84,9 @@ def verify_solution(instance, solution):
     return True, "Correct solution."
 
 
-# instance, solution = generate_instance(num_nodes=20, k=5)
-# print(solution)
+instance, solution = generate_instance(num_nodes=20, k=5)
+print(instance)
+print(solution)
 #
 # solution.add(2)
-# print(verify_solution(instance, solution))
+print(verify_solution(instance, solution))

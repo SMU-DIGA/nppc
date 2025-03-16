@@ -2,9 +2,7 @@ import random
 from typing import List, Tuple
 
 
-def generate_instance(
-    num_nodes: int, directed: bool = False, edge_probability: float = 0.3
-):
+def generate_instance(num_nodes: int, directed: bool, edge_probability: float = 0.3):
     """Generate a graph instance containing a Hamiltonian cycle
 
     Args:
@@ -36,9 +34,8 @@ def generate_instance(
                 edges.add((i, j))
                 if not directed:
                     edges.add((j, i))
-
-    instance["graph"]["edges"] = edges
     instance["graph"]["nodes"] = list(range(num_nodes))
+    instance["graph"]["edges"] = edges
     return instance, nodes + nodes[:1]
 
 
@@ -76,14 +73,18 @@ def verify_solution(instance, cycle: List[int]):
 
 
 # Test undirected graph
-# n = 5
-# undirected, solution = generate_instance(n, directed=False)
+n = 5
+undirected, solution = generate_instance(n, directed=False)
 # print("Undirected graph:")
 # # solution = [0, 2, 1, 4, 3, 0]
-# valid, msg = verify_solution(undirected, solution)
-# print(f"Undirected graph validation result: {msg}\n")
+print(undirected)
+print(solution)
+valid, msg = verify_solution(undirected, solution)
+print(f"Undirected graph validation result: {msg}\n")
 #
 # # Test directed graph
-# directed, solution = generate_instance(n, directed=True)
-# valid, msg = verify_solution(directed, solution)
-# print(f"Directed graph validation result: {msg}")
+directed, solution = generate_instance(n, directed=True)
+print(directed)
+print(solution)
+valid, msg = verify_solution(directed, solution)
+print(f"Directed graph validation result: {msg}")
