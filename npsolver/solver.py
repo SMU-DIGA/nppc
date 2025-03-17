@@ -91,6 +91,11 @@ class NPSolver:
                 api_key=os.environ.get("ARK_API_KEY"),
                 base_url="https://ark.cn-beijing.volces.com/api/v3",
             )
+        if self.is_online and model_name.startswith("maas"):
+            self.client = AsyncOpenAI(
+                api_key=os.environ.get("MAAS_API_KEY"),
+                base_url="https://genaiapi.cloudsway.net/v1/ai/RpGtTVMGiAYxmInr",
+            )
 
     async def async_evaluate_llm(self, contents):
         assert self.client is not None
@@ -134,7 +139,10 @@ class NPSolver:
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
-            if self.is_online and self.model_name.startswith("deepseek"):
+            if self.is_online and (
+                self.model_name.startswith("deepseek")
+                or self.model_name.startswith("maas")
+            ):
                 responses = asyncio.run(self.async_evaluate_llm(contents))
             else:
                 responses = batch_completion(

@@ -19,7 +19,7 @@ import seaborn as sns
 
 
 def _non_linear_scaling(
-        performance_profiles, tau_list, xticklabels=None, num_points=5, log_base=2
+    performance_profiles, tau_list, xticklabels=None, num_points=5, log_base=2
 ):
     """Returns non linearly scaled tau as well as corresponding xticks.
 
@@ -79,19 +79,19 @@ def _decorate_axis(ax, wrect=10, hrect=10, ticklabelsize="large"):
 
 
 def _annotate_and_decorate_axis(
-        ax,
-        labelsize="x-large",
-        ticklabelsize="x-large",
-        xticks=None,
-        xticklabels=None,
-        yticks=None,
-        legend=False,
-        grid_alpha=0.2,
-        legendsize="x-large",
-        xlabel="",
-        ylabel="",
-        wrect=10,
-        hrect=10,
+    ax,
+    labelsize="x-large",
+    ticklabelsize="x-large",
+    xticks=None,
+    xticklabels=None,
+    yticks=None,
+    legend=False,
+    grid_alpha=0.2,
+    legendsize="x-large",
+    xlabel="",
+    ylabel="",
+    wrect=10,
+    hrect=10,
 ):
     """Annotates and decorates the plot."""
     ax.set_xlabel(xlabel, fontsize=labelsize)
@@ -109,21 +109,21 @@ def _annotate_and_decorate_axis(
 
 
 def plot_performance_profiles(
-        performance_profiles,
-        tau_list,
-        performance_profile_cis=None,
-        use_non_linear_scaling=False,
-        ax=None,
-        colors=None,
-        color_palette="colorblind",
-        alpha=0.15,
-        figsize=(10, 5),
-        xticks=None,
-        yticks=None,
-        xlabel=r"Normalized Score ($\tau$)",
-        ylabel=r"Fraction of runs with score $> \tau$",
-        linestyles=None,
-        **kwargs
+    performance_profiles,
+    tau_list,
+    performance_profile_cis=None,
+    use_non_linear_scaling=False,
+    ax=None,
+    colors=None,
+    color_palette="colorblind",
+    alpha=0.15,
+    figsize=(10, 5),
+    xticks=None,
+    yticks=None,
+    xlabel=r"Normalized Score ($\tau$)",
+    ylabel=r"Fraction of runs with score $> \tau$",
+    linestyles=None,
+    **kwargs
 ):
     """Plots performance profiles with stratified confidence intervals.
 
@@ -207,18 +207,18 @@ def plot_performance_profiles(
 
 
 def plot_interval_estimates(
-        point_estimates,
-        interval_estimates,
-        metric_names,
-        algorithms=None,
-        colors=None,
-        color_palette="colorblind",
-        max_ticks=4,
-        subfigure_width=3.4,
-        row_height=0.37,
-        xlabel_y_coordinate=-0.1,
-        xlabel="Normalized Score",
-        **kwargs
+    point_estimates,
+    interval_estimates,
+    metric_names,
+    algorithms=None,
+    colors=None,
+    color_palette="colorblind",
+    max_ticks=4,
+    subfigure_width=3.4,
+    row_height=0.37,
+    xlabel_y_coordinate=-0.1,
+    xlabel="Normalized Score",
+    **kwargs
 ):
     """Plots various metrics with confidence intervals.
 
@@ -299,19 +299,19 @@ def plot_interval_estimates(
 
 
 def plot_sample_efficiency_curve(
-        frames,
-        point_estimates,
-        interval_estimates,
-        algorithms=None,
-        colors=None,
-        color_palette="colorblind",
-        figsize=(7, 5),
-        xlabel=r"Number of Frames (in millions)",
-        ylabel="Aggregate Human Normalized Score",
-        ax=None,
-        labelsize="xx-large",
-        ticklabelsize="xx-large",
-        **kwargs
+    frames,
+    point_estimates,
+    interval_estimates,
+    algorithms=None,
+    colors=None,
+    color_palette="colorblind",
+    figsize=(7, 5),
+    xlabel=r"Number of Frames (in millions)",
+    ylabel="Aggregate Human Normalized Score",
+    ax=None,
+    labelsize="xx-large",
+    ticklabelsize="xx-large",
+    **kwargs
 ):
     """Plots an aggregate metric with CIs as a function of environment frames.
 
@@ -374,19 +374,19 @@ def plot_sample_efficiency_curve(
 
 
 def plot_probability_of_improvement(
-        probability_estimates,
-        probability_interval_estimates,
-        pair_separator=",",
-        ax=None,
-        figsize=(4, 3),
-        colors=None,
-        color_palette="colorblind",
-        alpha=0.75,
-        xticks=None,
-        xlabel="P(X > Y)",
-        left_ylabel="Algorithm X",
-        right_ylabel="Algorithm Y",
-        **kwargs
+    probability_estimates,
+    probability_interval_estimates,
+    pair_separator=",",
+    ax=None,
+    figsize=(4, 3),
+    colors=None,
+    color_palette="colorblind",
+    alpha=0.75,
+    xticks=None,
+    xlabel="P(X > Y)",
+    left_ylabel="Algorithm X",
+    right_ylabel="Algorithm Y",
+    **kwargs
 ):
     """Plots probability of improvement with confidence intervals.
 

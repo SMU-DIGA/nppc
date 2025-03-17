@@ -2,7 +2,7 @@ import random
 
 
 def generate_bin_packing_instance(
-        num_items: int, bin_capacity: int, min_size: int = 1, max_size: int = None
+    num_items: int, bin_capacity: int, min_size: int = 1, max_size: int = None
 ):
     """生成装箱问题实例"""
     if max_size is None:

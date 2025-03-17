@@ -19,7 +19,13 @@ def verify_solution(instance, x):
     a = int(instance["a"])
     b = int(instance["b"])
     c = int(instance["c"])
-    x = int(x)
+    try:
+        x = int(x)
+    except:
+        return (
+            False,
+            "x is not an integer. x={}".format(x),
+        )
 
     if x > c or x == c:
         return False, "x is larger than c."

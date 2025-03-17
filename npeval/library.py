@@ -70,11 +70,11 @@ class StratifiedBootstrap(arch_bs.IIDBootstrap):
     _name = "Stratified Bootstrap"
 
     def __init__(
-            self,
-            *args: np.ndarray,
-            random_state: Optional[random.RandomState] = None,
-            task_bootstrap: bool = False,
-            **kwargs: np.ndarray,
+        self,
+        *args: np.ndarray,
+        random_state: Optional[random.RandomState] = None,
+        task_bootstrap: bool = False,
+        **kwargs: np.ndarray,
     ) -> None:
         """Initializes StratifiedBootstrap.
 
@@ -113,7 +113,7 @@ class StratifiedBootstrap(arch_bs.IIDBootstrap):
         return strata_indices[1:]
 
     def update_indices(
-            self,
+        self,
     ) -> Tuple[np.ndarray, ...]:
         """Selects the indices to sample from the bootstrap distribution."""
         # `self._num_items` corresponds to the number of runs
@@ -145,10 +145,10 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
     """
 
     def __init__(
-            self,
-            *args: np.ndarray,
-            random_state: Optional[random.RandomState] = None,
-            **kwargs: np.ndarray,
+        self,
+        *args: np.ndarray,
+        random_state: Optional[random.RandomState] = None,
+        **kwargs: np.ndarray,
     ) -> None:
         """Initializes StratifiedIndependentSamplesBootstrap.
 
@@ -187,17 +187,17 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
         return strata_indices[1:]
 
     def _get_indices(
-            self,
-            num_runs: int,
-            array_shape: Tuple[int, ...],
-            strata_indices: List[np.ndarray],
+        self,
+        num_runs: int,
+        array_shape: Tuple[int, ...],
+        strata_indices: List[np.ndarray],
     ) -> Tuple[np.ndarray, ...]:
         """Helper function for updating bootstrap indices."""
         indices = np.random.choice(num_runs, array_shape, replace=True)
         return (indices, *strata_indices)
 
     def update_indices(
-            self,
+        self,
     ) -> Tuple[List[Tuple[np.ndarray, ...]], Dict[str, Tuple[np.ndarray, ...]]]:
         """Update independent sampling indices for the next bootstrap iteration."""
 
@@ -223,13 +223,13 @@ class StratifiedIndependentBootstrap(arch_bs.IndependentSamplesBootstrap):
 
 
 def get_interval_estimates(
-        score_dict: Union[Mapping[str, np.ndarray], Mapping[str, List[np.ndarray]]],
-        func: Callable[..., np.ndarray],
-        method: str = "percentile",
-        task_bootstrap: bool = False,
-        reps: int = 50000,
-        confidence_interval_size: Float = 0.95,
-        random_state: Optional[random.RandomState] = None,
+    score_dict: Union[Mapping[str, np.ndarray], Mapping[str, List[np.ndarray]]],
+    func: Callable[..., np.ndarray],
+    method: str = "percentile",
+    task_bootstrap: bool = False,
+    reps: int = 50000,
+    confidence_interval_size: Float = 0.95,
+    random_state: Optional[random.RandomState] = None,
 ) -> Tuple[Dict[str, np.ndarray], Dict[str, np.ndarray]]:
     """Computes interval estimates via stratified bootstrap confidence intervals.
 
@@ -315,14 +315,14 @@ average_score_distributions = np.vectorize(mean_score_deviation, excluded=[0])
 
 
 def create_performance_profile(
-        score_dict: Mapping[str, np.ndarray],
-        tau_list: Union[List[Float], np.ndarray],
-        use_score_distribution: bool = True,
-        custom_profile_func: Optional[Callable[..., np.ndarray]] = None,
-        method: str = "percentile",
-        task_bootstrap: bool = False,
-        reps: int = 2000,
-        confidence_interval_size: Float = 0.95,
+    score_dict: Mapping[str, np.ndarray],
+    tau_list: Union[List[Float], np.ndarray],
+    use_score_distribution: bool = True,
+    custom_profile_func: Optional[Callable[..., np.ndarray]] = None,
+    method: str = "percentile",
+    task_bootstrap: bool = False,
+    reps: int = 2000,
+    confidence_interval_size: Float = 0.95,
 ) -> Tuple[Dict[str, np.ndarray], Dict[str, np.ndarray]]:
     """Function for calculating performance profiles.
 

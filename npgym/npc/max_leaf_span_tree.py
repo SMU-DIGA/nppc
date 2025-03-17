@@ -66,8 +66,8 @@ def verify_solution(instance, solution):
     target_leaves = instance["target_leaves"]
     n = len(nodes)
 
-    # Check solution length
     try:
+        # Check solution length
         if len(solution) != n:
             return False, "Solution length doesn't match number of vertices"
 
@@ -84,7 +84,10 @@ def verify_solution(instance, solution):
             if parent != -1:
                 # Check if edge exists in graph
                 if tuple(sorted([v, parent])) not in edge_set:
-                    return False, f"Edge ({v}, {parent}) in solution not present in graph"
+                    return (
+                        False,
+                        f"Edge ({v}, {parent}) in solution not present in graph",
+                    )
                 parent_count[parent] += 1
 
         # Do BFS from root to check connectivity
@@ -111,14 +114,17 @@ def verify_solution(instance, solution):
 
         # Check leaf count
         if leaf_count < target_leaves:
-            return False, f"Tree has {leaf_count} leaves, needs at least {target_leaves}"
+            return (
+                False,
+                f"Tree has {leaf_count} leaves, needs at least {target_leaves}",
+            )
 
         return True, "Solution is valid"
     except:
-        return False, "verification error"
+        return False, "Verification error."
 
 
-for i in range(1):
+for i in range(10):
     instance, solution = generate_instance(num_nodes=10, target_leaves=3)
     print(instance)
     print(solution)

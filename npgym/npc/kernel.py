@@ -10,7 +10,7 @@ def generate_instance(n, edge_prob=0.3):
     kernel = node_perm[: n // 2]
 
     for k in kernel:
-        for j in node_perm[n // 2:]:
+        for j in node_perm[n // 2 :]:
             edges.add((k, j))
 
     for i in nodes:
