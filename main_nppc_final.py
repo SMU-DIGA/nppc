@@ -185,7 +185,7 @@ def main(args):
                         predicted_solutions.append(output["solution"])
                         results[level][start_idx + idx].update(output)
                     break
-            
+
             if outputs is None:
                 predicted_solutions += [None] * batch_size
 
@@ -195,7 +195,13 @@ def main(args):
             results[level][idx]["correctness"] = verifications[idx][0]
             results[level][idx]["reason"] = verifications[idx][1]
 
-        with open(osp.join(result_folder_path, saving_path.replace(".pkl", "_level_{}.pkl".format(level))), "wb") as f:
+        with open(
+            osp.join(
+                result_folder_path,
+                saving_path.replace(".pkl", "_level_{}.pkl".format(level)),
+            ),
+            "wb",
+        ) as f:
             pickle.dump(results, f)
 
     if args.verbose:

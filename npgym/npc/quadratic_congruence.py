@@ -22,7 +22,10 @@ def verify_solution(instance, x):
     try:
         x = int(x)
     except:
-        return False, "x is not an integer. x={}".format(x),
+        return (
+            False,
+            "x is not an integer. x={}".format(x),
+        )
 
     if x > c or x == c:
         return False, "x is larger than c."
