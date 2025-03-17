@@ -241,7 +241,6 @@ if __name__ == "__main__":
     n_shots = args.n_shots
     n_trials = args.n_trials
 
-
     def create_demo_text(configs):
         demo_content = ""
         examples = []
@@ -254,7 +253,6 @@ if __name__ == "__main__":
             examples.append(instance)
         instance, solution = generate_instance(**configs)
         return demo_content, instance, examples
-
 
     result_folder_path = Path(args.result_folder)
     if not result_folder_path.exists():

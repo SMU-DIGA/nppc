@@ -75,7 +75,7 @@ def score_normalization_procgen(res_dict, min_scores, max_scores):
     norm_scores = {}
     for game, scores in res_dict.items():
         norm_scores[game] = (np.array(scores) - min_scores[game]) / (
-                max_scores[game] - min_scores[game]
+            max_scores[game] - min_scores[game]
         )
     return norm_scores
 

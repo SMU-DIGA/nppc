@@ -14,7 +14,7 @@ def generate_instance(num_elements: int, k: int, min_value=1, max_value=100):
     # print(group_value)
 
     J = sum([v * v for v in group_value]) + random.randint(0, max_value)
-    group_indices = [i+1 for i in range(k)]
+    group_indices = [i + 1 for i in range(k)]
     # print(group_indices)
 
     instance = {"elements": elements, "set_indices": group_indices, "J": J}

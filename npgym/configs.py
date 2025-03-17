@@ -42,37 +42,118 @@ PROBLEM_LEVELS = {
     },
     "Vertex Cover": {
         1: {"num_nodes": 4, "cover_size": 2},
-        2: {"num_nodes": 6, "cover_size": 3},
-        3: {"num_nodes": 8, "cover_size": 4},
-        4: {"num_nodes": 10, "cover_size": 5},
-        5: {"num_nodes": 12, "cover_size": 6},
-        6: {"num_nodes": 14, "cover_size": 7},
+        2: {"num_nodes": 8, "cover_size": 3},
+        3: {"num_nodes": 12, "cover_size": 4},
+        4: {"num_nodes": 16, "cover_size": 5},
+        5: {"num_nodes": 20, "cover_size": 10},
+        6: {"num_nodes": 22, "cover_size": 11},
+        7: {"num_nodes": 24, "cover_size": 12},
+        8: {"num_nodes": 26, "cover_size": 13},
+        9: {"num_nodes": 28, "cover_size": 14},
+        10: {"num_nodes": 32, "cover_size": 16},
+        11: {"num_nodes": 36, "cover_size": 18},
+        12: {"num_nodes": 40, "cover_size": 20},
+        13: {"num_nodes": 80, "cover_size": 40},
     },
     "Clique": {
         1: {"num_nodes": 4, "clique_size": 2},
-        2: {"num_nodes": 6, "clique_size": 3},
-        3: {"num_nodes": 8, "clique_size": 4},
-        4: {"num_nodes": 10, "clique_size": 5},
-        5: {"num_nodes": 12, "clique_size": 6},
-        6: {"num_nodes": 14, "clique_size": 7},
+        2: {"num_nodes": 8, "clique_size": 4},
+        3: {"num_nodes": 12, "clique_size": 6},
+        4: {"num_nodes": 14, "clique_size": 7},
+        5: {"num_nodes": 16, "clique_size": 8},
+        6: {"num_nodes": 18, "clique_size": 9},
+        7: {"num_nodes": 20, "clique_size": 10},
+        8: {"num_nodes": 22, "clique_size": 11},
+        9: {"num_nodes": 24, "clique_size": 12},
+        10: {"num_nodes": 26, "clique_size": 13},
+        11: {"num_nodes": 28, "clique_size": 14},
+        12: {"num_nodes": 30, "clique_size": 15},
+        13: {"num_nodes": 40, "clique_size": 20},
     },
     "Independent Set": {
         1: {"num_nodes": 4, "ind_set_size": 2},
+        2: {"num_nodes": 8, "ind_set_size": 4},
+        3: {"num_nodes": 12, "ind_set_size": 6},
+        4: {"num_nodes": 16, "ind_set_size": 8},
+        5: {"num_nodes": 20, "ind_set_size": 10},
+        6: {"num_nodes": 24, "ind_set_size": 12},
+        7: {"num_nodes": 26, "ind_set_size": 13},
+        8: {"num_nodes": 28, "ind_set_size": 14},
+        9: {"num_nodes": 30, "ind_set_size": 15},
+        10: {"num_nodes": 32, "ind_set_size": 16},
+        11: {"num_nodes": 34, "ind_set_size": 17},
+        12: {"num_nodes": 36, "ind_set_size": 18},
+        13: {"num_nodes": 48, "ind_set_size": 24},
     },
     "Partition": {
-        1: {"n": 6},
+        1: {"n": 2, "max_value": 1},
+        2: {"n": 4, "max_value": 40},
+        3: {"n": 10, "max_value": 100},
+        4: {"n": 20, "max_value": 200},
+        5: {"n": 30, "max_value": 300},
+        6: {"n": 40, "max_value": 400},
+        7: {"n": 50, "max_value": 500},
+        8: {"n": 55, "max_value": 550},
+        9: {"n": 60, "max_value": 600},
+        10: {"n": 65, "max_value": 650},
+        11: {"n": 70, "max_value": 700},
+        12: {"n": 75, "max_value": 750},
+        13: {"n": 80, "max_value": 800},
     },
     "Subset Sum": {
-        1: {"num_elements": 5},
+        1: {"num_elements": 5, "max_value": 100},
+        2: {"num_elements": 10, "max_value": 100},
+        3: {"num_elements": 20, "max_value": 200},
+        4: {"num_elements": 40, "max_value": 400},
+        5: {"num_elements": 80, "max_value": 800},
+        6: {"num_elements": 100, "max_value": 1000},
+        7: {"num_elements": 120, "max_value": 1200},
+        8: {"num_elements": 160, "max_value": 1000},
+        9: {"num_elements": 160, "max_value": 1600},
+        10: {"num_elements": 200, "max_value": 2000},
+        11: {"num_elements": 200, "max_value": 1000},
+        12: {"num_elements": 400, "max_value": 2000},
+        13: {"num_elements": 600, "max_value": 2000},
     },
     "Set Packing": {
-        1: {"num_elements": 10, "num_subsets": 20, "num_disjoint_sets": 3},
+        1: {"num_elements": 10, "num_subsets": 10, "num_disjoint_sets": 2},
+        2: {"num_elements": 40, "num_subsets": 40, "num_disjoint_sets": 8},
+        3: {"num_elements": 100, "num_subsets": 200, "num_disjoint_sets": 50},
+        4: {"num_elements": 100, "num_subsets": 400, "num_disjoint_sets": 30},
+        5: {"num_elements": 100, "num_subsets": 500, "num_disjoint_sets": 30},
+        6: {"num_elements": 100, "num_subsets": 600, "num_disjoint_sets": 30},
+        7: {"num_elements": 100, "num_subsets": 800, "num_disjoint_sets": 30},
+        8: {"num_elements": 100, "num_subsets": 1000, "num_disjoint_sets": 30},
+        9: {"num_elements": 200, "num_subsets": 400, "num_disjoint_sets": 60},
+        10: {"num_elements": 200, "num_subsets": 800, "num_disjoint_sets": 60},
+        11: {"num_elements": 400, "num_subsets": 1000, "num_disjoint_sets": 200},
     },
     "Set Splitting": {
-        1: {"num_elements": 10, "num_subsets": 4},
+        1: {"num_elements": 5, "num_subsets": 5},
+        2: {"num_elements": 10, "num_subsets": 10},
+        3: {"num_elements": 10, "num_subsets": 50},
+        4: {"num_elements": 10, "num_subsets": 100},
+        5: {"num_elements": 10, "num_subsets": 200},
+        6: {"num_elements": 100, "num_subsets": 100},
+        7: {"num_elements": 100, "num_subsets": 200},
+        8: {"num_elements": 10, "num_subsets": 500},
+        9: {"num_elements": 10, "num_subsets": 1000},
+        10: {"num_elements": 15, "num_subsets": 500},
+        11: {"num_elements": 20, "num_subsets": 500},
     },
     "Shortest Common Superstring": {
-        1: {"n": 3, "k": 10},
+        1: {"n": 10, "k": 5},
+        2: {"n": 20, "k": 10},
+        3: {"n": 40, "k": 20},
+        4: {"n": 80, "k": 40},
+        5: {"n": 100, "k": 50},
+        6: {"n": 100, "k": 100},
+        7: {"n": 100, "k": 200},
+        8: {"n": 200, "k": 200},
+        9: {"n": 200, "k": 400},
+        10: {"n": 300, "k": 400},
+        11: {"n": 300, "k": 600},
+        12: {"n": 100, "k": 1000},
     },
     "Quadratic Diophantine Equations": {
         1: {"low": 1, "high": 50},
@@ -221,12 +302,12 @@ PROBLEM_LEVELS = {
         12: {"num_nodes": 30, "num_edges": 80},
     },
     "Clustering": {
-        1: {"num_elements": 6, "b": 10}, # 0.83
-        2: {"num_elements": 10, "b": 10}, # 0.76
-        3: {"num_elements": 15, "b": 10}, # 0.6
-        4: {"num_elements": 18, "b": 10}, # 0.43
-        5: {"num_elements": 20, "b": 10}, # 0.23
-        6: {"num_elements": 30, "b": 10}, # 0.067
+        1: {"num_elements": 6, "b": 10},  # 0.83
+        2: {"num_elements": 10, "b": 10},  # 0.76
+        3: {"num_elements": 15, "b": 10},  # 0.6
+        4: {"num_elements": 18, "b": 10},  # 0.43
+        5: {"num_elements": 20, "b": 10},  # 0.23
+        6: {"num_elements": 30, "b": 10},  # 0.067
         7: {"num_elements": 40, "b": 10},
         8: {"num_elements": 50, "b": 10},
         9: {"num_elements": 60, "b": 10},
@@ -243,14 +324,14 @@ PROBLEM_LEVELS = {
     "Minimum Sum of Squares": {
         1: {"num_elements": 10, "k": 5},  # 0.93
         2: {"num_elements": 50, "k": 8},  # 0.83
-        3: {"num_elements": 100, "k": 8}, # 0.77
-        4: {"num_elements": 100, "k": 5}, # 0.63
-        5: {"num_elements": 100, "k": 4}, # 0.4
-        6: {"num_elements": 100, "k": 3}, # 0.26
-        7: {"num_elements": 200, "k": 10}, # 0.2
-        8: {"num_elements": 200, "k": 4}, # 0.17
-        9: {"num_elements": 200, "k": 3}, # 0.03
-        10: {"num_elements": 300, "k": 3}, # 0.03
+        3: {"num_elements": 100, "k": 8},  # 0.77
+        4: {"num_elements": 100, "k": 5},  # 0.63
+        5: {"num_elements": 100, "k": 4},  # 0.4
+        6: {"num_elements": 100, "k": 3},  # 0.26
+        7: {"num_elements": 200, "k": 10},  # 0.2
+        8: {"num_elements": 200, "k": 4},  # 0.17
+        9: {"num_elements": 200, "k": 3},  # 0.03
+        10: {"num_elements": 300, "k": 3},  # 0.03
         # 8: {"num_elements": 200, "k": 8}, # 0.13
         # 9: {"num_elements": 200, "k": 5}, # 0.23
     },
@@ -267,16 +348,16 @@ PROBLEM_LEVELS = {
         10: {"num_nodes": 8, "bandwidth": 2},
     },
     "Maximum Leaf Spanning Tree": {
-        1: {"num_nodes": 5, "target_leaves": 2}, #
-        2: {"num_nodes": 10, "target_leaves": 5}, #
-        3: {"num_nodes": 20, "target_leaves": 10}, # 0.92
-        4: {"num_nodes": 30, "target_leaves": 20}, # 0.7
-        5: {"num_nodes": 40, "target_leaves": 30}, # 0.416
-        6: {"num_nodes": 60, "target_leaves": 50}, # 0.37
-        7: {"num_nodes": 70, "target_leaves": 60}, #
-        8: {"num_nodes": 80, "target_leaves": 65}, # 0.15
-        9: {"num_nodes": 90, "target_leaves": 75}, # 0.11
-        10: {"num_nodes": 100, "target_leaves": 80}, # 0.06
+        1: {"num_nodes": 5, "target_leaves": 2},  #
+        2: {"num_nodes": 10, "target_leaves": 5},  #
+        3: {"num_nodes": 20, "target_leaves": 10},  # 0.92
+        4: {"num_nodes": 30, "target_leaves": 20},  # 0.7
+        5: {"num_nodes": 40, "target_leaves": 30},  # 0.416
+        6: {"num_nodes": 60, "target_leaves": 50},  # 0.37
+        7: {"num_nodes": 70, "target_leaves": 60},  #
+        8: {"num_nodes": 80, "target_leaves": 65},  # 0.15
+        9: {"num_nodes": 90, "target_leaves": 75},  # 0.11
+        10: {"num_nodes": 100, "target_leaves": 80},  # 0.06
     },
 }
 

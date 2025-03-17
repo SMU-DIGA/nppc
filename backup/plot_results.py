@@ -1874,6 +1874,7 @@ def save_fig(fig, name):
     fig.savefig(file_name, format="pdf", bbox_inches="tight")
     return file_name
 
+
 # colors = sns.color_palette("colorblind")
 # xlabels = ["DER", "OTR", "CURL", "DrQ(ε)", "SPR", "SimPLe", "DrQ"]
 # color_idxs = [0, 3, 4, 2, 1, 7, 8]

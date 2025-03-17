@@ -47,6 +47,7 @@ def verify_solution(instance, clique: list):
                 return False, f"No edge between {u} and {v}."
     return True, "Correct solution."
 
+
 # graph, solution = generate_instance(10, 4, 0.6)
 # print("edges:", graph)
 # print(solution)
