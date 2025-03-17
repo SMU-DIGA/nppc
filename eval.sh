@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --gpus 4
 #SBATCH -t 6:00:00
-#SBATCH -A berzelius-2025-50
+#SBATCH -A berzelius-2024-286
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user olivewry@gmail.com
 #SBATCH -o /proj/cloudrobotics-nest/users/x_ruiwa/corl/pusht/diffusion_cnn/r3m_finetune/slurm-%A.out
@@ -17,14 +17,14 @@ conda activate nppc
 
 # Define arguments
 SEED=42
-MODEL="qwen"
+MODEL="deepseek"
 N_SHOTS=3
 N_TRIALS=100
 ASY_BATCH_SIZE=8
-RESULT_FOLDER="results_32768"
+RESULT_FOLDER="results"
 OFFLINE_EVAL="--offline_eval"
 DEBUG=""
-PROBLEM_IDX=1
+PROBLEM_IDX=2
 
 PROBLEM_NAME=$(python -c "
 from nppc_problem import problem2path

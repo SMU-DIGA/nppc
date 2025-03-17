@@ -1,5 +1,4 @@
 import os
-import json
 import os.path as osp
 import pickle
 from copy import deepcopy
@@ -8,8 +7,6 @@ from pathlib import Path
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
 from npsolver import NPSolver
 
-from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
-from npsolver import NPSolver
 
 def seed_everything(seed=42):
     import torch
@@ -28,14 +25,14 @@ def seed_everything(seed=42):
 
 def set_api_keys():
     with open("api_keys/openai_api_key.txt", "r") as file:
-        openai_api_key = file.read().strip()                                               
-    # with open("api_keys/deepseek_api_key.txt", "r") as file:
-    #     deepseek_api_key = file.read().strip()
-    # with open("./api_keys/claude_api_key.txt", "r") as file:
-    #     claude_api_key = file.read().strip()
+        openai_api_key = file.read().strip()
+    with open("api_keys/deepseek_api_key.txt", "r") as file:
+        deepseek_api_key = file.read().strip()
+    with open("./api_keys/claude_api_key.txt", "r") as file:
+        claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
-    # os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
-    # os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+    os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
+    os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
     with open("./api_keys/huoshan_api_key.txt", "r") as file:
         huoshan_api_key = file.read().strip()
@@ -47,6 +44,7 @@ def set_api_keys():
 
 
 import argparse
+
 
 def get_parser():
     parser = argparse.ArgumentParser()
@@ -65,11 +63,9 @@ def get_parser():
         help="name for LLM",
     )
     parser.add_argument(
-        "-p",
         "--problem",
         type=int,
         required=False,
-        default=1,
         default=24,
         help="the problem name idx",
     )
@@ -80,6 +76,7 @@ def get_parser():
         default=1,
         help="number of in-context examples",
     )
+
     parser.add_argument(
         "--n_trials",
         type=int,
@@ -87,6 +84,7 @@ def get_parser():
         default=30,
         help="number of trials for each level",
     )
+
     parser.add_argument(
         "--batch_size",
         type=int,
@@ -94,6 +92,7 @@ def get_parser():
         default=10,
         help="the problem name",
     )
+
     parser.add_argument(
         "--max_tries",
         type=int,
@@ -101,34 +100,25 @@ def get_parser():
         default=3,
         help="max tries for one batch",
     )
+
     parser.add_argument(
         "--result_folder",
         type=str,
         required=False,
-        default="results_online",
+        default="results",
         help="folder path to store the results",
     )
-    parser.add_argument(
-        "--verbose", 
-        type=bool,
-        required=False, 
-        default=True
-    )
-    parser.add_argument(
-        "--levels", 
-        type=int,
-        nargs="+",
-        required=False, 
-        default=None,
-        help="Specify the levels as a space-separated list of integers, e.g., --levels 1 2 3"
-    )   
+
+    parser.add_argument("--verbose", type=bool, required=False, default=True)
+
     return parser.parse_args()
 
 
 def main(args):
     model_name = args.model
+
     problem_name = PROBLEMS[args.problem]
-    print(model_name, problem_name)
+
     n_shots = args.n_shots
     n_trials = args.n_trials
 
@@ -140,22 +130,14 @@ def main(args):
     saving_path = "model_{}_problem_{}_shots_{}.pkl".format(
         model_name, problem_name, n_shots
     )
-    saving_path_json = result_folder_path / "model_{}_problem_{}_shots_{}.json".format(
-        model_name, problem_name, n_shots
-    )
-    
-    levels = PROBLEM_LEVELS[problem_name]
-    if args.levels is not None:
-        levels = {lvl: levels[lvl] for lvl in args.levels if lvl in levels}
 
-    print("levels", levels)
+    levels = PROBLEM_LEVELS[problem_name]
     for level_idx, level in enumerate(list(levels.keys())):
         # if level_idx not in [3, 6]:
         #     continue
+
         env = NPEnv(problem_name=problem_name, level=level)
         solver = NPSolver(problem_name=problem_name, model_name=model_name)
-        seed_everything(args.seed)
-            
         if args.verbose:
             print("=" * 15)
             print("level {}: {}".format(level, levels[level]))
@@ -196,7 +178,7 @@ def main(args):
             # basically, we will
             for try_idx in range(args.max_tries):
                 outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
-                
+
                 if outputs is None:
                     continue
                 else:
@@ -242,10 +224,6 @@ def main(args):
                     sum(accuracy) / len(accuracy), len(accuracy)
                 )
             )
-            solver.save_level_results_to_json(results_for_level, level, saving_path_json)
-        
-        if not solver.is_online:
-            solver.terminate_model()
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
@@ -255,6 +233,7 @@ if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
+    seed_everything(args.seed)
 
     print(args)
     main(args)

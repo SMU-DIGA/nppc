@@ -1,5 +1,4 @@
 import argparse
-import logging
 import ast
 import importlib
 import json
@@ -37,7 +36,6 @@ MODELS = {
     "deepseek-chat": "deepseek/deepseek-chat",
     # Offline models
     "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-    "qwen": "Qwen/QwQ-32B"
 }
 
 
@@ -98,27 +96,27 @@ def save_outputs(results: List[Dict], file_path: Path) -> None:
         if file_path.exists():
             with file_path.open() as f:
                 try:
-                    existing_data = json.load(f)
+                    existing_data = json.load(f)  # Load existing JSON
                 except json.JSONDecodeError:
                     logger.warning(
                         f"Warning: {file_path} is empty or corrupted. Overwriting with fresh results."
                     )
-                    existing_data = []
+                    existing_data = []  # Reset if file is corrupted
 
         def convert_sets(obj):
             """Ensure JSON compatibility by converting sets, tuples, and None values."""
             if isinstance(obj, set):
-                return list(obj)
+                return list(obj)  # Convert sets to lists
             elif isinstance(obj, tuple):
-                return list(obj)
+                return list(obj)  # Convert tuples to lists
             elif isinstance(obj, dict):
                 return {
                     str(k): convert_sets(v) for k, v in obj.items()
-                }
+                }  # Ensure valid dict
             elif isinstance(obj, list):
-                return [convert_sets(x) for x in obj]
+                return [convert_sets(x) for x in obj]  # Recursively process lists
             elif obj is None:
-                return "null"
+                return "null"  # JSON cannot handle None, replace with "null"
             return obj
 
         existing_data += [convert_sets(r) for r in results]
@@ -153,12 +151,8 @@ def initialize_offline_model(
         dtype="auto",
         gpu_memory_utilization=0.8,
         trust_remote_code=True,
-        enforce_eager=True
-    ), SamplingParams(
-        temperature=0.6,
-        top_p=0.95,
-        max_tokens=32768
-    )
+        enforce_eager=True,
+    ), SamplingParams(temperature=0.6, top_p=0.95, max_tokens=7500)
 
 
 def process_batch(
@@ -175,7 +169,6 @@ def process_batch(
         if llm is not None and sampling_params is not None:
             offline_mode = True
             responses = llm.generate(batch_contents, sampling_params)
-            print(responses)
         else:
             messages = [
                 [{"role": "user", "content": content}] for content in batch_contents
@@ -314,10 +307,10 @@ def configure_parser() -> argparse.ArgumentParser:
         "--seed", type=int, default=42, help="Random seed for reproducibility"
     )
     parser.add_argument(
-        "--model", choices=list(MODELS), default="qwen", help="Model to evaluate"
+        "--model", choices=list(MODELS), default="deepseek", help="Model to evaluate"
     )
     parser.add_argument(
-        "-p", "--problem", type=int, default=0, help="Problem index to evaluate"
+        "--problem", type=int, default=0, help="Problem index to evaluate"
     )
     parser.add_argument(
         "-l", "--level", type=int, default=1, help="Level of problem to evaluate"
@@ -366,7 +359,7 @@ def main():
         llm, sampling_params = initialize_offline_model(args.model)
     else:
         llm, sampling_params = None, None
-    # set seed after initializing offline model to avoid mp worker conflict
+    # set seed after initializing offline model
     seed_everything(args.seed)
 
     # Generate evaluation instances
