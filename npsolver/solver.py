@@ -1,20 +1,16 @@
-import re
-import json
-import ast
 import asyncio
+import json
 import os
+import re
 from pathlib import Path
-import torch
-import gc
-import signal
 
-from litellm import batch_completion
-from vllm.distributed.parallel_state import destroy_model_parallel
 from huggingface_hub import snapshot_download
+from litellm import batch_completion
 from openai import AsyncOpenAI
 
 from npsolver import MODELS
 from npsolver.prompt import nppc_template, example_and_solution, problem_descriptions
+
 
 # Continue with your vLLM code
 def extract_solution_from_response(response):
@@ -28,10 +24,7 @@ def extract_solution_from_response(response):
             # remove the multiple line comment
             json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
             data = json.loads(json_str)
-            
-            answer = data.get("solution")
-            if isinstance(answer, str) and answer.startswith("[") and answer.endswith("]"):
-                answer = ast.literal_eval(answer)
+            answer = data["solution"]
             return answer
         except (json.JSONDecodeError, KeyError, SyntaxError) as e:
             print(f"Error parsing JSON or answer field: {e}")
@@ -88,7 +81,7 @@ class NPSolver:
         self.sampling_params = None
         if not self.is_online:
             self.local_llm, self.sampling_params = initialize_offline_model(
-                model_name=model_name, model_dir=Path("./offline_models")
+                model_name=model_name, model_dir=Path("./models")
             )
 
         self.client = None
@@ -202,68 +195,3 @@ class NPSolver:
         except Exception as e:
             print(f"Error calling the LLM: {e}")
             return None
-        
-    def save_level_results_to_json(self, results_for_level, level, file_path) -> None:
-        """Save results to JSON file with atomic write, handling empty or corrupted files."""
-        file_path = Path(file_path)
-        try:
-            existing_data = []
-            if file_path.exists():
-                with file_path.open() as f:
-                    try:
-                        existing_data = json.load(f)
-                    except json.JSONDecodeError:
-                        print(
-                            f"Warning: {file_path} is empty or corrupted. Overwriting with fresh results."
-                        )
-                        existing_data = []
-                        
-            def convert_sets(obj):
-                """Ensure JSON compatibility by converting sets, tuples, and None values."""
-                if isinstance(obj, set):
-                    return list(obj)
-                elif isinstance(obj, tuple):
-                    return list(obj)
-                elif isinstance(obj, dict):
-                    return {
-                        str(k): convert_sets(v) for k, v in obj.items()
-                    }
-                elif isinstance(obj, list):
-                    return [convert_sets(x) for x in obj]
-                elif obj is None:
-                    return "null"
-                return obj  
-
-            accuracy = [result["correctness"] for result in results_for_level]
-            reasons = [result["reason"] for result in results_for_level]
-            accuracy_score = sum(accuracy) / len(accuracy) if accuracy else 0
-
-            results_summary = [{
-                "level": level,
-                "accuracy": accuracy_score,
-                "total_trials": len(accuracy),
-            }]
-            existing_data += [convert_sets(r) for r in results_summary]
-            with file_path.open("w", encoding="utf-8") as f:
-                json.dump(existing_data, f, indent=2, ensure_ascii=False)
-        except (IOError, json.JSONDecodeError) as e:
-            print(f"Failed to save results: {str(e)}")
-            
-    def terminate_model(self):
-        """Properly terminate the LLM model to free up memory and resources."""
-        try:
-            # Destroy model parallel groups if they exist
-            destroy_model_parallel()
-            # Safely delete LLM engine components
-            if hasattr(self, "local_llm") and self.local_llm:
-                del self.local_llm.llm_engine.model_executor.driver_worker
-                
-                del self.local_llm
-                self.local_llm = None
-
-            # Force garbage collection and clear CUDA memory
-            gc.collect()
-            torch.cuda.empty_cache()
-
-        except Exception as e:
-            print(f"Error while terminating model: {e}") 

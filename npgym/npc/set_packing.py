@@ -3,64 +3,69 @@ import random
 
 def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: int):
     """
-    Generates a Set Packing problem instance with at least one valid solution.
+    Generate a set packing instance with at least one valid solution.
 
-    Parameters:
-    - num_elements: Total number of unique elements in the universe S.
-    - num_subsets: Total number of sets in the collection C.
-    - num_disjoint_sets: Number of disjoint sets required in the solution.
-    - max_set_size: Maximum size of any subset.
-
-    Returns:
-    - instance (dict): The generated Set Packing instance.
-    - selected_ids (list): The indices of sets forming a guaranteed solution.
+    # Args:
+    #     n (int): Number of elements in the universe
+    #     m (int): Number of sets to generate
+    #     k (int): Size of a valid solution (number of disjoint sets)
+    #
+    # Returns:
+    #     Tuple[List[Set[int]], int]: A tuple containing:
+    #         - List of sets representing the instance
+    #         - Target k value (number of disjoint sets to find)
     """
-    
-    assert num_disjoint_sets <= num_subsets, "num_disjoint_sets must be less than or equal to num_subsets"
-   
-    max_set_size = num_elements // num_disjoint_sets
-    assert max_set_size > 0, "max_set_size must be greater than 0"
-    # Step 1: Create a universal set S
-    universal_set = set(range(num_elements))
+    if num_disjoint_sets > num_subsets:
+        raise ValueError("k cannot be larger than m")
+    # if k * n < n:  # Ensure we can create k disjoint sets
+    #     raise ValueError("k is too small to guarantee a solution")
 
-    # Step 2: Generate num_disjoint_sets pairwise disjoint sets (ensuring a valid solution)
-    selected_elements = set()
-    selected_ids = []
-    C = []
-    
-    for i in range(num_disjoint_sets):
-        subset_size = random.randint(1, max_set_size)
-        subset = set(random.sample(universal_set - selected_elements, subset_size))
-        C.append(subset)
-        selected_elements.update(subset)
-        selected_ids.append(i)
+    # First, generate k disjoint sets to ensure at least one solution exists
+    universe = set(range(num_elements))
+    sets = []
+    available_elements = list(universe)
 
-    # Step 3: Generate additional sets, possibly overlapping
-    while len(C) < num_subsets:
-        subset_size = random.randint(1, max_set_size)
-        subset = set(random.sample(universal_set, subset_size))  # May overlap
-        if subset not in C:
-            C.append(subset)
+    # Generate k disjoint sets first
+    for _ in range(num_disjoint_sets):
+        # For each set, randomly choose elements from available elements
+        set_size = random.randint(
+            1, max(1, len(available_elements) // (num_disjoint_sets * 2))
+        )
+        new_set = set(random.sample(available_elements, set_size))
 
-    # Step 4: Shuffle the order of subsets
-    shuffled_indices = list(range(len(C)))
-    random.shuffle(shuffled_indices)
+        # Remove used elements from available_elements
+        available_elements = [x for x in available_elements if x not in new_set]
+        sets.append(new_set)
 
-    # Create a mapping from original indices to shuffled indices
-    shuffled_sets = {i: list(C[shuffled_indices[i]]) for i in range(len(C))}
+        # solution.append(new_set)
 
-    # Adjust selected_ids to match shuffled order
-    selected_ids = sorted([shuffled_indices.index(i) for i in selected_ids])
+    # Generate remaining m-k sets randomly
+    for _ in range(num_subsets - num_disjoint_sets):
+        set_size = random.randint(1, num_elements // 2)
+        new_set = set(random.sample(list(universe), set_size))
+        sets.append(new_set)
 
-    # Step 5: Construct the final instance
+    # Shuffle the sets to hide the solution
+
+    set_indices = [i for i in range(len(sets))]
+    random.shuffle(set_indices)
+    shuffle_sets = {}
+    solution = []
+    selected_sets = []
+    for idx, i in enumerate(set_indices):
+        shuffle_sets[idx] = list(sets[i])
+        if i < num_disjoint_sets:
+            solution.append(idx)
+            selected_sets.append(list(sets[i]))
+
     instance = {
-        "universe": list(universal_set),
-        "subsets": shuffled_sets,
+        "universe": list(universe),
+        "subsets": shuffle_sets,
         "k": num_disjoint_sets,
     }
+    # print(selected_sets)
 
-    return instance, selected_ids
-
+    return instance, solution
 
 
 def verify_solution(instance, selected_sets):
@@ -75,8 +80,6 @@ def verify_solution(instance, selected_sets):
     Returns:
         bool: True if the solution is valid, False otherwise
     """
-    if not isinstance(selected_sets, list):
-        return False, "Wrong solution format."
 
     k = instance["k"]
 
@@ -98,13 +101,10 @@ def verify_solution(instance, selected_sets):
 
     return True, "Correct solution."
 
-def test():
-    instance, solution = generate_instance(
-        100, 200, 50
-    )
-    print(instance)
-    print(solution)
-    print(verify_solution(instance, solution))
 
-if __name__ == "__main__":
-    test()
+instance, solution = generate_instance(
+    num_elements=10, num_subsets=20, num_disjoint_sets=2
+)
+print(instance)
+print(solution)
+print(verify_solution(instance, solution))
