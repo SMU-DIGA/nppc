@@ -25,15 +25,15 @@ def extract_solution_from_response(response):
             json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
             data = json.loads(json_str)
             answer = data["solution"]
-            return answer
+            return answer, None
         except (json.JSONDecodeError, KeyError, SyntaxError) as e:
             print(f"Error parsing JSON or answer field: {e}")
             # return None
-            return "JSON Error."
+            return None, f"Error parsing JSON or answer field: {e}"
     else:
         print("No JSON found in the text.")
         # return None
-        return "JSON Error."
+        return None, "JSON Error: No JSON found in the text."
 
 
 def initialize_offline_model(model_name: str, model_dir):
@@ -137,7 +137,6 @@ class NPSolver:
 
     def get_batch_outputs_from_api(self, contents):
         assert self.is_online
-        outputs = []
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
@@ -152,25 +151,37 @@ class NPSolver:
                 )
             # print(responses)
             print("End of calling LLM")
+            outputs = []
             for idx, response in enumerate(responses):
                 token_numbers = {
                     "prompt": response.usage.prompt_tokens,
                     "completion": response.usage.completion_tokens,
                 }
                 prediction = response.choices[0].message.content
-                predicted_solution = extract_solution_from_response(prediction)
+                predicted_solution, json_error_message = extract_solution_from_response(
+                    prediction
+                )
 
                 output = {
                     "response": prediction,
                     "solution": predicted_solution,
                     "tokens": token_numbers,
+                    "error_msg": {"llm": None, "json": json_error_message},
                 }
                 # print(result)
                 outputs.append(output)
             return outputs
         except Exception as e:
             # return None
-            return "LLM Error."
+            outputs = [
+                {
+                    "solution": None,
+                    "error_msg": {"llm": f"LLM error: {e}", "json": None},
+                }
+                for _ in range(len(contents))
+            ]
+
+            return outputs
 
     def get_batch_outputs_from_offline_model(self, contents):
         assert not self.is_online
