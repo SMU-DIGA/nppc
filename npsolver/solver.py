@@ -28,10 +28,12 @@ def extract_solution_from_response(response):
             return answer
         except (json.JSONDecodeError, KeyError, SyntaxError) as e:
             print(f"Error parsing JSON or answer field: {e}")
-            return None
+            # return None
+            return "JSON Error."
     else:
         print("No JSON found in the text.")
-        return None
+        # return None
+        return "JSON Error."
 
 
 def initialize_offline_model(model_name: str, model_dir):
@@ -167,8 +169,8 @@ class NPSolver:
                 outputs.append(output)
             return outputs
         except Exception as e:
-            print(f"Error calling the LLM: {e}")
-            return None
+            # return None
+            return "LLM Error."
 
     def get_batch_outputs_from_offline_model(self, contents):
         assert not self.is_online
@@ -194,4 +196,5 @@ class NPSolver:
             return outputs
         except Exception as e:
             print(f"Error calling the LLM: {e}")
-            return None
+            # return None
+            return "LLM Error."
