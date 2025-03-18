@@ -181,7 +181,6 @@ def main(args):
         end_idx = min(batch_size * (batch_idx + 1), n_trials)
 
         # we will talke the max tries for both open and close models
-        # basically, we will
 
         for try_idx in range(args.max_tries):
             outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
