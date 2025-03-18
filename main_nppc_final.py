@@ -197,30 +197,29 @@ def main(args):
         results[level][idx]["reason"] = verifications[idx][1]
 
     if args.verbose:
-        for level in results.keys():
-            results_for_level = results[level]
+        results_for_level = results[level]
 
+        print(
+            "This is for {} of {}".format(
+                PROBLEM_LEVELS[problem_name][level], problem_name
+            )
+        )
+        accuracy = []
+        reason = []
+        for result in results_for_level:
+            accuracy.append(result["correctness"])
+            reason.append(result["reason"])
             print(
-                "This is for {} of {}".format(
-                    PROBLEM_LEVELS[problem_name][level], problem_name
+                "{}, {}, {}".format(
+                    result["correctness"], result["reason"], result["tokens"]
                 )
             )
-            accuracy = []
-            reason = []
-            for result in results_for_level:
-                accuracy.append(result["correctness"])
-                reason.append(result["reason"])
-                print(
-                    "{}, {}, {}".format(
-                        result["correctness"], result["reason"], result["tokens"]
-                    )
-                )
 
-            print(
-                "Accuracy is {} (all={})".format(
-                    sum(accuracy) / len(accuracy), len(accuracy)
-                )
+        print(
+            "Accuracy is {} (all={})".format(
+                sum(accuracy) / len(accuracy), len(accuracy)
             )
+        )
 
     with open(osp.join(result_folder_path, saving_path), "wb") as f:
         pickle.dump(results, f)
