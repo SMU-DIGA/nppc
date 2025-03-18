@@ -48,15 +48,15 @@ def verify_solution(instance, solution):
     try:
         # 检查解的大小是否不超过 k
         if len(solution) > k:
-            return False, "The number of subsets in the solution exceeds k"
+            return False, "The number of subsets in the solution exceeds k."
         # 检查解是否覆盖 S
         covered = set()
         for i in solution:
             covered.update(C[i])
         if covered >= set(S):
-            return True, "Valid solution"
+            return True, "Correct solution."
         else:
-            return False, "The solution does not cover S"
+            return False, "The solution does not cover S."
     except:
         return False, "Verification error."
 

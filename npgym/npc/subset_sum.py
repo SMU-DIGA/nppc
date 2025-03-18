@@ -30,13 +30,13 @@ def verify_solution(instance, solution):
     # 检查 B 是否是 A 的子集（考虑重复元素）
     for element, count in count_B.items():
         if count > count_A[element]:
-            return False, f"Not a subset"
+            return False, f"Not a subset."
 
     # 检查 B 的和是否等于 K
     if sum(B) != K:
-        return False, f"Wrong sum"
+        return False, f"Wrong sum."
 
-    return True, f"Valid subset"
+    return True, "Correct solution."
 
 
 instance, solution = generate_instance(num_elements=20)

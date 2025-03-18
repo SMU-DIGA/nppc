@@ -67,6 +67,7 @@ def verify_solution(numbers: List[int], partition: List[bool]) -> Tuple[bool, st
     sum2 = sum(num for num, include in zip(numbers, partition) if not include)
 
     if sum1 == sum2:
-        return True, f"Valid partition with sum {sum1}"
+        return True, "Correct solution."
+        # return True, f"Valid partition with sum {sum1}"
     else:
         return False, f"Invalid partition: {sum1} ≠ {sum2}"

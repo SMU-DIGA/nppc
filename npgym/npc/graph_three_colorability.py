@@ -111,7 +111,7 @@ def verify_solution(instance, solution):
     for u, v in edges:
         if solution[u] == solution[v]:
             return False, "The two nodes of an edge have the same color"
-    return True, "Correct solution"
+    return True, "Correct solution."
 
 
 # 示例用法

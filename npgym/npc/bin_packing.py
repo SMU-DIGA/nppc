@@ -87,7 +87,7 @@ def verify_solution(instance, solution):
     if max(bin_weights) > bin_capacity:
         return False, f"The total size exceeds B."
 
-    return True, f"Valid bin packing."
+    return True, "Correct solution."
 
 
 # 示例用法

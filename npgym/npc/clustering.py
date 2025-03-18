@@ -85,7 +85,7 @@ def verify_solution(instance, partition):
                         f"Distance {distances[(i, j)]} between elements {i} and {j} in set X_{partition[i] + 1} exceeds bound B={B}",
                     )
 
-    return True, "Valid solution"
+    return True, "Correct solution."
 
 
 instance, solution = generate_instance(num_elements=50, b=10)

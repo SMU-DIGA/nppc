@@ -119,7 +119,7 @@ def verify_solution(instance, solution):
                 f"Tree has {leaf_count} leaves, needs at least {target_leaves}",
             )
 
-        return True, "Solution is valid"
+        return True, "Correct solution."
     except:
         return False, "Verification error."
 

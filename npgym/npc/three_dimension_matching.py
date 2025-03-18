@@ -77,7 +77,7 @@ def verify_solution(
         used_y.add(y)
         used_z.add(z)
 
-    return True, f"Valid matching."
+    return True, "Correct solution."
 
 
 # 使用示例

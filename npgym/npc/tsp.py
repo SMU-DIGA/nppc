@@ -131,7 +131,7 @@ def verify_solution(instance, tour):
             f"Tour length {total_length} exceeds target length {target_length}",
         )
 
-    return True, "Solution is valid"
+    return True, "Correct solution."
 
 
 instance, solution = generate_instance(num_cities=5, target_length=10)
