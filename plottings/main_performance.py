@@ -77,8 +77,8 @@ plot_utils.plot_sample_efficiency_curve(
     iqm_scores,
     iqm_cis,
     algorithms=list(nppc_result.keys()),
-    xlabel=r"Accuracy",
-    ylabel="Difficulty Level",
+    xlabel=r"Difficulty Level",
+    ylabel="Accuracy",
     ax=ax,
 )
 
