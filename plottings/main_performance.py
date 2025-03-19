@@ -97,6 +97,6 @@ ax.legend(
 )
 
 plt.tight_layout()
-plt.savefig("3-SAT.png")
+plt.savefig("{}.png".format(problem))
 plt.show()
 
