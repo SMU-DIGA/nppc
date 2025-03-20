@@ -26,21 +26,27 @@ def seed_everything(seed=42):
 def set_api_keys():
     with open("api_keys/openai_api_key.txt", "r") as file:
         openai_api_key = file.read().strip()
-    with open("api_keys/deepseek_api_key.txt", "r") as file:
-        deepseek_api_key = file.read().strip()
-    with open("./api_keys/claude_api_key.txt", "r") as file:
-        claude_api_key = file.read().strip()
     os.environ["OPENAI_API_KEY"] = openai_api_key
-    os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
-    os.environ["ANTHROPIC_API_KEY"] = claude_api_key
 
     with open("./api_keys/huoshan_api_key.txt", "r") as file:
         huoshan_api_key = file.read().strip()
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
-    with open("./api_keys/maas_api_key.txt", "r") as file:
-        maas_api_key = file.read().strip()
-    os.environ["MAAS_API_KEY"] = maas_api_key
+    try:
+
+        with open("api_keys/deepseek_api_key.txt", "r") as file:
+            deepseek_api_key = file.read().strip()
+        with open("./api_keys/claude_api_key.txt", "r") as file:
+            claude_api_key = file.read().strip()
+
+        os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
+        os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+
+        with open("./api_keys/maas_api_key.txt", "r") as file:
+            maas_api_key = file.read().strip()
+        os.environ["MAAS_API_KEY"] = maas_api_key
+    except:
+        print("some api key is not there")
 
 
 import argparse
@@ -52,7 +58,7 @@ def get_parser():
         "--seed",
         type=int,
         required=False,
-        default=42,
+        default=64,
         help="seed",
     )
     parser.add_argument(
@@ -66,7 +72,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=15,
+        default=0,
         help="the problem name idx",
     )
 
@@ -138,6 +144,16 @@ def main(args):
     result_folder_path = Path(args.result_folder)
     if not result_folder_path.exists():
         result_folder_path.mkdir(parents=True, exist_ok=True)
+
+    result_folder_path_per_problem = Path(osp.join(args.result_folder, problem_name))
+    if not result_folder_path_per_problem.exists():
+        result_folder_path_per_problem.mkdir(parents=True, exist_ok=True)
+
+    result_folder_path_per_model = Path(
+        osp.join(args.result_folder, problem_name, model_name)
+    )
+    if not result_folder_path_per_model.exists():
+        result_folder_path_per_model.mkdir(parents=True, exist_ok=True)
 
     results = {}
     saving_path = "model_{}_problem_{}_level_{}_shots_{}_seed_{}.pkl".format(
@@ -221,7 +237,7 @@ def main(args):
             )
         )
 
-    with open(osp.join(result_folder_path, saving_path), "wb") as f:
+    with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
         pickle.dump(results, f)
 
 
@@ -233,8 +249,11 @@ if __name__ == "__main__":
     problem_name = PROBLEMS[args.problem]
     levels = PROBLEM_LEVELS[problem_name]
 
-    for level in levels:
+    for seed in [42, 53, 64]:
+        args.seed = seed
         seed_everything(args.seed)
-        args.level = level
-        print(args)
-        main(args)
+        for level in levels:
+            seed_everything(args.seed)
+            args.level = level
+            print(args)
+            main(args)

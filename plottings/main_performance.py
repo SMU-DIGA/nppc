@@ -6,7 +6,12 @@ from npeval import plot_utils
 from npeval.interval import get_interval_estimates
 import pickle
 
+import os.path as osp
+from pathlib import Path
+
+
 def get_data(problem, levels, model):
+    # print(model)
     seeds = [42, 53, 64]
     results = []
     for seed in seeds:
@@ -16,49 +21,34 @@ def get_data(problem, levels, model):
         # print("========")
         for level in levels:
             f = open(
-                "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(problem, model, model, problem, level, seed),
-                'rb')
+                "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
+                    problem, model, model, problem, level, seed
+                ),
+                "rb",
+            )
             data = pickle.load(f)
             true_num = 0
             for i in range(30):
-                if data[level][i]["correctness"] == True:
+                # if model == 'gpt-4o':
+                #     print(data[level][i]["instance"])
+                if data[level][i]["correctness"]:
                     true_num = true_num + 1
             # print("level {}, accuracy = {}".format(level, true_num / 30))
             seed_result.append(true_num / 30)
         # print(seed_result)
         results.append(seed_result)
     results = np.array(results).reshape(3, 1, len(levels))
-    return  results
+    return results
 
-
-# num_runs = 3
-# num_tasks = 1
-# num_frames = 11
-#
-# nppc_result = {
-#     "gpt-4o": np.random.rand(num_runs, num_tasks, num_frames),
-#     "gpt-4o-mini": np.random.rand(num_runs, num_tasks, num_frames),
-#     "claude": np.random.rand(num_runs, num_tasks, num_frames),
-#     "deepseek": np.random.rand(num_runs, num_tasks, num_frames),
-#     "o1": np.random.rand(num_runs, num_tasks, num_frames),
-# }
 
 problem = "3-Satisfiability (3-SAT)"
 levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-model = "deepseek-v3"
-deepseek_v3 = get_data(problem, levels, model)
-print(deepseek_v3)
-model = "deepseek-r1"
-deepseek_r1 = get_data(problem, levels, model)
-print(deepseek_r1)
+model_list = ["deepseek-v3", "deepseek-r1", "claude", "gpt-4o", "gpt-4o-mini"]
+nppc_result = {}
 
-
-nppc_result = {
-    "deepseek-v3": deepseek_v3,
-    "deepseek-r1": deepseek_r1,
-}
-
+for model in model_list:
+    nppc_result[model] = get_data(problem, levels, model)
 
 ale_all_frames_scores_dict = nppc_result
 frames = np.array(levels) - 1
@@ -72,6 +62,11 @@ iqm = lambda scores: np.array(
 iqm_scores, iqm_cis = get_interval_estimates(ale_frames_scores_dict, iqm, reps=2000)
 
 fig, ax = plt.subplots(figsize=(7, 5))
+
+x_ticks = np.arange(1, len(frames) + 1)  # 假设frames是一个数组，表示难度级别
+# ax.set_xticks(x_ticks)
+y_ticks = np.linspace(0, 1, 6)  # 创建0到1之间的11个均匀分布的点
+# ax.set_yticks(y_ticks)
 plot_utils.plot_sample_efficiency_curve(
     frames + 1,
     iqm_scores,
@@ -80,23 +75,22 @@ plot_utils.plot_sample_efficiency_curve(
     xlabel=r"Difficulty Level",
     ylabel="Accuracy",
     ax=ax,
-)
-
-# 获取所有线条和算法名称
-lines = ax.get_lines()
-algorithms = list(nppc_result.keys())
-
-# 为每条线设置标签
-for line, algo in zip(lines, algorithms):
-    line.set_label(algo)  # 设置标签
-
-# 添加图例
-ax.legend(
-    bbox_to_anchor=(1.05, 1),  # 避免遮挡主图
-    # loc="upper left"
+    xticks=x_ticks,
+    yticks=y_ticks,
+    legend=True
+    # xticklabels = x_ticks,
+    # yticklables = y_ticks
 )
 
 plt.tight_layout()
-plt.savefig("{}.png".format(problem))
-plt.show()
 
+plots_folder = "./performance_over_levels"
+path_plots_folder = Path(plots_folder)
+if not path_plots_folder.exists():
+    path_plots_folder.mkdir(parents=True, exist_ok=True)
+plt.savefig(
+    osp.join(plots_folder, "{}.pdf".format(problem)),
+    bbox_inches="tight",
+    pad_inches=0.0,
+)
+plt.show()

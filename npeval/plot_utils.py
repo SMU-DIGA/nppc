@@ -98,13 +98,13 @@ def _annotate_and_decorate_axis(
     ax.set_ylabel(ylabel, fontsize=labelsize)
     if xticks is not None:
         ax.set_xticks(ticks=xticks)
-        ax.set_xticklabels(xticklabels)
+        # ax.set_xticklabels(xticklabels)
     if yticks is not None:
         ax.set_yticks(yticks)
     ax.grid(True, alpha=grid_alpha)
     ax = _decorate_axis(ax, wrect=wrect, hrect=hrect, ticklabelsize=ticklabelsize)
     if legend:
-        ax.legend(fontsize=legendsize)
+        ax.legend(fontsize=legendsize, loc="upper right")
     return ax
 
 

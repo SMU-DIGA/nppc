@@ -64,28 +64,35 @@ def verify_solution(instance, solution):
         instance = instance[0]
     num_variables = len(instance["variables"])
     clauses = instance["clauses"]
-    if num_variables != len(solution):
-        return False, "Ths solution is not valid."
 
-    unsatisfied_clauses = []
+    try:
+        if num_variables != len(solution):
+            return False, "Ths solution is not valid."
 
-    # 检查每个子句
-    for i, clause in enumerate(clauses):
-        clause_satisfied = False
-        for literal in clause:
-            var = abs(literal)
-            if (literal > 0 and solution[var - 1]) or (
-                literal < 0 and not solution[var - 1]
-            ):
-                clause_satisfied = True
-                break
-        if not clause_satisfied:
-            unsatisfied_clauses.append(i)
+        unsatisfied_clauses = []
 
-    if len(unsatisfied_clauses) == 0:
-        return True, "Correct solution."
-    else:
-        return False, f"The following clauses are not satisfied: {unsatisfied_clauses}."
+        # 检查每个子句
+        for i, clause in enumerate(clauses):
+            clause_satisfied = False
+            for literal in clause:
+                var = abs(literal)
+                if (literal > 0 and solution[var - 1]) or (
+                    literal < 0 and not solution[var - 1]
+                ):
+                    clause_satisfied = True
+                    break
+            if not clause_satisfied:
+                unsatisfied_clauses.append(i)
+
+        if len(unsatisfied_clauses) == 0:
+            return True, "Correct solution."
+        else:
+            return (
+                False,
+                f"The following clauses are not satisfied: {unsatisfied_clauses}.",
+            )
+    except:
+        return False, "verification error"
 
 
 # 生成实例
