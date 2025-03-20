@@ -33,7 +33,6 @@ def set_api_keys():
     os.environ["ARK_API_KEY"] = huoshan_api_key
 
     try:
-
         with open("api_keys/deepseek_api_key.txt", "r") as file:
             deepseek_api_key = file.read().strip()
         with open("./api_keys/claude_api_key.txt", "r") as file:
