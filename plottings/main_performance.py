@@ -9,6 +9,8 @@ import pickle
 import os.path as osp
 from pathlib import Path
 
+from npgym import PROBLEMS, PROBLEM_LEVELS
+
 
 def get_data(problem, levels, model):
     # print(model)
@@ -41,8 +43,10 @@ def get_data(problem, levels, model):
     return results
 
 
-problem = "3-Satisfiability (3-SAT)"
-levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+problem_idx = 0
+
+problem = PROBLEMS[0]
+levels = list(PROBLEM_LEVELS[problem])
 
 model_list = ["deepseek-v3", "deepseek-r1", "claude", "gpt-4o", "gpt-4o-mini"]
 nppc_result = {}

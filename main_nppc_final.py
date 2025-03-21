@@ -28,8 +28,9 @@ def seed_everything(seed=42):
 
 import os
 
+
 def set_api_keys():
-    def load_key(file_path: str) -> str:
+    def load_key(file_path: str):
         if os.path.exists(file_path):
             with open(file_path, "r") as f:
                 return f.read().strip()
@@ -74,14 +75,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="gpt-4o-mini",
+        default="gpt-4o",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=0,
+        default=1,
         help="the problem name idx",
     )
 
@@ -250,9 +251,10 @@ def main(args):
 
     with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
         pickle.dump(results, f)
-        
+
     if not solver.is_online:
         from vllm.distributed.parallel_state import destroy_model_parallel
+
         destroy_model_parallel()
         del solver.local_llm.llm_engine.model_executor.driver_worker
         del solver.local_llm
@@ -264,18 +266,18 @@ if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
-    if args.model in MODELS["online"]:
-        seed_everything(args.seed)
-    main(args)
-    
-    # problem_name = PROBLEMS[args.problem]
-    # levels = PROBLEM_LEVELS[problem_name]
-
-    # for seed in [42, 53, 64]:
-    #     args.seed = seed
+    # if args.model in MODELS["online"]:
     #     seed_everything(args.seed)
-    #     for level in levels:
-    #         seed_everything(args.seed)
-    #         args.level = level
-    #         print(args)
-    #         main(args)
+    # main(args)
+
+    problem_name = PROBLEMS[args.problem]
+    levels = PROBLEM_LEVELS[problem_name]
+
+    for seed in [42, 53, 64]:
+        args.seed = seed
+        seed_everything(args.seed)
+        for level in levels:
+            seed_everything(args.seed)
+            args.level = level
+            print(args)
+            main(args)

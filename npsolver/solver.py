@@ -83,7 +83,11 @@ class NPSolver:
         self.sampling_params = None
         if not self.is_online:
             self.local_llm, self.sampling_params = initialize_offline_model(
-                model_name=model_name, model_dir=Path("/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/offline_models"), seed=seed
+                model_name=model_name,
+                model_dir=Path(
+                    "/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/offline_models"
+                ),
+                seed=seed,
             )
 
         self.client = None
