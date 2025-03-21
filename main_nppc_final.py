@@ -171,7 +171,7 @@ def main(args):
 
     env = NPEnv(problem_name=problem_name, level=level)
     solver = NPSolver(problem_name=problem_name, model_name=model_name, seed=args.seed)
-    print(solver)
+
     if args.verbose:
         print("=" * 15)
         print("level {}: {}".format(level, levels[level]))
@@ -210,7 +210,7 @@ def main(args):
 
         for try_idx in range(args.max_tries):
             outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
-            print(outputs)
+
             if not outputs[0]["error_msg"]["llm"] or try_idx == args.max_tries - 1:
                 for idx, output in enumerate(outputs):
                     predicted_solutions.append(output["solution"])
