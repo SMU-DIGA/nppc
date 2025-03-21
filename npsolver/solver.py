@@ -200,7 +200,7 @@ class NPSolver:
                 }
                 outputs.append(
                     {
-                        "response": response_text,
+                        "response": prediction,
                         "solution": predicted_solution,
                         "tokens": token_numbers,
                         "error_msg": {"llm": None, "json": json_error_message},
