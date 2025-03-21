@@ -36,7 +36,7 @@ def extract_solution_from_response(response):
         return None, "JSON Error: No JSON found in the text."
 
 
-def initialize_offline_model(model_name: str, model_dir):
+def initialize_offline_model(model_name: str, model_dir, seed):
     import torch
     from vllm import LLM, SamplingParams
 
@@ -64,14 +64,14 @@ def initialize_offline_model(model_name: str, model_dir):
         gpu_memory_utilization=0.8,
         trust_remote_code=True,
         enforce_eager=True,
-    ), SamplingParams(temperature=0.6, top_p=0.95, max_tokens=7500)
+    ), SamplingParams(temperature=0.6, top_p=0.95, max_tokens=7500, seed=seed)
 
 
 class NPSolver:
-    def __init__(self, problem_name, model_name):
-        if model_name in MODELS["online"]:
+    def __init__(self, problem_name, model_name, seed):
+        if model_name in MODELS["online"].keys():
             self.is_online = True
-        elif model_name in MODELS["offline"]:
+        elif model_name in MODELS["offline"].keys():
             self.is_online = False
         else:
             raise NotImplementedError
@@ -83,7 +83,7 @@ class NPSolver:
         self.sampling_params = None
         if not self.is_online:
             self.local_llm, self.sampling_params = initialize_offline_model(
-                model_name=model_name, model_dir=Path("./models")
+                model_name=model_name, model_dir=Path("/proj/cloudrobotics-nest/users/x_ruiwa/nppc_main/offline_models"), seed=seed
             )
 
         self.client = None
@@ -131,12 +131,13 @@ class NPSolver:
             contents.append(content)
 
         if self.is_online:
+            print("Get results from api")
             return self.get_batch_outputs_from_api(contents)
         else:
+            print("Get results from local model")
             return self.get_batch_outputs_from_offline_model(contents)
 
     def get_batch_outputs_from_api(self, contents):
-        assert self.is_online
         try:
             print("Starting the batch calling of LLM")
             messages = [[{"role": "user", "content": content}] for content in contents]
@@ -184,28 +185,35 @@ class NPSolver:
             return outputs
 
     def get_batch_outputs_from_offline_model(self, contents):
-        assert not self.is_online
         try:
             responses = self.local_llm.generate(contents, self.sampling_params)
             outputs = []
 
             for response in responses:
-                response_text = response.outputs[0].text
-                solution = extract_solution_from_response(response_text)
-
+                prediction = response.outputs[0].text
+                predicted_solution, json_error_message = extract_solution_from_response(
+                    prediction
+                )
+                token_numbers = {
+                    "prompt": len(response.prompt_token_ids),
+                    "completion": len(response.outputs[0].token_ids),
+                }
                 outputs.append(
                     {
                         "response": response_text,
-                        "solution": solution,
-                        "tokens": {
-                            "prompt": len(response.prompt_token_ids),
-                            "completion": len(response.outputs[0].token_ids),
-                        },
+                        "solution": predicted_solution,
+                        "tokens": token_numbers,
+                        "error_msg": {"llm": None, "json": json_error_message},
                     }
                 )
-
             return outputs
         except Exception as e:
-            print(f"Error calling the LLM: {e}")
             # return None
-            return "LLM Error."
+            outputs = [
+                {
+                    "solution": None,
+                    "error_msg": {"llm": f"LLM error: {e}", "json": None},
+                }
+                for _ in range(len(contents))
+            ]
+            return outputs

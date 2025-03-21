@@ -12,8 +12,11 @@ MODELS = {
         "maas-deepseek-v3": "MaaS-DS-V3",
     },
     "offline": {
-        "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "deepseek-r1-32": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "qwq": "Qwen/QwQ-32B",
+        "qwen-32b": "Qwen/Qwen2.5-32B",
+        "mistral-24b": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+        "gemma-3": " google/gemma-3-27b-it",
+        "lamma-3.3-70b": "meta-llama/Llama-3.3-70B-Instruct"
     },
 }
-
-from npsolver.solver import NPSolver

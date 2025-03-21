@@ -3,9 +3,12 @@ import os.path as osp
 import pickle
 from copy import deepcopy
 from pathlib import Path
+import torch
+import gc
 
 from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
-from npsolver import NPSolver
+from npsolver import MODELS
+from npsolver.solver import NPSolver
 
 
 def seed_everything(seed=42):
@@ -23,29 +26,36 @@ def seed_everything(seed=42):
     random.seed(seed)
 
 
+import os
+
 def set_api_keys():
-    with open("api_keys/openai_api_key.txt", "r") as file:
-        openai_api_key = file.read().strip()
-    os.environ["OPENAI_API_KEY"] = openai_api_key
+    def load_key(file_path: str) -> str:
+        if os.path.exists(file_path):
+            with open(file_path, "r") as f:
+                return f.read().strip()
+        return None
 
-    with open("./api_keys/huoshan_api_key.txt", "r") as file:
-        huoshan_api_key = file.read().strip()
-    os.environ["ARK_API_KEY"] = huoshan_api_key
+    # Required keys
+    openai_key = load_key("api_keys/openai_api_key.txt")
+    if openai_key:
+        os.environ["OPENAI_API_KEY"] = openai_key
 
-    try:
-        with open("api_keys/deepseek_api_key.txt", "r") as file:
-            deepseek_api_key = file.read().strip()
-        with open("./api_keys/claude_api_key.txt", "r") as file:
-            claude_api_key = file.read().strip()
+    huoshan_key = load_key("api_keys/huoshan_api_key.txt")
+    if huoshan_key:
+        os.environ["ARK_API_KEY"] = huoshan_key
 
-        os.environ["DEEPSEEK_API_KEY"] = deepseek_api_key
-        os.environ["ANTHROPIC_API_KEY"] = claude_api_key
+    # Optional keys
+    deepseek_key = load_key("api_keys/deepseek_api_key.txt")
+    if deepseek_key:
+        os.environ["DEEPSEEK_API_KEY"] = deepseek_key
 
-        with open("./api_keys/maas_api_key.txt", "r") as file:
-            maas_api_key = file.read().strip()
-        os.environ["MAAS_API_KEY"] = maas_api_key
-    except:
-        print("some api key is not there")
+    claude_key = load_key("api_keys/claude_api_key.txt")
+    if claude_key:
+        os.environ["ANTHROPIC_API_KEY"] = claude_key
+
+    maas_key = load_key("api_keys/maas_api_key.txt")
+    if maas_key:
+        os.environ["MAAS_API_KEY"] = maas_key
 
 
 import argparse
@@ -160,7 +170,8 @@ def main(args):
     )
 
     env = NPEnv(problem_name=problem_name, level=level)
-    solver = NPSolver(problem_name=problem_name, model_name=model_name)
+    solver = NPSolver(problem_name=problem_name, model_name=model_name, seed=args.seed)
+    print(solver)
     if args.verbose:
         print("=" * 15)
         print("level {}: {}".format(level, levels[level]))
@@ -199,6 +210,7 @@ def main(args):
 
         for try_idx in range(args.max_tries):
             outputs = solver.get_prediction(inputs=inputs[start_idx:end_idx])
+            print(outputs)
             if not outputs[0]["error_msg"]["llm"] or try_idx == args.max_tries - 1:
                 for idx, output in enumerate(outputs):
                     predicted_solutions.append(output["solution"])
@@ -238,21 +250,32 @@ def main(args):
 
     with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
         pickle.dump(results, f)
+        
+    if not solver.is_online:
+        from vllm.distributed.parallel_state import destroy_model_parallel
+        destroy_model_parallel()
+        del solver.local_llm.llm_engine.model_executor.driver_worker
+        del solver.local_llm
+        gc.collect()
+        torch.cuda.empty_cache()
 
 
 if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
-
-    problem_name = PROBLEMS[args.problem]
-    levels = PROBLEM_LEVELS[problem_name]
-
-    for seed in [42, 53, 64]:
-        args.seed = seed
+    if args.model in MODELS["online"]:
         seed_everything(args.seed)
-        for level in levels:
-            seed_everything(args.seed)
-            args.level = level
-            print(args)
-            main(args)
+    main(args)
+    
+    # problem_name = PROBLEMS[args.problem]
+    # levels = PROBLEM_LEVELS[problem_name]
+
+    # for seed in [42, 53, 64]:
+    #     args.seed = seed
+    #     seed_everything(args.seed)
+    #     for level in levels:
+    #         seed_everything(args.seed)
+    #         args.level = level
+    #         print(args)
+    #         main(args)
