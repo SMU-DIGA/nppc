@@ -95,11 +95,13 @@ def verify_solution(instance, solution):
         return False, "verification error"
 
 
-# 生成实例
-# instance, solution = generate_instance(3, 3)
-# print("generate 3sat instances：")
-# print(instance)
-# print(solution)
+def test():
+    # 生成实例
+    instance, solution = generate_instance(3, 3)
+    print("generate 3sat instances：")
+    print(instance)
+    print(solution)
+
 
 # 创建一个解（所有变量都设为True）
 # solution = {i: True for i in range(1, 21)}

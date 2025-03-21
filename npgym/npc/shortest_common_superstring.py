@@ -55,21 +55,26 @@ def verify_solution(instance, solution: str):
     # Check if solution length is at most k
     k = instance["k"]
     strings = instance["strings"]
-    if len(solution) > k:
-        return False, "The solution is invalid."
 
-    # Check if each input string is a substring of the solution
-    for s in strings:
-        if s not in solution:
-            return False, "Some string is not the substring of the solution"
+    try:
+        if len(solution) > k:
+            return False, "The solution is invalid."
 
-    return True, "Correct solution."
+        # Check if each input string is a substring of the solution
+        for s in strings:
+            if s not in solution:
+                return False, "Some string is not the substring of the solution"
+
+        return True, "Correct solution."
+    except:
+        return False, "Verification error."
 
 
-# 示例用法
-n = 3
-k = 10
-instance, solution = generate_instance(n, k)
-print("Instance:", instance)
-print("Solution:", solution)
-print(verify_solution(instance, solution))
+def test():
+    # 示例用法
+    n = 3
+    k = 10
+    instance, solution = generate_instance(n, k)
+    print("Instance:", instance)
+    print("Solution:", solution)
+    print(verify_solution(instance, solution))

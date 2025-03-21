@@ -42,11 +42,14 @@ def verify_solution(instance, cover: set):
         return False, "Verification error."
 
 
-# num_nodes = 5
-# cover_size = 3
-# graph, solution = generate_instance(num_nodes, cover_size)
-# print(graph)
-# print(solution)
+def test():
+    num_nodes = 5
+    cover_size = 3
+    graph, solution = generate_instance(num_nodes, cover_size)
+    print(graph)
+    print(solution)
+
+
 #
 # # 验证顶点覆盖
 # # cover = {2, 3, 4}

@@ -106,39 +106,43 @@ def verify_solution(instance, tour):
     target_length = instance["length"]
     num_cities = len(distances)
 
-    # Check if tour length matches number of cities
-    if len(tour) != num_cities:
-        return False, "Tour must visit exactly all cities once"
+    try:
+        # Check if tour length matches number of cities
+        if len(tour) != num_cities:
+            return False, "Tour must visit exactly all cities once"
 
-    if not (max(tour) < num_cities and min(tour) >= 0):
-        return False, "Invalid city index."
+        if not (max(tour) < num_cities and min(tour) >= 0):
+            return False, "Invalid city index."
 
-    # Check if all cities are visited exactly once
-    if sorted(tour) != list(range(num_cities)):
-        return False, "Tour must contain each city exactly once"
+        # Check if all cities are visited exactly once
+        if sorted(tour) != list(range(num_cities)):
+            return False, "Tour must contain each city exactly once"
 
-    # Calculate total tour length
-    total_length = 0
-    for i in range(num_cities):
-        city1 = tour[i]
-        city2 = tour[(i + 1) % num_cities]
-        total_length += distances[city1][city2]
+        # Calculate total tour length
+        total_length = 0
+        for i in range(num_cities):
+            city1 = tour[i]
+            city2 = tour[(i + 1) % num_cities]
+            total_length += distances[city1][city2]
 
-    # Check if tour length is within target
-    if total_length > target_length:
-        return (
-            False,
-            f"Tour length {total_length} exceeds target length {target_length}",
-        )
+        # Check if tour length is within target
+        if total_length > target_length:
+            return (
+                False,
+                f"Tour length {total_length} exceeds target length {target_length}",
+            )
 
-    return True, "Correct solution."
+        return True, "Correct solution."
+    except:
+        return False, "Verification error."
 
 
-instance, solution = generate_instance(num_cities=5, target_length=10)
+def test():
+    instance, solution = generate_instance(num_cities=5, target_length=10)
 
-print(instance)
-print(solution)
+    print(instance)
+    print(solution)
 
-print(verify_solution(instance, solution))
-solution = [0, 1, 2, 3, 4]
-print(verify_solution(instance, solution))
+    print(verify_solution(instance, solution))
+    solution = [0, 1, 2, 3, 4]
+    print(verify_solution(instance, solution))

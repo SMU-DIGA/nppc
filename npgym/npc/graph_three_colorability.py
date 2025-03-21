@@ -107,21 +107,26 @@ def verify_solution(instance, solution):
     nodes = instance["nodes"]
     edges = instance["edges"]
 
-    # 检查每个边的两个节点颜色是否不同
-    for u, v in edges:
-        if solution[u] == solution[v]:
-            return False, "The two nodes of an edge have the same color"
-    return True, "Correct solution."
+    try:
+        # 检查每个边的两个节点颜色是否不同
+        for u, v in edges:
+            if solution[u] == solution[v]:
+                return False, "The two nodes of an edge have the same color"
+        return True, "Correct solution."
+    except:
+        return False, "Verification error."
 
 
 # 示例用法
 
-for _ in range(1):
-    num_nodes = 10
-    num_edges = 15
-    instance, solution = generate_instance(num_nodes, num_edges)
-    print("Instance:", instance)
-    print("Solution:", solution)
-    # # 示例用法
-    is_valid = verify_solution(instance, solution)
-    print(is_valid)
+
+def test():
+    for _ in range(1):
+        num_nodes = 10
+        num_edges = 15
+        instance, solution = generate_instance(num_nodes, num_edges)
+        print("Instance:", instance)
+        print("Solution:", solution)
+        # # 示例用法
+        is_valid = verify_solution(instance, solution)
+        print(is_valid)

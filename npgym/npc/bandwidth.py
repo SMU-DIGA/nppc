@@ -82,25 +82,29 @@ def verify_solution(instance, layout):
     bandwidth = instance["bandwidth"]
     num_vertices = len(graph["nodes"])
 
-    # Check if layout is a valid permutation
-    if len(layout) != num_vertices:
-        return False, "Layout length doesn't match number of vertices."
-    if sorted(layout) != list(range(num_vertices)):
-        return False, "Layout must be a permutation of vertices."
+    try:
+        # Check if layout is a valid permutation
+        if len(layout) != num_vertices:
+            return False, "Layout length doesn't match number of vertices."
+        if sorted(layout) != list(range(num_vertices)):
+            return False, "Layout must be a permutation of vertices."
 
-    # Check bandwidth constraint for each edge
-    for v1, v2 in graph["edges"]:
-        if abs(layout[v1] - layout[v2]) > bandwidth:
-            return (
-                False,
-                f"Edge ({v1}, {v2}) exceeds bandwidth: |{layout[v1]} - {layout[v2]}| > {bandwidth}",
-            )
+        # Check bandwidth constraint for each edge
+        for v1, v2 in graph["edges"]:
+            if abs(layout[v1] - layout[v2]) > bandwidth:
+                return (
+                    False,
+                    f"Edge ({v1}, {v2}) exceeds bandwidth: |{layout[v1]} - {layout[v2]}| > {bandwidth}",
+                )
 
-    return True, "Correct solution."
+        return True, "Correct solution."
+    except:
+        return False, "Verification error."
 
 
-for i in range(1):
-    instance, solution = generate_instance(num_nodes=5, bandwidth=2)
-    print(instance)
-    print(solution)
-    print(verify_solution(instance, solution))
+def test():
+    for i in range(1):
+        instance, solution = generate_instance(num_nodes=5, bandwidth=2)
+        print(instance)
+        print(solution)
+        print(verify_solution(instance, solution))

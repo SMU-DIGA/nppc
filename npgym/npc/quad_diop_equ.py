@@ -15,21 +15,25 @@ def verify_solution(instance, solution):
     b = instance["b"]
     c = instance["c"]
 
-    if len(solution) != 2:
-        return False, "The solution is not valid."
-    x = solution[0]
-    y = solution[1]
+    try:
+        if len(solution) != 2:
+            return False, "The solution is not valid."
+        x = solution[0]
+        y = solution[1]
 
-    if not (x > 0 and y > 0):
-        return False, "The solution is not valid."
-    else:
-        if (a * x * x) + (b * y) == c:
-            return True, "Correct solution."
+        if not (x > 0 and y > 0):
+            return False, "The solution is not valid."
         else:
-            return False, "The solution does not match."
+            if (a * x * x) + (b * y) == c:
+                return True, "Correct solution."
+            else:
+                return False, "The solution does not match."
+    except:
+        return False, "Verification error."
 
 
-instance, solution = generate_instance(1, 100)
-print(instance)
-print(solution)
-print(verify_solution(instance, solution))
+def test():
+    instance, solution = generate_instance(1, 100)
+    print(instance)
+    print(solution)
+    print(verify_solution(instance, solution))
