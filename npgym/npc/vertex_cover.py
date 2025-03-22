@@ -32,7 +32,7 @@ def verify_solution(instance, cover):
         return False, "Wrong solution format."
     
     cover = set(cover)
-
+    try:
         if not cover:
             return False, "The cover cannot be empty."
 
