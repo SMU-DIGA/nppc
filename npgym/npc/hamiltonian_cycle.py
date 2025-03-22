@@ -53,38 +53,44 @@ def verify_solution(instance, cycle: List[int]):
     n = len(instance["graph"]["nodes"])
     edges = instance["graph"]["edges"]
 
-    # Basic checks
-    if len(cycle) != n + 1:
-        return False, f"Path length should be {n + 1}."
-    if cycle[0] != cycle[-1]:
-        return False, "Path does not return to start."
-    if len(set(cycle[:-1])) != n:
-        return False, "Not all vertices visited exactly once."
-    if not all(0 <= node < n for node in cycle):
-        return False, "Invalid vertex in path."
+    try:
 
-    # Check if edges exist
-    for i in range(len(cycle) - 1):
-        v1, v2 = cycle[i], cycle[i + 1]
-        if (v1, v2) not in edges:
-            return False, f"No edge between vertices {v1} and {v2}."
+        # Basic checks
+        if len(cycle) != n + 1:
+            return False, f"Path length should be {n + 1}."
+        if cycle[0] != cycle[-1]:
+            return False, "Path does not return to start."
+        if len(set(cycle[:-1])) != n:
+            return False, "Not all vertices visited exactly once."
+        if not all(0 <= node < n for node in cycle):
+            return False, "Invalid vertex in path."
 
-    return True, "Correct solution."
+        # Check if edges exist
+        for i in range(len(cycle) - 1):
+            v1, v2 = cycle[i], cycle[i + 1]
+            if (v1, v2) not in edges:
+                return False, f"No edge between vertices {v1} and {v2}."
+
+        return True, "Correct solution."
+
+    except:
+        return False, "Verification error."
 
 
-# Test undirected graph
-n = 5
-undirected, solution = generate_instance(n, directed=False)
-# print("Undirected graph:")
-# # solution = [0, 2, 1, 4, 3, 0]
-print(undirected)
-print(solution)
-valid, msg = verify_solution(undirected, solution)
-print(f"Undirected graph validation result: {msg}\n")
-#
-# # Test directed graph
-directed, solution = generate_instance(n, directed=True)
-print(directed)
-print(solution)
-valid, msg = verify_solution(directed, solution)
-print(f"Directed graph validation result: {msg}")
+def test():
+    # Test undirected graph
+    n = 5
+    undirected, solution = generate_instance(n, directed=False)
+    # print("Undirected graph:")
+    # # solution = [0, 2, 1, 4, 3, 0]
+    print(undirected)
+    print(solution)
+    valid, msg = verify_solution(undirected, solution)
+    print(f"Undirected graph validation result: {msg}\n")
+    #
+    # # Test directed graph
+    directed, solution = generate_instance(n, directed=True)
+    print(directed)
+    print(solution)
+    valid, msg = verify_solution(directed, solution)
+    print(f"Directed graph validation result: {msg}")
