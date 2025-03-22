@@ -1,10 +1,8 @@
 import random
 import string
 
-
 def generate_instance(n: int, k: int):
     """生成 Shortest Common Superstring 实例和优化后的解 w"""
-
     # 生成随机字符串 w，长度为 k
     def generate_random_string(length: int):
         """生成一个指定长度的随机字符串"""
@@ -44,7 +42,7 @@ def generate_instance(n: int, k: int):
     return instance, optimized_w
 
 
-def verify_solution(instance, solution: str):
+def verify_solution(instance, solution):
     """
     Verify if a given solution is valid for the Shortest Common Superstring instance.
 
@@ -52,7 +50,9 @@ def verify_solution(instance, solution: str):
     Returns:
         bool indicating whether solution is valid
     """
-    # Check if solution length is at most k
+    if not isinstance(solution, str):
+        return False, "Wrong solution format."
+    
     k = instance["k"]
     strings = instance["strings"]
 

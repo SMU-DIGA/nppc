@@ -104,4 +104,4 @@ legend = fig.legend(
     fontsize="x-large",
 )
 fig.subplots_adjust(top=0.78, wspace=0.1, hspace=0.05)
-plt.show()
+fig.savefig("test.png", bbox_inches="tight", dpi=300)

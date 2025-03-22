@@ -14,13 +14,13 @@ conda activate nppc
 
 # Define arguments
 SEEDS=(42 53 64)
-MODEL="deepseek-r1-32"
+MODEL="mistral-24b"
 N_SHOTS=1
-N_TRIALS=2
-BATCH_SIZE=2
+N_TRIALS=30
+BATCH_SIZE=10
 RESULT_FOLDER="results"
 DEBUG=""
-PROBLEM_IDX=1
+PROBLEM_IDX=0
 
 # Get the problem name using Python
 PROBLEM_NAME=$(python -c "
