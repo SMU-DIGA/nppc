@@ -4,7 +4,7 @@ MODELS = {
         "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
         "o1-mini": "o1-mini-2024-09-12",
         "deepseek-chat": "deepseek/deepseek-chat",
-        "claude": "anthropic/claude-3-sonnet-20240229",
+        "claude": "anthropic/claude-3-7-sonnet-20250219",
         "deepseek-r1": "deepseek-r1-250120",
         "deepseek-r1-32b": "deepseek-r1-distill-qwen-32b-250120",
         "deepseek-v3": "deepseek-v3-241226",
