@@ -2,7 +2,7 @@ import random
 
 
 def generate_instance(
-    num_cities: int, target_length: int, min_distance=1, max_distance=100
+        num_cities: int, target_length: int, min_distance=1, max_distance=100
 ):
     """
     Generate a TSP decision instance with guaranteed solution under target_length.
@@ -21,7 +21,8 @@ def generate_instance(
     if num_cities < 3:
         raise ValueError("Number of cities must be at least 3")
 
-    instance = {"length": target_length}
+    # instance['city_indices'] = list(range(num_cities))
+    instance = {"city_indices": list(range(num_cities)), "length": target_length}
 
     # Initialize distance matrix with zeros
     distances = [[0] * num_cities for _ in range(num_cities)]
@@ -83,7 +84,12 @@ def generate_instance(
                 distances[i][j] = distance
                 distances[j][i] = distance
 
-    instance["distances"] = distances
+    instance["distances"] = {}
+    for i in range(num_cities):
+        for j in range(num_cities):
+            if i == j:
+                continue
+            instance["distances"]['{},{}'.format(i, j)] = distances[i][j]
     return instance, cities_order
 
 
@@ -104,7 +110,7 @@ def verify_solution(instance, tour):
 
     distances = instance["distances"]
     target_length = instance["length"]
-    num_cities = len(distances)
+    num_cities = len(instance['city_indices'])
 
     try:
         # Check if tour length matches number of cities
@@ -123,7 +129,7 @@ def verify_solution(instance, tour):
         for i in range(num_cities):
             city1 = tour[i]
             city2 = tour[(i + 1) % num_cities]
-            total_length += distances[city1][city2]
+            total_length += distances['{},{}'.format(city1, city2)]
 
         # Check if tour length is within target
         if total_length > target_length:
@@ -146,3 +152,6 @@ def test():
     print(verify_solution(instance, solution))
     solution = [0, 1, 2, 3, 4]
     print(verify_solution(instance, solution))
+
+
+test()
