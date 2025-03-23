@@ -10,7 +10,7 @@ from typing import List, Tuple
 
 # TODO: some issues
 def generate_instance(
-        n: int,
+    n: int,
 ):
     """
     生成3D matching实例
@@ -21,11 +21,7 @@ def generate_instance(
     Y = list(range(n, 2 * n))
     Z = list(range(2 * n, 3 * n))
 
-    instance = {
-        'X': X,
-        'Y': Y,
-        "Z": Z
-    }
+    instance = {"X": X, "Y": Y, "Z": Z}
 
     # 先生成一个完美匹配作为解
     solution = []
@@ -49,19 +45,20 @@ def generate_instance(
         if triple not in all_triples:
             all_triples.append(list(triple))
 
-    instance['triples'] = all_triples
+    # random shuffle to avoid short cut
+    random.shuffle(all_triples)
+    instance["triples"] = all_triples
+
     return instance, solution
 
 
-def verify_solution(
-        instance, matching
-):
+def verify_solution(instance, matching):
     """
     验证给定的matching是否合法
     """
 
-    triples = instance['triples']
-    n = len(instance['X'])
+    triples = instance["triples"]
+    n = len(instance["X"])
 
     try:
         # 检查matching中的三元组是否都在原始集合中
