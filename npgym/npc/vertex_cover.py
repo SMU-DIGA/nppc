@@ -1,19 +1,20 @@
 import random
 
+
 def generate_instance(num_nodes: int, cover_size: int, edge_prob: float = 0.5):
     assert cover_size <= num_nodes
-    
+
     graph = dict()
     graph["nodes"] = [i for i in range(num_nodes)]
     graph["edges"] = set()
 
     cover_vertices = set(random.sample(range(num_nodes), cover_size))
     remaining_nodes = set(range(num_nodes)) - cover_vertices
-    
+
     for v in remaining_nodes:
         cover_node = random.choice(list(cover_vertices))
         graph["edges"].add(tuple(sorted((v, cover_node))))
-    
+
     for i in cover_vertices:
         for j in range(num_nodes):
             if random.random() < edge_prob and j != i:
@@ -23,14 +24,15 @@ def generate_instance(num_nodes: int, cover_size: int, edge_prob: float = 0.5):
     cover_vertices = sorted(list(cover_vertices))
     return instance, cover_vertices
 
+
 def verify_solution(instance, cover):
     cover_size = instance["cover_size"]
     graph = instance["graph"]
     num_vertices = len(graph["nodes"])
-    
+
     if not isinstance(cover, list):
         return False, "Wrong solution format."
-    
+
     cover = set(cover)
     try:
         if not cover:
@@ -49,6 +51,7 @@ def verify_solution(instance, cover):
         return True, "Correct solution."
     except:
         return False, "Verification error."
+
 
 def test():
     num_nodes = 10

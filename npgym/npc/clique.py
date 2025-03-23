@@ -1,8 +1,9 @@
 import random
 
+
 def generate_instance(num_nodes: int, clique_size: int, edge_prob: float = 0.5):
     assert clique_size <= num_nodes
-    
+
     graph = dict()
     graph["nodes"] = [i for i in range(num_nodes)]
     graph["edges"] = set()
@@ -35,7 +36,7 @@ def verify_solution(instance, clique):
 
     if not clique:
         return False, "The clique cannot be empty."
-    
+
     if not isinstance(clique, list):
         return False, "Wrong solution format."
 
@@ -50,6 +51,7 @@ def verify_solution(instance, clique):
             if u < v and (u, v) not in graph["edges"]:
                 return False, f"No edge between {u} and {v}."
     return True, "Correct solution."
+
 
 def test():
     instance, solution = generate_instance(10, 4, 0.5)

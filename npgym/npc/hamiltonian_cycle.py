@@ -54,7 +54,6 @@ def verify_solution(instance, cycle: List[int]):
     edges = instance["graph"]["edges"]
 
     try:
-
         # Basic checks
         if len(cycle) != n + 1:
             return False, f"Path length should be {n + 1}."

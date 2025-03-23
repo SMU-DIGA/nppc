@@ -3,11 +3,12 @@ import random
 
 def generate_valid_numbers(x1, x2, x3):
     while True:
-        a = random.randint(1, min(x1-1, x3-1))  # Ensure a < x1 and a < x3
-        b = random.randint(1, min(x2-1, x3-a))  # Ensure b < x2 and a + b < x3
-        
+        a = random.randint(1, min(x1 - 1, x3 - 1))  # Ensure a < x1 and a < x3
+        b = random.randint(1, min(x2 - 1, x3 - a))  # Ensure b < x2 and a + b < x3
+
         if a + b < x3:
             return a, b
+
 
 def generate_instance(num_elements, num_subsets):
     """
@@ -43,13 +44,13 @@ def generate_instance(num_elements, num_subsets):
         from_S2 = random.sample(S2, k=size_s2)
         subset = set(from_S1 + from_S2)
         subsets.append(subset)
-    
+
     subsets_dict = {}
     for subset in subsets:
         subsets_dict[len(subsets_dict)] = list(subset)
 
     instance = {"universe": list(universal_set), "subsets": subsets_dict}
-    
+
     return instance, [list(S1), list(S2)]
 
 
@@ -60,7 +61,7 @@ def verify_solution(instance, partition):
     # Ensure each element in partition is a list
     if not all(isinstance(sublist, list) for sublist in partition):
         return False, "Each element in the partition must be a list."
-    
+
     # Check if partition only contains valid elements
     partition_A = set(partition[0])
     universe = instance["universe"]
@@ -78,6 +79,7 @@ def verify_solution(instance, partition):
             return False, "Some subset is in both partitions."
 
     return True, "Correct solution."
+
 
 def test():
     instance, solution = generate_instance(10, 300)

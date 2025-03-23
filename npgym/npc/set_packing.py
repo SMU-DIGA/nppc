@@ -1,5 +1,6 @@
 import random
 
+
 def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: int):
     """
     Generates a Set Packing problem instance with at least one valid solution.
@@ -14,9 +15,11 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
     - instance (dict): The generated Set Packing instance.
     - selected_ids (list): The indices of sets forming a guaranteed solution.
     """
-    
-    assert num_disjoint_sets <= num_subsets, "num_disjoint_sets must be less than or equal to num_subsets"
-   
+
+    assert (
+        num_disjoint_sets <= num_subsets
+    ), "num_disjoint_sets must be less than or equal to num_subsets"
+
     max_set_size = num_elements // num_disjoint_sets
     assert max_set_size > 0, "max_set_size must be greater than 0"
     # Step 1: Create a universal set S
@@ -26,7 +29,7 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
     selected_elements = set()
     selected_ids = []
     C = []
-    
+
     for i in range(num_disjoint_sets):
         subset_size = random.randint(1, max_set_size)
         subset = set(random.sample(universal_set - selected_elements, subset_size))
@@ -59,7 +62,6 @@ def generate_instance(num_elements: int, num_subsets: int, num_disjoint_sets: in
     }
 
     return instance, selected_ids
-
 
 
 def verify_solution(instance, selected_sets):
@@ -97,10 +99,9 @@ def verify_solution(instance, selected_sets):
 
     return True, "Correct solution."
 
+
 def test():
-    instance, solution = generate_instance(
-        100, 200, 50
-    )
+    instance, solution = generate_instance(100, 200, 50)
     print(instance)
     print(solution)
     print(verify_solution(instance, solution))
