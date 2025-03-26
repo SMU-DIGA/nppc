@@ -54,7 +54,7 @@ def get_instance_generator(
 
 def set_api_keys() -> None:
     """Load API keys from secure storage"""
-    key_path = Path("api_keys")
+    key_path = Path("../api_keys")
 
     with (key_path / "openai_api_key.txt").open() as f:
         os.environ["OPENAI_API_KEY"] = f.read().strip()

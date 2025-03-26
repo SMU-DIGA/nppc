@@ -33,10 +33,10 @@ n_shots = 3
 problem_list = ["three_sat", "clique", "vertex_cover"]
 for problem_name in problem_list:
     json_file = os.path.join(
-        "./results", problem_name, model_name, f"shots_{n_shots}_summary.json"
+        "../results", problem_name, model_name, f"shots_{n_shots}_summary.json"
     )
     save_path = os.path.join(
-        "./results",
+        "../results",
         problem_name,
         model_name,
         f"{problem_name}_{model_name}_{n_shots}_shots_accuracy_plot.png",

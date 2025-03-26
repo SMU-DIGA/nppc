@@ -86,4 +86,4 @@ batch_results = [
         "tokens": {"prompt": 594, "completion": 1032},
     },
 ]
-save_outputs(batch_results, Path("./") / "test.json")
+save_outputs(batch_results, Path("../") / "test.json")
