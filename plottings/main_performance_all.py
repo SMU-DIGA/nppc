@@ -36,7 +36,12 @@ def get_data_with_try(problem, levels, model):
             try:
                 f = open(
                     "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
-                        problem, model_to_file[model], model_to_file[model], problem, level, seed
+                        problem,
+                        model_to_file[model],
+                        model_to_file[model],
+                        problem,
+                        level,
+                        seed,
                     ),
                     "rb",
                 )
@@ -85,7 +90,12 @@ def get_data(problem, levels, model):
         for level in levels:
             f = open(
                 "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
-                    problem, model_to_file[model], model_to_file[model], problem, level, seed
+                    problem,
+                    model_to_file[model],
+                    model_to_file[model],
+                    problem,
+                    level,
+                    seed,
                 ),
                 "rb",
             )
@@ -116,9 +126,7 @@ model_list = [
 
 color_palette = "colorblind"
 color_palette = sns.color_palette(color_palette, n_colors=len(model_list))
-colors = dict(zip([
-    model_list[i] for i in [6, 5, 4, 1, 3, 0, 2]
-], color_palette))
+colors = dict(zip([model_list[i] for i in [6, 5, 4, 1, 3, 0, 2]], color_palette))
 
 
 # model_list = ["gpt-4o-mini"]

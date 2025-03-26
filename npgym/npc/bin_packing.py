@@ -74,7 +74,6 @@ def verify_solution(instance, solution):
     bin_capacity = instance["bin_capacity"]
 
     try:
-
         if len(solution) != len(item_weights):
             return False, "The solution is not valid."
 

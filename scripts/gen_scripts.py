@@ -1,5 +1,5 @@
 seed_list = [42, 53, 64]
-model_list = ["deepseek-v3", "deepseek-r1", "gpt-4o", "gpt-4o-mini", 'claude']
+model_list = ["deepseek-v3", "deepseek-r1", "gpt-4o", "gpt-4o-mini", "claude"]
 
 problem_list = [16]
 # problem_list = [12]
