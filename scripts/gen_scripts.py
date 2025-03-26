@@ -1,7 +1,7 @@
 seed_list = [42, 53, 64]
-model_list = ["deepseek-v3"]
+model_list = ["deepseek-v3", "deepseek-r1", "gpt-4o", "gpt-4o-mini", 'claude']
 
-problem_list = [8, 9, 12, 15, 19, 22, 24]
+problem_list = [16]
 # problem_list = [12]
 
 for model in model_list:
@@ -11,10 +11,10 @@ for model in model_list:
     f = open(file=filename, mode="w")
     f.write("mkdir -p {}\n\n".format(pare_folder))
     for problem in problem_list:
-        if model == "deepseek-v3" and problem not in [12]:
-            continue
-        if model == "deepseek-r1" and problem not in [9]:
-            continue
+        # if model == "deepseek-v3" and problem not in [12]:
+        #     continue
+        # if model == "deepseek-r1" and problem not in [9]:
+        #     continue
         for seed in seed_list:
             config = ""
             config += "--model {} ".format(model)

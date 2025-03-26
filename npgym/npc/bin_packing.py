@@ -73,30 +73,36 @@ def verify_solution(instance, solution):
     item_weights = instance["item_weights"]
     bin_capacity = instance["bin_capacity"]
 
-    if len(solution) != len(item_weights):
-        return False, "The solution is not valid."
+    try:
 
-    if max(solution) > num_bins - 1:
-        return False, "No this bin."
+        if len(solution) != len(item_weights):
+            return False, "The solution is not valid."
 
-    bin_weights = [0] * num_bins
+        if max(solution) > num_bins - 1:
+            return False, "No this bin."
 
-    for idx, bin_idx in enumerate(solution):
-        bin_weights[bin_idx] += item_weights[idx]
+        bin_weights = [0] * num_bins
 
-    if max(bin_weights) > bin_capacity:
-        return False, f"The total size exceeds B."
+        for idx, bin_idx in enumerate(solution):
+            bin_weights[bin_idx] += item_weights[idx]
 
-    return True, "Correct solution."
+        if max(bin_weights) > bin_capacity:
+            return False, f"The total size exceeds B."
+
+        return True, "Correct solution."
+
+    except:
+        return False, "Verification error."
 
 
-# 示例用法
-num_items = 10
-bin_capacity = 20
-num_bins = 3
-instance, solution = generate_instance(num_items, bin_capacity, num_bins)
-print("Instance:", instance)
-print("Solution:", solution)
-# solution = [0, 1, 1, 2, 2, 2 , 2 , 2, 2, 3]
-result = verify_solution(instance, solution)
-print(result)
+def test():
+    # 示例用法
+    num_items = 10
+    bin_capacity = 20
+    num_bins = 3
+    instance, solution = generate_instance(num_items, bin_capacity, num_bins)
+    print("Instance:", instance)
+    print("Solution:", solution)
+    # solution = [0, 1, 1, 2, 2, 2 , 2 , 2, 2, 3]
+    result = verify_solution(instance, solution)
+    print(result)

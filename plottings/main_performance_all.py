@@ -18,6 +18,17 @@ def get_data_with_try(problem, levels, model):
     seeds = [42, 53, 64]
     results = {}
     min_len = len(levels)
+
+    model_to_file = {
+        "qwq-32b": "qwq",
+        "deepseek-r1-32b": "deepseek-r1-32",
+        "gpt-4o-mini": "gpt-4o-mini",
+        "gpt-4o": "gpt-4o",
+        "claude": "claude",
+        "deepseek-v3": "deepseek-v3",
+        "deepseek-r1": "deepseek-r1",
+    }
+
     for seed in seeds:
         results[seed] = []
 
@@ -25,7 +36,7 @@ def get_data_with_try(problem, levels, model):
             try:
                 f = open(
                     "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
-                        problem, model, model, problem, level, seed
+                        problem, model_to_file[model], model_to_file[model], problem, level, seed
                     ),
                     "rb",
                 )
@@ -56,6 +67,16 @@ def get_data(problem, levels, model):
     seeds = [42, 53, 64]
     results = []
 
+    model_to_file = {
+        "qwq-32b": "qwq",
+        "deepseek-r1-32b": "deepseek-r1-32",
+        "gpt-4o-mini": "gpt-4o-mini",
+        "gpt-4o": "gpt-4o",
+        "claude": "claude",
+        "deepseek-v3": "deepseek-v3",
+        "deepseek-r1": "deepseek-r1",
+    }
+
     for seed in seeds:
         seed_result = []
         # print("========")
@@ -64,7 +85,7 @@ def get_data(problem, levels, model):
         for level in levels:
             f = open(
                 "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
-                    problem, model, model, problem, level, seed
+                    problem, model_to_file[model], model_to_file[model], problem, level, seed
                 ),
                 "rb",
             )
@@ -83,15 +104,21 @@ def get_data(problem, levels, model):
     return results
 
 
-
-
 model_list = [
+    "qwq-32b",
+    "deepseek-r1-32b",
     "gpt-4o-mini",
     "gpt-4o",
     "claude",
     "deepseek-v3",
     "deepseek-r1",
 ]
+
+color_palette = "colorblind"
+color_palette = sns.color_palette(color_palette, n_colors=len(model_list))
+colors = dict(zip([
+    model_list[i] for i in [6, 5, 4, 1, 3, 0, 2]
+], color_palette))
 
 
 # model_list = ["gpt-4o-mini"]
@@ -140,8 +167,8 @@ def plot_one_line(ax, problem, model, levels, colors):
 
 problem_idx = 19
 
-for problem_idx in [0, 1, 8, 9, 11, 12, 15, 19, 22, 23, 24]:
-    # if problem_idx not in [9]:
+for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
+    # if problem_idx not in [16]:
     #     continue
     problem = PROBLEMS[problem_idx]
     levels = list(PROBLEM_LEVELS[problem])
@@ -150,9 +177,6 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 19, 22, 23, 24]:
         levels = levels[:8]
     fig, ax = plt.subplots(figsize=(7, 5))
 
-    color_palette = "colorblind"
-    color_palette = sns.color_palette(color_palette, n_colors=len(model_list))
-    colors = dict(zip(model_list, color_palette))
     for model in model_list:
         plot_one_line(ax=ax, model=model, colors=colors, levels=levels, problem=problem)
 

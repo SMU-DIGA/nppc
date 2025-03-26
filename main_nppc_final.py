@@ -76,14 +76,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="deepseek-v3",
+        default="deepseek-r1",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=8,
+        default=9,
         help="the problem name idx",
     )
 
@@ -115,7 +115,7 @@ def get_parser():
         "--batch_size",
         type=int,
         required=False,
-        default=30,
+        default=1,
         help="the problem name",
     )
 
@@ -201,6 +201,8 @@ def main(args):
     num_batches = n_trials // batch_size + (0 if n_trials % batch_size == 0 else 1)
 
     predicted_solutions = []
+
+    is_llm_error = False
     for batch_idx in range(num_batches):
         if args.verbose:
             print("batch {} over all {} batches".format(batch_idx + 1, num_batches))
@@ -236,6 +238,7 @@ def main(args):
         )
         accuracy = []
         reason = []
+
         for result in results_for_level:
             accuracy.append(result["correctness"])
             reason.append(result["reason"])
@@ -247,14 +250,17 @@ def main(args):
                 )
             )
 
+            if "tokens" not in result.keys():
+                is_llm_error = True
+
         print(
             "Accuracy is {} (all={})".format(
                 sum(accuracy) / len(accuracy), len(accuracy)
             )
         )
-
-    with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
-        pickle.dump(results, f)
+    if not is_llm_error:
+        with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
+            pickle.dump(results, f)
 
     if not solver.is_online:
         from vllm.distributed.parallel_state import destroy_model_parallel
@@ -281,7 +287,7 @@ if __name__ == "__main__":
         args.seed = seed
         seed_everything(args.seed)
         for level in levels:
-            if level <= 3:
+            if level not in [9]:
                 continue
             seed_everything(args.seed)
             args.level = level
