@@ -1,6 +1,7 @@
 import os
 import os.path as osp
 import pickle
+import time
 from copy import deepcopy
 from pathlib import Path
 import torch
@@ -75,14 +76,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="gpt-4o",
+        default="deepseek-v3",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=1,
+        default=8,
         help="the problem name idx",
     )
 
@@ -114,7 +115,7 @@ def get_parser():
         "--batch_size",
         type=int,
         required=False,
-        default=10,
+        default=30,
         help="the problem name",
     )
 
@@ -217,6 +218,7 @@ def main(args):
                     predicted_solutions.append(output["solution"])
                     results[level][start_idx + idx].update(output)
                 break
+            time.sleep(20)
 
     # verify all the results
     verifications = env.batch_verify_solution(instances, predicted_solutions)
@@ -239,7 +241,9 @@ def main(args):
             reason.append(result["reason"])
             print(
                 "{}, {}, {}".format(
-                    result["correctness"], result["reason"], result["tokens"]
+                    result["correctness"],
+                    result["reason"],
+                    result["tokens"] if "tokens" in result.keys() else 0,
                 )
             )
 
@@ -277,6 +281,8 @@ if __name__ == "__main__":
         args.seed = seed
         seed_everything(args.seed)
         for level in levels:
+            if level <= 3:
+                continue
             seed_everything(args.seed)
             args.level = level
             print(args)

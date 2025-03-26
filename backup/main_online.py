@@ -18,5 +18,5 @@ messages = [{"content": "Hello, how are you?", "role": "user"}]
 response = completion(model="openai/gpt-4o", messages=messages)
 print(response)
 # anthropic call
-response = completion(model="anthropic/claude-3-sonnet-20240229", messages=messages)
+response = completion(model="anthropic/claude-3-7-sonnet-20250219", messages=messages)
 print(response)

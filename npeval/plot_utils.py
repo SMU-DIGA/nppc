@@ -104,7 +104,7 @@ def _annotate_and_decorate_axis(
     ax.grid(True, alpha=grid_alpha)
     ax = _decorate_axis(ax, wrect=wrect, hrect=hrect, ticklabelsize=ticklabelsize)
     if legend:
-        ax.legend(fontsize=legendsize, loc="upper right")
+        ax.legend(fontsize=legendsize, loc="upper right", framealpha=0.5)
     return ax
 
 

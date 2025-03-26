@@ -43,12 +43,14 @@ def get_data(problem, levels, model):
     return results
 
 
-problem_idx = 0
+problem_idx = 11
 
-problem = PROBLEMS[0]
-levels = list(PROBLEM_LEVELS[problem])
+problem = PROBLEMS[11]
+levels = list(PROBLEM_LEVELS[problem])[:7]
 
 model_list = ["deepseek-v3", "deepseek-r1", "claude", "gpt-4o", "gpt-4o-mini"]
+model_list = ["gpt-4o-mini"]
+
 nppc_result = {}
 
 for model in model_list:
