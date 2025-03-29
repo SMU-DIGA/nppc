@@ -181,13 +181,13 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
     problem = PROBLEMS[problem_idx]
     levels = list(PROBLEM_LEVELS[problem])
 
-    if problem_idx == 9:
-        levels = levels[:8]
+    # if problem_idx == 9:
+    #     levels = levels[:9]
     fig, ax = plt.subplots(figsize=(7, 5))
 
     for model in model_list:
         plot_one_line(ax=ax, model=model, colors=colors, levels=levels, problem=problem)
-
+    # ax.set_xscale('log')
     plt.tight_layout()
 
     plots_folder = "./performance_over_levels"
