@@ -1,7 +1,7 @@
 seed_list = [42, 53, 64]
-model_list = ["deepseek-v3", "deepseek-r1", "gpt-4o", "gpt-4o-mini", "claude"]
+model_list = ["o1-mini"]
 
-problem_list = [16]
+problem_list = [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
 # problem_list = [12]
 
 for model in model_list:
@@ -10,7 +10,7 @@ for model in model_list:
 
     f = open(file=filename, mode="w")
     f.write("mkdir -p {}\n\n".format(pare_folder))
-    for problem in problem_list:
+    for p_idx, problem in enumerate(problem_list):
         # if model == "deepseek-v3" and problem not in [12]:
         #     continue
         # if model == "deepseek-r1" and problem not in [9]:
@@ -31,4 +31,5 @@ for model in model_list:
             f.write(" > " + pare_folder)
             f.write("/log_" + config_l + ".txt")
             f.write("&\n")
-        # f.write("wait\n\n")
+        if (p_idx + 1) % 4 == 0:
+            f.write("wait\n\n")

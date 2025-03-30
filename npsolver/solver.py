@@ -158,6 +158,7 @@ class NPSolver:
             print("End of calling LLM")
             outputs = []
             for idx, response in enumerate(responses):
+                # print(response)
                 token_numbers = {
                     "prompt": response.usage.prompt_tokens,
                     "completion": response.usage.completion_tokens,
@@ -168,6 +169,7 @@ class NPSolver:
                 )
 
                 output = {
+                    "full_response": response,
                     "response": prediction,
                     "solution": predicted_solution,
                     "tokens": token_numbers,

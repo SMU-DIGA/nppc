@@ -27,6 +27,7 @@ def get_data_with_try(problem, levels, model):
         "claude": "claude",
         "deepseek-v3": "deepseek-v3",
         "deepseek-r1": "deepseek-r1",
+        "o1-mini": "o1-mini",
     }
 
     for seed in seeds:
@@ -34,8 +35,12 @@ def get_data_with_try(problem, levels, model):
 
         for level in levels:
             try:
+                if model in ["deepseek-r1"]:
+                    result_file_template = "../results_r1/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+                else:
+                    result_file_template = "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
                 f = open(
-                    "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
+                    result_file_template.format(
                         problem,
                         model_to_file[model],
                         model_to_file[model],
@@ -67,51 +72,59 @@ def get_data_with_try(problem, levels, model):
     return None
 
 
-def get_data(problem, levels, model):
-    # print(model)
-    seeds = [42, 53, 64]
-    results = []
-
-    model_to_file = {
-        "qwq-32b": "qwq",
-        "deepseek-r1-32b": "deepseek-r1-32",
-        "gpt-4o-mini": "gpt-4o-mini",
-        "gpt-4o": "gpt-4o",
-        "claude": "claude",
-        "deepseek-v3": "deepseek-v3",
-        "deepseek-r1": "deepseek-r1",
-    }
-
-    for seed in seeds:
-        seed_result = []
-        # print("========")
-        # print("seed: {}".format(seed))
-        # print("========")
-        for level in levels:
-            f = open(
-                "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl".format(
-                    problem,
-                    model_to_file[model],
-                    model_to_file[model],
-                    problem,
-                    level,
-                    seed,
-                ),
-                "rb",
-            )
-            data = pickle.load(f)
-            true_num = 0
-            for i in range(30):
-                # if model == 'gpt-4o':
-                #     print(data[level][i]["instance"])
-                if data[level][i]["correctness"]:
-                    true_num = true_num + 1
-            # print("level {}, accuracy = {}".format(level, true_num / 30))
-            seed_result.append(true_num / 30)
-        # print(seed_result)
-        results.append(seed_result)
-    results = np.array(results).reshape(3, 1, len(levels))
-    return results
+# def get_data(problem, levels, model):
+#     # print(model)
+#     seeds = [42, 53, 64]
+#     results = []
+#
+#     model_to_file = {
+#         "qwq-32b": "qwq",
+#         "deepseek-r1-32b": "deepseek-r1-32",
+#         "gpt-4o-mini": "gpt-4o-mini",
+#         "gpt-4o": "gpt-4o",
+#         "claude": "claude",
+#         "deepseek-v3": "deepseek-v3",
+#         "deepseek-r1": "deepseek-r1",
+#     }
+#
+#     for seed in seeds:
+#         seed_result = []
+#         # print("========")
+#         # print("seed: {}".format(seed))
+#         # print("========")
+#         if model in ["deepseek-r1"]:
+#             result_file_template = (
+#                 "../results_r1/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+#             )
+#         else:
+#             result_file_template = (
+#                 "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+#             )
+#         for level in levels:
+#             f = open(
+#                 result_file_template.format(
+#                     problem,
+#                     model_to_file[model],
+#                     model_to_file[model],
+#                     problem,
+#                     level,
+#                     seed,
+#                 ),
+#                 "rb",
+#             )
+#             data = pickle.load(f)
+#             true_num = 0
+#             for i in range(30):
+#                 # if model == 'gpt-4o':
+#                 #     print(data[level][i]["instance"])
+#                 if data[level][i]["correctness"]:
+#                     true_num = true_num + 1
+#             # print("level {}, accuracy = {}".format(level, true_num / 30))
+#             seed_result.append(true_num / 30)
+#         # print(seed_result)
+#         results.append(seed_result)
+#     results = np.array(results).reshape(3, 1, len(levels))
+#     return results
 
 
 model_list = [
@@ -122,11 +135,12 @@ model_list = [
     "claude",
     "deepseek-v3",
     "deepseek-r1",
+    "o1-mini",
 ]
 
 color_palette = "colorblind"
 color_palette = sns.color_palette(color_palette, n_colors=len(model_list))
-colors = dict(zip([model_list[i] for i in [6, 5, 4, 1, 3, 0, 2]], color_palette))
+colors = dict(zip([model_list[i] for i in [6, 5, 4, 1, 3, 0, 2, 7]], color_palette))
 
 
 # model_list = ["gpt-4o-mini"]
