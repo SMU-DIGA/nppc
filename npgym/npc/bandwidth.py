@@ -85,21 +85,24 @@ def verify_solution(instance, layout):
     try:
         # Check if layout is a valid permutation
         if len(layout) != num_vertices:
-            return False, "Layout length doesn't match number of vertices."
+            return (
+                False,
+                "BANDWIDTH ERROR 1: Layout length doesn't match number of vertices.",
+            )
         if sorted(layout) != list(range(num_vertices)):
-            return False, "Layout must be a permutation of vertices."
+            return False, "BANDWIDTH ERROR 2: Layout must be a permutation of vertices."
 
         # Check bandwidth constraint for each edge
         for v1, v2 in graph["edges"]:
             if abs(layout[v1] - layout[v2]) > bandwidth:
                 return (
                     False,
-                    f"Edge ({v1}, {v2}) exceeds bandwidth: |{layout[v1]} - {layout[v2]}| > {bandwidth}",
+                    f"BANDWIDTH ERROR 3: Edge ({v1}, {v2}) exceeds bandwidth: |{layout[v1]} - {layout[v2]}| > {bandwidth}",
                 )
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

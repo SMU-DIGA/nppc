@@ -76,14 +76,14 @@ def get_parser():
         "--model",
         type=str,
         required=False,
-        default="deepseek-r1",
+        default="claude",
         help="name for LLM",
     )
     parser.add_argument(
         "--problem",
         type=int,
         required=False,
-        default=9,
+        default=12,
         help="the problem name idx",
     )
 
@@ -276,18 +276,14 @@ if __name__ == "__main__":
     set_api_keys()
 
     args = get_parser()
-    # if args.model in MODELS["online"]:
-    #     seed_everything(args.seed)
-    # main(args)
 
     problem_name = PROBLEMS[args.problem]
     levels = PROBLEM_LEVELS[problem_name]
 
-    for seed in [42, 53, 64]:
+    for seed in [42, 53]:
         args.seed = seed
-        seed_everything(args.seed)
         for level in levels:
-            if level not in [9]:
+            if level not in [10, 11]:
                 continue
             seed_everything(args.seed)
             args.level = level

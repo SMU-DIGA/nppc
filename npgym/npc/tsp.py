@@ -110,19 +110,20 @@ def verify_solution(instance, tour):
 
     distances = instance["distances"]
     target_length = instance["length"]
+    # print(instance)
     num_cities = len(instance["city_indices"])
 
     try:
         # Check if tour length matches number of cities
         if len(tour) != num_cities:
-            return False, "Tour must visit exactly all cities once"
+            return False, "TSP ERROR 1: Tour must visit exactly all cities once"
 
         if not (max(tour) < num_cities and min(tour) >= 0):
-            return False, "Invalid city index."
+            return False, "TSP ERROR 2: Invalid city index."
 
         # Check if all cities are visited exactly once
         if sorted(tour) != list(range(num_cities)):
-            return False, "Tour must contain each city exactly once"
+            return False, "TSP ERROR 3: Tour must contain each city exactly once"
 
         # Calculate total tour length
         total_length = 0
@@ -135,12 +136,12 @@ def verify_solution(instance, tour):
         if total_length > target_length:
             return (
                 False,
-                f"Tour length {total_length} exceeds target length {target_length}",
+                f"TSP ERROR 4: Tour length {total_length} exceeds target length {target_length}",
             )
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

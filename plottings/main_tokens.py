@@ -129,7 +129,7 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
                 marker="o",
                 color="b",
                 facecolor="None",
-                label='correct' if i == 0 else None
+                label="correct" if i == 0 else None,
             )
 
             axes[0][m_idx].scatter(
@@ -138,7 +138,7 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
                 marker="o",
                 color="r",
                 facecolor="None",
-                label='wrong' if i == 0 else None
+                label="wrong" if i == 0 else None,
             )
 
             axes[0][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
@@ -150,7 +150,9 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
             # axes[0][m_idx].set_xticks(fontsize=32)
             # axes[0][m_idx].set_yticks(fontsize=32)
             axes[0][m_idx].set_title(f"{model}", fontsize=24)
-            axes[0][m_idx].tick_params(axis='both', which='major', labelsize=24)  # Set font size to 14 for top row
+            axes[0][m_idx].tick_params(
+                axis="both", which="major", labelsize=24
+            )  # Set font size to 14 for top row
 
         for i in range(len(levels)):
             axes[1][m_idx].scatter(
@@ -179,13 +181,13 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
             #     axes[1][m_idx].set_yticklabels([])
 
             # axes[1][m_idx].set_yticks(fontsize=32)
-            axes[1][m_idx].tick_params(axis='both', which='major', labelsize=24)
+            axes[1][m_idx].tick_params(axis="both", which="major", labelsize=24)
 
     plt.tight_layout()
 
     # plt.ylabel("Performance", fontsize=32)
     # plt.title("Model Performance Over Time", fontsize=24, weight="bold")
-    fig_folder = './tokens'
+    fig_folder = "./tokens"
     file_name = fig_folder + "/tokens_{}.pdf".format(problem)
     plt.savefig(file_name, format="pdf", bbox_inches="tight")
 

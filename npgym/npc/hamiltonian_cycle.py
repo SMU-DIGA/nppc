@@ -56,24 +56,27 @@ def verify_solution(instance, cycle: List[int]):
     try:
         # Basic checks
         if len(cycle) != n + 1:
-            return False, f"Path length should be {n + 1}."
+            return False, f"HAM CYCLE ERROR 1: Path length should be {n + 1}."
         if cycle[0] != cycle[-1]:
-            return False, "Path does not return to start."
+            return False, "HAM CYCLE ERROR 2: Path does not return to start."
         if len(set(cycle[:-1])) != n:
-            return False, "Not all vertices visited exactly once."
+            return False, "HAM CYCLE ERROR 3: Not all vertices visited exactly once."
         if not all(0 <= node < n for node in cycle):
-            return False, "Invalid vertex in path."
+            return False, "HAM CYCLE ERROR 4: Invalid vertex in path."
 
         # Check if edges exist
         for i in range(len(cycle) - 1):
             v1, v2 = cycle[i], cycle[i + 1]
             if (v1, v2) not in edges:
-                return False, f"No edge between vertices {v1} and {v2}."
+                return (
+                    False,
+                    f"HAM CYCLE ERROR 5: No edge between vertices {v1} and {v2}.",
+                )
 
         return True, "Correct solution."
 
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

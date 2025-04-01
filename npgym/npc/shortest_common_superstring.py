@@ -53,23 +53,26 @@ def verify_solution(instance, solution):
         bool indicating whether solution is valid
     """
     if not isinstance(solution, str):
-        return False, "Wrong solution format."
+        return False, "SUPERSTRING ERROR 1: Wrong solution format."
 
     k = instance["k"]
     strings = instance["strings"]
 
     try:
         if len(solution) > k:
-            return False, "The solution is invalid."
+            return False, "SUPERSTRING ERROR 2: The solution is invalid."
 
         # Check if each input string is a substring of the solution
         for s in strings:
             if s not in solution:
-                return False, "Some string is not the substring of the solution"
+                return (
+                    False,
+                    "SUPERSTRING ERROR 3: Some string is not the substring of the solution",
+                )
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

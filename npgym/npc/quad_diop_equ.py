@@ -17,19 +17,19 @@ def verify_solution(instance, solution):
 
     try:
         if len(solution) != 2:
-            return False, "The solution is not valid."
+            return False, "QDE ERROR 1: The solution is not valid."
         x = solution[0]
         y = solution[1]
 
         if not (x > 0 and y > 0):
-            return False, "The solution is not valid."
+            return False, "QDE ERROR 2: The solution is not valid."
         else:
             if (a * x * x) + (b * y) == c:
-                return True, "Correct solution."
+                return True, "QDE ERROR 3: Correct solution."
             else:
-                return False, "The solution does not match."
+                return False, "QDE ERROR 4: The solution does not match."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

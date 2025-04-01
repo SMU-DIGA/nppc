@@ -75,10 +75,10 @@ def verify_solution(instance, solution):
 
     try:
         if len(solution) != len(item_weights):
-            return False, "The solution is not valid."
+            return False, "BIN PACKING ERROR 1: The solution is not valid."
 
         if max(solution) > num_bins - 1:
-            return False, "No this bin."
+            return False, "BIN PACKING ERROR 2: No this bin."
 
         bin_weights = [0] * num_bins
 
@@ -86,12 +86,12 @@ def verify_solution(instance, solution):
             bin_weights[bin_idx] += item_weights[idx]
 
         if max(bin_weights) > bin_capacity:
-            return False, f"The total size exceeds B."
+            return False, f"BIN PACKING ERROR 3: The total size exceeds B."
 
         return True, "Correct solution."
 
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

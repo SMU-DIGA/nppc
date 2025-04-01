@@ -29,28 +29,32 @@ def verify_solution(instance, cover):
     cover_size = instance["cover_size"]
     graph = instance["graph"]
     num_vertices = len(graph["nodes"])
-
-    if not isinstance(cover, list):
-        return False, "Wrong solution format."
-
-    cover = set(cover)
     try:
+        if not isinstance(cover, list):
+            return False, "VERTEX COVER ERROR 1: Wrong solution format."
+        cover = set(cover)
         if not cover:
-            return False, "The cover cannot be empty."
+            return False, "VERTEX COVER ERROR 2: The cover cannot be empty."
 
         if max(cover) >= num_vertices or min(cover) < 0:
-            return False, "The vertex index exceeds the max number."
+            return (
+                False,
+                "VERTEX COVER ERROR 3: The vertex index exceeds the max number.",
+            )
 
         if len(cover) > cover_size:
-            return False, f"The cover size is larger than {cover_size}"
+            return (
+                False,
+                f"VERTEX COVER ERROR 4: The cover size is larger than {cover_size}",
+            )
 
         for u, v in graph["edges"]:
             if u not in cover and v not in cover:
-                return False, f"Edge ({u}, {v}) is not covered."
+                return False, f"VERTEX COVER ERROR 5: Edge ({u}, {v}) is not covered."
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

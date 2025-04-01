@@ -69,7 +69,10 @@ def verify_solution(instance, solution):
     try:
         # Check solution length
         if len(solution) != n:
-            return False, "Solution length doesn't match number of vertices"
+            return (
+                False,
+                "MLST ERROR 1: Solution length doesn't match number of vertices",
+            )
 
         # Convert edges to set of tuples for easier lookup
         edge_set = set(tuple(sorted(edge)) for edge in edges)
@@ -86,14 +89,14 @@ def verify_solution(instance, solution):
                 if tuple(sorted([v, parent])) not in edge_set:
                     return (
                         False,
-                        f"Edge ({v}, {parent}) in solution not present in graph",
+                        f"MLST ERROR 2: Edge ({v}, {parent}) in solution not present in graph",
                     )
                 parent_count[parent] += 1
 
         # Do BFS from root to check connectivity
         root = solution.index(-1)
         if solution.count(-1) != 1:
-            return False, "Solution must have exactly one root"
+            return False, "MLST ERROR 3: Solution must have exactly one root"
 
         queue = [root]
         visited[root] = True
@@ -107,7 +110,7 @@ def verify_solution(instance, solution):
 
         # Check if tree spans all vertices
         if not all(visited):
-            return False, "Tree doesn't span all vertices"
+            return False, "MLST ERROR 4: Tree doesn't span all vertices"
 
         # Count leaves (vertices with no children)
         leaf_count = sum(1 for count in parent_count if count == 0)
@@ -116,12 +119,12 @@ def verify_solution(instance, solution):
         if leaf_count < target_leaves:
             return (
                 False,
-                f"Tree has {leaf_count} leaves, needs at least {target_leaves}",
+                f"MLST ERROR 5: Tree has {leaf_count} leaves, needs at least {target_leaves}",
             )
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

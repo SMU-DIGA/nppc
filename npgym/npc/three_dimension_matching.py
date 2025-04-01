@@ -63,11 +63,14 @@ def verify_solution(instance, matching):
     try:
         # 检查matching中的三元组是否都在原始集合中
         if not all(m in triples for m in matching):
-            return False, f"Not all triples in the matching are in the original set."
+            return (
+                False,
+                f"3DM ERROR 1: Not all triples in the matching are in the original set.",
+            )
 
         # 检查matching大小是否为n
         if len(matching) != n:
-            return False, f"The size of matching is not n."
+            return False, f"3DM ERROR 2: The size of matching is not n."
 
         # 检查每个元素是否只用了一次
         used_x = set()
@@ -76,14 +79,14 @@ def verify_solution(instance, matching):
 
         for x, y, z in matching:
             if x in used_x or y in used_y or z in used_z:
-                return False, f"Not mutual exclusion."
+                return False, f"3DM ERROR 3: Not mutual exclusion."
             used_x.add(x)
             used_y.add(y)
             used_z.add(z)
 
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

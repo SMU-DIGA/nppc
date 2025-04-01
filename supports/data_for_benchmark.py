@@ -126,7 +126,6 @@ import seaborn as sns
 import matplotlib.dates as mdates
 
 
-
 # Define the datasets
 datasets = {
     "GSM8K": [
@@ -175,7 +174,6 @@ datasets = {
         ["ARChitects", 53.5, "2024-12-6"],
         ["unknown", 34.3, "2024-05-30"],
     ],
-
 }
 
 color_palette = "colorblind"
@@ -207,7 +205,7 @@ plt.xticks(fontsize=32)
 plt.yticks(fontsize=32)
 
 plt.gca().xaxis.set_major_locator(mdates.YearLocator())
-plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
 # plt.xticks(fontsize=11, weight='bold')
 
 plt.tight_layout()

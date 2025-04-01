@@ -29,10 +29,13 @@ def verify_solution(instance, solution):
 
     try:
         if len(elements) != len(solution):
-            return False, "The solution is not with the same elements"
+            return (
+                False,
+                "MIN SUM SQ ERROR 1: The solution is not with the same elements",
+            )
 
         if len(set(solution)) > k:
-            return False, "The subset number is not valid"
+            return False, "MIN SUM SQ ERROR 2: The subset number is not valid"
 
         group_value = {}
 
@@ -49,9 +52,9 @@ def verify_solution(instance, solution):
         if quad_sum <= J:
             return True, "Correct solution."
         else:
-            return False, "The sum exceeds J."
+            return False, "MIN SUM SQ ERROR 3: The sum exceeds J."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 def test():

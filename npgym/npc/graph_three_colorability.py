@@ -111,10 +111,13 @@ def verify_solution(instance, solution):
         # 检查每个边的两个节点颜色是否不同
         for u, v in edges:
             if solution[u] == solution[v]:
-                return False, "The two nodes of an edge have the same color"
+                return (
+                    False,
+                    "3-COL ERROR 1: The two nodes of an edge have the same color",
+                )
         return True, "Correct solution."
     except:
-        return False, "Verification error."
+        return False, "VERIFICATION: Verification error."
 
 
 # 示例用法
