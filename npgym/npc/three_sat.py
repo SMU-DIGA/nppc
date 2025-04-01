@@ -67,7 +67,7 @@ def verify_solution(instance, solution):
 
     try:
         if num_variables != len(solution):
-            return False, "3SAT Error 1: Ths solution is not valid."
+            return False, "3SAT ERROR 1: Ths solution is not valid."
 
         unsatisfied_clauses = []
 
