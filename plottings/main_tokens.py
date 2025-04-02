@@ -81,135 +81,146 @@ model_list = [
     "o1-mini",
 ]
 
-for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
-    # if problem_idx not in [16]:
-    #     continue
-    problem = PROBLEMS[problem_idx]
-    levels = list(PROBLEM_LEVELS[problem])
 
-    fig, axes = plt.subplots(nrows=2, ncols=6, figsize=(5 * 6, 3 * 2))
+def plot_tokens():
+    for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
+        # if problem_idx not in [16]:
+        #     continue
+        problem = PROBLEMS[problem_idx]
+        levels = list(PROBLEM_LEVELS[problem])
+
+        fig, axes = plt.subplots(nrows=2, ncols=6, figsize=(5 * 6, 3 * 2))
+        for m_idx, model in enumerate(model_list):
+            # fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(3.5, 3.5 * 2))
+
+            nppc_result = get_data_with_try(problem, levels, model)
+
+            correct_prompt = []
+            wrong_prompt = []
+            correct_completion = []
+            wrong_completion = []
+
+            for i in range(len(levels)):
+                correct_prompt.append([])
+                wrong_prompt.append([])
+                correct_completion.append([])
+                wrong_completion.append([])
+
+                for seed in [42, 53, 64]:
+                    if i >= len(nppc_result[seed]):
+                        continue
+                    for j in range(len(nppc_result[seed][i])):
+                        if nppc_result[seed][i][j][1]:
+                            correct_prompt[-1].append(nppc_result[seed][i][j][0]["prompt"])
+                            correct_completion[-1].append(
+                                nppc_result[seed][i][j][0]["completion"]
+                            )
+                        else:
+                            wrong_prompt[-1].append(nppc_result[seed][i][j][0]["prompt"])
+                            wrong_completion[-1].append(
+                                nppc_result[seed][i][j][0]["completion"]
+                            )
+
+            # axes[1].xlim(0, len(levels)+1)
+            # axes[1].ylim(0, 10)
+
+            for i in range(len(levels)):
+                axes[0][m_idx].scatter(
+                    [i + 1] * len(correct_prompt[i]),
+                    correct_prompt[i],
+                    marker="o",
+                    color="b",
+                    facecolor="None",
+                    label="correct" if i == 0 else None,
+                )
+
+                axes[0][m_idx].scatter(
+                    [i + 1] * len(wrong_prompt[i]),
+                    wrong_prompt[i],
+                    marker="o",
+                    color="r",
+                    facecolor="None",
+                    label="wrong" if i == 0 else None,
+                )
+
+                axes[0][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
+                axes[0][m_idx].grid(True, linestyle="--", alpha=0.6)
+                axes[0][m_idx].set_xticks(levels)
+                # if m_idx != 0:
+                #     axes[0][m_idx].set_yticklabels([])
+
+                # axes[0][m_idx].set_xticks(fontsize=32)
+                # axes[0][m_idx].set_yticks(fontsize=32)
+                axes[0][m_idx].set_title(f"{model}", fontsize=24)
+                axes[0][m_idx].tick_params(
+                    axis="both", which="major", labelsize=24
+                )  # Set font size to 14 for top row
+
+            for i in range(len(levels)):
+                axes[1][m_idx].scatter(
+                    [i + 1] * len(correct_completion[i]),
+                    correct_completion[i],
+                    marker="o",
+                    color="b",
+                    facecolor="None",
+                    # label='correct' if i == 0 else None
+                )
+
+                axes[1][m_idx].scatter(
+                    [i + 1] * len(wrong_completion[i]),
+                    wrong_completion[i],
+                    marker="o",
+                    color="r",
+                    facecolor="None",
+                    # label='correct' if i == 0 else None
+                )
+
+                # axes[1][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
+                axes[1][m_idx].grid(True, linestyle="--", alpha=0.6)
+                axes[1][m_idx].set_xticks(levels)
+
+                # if m_idx != 0:
+                #     axes[1][m_idx].set_yticklabels([])
+
+                # axes[1][m_idx].set_yticks(fontsize=32)
+                axes[1][m_idx].tick_params(axis="both", which="major", labelsize=24)
+
+        plt.tight_layout()
+
+        # plt.ylabel("Performance", fontsize=32)
+        # plt.title("Model Performance Over Time", fontsize=24, weight="bold")
+        fig_folder = "./tokens"
+        file_name = fig_folder + "/tokens_{}.pdf".format(problem)
+        plt.savefig(file_name, format="pdf", bbox_inches="tight")
+
+        plt.show()
+
+
+def plot_token_table():
     for m_idx, model in enumerate(model_list):
-        # fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(3.5, 3.5 * 2))
+        token_prompt = []
+        token_completion = []
+        for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
+            problem = PROBLEMS[problem_idx]
+            levels = list(PROBLEM_LEVELS[problem])
 
-        nppc_result = get_data_with_try(problem, levels, model)
+            nppc_result = get_data_with_try(problem, levels, model)
 
-        correct_prompt = []
-        wrong_prompt = []
-        correct_completion = []
-        wrong_completion = []
-
-        for i in range(len(levels)):
-            correct_prompt.append([])
-            wrong_prompt.append([])
-            correct_completion.append([])
-            wrong_completion.append([])
-
-            for seed in [42, 53, 64]:
-                if i >= len(nppc_result[seed]):
-                    continue
-                for j in range(len(nppc_result[seed][i])):
-                    if nppc_result[seed][i][j][1]:
-                        correct_prompt[-1].append(nppc_result[seed][i][j][0]["prompt"])
-                        correct_completion[-1].append(
+            token_prompt_problem = []
+            token_completion_problem = []
+            for i in range(len(levels)):
+                for seed in [42, 53, 64]:
+                    if i >= len(nppc_result[seed]):
+                        continue
+                    for j in range(len(nppc_result[seed][i])):
+                        token_prompt_problem.append(nppc_result[seed][i][j][0]["prompt"])
+                        token_completion_problem.append(
                             nppc_result[seed][i][j][0]["completion"]
                         )
-                    else:
-                        wrong_prompt[-1].append(nppc_result[seed][i][j][0]["prompt"])
-                        wrong_completion[-1].append(
-                            nppc_result[seed][i][j][0]["completion"]
-                        )
+            token_prompt.append(sum(token_prompt_problem))
+            token_completion.append(sum(token_completion_problem))
 
-        # axes[1].xlim(0, len(levels)+1)
-        # axes[1].ylim(0, 10)
+        print(model, '&', sum(token_prompt), '&', sum(token_completion), '\\\\\n')
 
-        for i in range(len(levels)):
-            axes[0][m_idx].scatter(
-                [i + 1] * len(correct_prompt[i]),
-                correct_prompt[i],
-                marker="o",
-                color="b",
-                facecolor="None",
-                label="correct" if i == 0 else None,
-            )
 
-            axes[0][m_idx].scatter(
-                [i + 1] * len(wrong_prompt[i]),
-                wrong_prompt[i],
-                marker="o",
-                color="r",
-                facecolor="None",
-                label="wrong" if i == 0 else None,
-            )
-
-            axes[0][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
-            axes[0][m_idx].grid(True, linestyle="--", alpha=0.6)
-            axes[0][m_idx].set_xticks(levels)
-            # if m_idx != 0:
-            #     axes[0][m_idx].set_yticklabels([])
-
-            # axes[0][m_idx].set_xticks(fontsize=32)
-            # axes[0][m_idx].set_yticks(fontsize=32)
-            axes[0][m_idx].set_title(f"{model}", fontsize=24)
-            axes[0][m_idx].tick_params(
-                axis="both", which="major", labelsize=24
-            )  # Set font size to 14 for top row
-
-        for i in range(len(levels)):
-            axes[1][m_idx].scatter(
-                [i + 1] * len(correct_completion[i]),
-                correct_completion[i],
-                marker="o",
-                color="b",
-                facecolor="None",
-                # label='correct' if i == 0 else None
-            )
-
-            axes[1][m_idx].scatter(
-                [i + 1] * len(wrong_completion[i]),
-                wrong_completion[i],
-                marker="o",
-                color="r",
-                facecolor="None",
-                # label='correct' if i == 0 else None
-            )
-
-            # axes[1][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
-            axes[1][m_idx].grid(True, linestyle="--", alpha=0.6)
-            axes[1][m_idx].set_xticks(levels)
-
-            # if m_idx != 0:
-            #     axes[1][m_idx].set_yticklabels([])
-
-            # axes[1][m_idx].set_yticks(fontsize=32)
-            axes[1][m_idx].tick_params(axis="both", which="major", labelsize=24)
-
-    plt.tight_layout()
-
-    # plt.ylabel("Performance", fontsize=32)
-    # plt.title("Model Performance Over Time", fontsize=24, weight="bold")
-    fig_folder = "./tokens"
-    file_name = fig_folder + "/tokens_{}.pdf".format(problem)
-    plt.savefig(file_name, format="pdf", bbox_inches="tight")
-
-    plt.show()
-    # break
-
-    # if problem_idx == 9:
-    #     levels = levels[:9]
-    # fig, ax = plt.subplots(figsize=(7, 5))
-    #
-    # for model in model_list:
-    #     plot_one_line(ax=ax, model=model, colors=colors, levels=levels, problem=problem)
-    # # ax.set_xscale('log')
-    # plt.tight_layout()
-    #
-    # plots_folder = "./performance_over_levels"
-    # path_plots_folder = Path(plots_folder)
-    # if not path_plots_folder.exists():
-    #     path_plots_folder.mkdir(parents=True, exist_ok=True)
-    # plt.savefig(
-    #     osp.join(plots_folder, "{}.pdf".format(problem)),
-    #     bbox_inches="tight",
-    #     pad_inches=0.0,
-    # )
-    # plt.show()
+plot_token_table()

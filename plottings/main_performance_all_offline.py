@@ -199,12 +199,12 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
     #     levels = levels[:9]
     fig, ax = plt.subplots(figsize=(7, 5))
 
-    for model in model_list[2:]:
+    for model in model_list[:2]:
         plot_one_line(ax=ax, model=model, colors=colors, levels=levels, problem=problem)
     # ax.set_xscale('log')
     plt.tight_layout()
 
-    plots_folder = "./performance_over_levels"
+    plots_folder = "./performance_over_levels_offline"
     path_plots_folder = Path(plots_folder)
     if not path_plots_folder.exists():
         path_plots_folder.mkdir(parents=True, exist_ok=True)
