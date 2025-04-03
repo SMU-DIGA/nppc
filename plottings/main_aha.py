@@ -64,6 +64,7 @@ def get_data_with_try(problem, levels, model):
                 for i in range(30):
                     # if model == 'gpt-4o':
                     #     print(data[level][i]["instance"])
+                    print(data[level][i]["full_response"].choices[0].message.reasoning_content)
                     tokens.append(
                         [
                             check_aha_number(

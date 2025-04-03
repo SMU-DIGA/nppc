@@ -25,9 +25,9 @@ def verify_solution(instance, solution):
             return False, "QDE ERROR 2: The solution is not valid."
         else:
             if (a * x * x) + (b * y) == c:
-                return True, "QDE ERROR 3: Correct solution."
+                return True, "Correct solution."
             else:
-                return False, "QDE ERROR 4: The solution does not match."
+                return False, "QDE ERROR 3: The solution does not match."
     except:
         return False, "VERIFICATION: Verification error."
 
