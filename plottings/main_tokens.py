@@ -270,7 +270,7 @@ def plot_tokens():
             # axes[1][m_idx].legend(fontsize=18, ncol=1, loc="upper left")
             axes[r_idx * 2 + 1][c_idx].grid(True, linestyle="--", alpha=0.6)
             axes[r_idx * 2 + 1][c_idx].set_xticks(levels)
-            axes[r_idx * 2 + 1][c_idx].set_xticklabels([])
+            # axes[r_idx * 2 + 1][c_idx].set_xticklabels([])
 
             # if m_idx != 0:
             #     axes[1][m_idx].set_yticklabels([])
