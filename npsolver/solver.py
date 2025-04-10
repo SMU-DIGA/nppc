@@ -13,9 +13,39 @@ from npsolver.prompt import nppc_template, example_and_solution, problem_descrip
 
 
 # Continue with your vLLM code
+def extract_solution_from_response_old(response):
+    # find the json code
+    match = re.findall(r"```json\n(.*?)\n```", response, re.DOTALL)
+    if match:
+        json_str = match[-1]
+        try:
+            # remove the single line comment
+            json_str = re.sub(r"//.*$", "", json_str, flags=re.MULTILINE)
+            # remove the multiple line comment
+            json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
+            data = json.loads(json_str)
+            answer = data["solution"]
+            return answer, None
+        except (json.JSONDecodeError, KeyError, SyntaxError) as e:
+            print(f"Error parsing JSON or answer field: {e}")
+            # return None
+            return None, f"Error parsing JSON or answer field: {e}"
+    else:
+        print("No JSON found in the text.")
+        # return None
+        return None, "JSON Error: No JSON found in the text."
+
+
 def extract_solution_from_response(response):
     # find the json code
     match = re.findall(r"```json\n(.*?)\n```", response, re.DOTALL)
+
+    # print(match)
+    if not match:
+        match = re.findall(r"json\s*({[^{}]*})", response, re.DOTALL)
+    if not match:
+        match = re.findall(r"\{[^{}]*\}", response)
+
     if match:
         json_str = match[-1]
         try:

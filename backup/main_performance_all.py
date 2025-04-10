@@ -28,6 +28,7 @@ def get_data_with_try(problem, levels, model):
         "deepseek-v3": "deepseek-v3",
         "deepseek-r1": "deepseek-r1",
         "o1-mini": "o1-mini",
+        "deepseek-v3-2503": "deepseek-v3-2503",
     }
 
     for seed in seeds:
@@ -35,17 +36,17 @@ def get_data_with_try(problem, levels, model):
 
         for level in levels:
             try:
-                if model in ["deepseek-r1"]:
-                    result_file_template = "../results_r1/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
-                else:
-                    result_file_template = "../results/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+                dict_as_key = tuple(sorted(PROBLEM_LEVELS[problem][level].items()))
+
+                new_result_file_template = "./full_results_flex/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+
                 f = open(
-                    result_file_template.format(
+                    new_result_file_template.format(
                         problem,
                         model_to_file[model],
                         model_to_file[model],
                         problem,
-                        level,
+                        dict_as_key,
                         seed,
                     ),
                     "rb",
@@ -134,13 +135,14 @@ model_list = [
     "gpt-4o",
     "claude",
     "deepseek-v3",
+    "deepseek-v3-2503",
     "deepseek-r1",
     "o1-mini",
 ]
 
 color_palette = "colorblind"
 color_palette = sns.color_palette(color_palette, n_colors=len(model_list))
-colors = dict(zip([model_list[i] for i in [6, 5, 4, 1, 3, 0, 2, 7]], color_palette))
+colors = dict(zip([model_list[i] for i in [6, 5, 4, 1, 3, 0, 2, 7, 8]], color_palette))
 
 
 # model_list = ["gpt-4o-mini"]
@@ -199,7 +201,7 @@ for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:
     #     levels = levels[:9]
     fig, ax = plt.subplots(figsize=(7, 5))
 
-    for model in model_list[2:]:
+    for model in model_list[5:7]:
         plot_one_line(ax=ax, model=model, colors=colors, levels=levels, problem=problem)
     # ax.set_xscale('log')
     plt.tight_layout()

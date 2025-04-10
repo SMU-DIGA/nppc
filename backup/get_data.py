@@ -15,6 +15,7 @@ def get_data_with_try(problem, levels, model):
         "claude": "claude",
         "deepseek-v3": "deepseek-v3",
         "deepseek-r1": "deepseek-r1",
+        "o1-mini": "o1-mini",
     }
 
     for seed in seeds:

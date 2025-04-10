@@ -1,3 +1,7 @@
+import os
+
+os.chdir("..")
+
 import collections
 
 import matplotlib.patches as mpatches
@@ -5,10 +9,60 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from npgym import PROBLEMS, PROBLEM_LEVELS
-from get_data import get_data_with_try
-from npeval import plot_utils
 
-fig_folder = "./performance_rank"
+# from get_data import get_data_with_try
+from npeval import plot_utils
+import pickle
+
+import os.path as osp
+from pathlib import Path
+
+from npgym import NPEnv, PROBLEMS, PROBLEM_LEVELS
+from npsolver.solver import (
+    extract_solution_from_response,
+    extract_solution_from_response_old,
+)
+
+PROBLEM2FIG = {
+    "3-Satisfiability (3-SAT)": "3SAT",  # 0
+    "Vertex Cover": "Vertex Cover",  # 1
+    "Clique": "clique",  # 2
+    "Independent Set": "independent_set",  # 3
+    "Partition": "partition",  # 4
+    "Subset Sum": "subset_sum",  # 5
+    "Set Packing": "set_packing",  # 6
+    "Set Splitting": "set_splitting",  # 7
+    "Shortest Common Superstring": "Superstring",  # 8
+    "Quadratic Diophantine Equations": "QDE",  # 9
+    "Quadratic Congruences": "quadratic_congruence",  # 10
+    "3-Dimensional Matching (3DM)": "3DM",  # 11
+    "Travelling Salesman (TSP)": "TSP",  # 12
+    "Dominating Set": "domninating_set",  # 13
+    "Hitting String": "hitting_string",  # 14
+    "Hamiltonian Cycle": "Hamiltonian Cycle",  # 15
+    "Bin Packing": "Bin Packing",  # 16
+    "Exact Cover by 3-Sets (X3C)": "x3c",  # 17
+    "Minimum Cover": "minimum_cover",  # 18
+    "Graph 3-Colourability (3-COL)": "3-COL",  # 19
+    "Clustering": "clustering",  # 20
+    "Betweenness": "betweenness",  # 21
+    "Minimum Sum of Squares": "Min Sum Square",  # 22
+    "Bandwidth": "Bandwidth",  # 23
+    "Maximum Leaf Spanning Tree": "Max Leaf Span Tree",  # 24
+}
+
+# MODEL2FIG = {
+#     "deepseek-r1-32": "DeepSeek-R1-32B",
+#     "qwq": "QwQ-32B",
+#     "gpt-4o-mini": "GPT-4o-mini",
+#     "gpt-4o": "GPT-4o",
+#     "claude": "Claude 3.7 Sonnet",
+#     "deepseek-v3": "DeepSeek-V3",
+#     "deepseek-r1": "DeepSeek-R1",
+#     "o1-mini": "o1-mini",
+# }
+
+fig_folder = "./plottings/performance_rank"
 
 
 def save_fig(fig, name):
@@ -55,19 +109,109 @@ def get_rank_matrix(score_dict, n=100000, algorithms=None):
     return all_mat
 
 
+MODEL2FIG = {
+    "deepseek-r1-32b": "DeepSeek-R1-32B",
+    "qwq-32b": "QwQ-32B",
+    "gpt-4o-mini": "GPT-4o-mini",
+    "gpt-4o": "GPT-4o",
+    "claude": "Claude 3.7 Sonnet",
+    "deepseek-v3": "DeepSeek-V3",
+    "deepseek-v3-2503": "deepseek-v3-2503",
+    "deepseek-r1": "DeepSeek-R1",
+    "o1-mini": "o1-mini",
+    "o3-mini": "o3-mini",
+}
+
 model_list = [
-    # "qwq-32b",
-    # "deepseek-r1-32b",
+    "qwq-32b",
+    "deepseek-r1-32b",
     "gpt-4o-mini",
     "gpt-4o",
     "claude",
     "deepseek-v3",
+    "deepseek-v3-2503",
     "deepseek-r1",
+    "o1-mini",
+    "o3-mini",
 ]
 
 
+def get_data_with_try(problem, levels, model):
+    seeds = [42, 53, 64]
+    results = {}
+    min_len = len(levels)
+
+    model_to_file = {
+        "qwq-32b": "qwq",
+        "deepseek-r1-32b": "deepseek-r1-32",
+        "gpt-4o-mini": "gpt-4o-mini",
+        "gpt-4o": "gpt-4o",
+        "claude": "claude",
+        "deepseek-v3": "deepseek-v3",
+        "deepseek-r1": "deepseek-r1",
+        "o1-mini": "o1-mini",
+        "deepseek-v3-2503": "deepseek-v3-2503",
+        "o3-mini": "o3-mini",
+    }
+
+    env = NPEnv(problem_name=problem, level=1)
+
+    for seed in seeds:
+        results[seed] = []
+
+        for level in levels:
+            try:
+                dict_as_key = tuple(sorted(PROBLEM_LEVELS[problem][level].items()))
+
+                new_result_file_template = "./full_results_flex/{}/{}/model_{}_problem_{}_level_{}_shots_1_seed_{}.pkl"
+
+                f = open(
+                    new_result_file_template.format(
+                        problem,
+                        model_to_file[model],
+                        model_to_file[model],
+                        problem,
+                        dict_as_key,
+                        seed,
+                    ),
+                    "rb",
+                )
+                data = pickle.load(f)
+                # correctness = []
+                instances = []
+                solutions = []
+                for i in range(30):
+                    # print(data[level][i])
+                    # if model == 'gpt-4o':
+                    #     print(data[level][i]["instance"])
+                    instances.append(data[i]["instance"])
+                    predicted_solution, _ = extract_solution_from_response(
+                        data[i]["response"]
+                    )
+                    # print(data[level][i]["response"])
+                    solutions.append(predicted_solution)
+
+                verify_results = env.batch_verify_solution(instances, solutions)
+                # print(verify_results)
+                verify_results = [res[0] for res in verify_results]
+                # print("level {}, accuracy = {}".format(level, true_num / 30))
+                results[seed].append(
+                    np.sum(np.array(verify_results)) / len(verify_results)
+                )
+            except:
+                min_len = min(min_len, len(results[seed]))
+                continue
+    if min_len > 0:
+        results = np.array([results[seed][:min_len] for seed in seeds]).reshape(
+            3, 1, min_len
+        )
+        return results
+
+    return None
+
+
 def plot_rank_per_problem():
-    fig, axes = plt.subplots(nrows=2, ncols=6, figsize=(3.5 * 6, 3.5 * 2))
+    fig, axes = plt.subplots(nrows=2, ncols=6, figsize=(5 * 6, 5 * 2))
     colors = sns.color_palette("colorblind")
     for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]):
         # if problem_idx not in [16]:
@@ -90,7 +234,7 @@ def plot_rank_per_problem():
         all_ranks = get_rank_matrix(nppc_result, algorithms=model_list)
 
         mean_ranks = np.mean(all_ranks, axis=0)
-        print(mean_ranks)
+        # print(mean_ranks)
 
         bottom = np.zeros([len(keys)])
         # fig, ax = plt.subplots()
@@ -109,11 +253,16 @@ def plot_rank_per_problem():
             bottom += mean_ranks[i]
 
         if p_idx % 6 == 0:
-            ax.set_ylabel("Distribution", size="x-large")
-        ax.set_xlabel("{}".format(problem), size="x-large")
+            ax.set_ylabel("Distribution", fontsize=24)
+        # ax.set_xlabel("{}".format(PROBLEM2FIG[problem]), size="x-large")
+        ax.set_title(f"{PROBLEM2FIG[problem]}", fontsize=24)
+
         ax.set_xticks(labels)
         ax.set_ylim(0, 1)
-        ax.set_xticklabels(labels, size="large")
+        ax.set_xticklabels(labels, fontsize=24)
+        yticks = [0.2 * i for i in range(6)]
+        ax.set_yticks(yticks)
+        ax.set_yticklabels(yticks, fontsize=24)
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
         ax.spines["bottom"].set_visible(False)
@@ -136,12 +285,14 @@ def plot_rank_per_problem():
     ]
     legend = fig.legend(
         fake_patches,
-        model_list,
+        [MODEL2FIG[model] for model in model_list],
         loc="upper center",
         fancybox=True,
-        ncol=len(model_list),
-        fontsize="x-large",
+        ncol=min(len(model_list), 5),
+        fontsize=24,
+        bbox_to_anchor=(0.5, 0.05),
     )
+    plt.subplots_adjust(hspace=0.25)
 
     save_fig(fig, "rank_all")
     # fig.subplots_adjust(top=0.78, wspace=0.1, hspace=0.05)

@@ -1,8 +1,8 @@
 seed_list = [42, 53, 64]
-model_list = ["o1-mini"]
+model_list = ["o3-mini"]
 
 problem_list = [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
-# problem_list = [12]
+problem_list = [11]
 
 for model in model_list:
     filename = "run_{}.sh".format(model)
@@ -26,7 +26,7 @@ for model in model_list:
             config_l += "problem_{}_".format(problem)
             config_l += "seed_{}_".format(seed)
 
-            f.write("nohup python3 -u main_nppc_final.py ")
+            f.write("nohup python3 -u main_nppc_final_v3.py ")
             f.write(config)
             f.write(" > " + pare_folder)
             f.write("/log_" + config_l + ".txt")

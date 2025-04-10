@@ -159,7 +159,7 @@ datasets = {
         ["deepseek-r1", 77.3, "2025-01-20"],
         ["GPT 4o (2024-08-06)", 14.0, "2024-08-06"],
     ],
-    "SWE-Bench": [
+    "SWE-bench": [
         ["W&B Programmer O1 crosscheck5", 64.60, "2025-01-17"],
         ["OpenHands + CodeAct v2.1 (claude-3-5-sonnet-20241022)", 53.00, "2024-10-29"],
         ["RAG + Claude 3 Opus", 7.00, "2024-04-02"],
@@ -211,7 +211,7 @@ plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
 plt.tight_layout()
 
 plt.savefig(
-    "./supports/benchmark_over_time.pdf",
+    "benchmark_over_time.pdf",
     bbox_inches="tight",
     pad_inches=0.0,
 )

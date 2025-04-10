@@ -83,7 +83,7 @@ def get_parser():
         "--problem",
         type=int,
         required=False,
-        default=12,
+        default=11,
         help="the problem name idx",
     )
 
@@ -166,9 +166,11 @@ def main(args):
     if not result_folder_path_per_model.exists():
         result_folder_path_per_model.mkdir(parents=True, exist_ok=True)
 
+    dict_as_key = tuple(sorted(PROBLEM_LEVELS[problem_name][level].items()))
+
     results = {}
     saving_path = "model_{}_problem_{}_level_{}_shots_{}_seed_{}.pkl".format(
-        model_name, problem_name, level, n_shots, args.seed
+        model_name, problem_name, dict_as_key, n_shots, args.seed
     )
 
     env = NPEnv(problem_name=problem_name, level=level)
@@ -260,7 +262,7 @@ def main(args):
         )
     if not is_llm_error:
         with open(osp.join(result_folder_path_per_model, saving_path), "wb") as f:
-            pickle.dump(results, f)
+            pickle.dump(results[level], f)
 
     if not solver.is_online:
         from vllm.distributed.parallel_state import destroy_model_parallel
@@ -280,10 +282,10 @@ if __name__ == "__main__":
     problem_name = PROBLEMS[args.problem]
     levels = PROBLEM_LEVELS[problem_name]
 
-    for seed in [42, 53]:
+    for seed in [64]:
         args.seed = seed
         for level in levels:
-            if level not in [10, 11]:
+            if level not in [1, 2]:
                 continue
             seed_everything(args.seed)
             args.level = level
