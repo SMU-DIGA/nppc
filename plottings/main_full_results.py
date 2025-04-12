@@ -319,13 +319,15 @@ table_template = """
 \centering
 \caption{<caption>}
 \label{tab:<label>_full_results}
+\setlength{\\tabcolsep}{3pt}
+\\resizebox{\\textwidth}{!}{
 \\begin{tabular}{<col_str>}
 \\toprule
    & <level_list>\\\\
 \\midrule
 <level_with_result>
 \\bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 """
 
@@ -402,13 +404,14 @@ def plot_table():
 
             for m_idx, level in enumerate(levels):
                 # print(full_results_dict[problem][model][1][model])
-                # level_result += "${:.2f}_{:.2f}$".format(
-                #     full_results_dict[problem][model][0][model][level - 1],
-                #     full_results_dict[problem][model][1][model][level - 1],
-                # )
-                level_result += "${:.2f}$".format(
-                    full_results_dict[problem][model][0][model][level - 1]
+                level_result += "${:.2f}_{{{:.2f}}}^{{{:.2f}}}$".format(
+                    full_results_dict[problem][model][0][model][level - 1],
+                    full_results_dict[problem][model][1][model][0][level - 1],
+                    full_results_dict[problem][model][1][model][1][level - 1],
                 )
+                # level_result += "${:.2f}$".format(
+                #     full_results_dict[problem][model][0][model][level - 1]
+                # )
                 if m_idx < len(levels) - 1:
                     level_result += "&"
             level_result += "\\\\"

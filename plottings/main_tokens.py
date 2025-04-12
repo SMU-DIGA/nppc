@@ -111,8 +111,8 @@ MODEL2FIG = {
 }
 
 model_list = [
-    "qwq-32b",
-    "deepseek-r1-32b",
+    # "qwq-32b",
+    # "deepseek-r1-32b",
     "gpt-4o-mini",
     "gpt-4o",
     "claude",
@@ -298,7 +298,64 @@ def plot_tokens():
         plt.show()
 
 
+token_price = {
+    # "qwq-32b",
+    # "deepseek-r1-32b",
+    "gpt-4o-mini": [0.15, 0.6],
+    "gpt-4o": [2.5, 10],
+    "claude": [3, 15],
+    "deepseek-v3": [2, 8],
+    "deepseek-v3-2503": [2, 8],
+    "deepseek-r1": [4, 16],
+    "o1-mini": [1.1, 4.4],
+    "o3-mini": [1.1, 4.4],
+}
+
+# MODEL2FIG = {
+#     "deepseek-r1-32b": "DeepSeek-R1-32B",
+#     "qwq-32b": "QwQ-32B",
+#     "gpt-4o-mini": "GPT-4o-mini",
+#     "gpt-4o": "GPT-4o",
+#     "claude": "Claude 3.7 Sonnet",
+#     "deepseek-v3": "DeepSeek-V3",
+#     "deepseek-v3-2503": "DeepSeek-V3-2503",
+#     "deepseek-r1": "DeepSeek-R1",
+#     "o1-mini": "o1-mini",
+#     "o3-mini": "o3-mini",
+# }
+#
+# model_list = [
+#     "qwq-32b",
+#     "deepseek-r1-32b",
+#     "gpt-4o-mini",
+#     "gpt-4o",
+#     "claude",
+#     "deepseek-v3",
+#     "deepseek-v3-2503",
+#     "deepseek-r1",
+#     "o1-mini",
+#     "o3-mini",
+# ]
+
+price_table_template = """
+\\begin{table}[ht]
+\centering
+\caption{Cost for online models}
+\label{tab:cost_online}
+\\begin{tabular}{c|c|c|c}
+\\toprule
+Model & Prompt & Completion & Cost \\\\
+\midrule
+<model_tokens>
+\\bottomrule
+\end{tabular}
+\end{table}
+
+"""
+
+
 def plot_token_table():
+    model_tokens = {}
     for m_idx, model in enumerate(model_list):
         token_prompt = []
         token_completion = []
@@ -325,7 +382,49 @@ def plot_token_table():
             token_completion.append(sum(token_completion_problem))
 
         print(model, "&", sum(token_prompt), "&", sum(token_completion), "\\\\\n")
+        model_tokens[model] = {
+            "prompt": sum(token_prompt),
+            "completion": sum(token_completion),
+        }
+
+    #
+    full_results_table = open("full_price.txt", "w")
+    model_token_results = ""
+
+    for model in model_list:
+        model_token_results += MODEL2FIG[model] + "&"
+        if model in [
+            "deepseek-v3",
+            "deepseek-v3-2503",
+            "deepseek-r1",
+        ]:
+            model_token_results += "{} ({}RMB/MTok)& ".format(
+                model_tokens[model]["prompt"], token_price[model][0]
+            )
+            model_token_results += "{} ({}RMB/MTok)& ".format(
+                model_tokens[model]["completion"], token_price[model][1]
+            )
+            model_token_results += "{:.2f} RMB ".format(
+                (model_tokens[model]["completion"] * token_price[model][1]
+                + model_tokens[model]["prompt"] * token_price[model][0])/1e6
+            )
+        else:
+            model_token_results += "{} (\\${}/MTok) & ".format(
+                model_tokens[model]["prompt"], token_price[model][0]
+            )
+            model_token_results += "{} (\\${}/MTok) & ".format(
+                model_tokens[model]["completion"], token_price[model][1]
+            )
+            model_token_results += "\\${:.2f} ".format(
+                (model_tokens[model]["completion"] * token_price[model][1]
+                + model_tokens[model]["prompt"] * token_price[model][0])/1e6
+            )
+        model_token_results += '\\\\\n'
+    full_results_table.write(
+        price_table_template.replace("<model_tokens>", model_token_results)
+    )
+    full_results_table.close()
 
 
-plot_tokens()
+# plot_tokens()
 plot_token_table()
