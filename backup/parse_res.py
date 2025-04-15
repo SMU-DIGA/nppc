@@ -1,7 +1,7 @@
 import ast
 import json
 
-from utils.problem_utils import load_np_problem
+from backup.utils.problem_utils import load_np_problem
 
 
 def extract_answers(json_file, instance):
