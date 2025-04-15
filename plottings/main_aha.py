@@ -249,7 +249,6 @@ for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
                 # axes[row_idx][col_idx].set_ylabel('Number', position=(0, 0.5), rotation=90, fontsize=24)
 
 
-
 plt.tight_layout()
 
 # plt.ylabel("Performance", fontsize=32)

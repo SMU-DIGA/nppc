@@ -342,7 +342,7 @@ for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
         ax.fill_between(frames + 1, y1=lower, y2=upper, color=colors[model], alpha=0.2)
         if p_idx % 4 == 0:
             _annotate_and_decorate_axis(ax, xticks=x_ticks, yticks=y_ticks)
-            ax.set_ylabel('Accuracy', position=(0, 0.5), rotation=90, fontsize=24)
+            ax.set_ylabel("Accuracy", position=(0, 0.5), rotation=90, fontsize=24)
 
         else:
             _annotate_and_decorate_axis(
