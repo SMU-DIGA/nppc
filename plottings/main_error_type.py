@@ -106,12 +106,12 @@ MODEL2FIG = {
     "qwq-32b": "QwQ-32B",
     "gpt-4o-mini": "GPT-4o-mini",
     "gpt-4o": "GPT-4o",
-    "claude": "Claude 3.7 Sonnet",
+    "claude": "Claude-3.7-Sonnet",
     "deepseek-v3": "DeepSeek-V3",
+    "deepseek-v3-2503": "DeepSeek-V3-2503",
     "deepseek-r1": "DeepSeek-R1",
     "o1-mini": "o1-mini",
     "o3-mini": "o3-mini",
-    "deepseek-v3-2503": "deepseek-v3-2503",
 }
 
 for problem_idx in [0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]:

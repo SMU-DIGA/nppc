@@ -102,7 +102,7 @@ MODEL2FIG = {
     "qwq-32b": "QwQ-32B",
     "gpt-4o-mini": "GPT-4o-mini",
     "gpt-4o": "GPT-4o",
-    "claude": "Claude 3.7 Sonnet",
+    "claude": "Claude-3.7-Sonnet",
     "deepseek-v3": "DeepSeek-V3",
     "deepseek-v3-2503": "DeepSeek-V3-2503",
     "deepseek-r1": "DeepSeek-R1",
@@ -111,8 +111,8 @@ MODEL2FIG = {
 }
 
 model_list = [
-    # "qwq-32b",
-    # "deepseek-r1-32b",
+    "qwq-32b",
+    "deepseek-r1-32b",
     "gpt-4o-mini",
     "gpt-4o",
     "claude",
@@ -238,6 +238,11 @@ def plot_tokens():
                 alpha=0.75,
             )
 
+            if c_idx == 0:
+                axes[r_idx * 2][c_idx].set_ylabel(
+                    "Prompt", position=(0, 0.5), rotation=90, fontsize=24
+                )
+
             all_completions = []
             for i in range(len(levels)):
                 axes[r_idx * 2 + 1][c_idx].scatter(
@@ -272,8 +277,10 @@ def plot_tokens():
             axes[r_idx * 2 + 1][c_idx].set_xticks(levels)
             # axes[r_idx * 2 + 1][c_idx].set_xticklabels([])
 
-            # if m_idx != 0:
-            #     axes[1][m_idx].set_yticklabels([])
+            if c_idx == 0:
+                axes[r_idx * 2 + 1][c_idx].set_ylabel(
+                    "Completion", position=(0, 0.5), rotation=90, fontsize=24
+                )
 
             # axes[1][m_idx].set_yticks(fontsize=32)
             axes[r_idx * 2 + 1][c_idx].tick_params(
@@ -405,8 +412,11 @@ def plot_token_table():
                 model_tokens[model]["completion"], token_price[model][1]
             )
             model_token_results += "{:.2f} RMB ".format(
-                (model_tokens[model]["completion"] * token_price[model][1]
-                + model_tokens[model]["prompt"] * token_price[model][0])/1e6
+                (
+                    model_tokens[model]["completion"] * token_price[model][1]
+                    + model_tokens[model]["prompt"] * token_price[model][0]
+                )
+                / 1e6
             )
         else:
             model_token_results += "{} (\\${}/MTok) & ".format(
@@ -416,15 +426,18 @@ def plot_token_table():
                 model_tokens[model]["completion"], token_price[model][1]
             )
             model_token_results += "\\${:.2f} ".format(
-                (model_tokens[model]["completion"] * token_price[model][1]
-                + model_tokens[model]["prompt"] * token_price[model][0])/1e6
+                (
+                    model_tokens[model]["completion"] * token_price[model][1]
+                    + model_tokens[model]["prompt"] * token_price[model][0]
+                )
+                / 1e6
             )
-        model_token_results += '\\\\\n'
+        model_token_results += "\\\\\n"
     full_results_table.write(
         price_table_template.replace("<model_tokens>", model_token_results)
     )
     full_results_table.close()
 
 
-# plot_tokens()
-plot_token_table()
+plot_tokens()
+# plot_token_table()

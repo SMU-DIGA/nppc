@@ -44,7 +44,7 @@ def extract_solution_from_response(response):
     if not match:
         match = re.findall(r"json\s*({[^{}]*})", response, re.DOTALL)
     if not match:
-        match = re.findall(r"\{[^{}]*\}", response)
+        match = re.findall(r"\{[^{}]*\}", response, re.DOTALL)
 
     if match:
         json_str = match[-1]

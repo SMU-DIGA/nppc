@@ -14,7 +14,7 @@ import os.path as osp
 from pathlib import Path
 
 from npgym import NPEnv, PROBLEMS
-from npgym.configs_mod import PROBLEM_LEVELS
+from npgym.configs import PROBLEM_LEVELS
 from npsolver.solver import (
     extract_solution_from_response,
     extract_solution_from_response_old,
@@ -118,7 +118,7 @@ MODEL2FIG = {
     "qwq-32b": "QwQ-32B",
     "gpt-4o-mini": "GPT-4o-mini",
     "gpt-4o": "GPT-4o",
-    "claude": "Claude 3.7 Sonnet",
+    "claude": "Claude-3.7-Sonnet",
     "deepseek-v3": "DeepSeek-V3",
     "deepseek-v3-2503": "DeepSeek-V3-2503",
     "deepseek-r1": "DeepSeek-R1",

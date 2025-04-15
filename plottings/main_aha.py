@@ -234,9 +234,6 @@ for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
             axes[row_idx][col_idx].set_title(f"{PROBLEM2FIG[problem]}", fontsize=24)
             axes[row_idx][col_idx].tick_params(axis="both", which="major", labelsize=24)
 
-            if col_idx != 0:
-                axes[row_idx][col_idx].set_yticklabels([])
-
             axes[row_idx][col_idx].plot(
                 [i + 1 for i in range(len(all_ahas))],
                 all_ahas,
@@ -244,6 +241,14 @@ for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
                 linewidth=4.5,
                 alpha=0.75,
             )
+
+            if col_idx != 0:
+                axes[row_idx][col_idx].set_yticklabels([])
+            else:
+                pass
+                # axes[row_idx][col_idx].set_ylabel('Number', position=(0, 0.5), rotation=90, fontsize=24)
+
+
 
 plt.tight_layout()
 

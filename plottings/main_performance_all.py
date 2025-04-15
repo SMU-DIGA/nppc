@@ -15,7 +15,7 @@ import os.path as osp
 from pathlib import Path
 
 from npgym import NPEnv, PROBLEMS
-from npgym.configs_mod import PROBLEM_LEVELS
+from npgym.configs import PROBLEM_LEVELS
 from npsolver.solver import (
     extract_solution_from_response,
     extract_solution_from_response_old,
@@ -120,7 +120,7 @@ MODEL2FIG = {
     "qwq-32b": "QwQ-32B",
     "gpt-4o-mini": "GPT-4o-mini",
     "gpt-4o": "GPT-4o",
-    "claude": "Claude 3.7 Sonnet",
+    "claude": "Claude-3.7-Sonnet",
     "deepseek-v3": "DeepSeek-V3",
     "deepseek-v3-2503": "DeepSeek-V3-2503",
     "deepseek-r1": "DeepSeek-R1",
@@ -342,6 +342,8 @@ for p_idx, problem_idx in enumerate([0, 1, 8, 9, 11, 12, 15, 16, 19, 22, 23, 24]
         ax.fill_between(frames + 1, y1=lower, y2=upper, color=colors[model], alpha=0.2)
         if p_idx % 4 == 0:
             _annotate_and_decorate_axis(ax, xticks=x_ticks, yticks=y_ticks)
+            ax.set_ylabel('Accuracy', position=(0, 0.5), rotation=90, fontsize=24)
+
         else:
             _annotate_and_decorate_axis(
                 ax, xticks=x_ticks, yticks=y_ticks, leftfalse=True
