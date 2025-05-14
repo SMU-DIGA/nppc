@@ -1,6 +1,6 @@
-# NPPC: An Ever-Scaling Reasoning Benchmark for LLMs
+# Nondeterministic Polynomial Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs
 <div align="center">
-<img align="center" src="assets/nppc_logo.png" width="50%"/>
+<img align="center" src="assets/nppc.png" width="50%"/>
 </div>
 
 ***
