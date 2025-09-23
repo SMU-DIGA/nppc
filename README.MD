@@ -22,7 +22,6 @@ To the best of our knowledge, NPPC is the first ever-scaling reasoning benchmark
     - [npeval](#npeval)
   - [Tutorial](#tutorial)
   - [File Structure](#file-structure)
-  - [Team](#team)
   - [License](#license)
 
 ## Overview
@@ -202,10 +201,6 @@ nppc/
 ├── eval.sh
 └── main_nppc_final.py
 ```
-
-[//]: # (## Team)
-
-[//]: # (- This repository is developed and maintained by the authors of this paper [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs]&#40;https://arxiv.org/abs/2504.11239&#41; )
 
 ## License
 
