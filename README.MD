@@ -203,8 +203,9 @@ nppc/
 └── main_nppc_final.py
 ```
 
-## Team
-- This repository is developed and maintained by the authors of this paper [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs](https://arxiv.org/abs/2504.11239) 
+[//]: # (## Team)
+
+[//]: # (- This repository is developed and maintained by the authors of this paper [Nondeterministic Polynomial-time Problem Challenge: An Ever-Scaling Reasoning Benchmark for LLMs]&#40;https://arxiv.org/abs/2504.11239&#41; )
 
 ## License
 
